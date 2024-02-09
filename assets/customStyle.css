@@ -1,0 +1,64 @@
+/* common css code start  */
+.hideScroll,
+body.hideScroll {
+    overflow: hidden !important;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+.is-width-standard {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0px auto !important;
+    padding: 0 48px;
+}
+
+/* common css code end  */
+
+/* header css code start  */
+a.header__link.specialLoginBtn span.icon-caption {
+    display: inline;
+}
+
+a.header__link.specialLoginBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    min-width: 122px;
+    min-height: 46px;
+    border-radius: 15px;
+    background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+}
+
+a.header__link.specialLoginBtn span.icon.header__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    margin-right: 4px;
+}
+
+a.header__link.specialLoginBtn span.icon.header__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.header-cart.action-area__link {
+    display: none !important;
+}
+
+.header--classic nav.header__menu-items.is-justify-start {
+    margin-left: 48px;
+}
+
+/* header css code end  */

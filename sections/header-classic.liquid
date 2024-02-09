@@ -21,6 +21,7 @@
   assign dropdown_click = section.settings.dropdown_click
 
   assign display_search = section.settings.display_search
+  assign showSpecialLoginButton = section.settings.showSpecialLoginButton
 
   assign icon_style = section.settings.icon_style
 
@@ -281,8 +282,7 @@
               {% endfor %}
             </nav>
           </div>
-
-          {% render 'header__action-icons', display_search: display_search, icon_style: icon_style %}
+          {% render 'header__action-icons', display_search: display_search, icon_style: icon_style, showSpecialLoginButton: showSpecialLoginButton, %}
         </div>
       </div>
     </section>
@@ -426,6 +426,12 @@
       "type": "checkbox",
       "id": "display_search",
       "label": "Show search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "showSpecialLoginButton",
+      "label": "Show Special Login Button?",
       "default": true
     },
     {
