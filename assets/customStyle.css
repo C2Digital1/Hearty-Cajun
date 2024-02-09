@@ -61,4 +61,13 @@ a.header__link.specialLoginBtn span.icon.header__icon svg {
     margin-left: 48px;
 }
 
+header.header {
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+div.header-sticky-wrapper {
+    min-height: 112px;
+}
+
 /* header css code end  */
