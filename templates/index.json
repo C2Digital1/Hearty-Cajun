@@ -55,18 +55,49 @@
             "text_width": 70,
             "button_1": "Get Started",
             "button_1_link": "",
-            "button_1_style": "button--secondary",
+            "button_1_style": "button--primary",
             "button_2": "",
             "button_2_link": "",
             "button_2_style": "button--secondary",
             "color_scheme_mobile": "",
             "mobile_image_crop": "none"
           }
+        },
+        "image_UPCCz9": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "background-1",
+            "link": "",
+            "image": "shopify:\/\/shop_images\/Copy_of_Portrait-004.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Copy_of_Portrait-004.jpg",
+            "preheading": "",
+            "heading": "Italian Cajun Cuisine",
+            "subheading": "<p>The Secret Ingredient To A Healthier,<br\/>Flavor-Filled Life <\/p>",
+            "preheading_preset": "is-h6",
+            "heading_preset": "is-h1",
+            "subheading_preset": "is-h5",
+            "text_alignment": "left",
+            "text_horizontal_position": "left",
+            "text_vertical_position": "center",
+            "background_color": "",
+            "border_color": "#FFFFFF",
+            "border_width": 0,
+            "text_width": 70,
+            "button_1": "Get Started",
+            "button_1_link": "",
+            "button_1_style": "button--primary",
+            "button_2": "",
+            "button_2_link": "",
+            "button_2_style": "button--secondary",
+            "color_scheme_mobile": "default",
+            "mobile_image_crop": "none"
+          }
         }
       },
       "block_order": [
         "image_ffYGzC",
-        "image_k6yrcj"
+        "image_k6yrcj",
+        "image_UPCCz9"
       ],
       "settings": {
         "image_transition": "slide",
