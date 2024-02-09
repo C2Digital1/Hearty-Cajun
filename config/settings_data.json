@@ -1176,7 +1176,7 @@
           "scheme_text": "#463f3a",
           "scheme_pre_text": "#463f3a",
           "scheme_button": "#121212",
-          "scheme_button_gradient": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)",
+          "scheme_button_gradient": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
           "scheme_button_hover": "#ffffff",
           "scheme_button_border": "#121212",
           "scheme_button_label": "#ffffff",
