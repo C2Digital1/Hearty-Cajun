@@ -145,6 +145,7 @@
     "behance_link": "",
     "flickr_link": "",
     "email_link": "test@test.com",
+    "favicon": "shopify:\/\/shop_images\/Favicon.png",
     "checkout_accent_color": "#d6d6d6",
     "checkout_button_color": "#060606",
     "show_border": true,
