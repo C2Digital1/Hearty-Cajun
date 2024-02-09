@@ -102,6 +102,7 @@
     {{ css_class }}
     is-width-{{ width }}
     under-overlay-menu
+    mainSlideShowSec
     {% if mobile_text_below_image == true %}
       mobile-text--below-media
       {% else %}
@@ -121,6 +122,7 @@
       {% if width == 'wide' or width == 'half' %}
         equal-columns--outside-trim
       {% endif %}
+      {% if section.settings.customStyle %}customStyleSlideShow{% endif %}
     "
     data-slideshow-classic
   >
@@ -157,6 +159,12 @@
   "name": "Slideshow - classic",
   "class": "jsSlideshowClassic overlaid-header-option slideshow-classic under-menu",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "customStyle",
+      "label": "Use Custom Style",
+      "default": true
+    },
     {
       "type": "select",
       "id": "image_transition",

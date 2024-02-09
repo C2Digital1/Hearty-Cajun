@@ -15,6 +15,7 @@ Shopify.theme.jsSlideshowClassic = {
       prevNextButtons: this.number_of_slides > 1 ? this.show_arrows : false,
       pageDots: this.number_of_slides > 1 ? this.show_nav_buttons : false,
       draggable: true,
+      cellAlign: 'center',
       imagesLoaded: true,
       fade: this.image_transition == 'fade' ? true : false,
       autoPlay: this.image_slideshow_speed * 1000,

@@ -9,11 +9,19 @@ body {
     scroll-behavior: smooth;
 }
 
+
+
 .is-width-standard {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0px auto !important;
     padding: 0 48px;
+}
+
+.bannerCaptionContainer.caption {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 48px !important;
 }
 
 /* common css code end  */
@@ -71,3 +79,50 @@ div.header-sticky-wrapper {
 }
 
 /* header css code end  */
+
+/* slide show hero section css code start  */
+.bannerCaptionContainer .caption-content {
+    padding: 20px 0;
+}
+
+a.button {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+}
+
+.bannerCaptionContainer h2.slideshow-classic__heading.banner__heading.title.is-h1 {
+    line-height: 85px;
+}
+
+.bannerCaptionContainer h2.slideshow-classic__heading.banner__heading.title {
+    margin-bottom: 8px;
+}
+
+.bannerCaptionContainer .slideshow-classic__subheading.banner__subheading.subtitle {
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.slideshow-classic__subheading.banner__subheading.subtitle.is-h5 {
+    line-height: 35px;
+}
+
+
+.bannerCaptionContainer.caption a.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    min-width: 216px;
+}
+
+.mainSlideShowSec .slideshow-classic__banner.columns.one-whole {
+    border-radius: 24px;
+    width: 95%;
+    margin: 0 8px;
+}
+
+/* slide show hero section css code end */
