@@ -1152,9 +1152,9 @@
         "settings": {
           "scheme_background": "#ffffff",
           "scheme_background_gradient": "",
-          "scheme_heading": "#121212",
-          "scheme_text": "#121212",
-          "scheme_pre_text": "#121212",
+          "scheme_heading": "#463f3a",
+          "scheme_text": "#463f3a",
+          "scheme_pre_text": "#463f3a",
           "scheme_button": "#121212",
           "scheme_button_hover": "#ffffff",
           "scheme_button_border": "#121212",
