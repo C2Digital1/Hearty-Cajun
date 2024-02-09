@@ -1186,8 +1186,8 @@
           "scheme_s_button_border": "#121212",
           "scheme_secondary_button_label": "#ffffff",
           "scheme_secondary_button_label_hover": "#121212",
-          "scheme_link": "#121212",
-          "scheme_link_hover": "#121212"
+          "scheme_link": "#463f3a",
+          "scheme_link_hover": "#f15d5e"
         }
       },
       "background-1": {
