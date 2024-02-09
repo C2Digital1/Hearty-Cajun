@@ -48,6 +48,11 @@
 -%}
 
 {% comment %} Section specific CSS {% endcomment %}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+{%  endif %}
 {% capture section_css -%}
 
   a.icon-bar__block {
@@ -63,7 +68,7 @@
   }
 
   .button--primary{
-    background-color: {{ section.settings.color_scheme.settings.scheme_button }};
+    background: {{ primaryBtnBg }};
     color: {{ section.settings.color_scheme.settings.scheme_button_label }};
     border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }

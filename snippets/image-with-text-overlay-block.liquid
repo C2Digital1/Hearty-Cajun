@@ -63,6 +63,16 @@
     {% if mobile_image_crop != 'none'%} has-image-crop image-crop-{{ mobile_image_crop }}{% endif %}
   "
 >
+
+  {% if object.settings.color_scheme.settings.scheme_button_gradient != blank %}
+    {% assign primaryBtnBg = object.settings.color_scheme.settings.scheme_button_gradient %}
+    {% assign borderWidth = 0 %}
+    {%  else %}      
+    {% assign primaryBtnBg = object.settings.color_scheme.settings.scheme_button %}
+    {% assign borderWidth = 1 %}
+  {%  endif %}
+
+
   {% style -%}
     #shopify-section-{{ id }} .caption-content {
       background:  {{ background_color }} ;
@@ -83,14 +93,15 @@
 
 
     #shopify-section-{{ id }} .button--primary{
-      background-color: {{ object.settings.color_scheme.settings.scheme_button }};
+      background: {{ primaryBtnBg }};
       color: {{ object.settings.color_scheme.settings.scheme_button_label }};
-      border: 1px solid {{ object.settings.color_scheme.settings.scheme_button_border }};
+      border: {{borderWidth}}px solid {{ object.settings.color_scheme.settings.scheme_button_border }};
     }
 
     #shopify-section-{{ id }} .button--primary:hover{
       background-color: {{ object.settings.color_scheme.settings.scheme_button_hover }};
       color: {{ object.settings.color_scheme.settings.scheme_button_label_hover }};
+      border: 1px solid {{ object.settings.color_scheme.settings.scheme_button_border }};
     }
 
     #shopify-section-{{ id }} .button--secondary{
@@ -129,18 +140,16 @@
       #shopify-section-{{ id }}  .{{ context }}__subheading {
         color: {{ subheading_color_mobile }};
       }
-
       #shopify-section-{{ id }} .button--primary{
-        background-color: {{ object.settings.color_scheme_mobile.settings.scheme_button }};
+        background: {{ primaryBtnBg }};
         color: {{ object.settings.color_scheme_mobile.settings.scheme_button_label }};
-        border: 1px solid {{ object.settings.color_scheme_mobile.settings.scheme_button_border }};
+        border: {{borderWidth}}px solid {{ object.settings.color_scheme.settings.scheme_button_border }};
       }
-
       #shopify-section-{{ id }} .button--primary:hover{
         background-color: {{ object.settings.color_scheme_mobile.settings.scheme_button_hover }};
         color: {{ object.settings.color_scheme_mobile.settings.scheme_button_label_hover }};
+        border: 1px solid {{ object.settings.color_scheme_mobile.settings.scheme_button_border }};
       }
-
       #shopify-section-{{ id }} .button--secondary{
         background-color: {{ object.settings.color_scheme_mobile.settings.scheme_s_button }};
         color: {{ object.settings.color_scheme_mobile.settings.scheme_secondary_button_label }};

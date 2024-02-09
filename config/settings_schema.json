@@ -1132,6 +1132,12 @@
             "default": "#121212"
           },
           {
+            "type": "color_background",
+            "id": "scheme_button_gradient",
+            "label": "Primary Button Background Gradient",
+            "default": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)"
+          },
+          {
             "type": "color",
             "id": "scheme_button_hover",
             "label": "Primary Button hover Background",
