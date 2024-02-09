@@ -6,7 +6,9 @@
   assign id = section.id
   assign collection = collections[section.settings.collection]
   assign heading = section.settings.heading
+  assign subHeading = section.settings.subHeading
   assign heading_preset = section.settings.heading_preset
+  assign subHeadingPreset = section.settings.subHeadingPreset
   assign heading_alignment = section.settings.heading_alignment
   assign items_per_row = section.settings.items_per_row
   assign mobile_items_per_row = section.settings.mobile_items_per_row
@@ -97,13 +99,14 @@
     section
     {{ css_class }}
     is-width-{{ width }}
+    featuredCollecionSec
   "
   {% if animation != 'none' %}
     data-scroll-class="{{ animation }}"
   {% endif %}
-  >
+>
   {% if heading != blank %}
-    <div class="container">
+    <div class="container featuredCollectionHeading">
       {% render 'heading',
         title: heading,
         heading_tag: 'h2',
@@ -112,10 +115,15 @@
         url: collection.url,
         preset: heading_preset
       %}
+      {% if subHeading != blank %}
+        <h3 class="secSubHeading {{ subHeadingPreset }}" style="text-align: {{ heading_alignment }}">
+          {{ subHeading }}
+        </h3>
+      {% endif %}
     </div>
   {% endif %}
   <div
-    class="container has-column-padding-bottom featured-collection layout--{{ layout }} is-justify-center"
+    class="container featuredCollectionItemContainer has-column-padding-bottom featured-collection layout--{{ layout }} is-justify-center"
     {% if layout == 'slider' %}
       data-slider
     {% endif %}
@@ -170,6 +178,11 @@
       "default": "Featured collection"
     },
     {
+      "type": "text",
+      "id": "subHeading",
+      "label": "Sub Heading"
+    },
+    {
       "type": "select",
       "id": "heading_preset",
       "label": "Heading Preset",
@@ -208,6 +221,46 @@
         }
       ],
       "default": "is-h1"
+    },
+    {
+      "type": "select",
+      "id": "subHeadingPreset",
+      "label": "Sub Heading Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-text"
     },
     {
       "type": "select",
