@@ -100,13 +100,16 @@
     {{ css_class }}
     is-width-{{ width }}
     featuredCollecionSec
+    {% if layout == 'slider' %}
+      hasSlider
+    {% endif %}
   "
   {% if animation != 'none' %}
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
   {% if heading != blank %}
-    <div class="container featuredCollectionHeading">
+    <div class="container featuredCollectionHeading align-{{heading_alignment}}">
       {% render 'heading',
         title: heading,
         heading_tag: 'h2',
@@ -116,7 +119,7 @@
         preset: heading_preset
       %}
       {% if subHeading != blank %}
-        <h3 class="secSubHeading {{ subHeadingPreset }}" style="text-align: {{ heading_alignment }}">
+        <h3 class="secSubHeading {{ subHeadingPreset }}">
           {{ subHeading }}
         </h3>
       {% endif %}

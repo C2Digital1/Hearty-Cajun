@@ -194,3 +194,33 @@ ol.flickity-page-dots li.dot.is-selected {
 }
 
 /* slide show hero section css code end */
+
+/* featured collection product section css code start  */
+
+h3.secSubHeading {
+    display: flex;
+    align-items: center;
+}
+
+
+.container.featuredCollectionHeading.align-center {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container.featuredCollectionHeading.align-left {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.container.featuredCollectionHeading.align-right {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.featuredCollecionSec.is-width-wide.hasSlider {
+    padding-left: 48px;
+}
+
+/* featured collection product section css code end  */
