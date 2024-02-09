@@ -75,6 +75,7 @@
     "h4_font_size_max": 48,
     "h4_font_size_min": 40,
     "h4_font_transform": false,
+    "h5_font": "montserrat_n7",
     "h5_font_custom": "",
     "h5_font_size_max": 24,
     "h5_font_transform": false,
