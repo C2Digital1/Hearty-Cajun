@@ -6,7 +6,7 @@
         "image_ffYGzC": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "background-1",
             "link": "",
             "image": "shopify:\/\/shop_images\/Copy_of_Portrait-004.jpg",
             "mobile_image": "shopify:\/\/shop_images\/Copy_of_Portrait-004.jpg",
@@ -26,7 +26,7 @@
             "button_1": "Get Started",
             "button_1_link": "",
             "button_1_style": "button--primary",
-            "button_2": "Button 2",
+            "button_2": "",
             "button_2_link": "",
             "button_2_style": "button--secondary",
             "color_scheme_mobile": "",
