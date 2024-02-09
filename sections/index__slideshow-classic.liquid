@@ -11,6 +11,11 @@
   assign show_arrows = section.settings.show_arrows
   assign show_nav_buttons = section.settings.show_nav_buttons
   assign mobile_text_below_image = section.settings.mobile_text_below_image
+
+  assign arrowIconColor = section.settings.arrowIconColor
+  assign arrowIconBg = section.settings.arrowIconBg
+  assign dotsBg = section.settings.dotsBg 
+    
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -86,6 +91,17 @@
           object-fit: cover;
         }
       {% endif %}
+  }
+
+  #shopify-section-{{ id }} ol.flickity-page-dots li.dot{
+    background: {{ dotsBg }};
+  }
+  #shopify-section-{{ id }} ol.flickity-page-dots li.dot{
+    background: {{ dotsBg }};
+  }
+  #shopify-section-{{ id }} button.flickity-button{
+    background: {{ arrowIconBg  }};
+    color: {{ arrowIconColor }};  
   }
 
   {%
@@ -216,6 +232,24 @@
       "id": "show_nav_buttons",
       "label": "Show navigation dots",
       "default": true
+    },
+    {
+      "type": "color",
+      "id": "arrowIconBg",
+      "label": "Arrow Icon BG",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "arrowIconColor",
+      "label": "Arrow Icon Color",
+      "default": "#28303F"
+    },    
+    {
+      "type": "color", 
+      "id": "dotsBg",
+      "label": "Dots Color",
+      "default": "#463F3A"
     },
     {
       "type": "header",
