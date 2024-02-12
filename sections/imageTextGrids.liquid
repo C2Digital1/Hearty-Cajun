@@ -1,0 +1,560 @@
+{% comment %}
+  ** Single featured collection **
+{% endcomment %}
+
+{%- liquid
+  assign id = section.id
+  assign heading = section.settings.heading
+  assign headingPreset = section.settings.headingPreset
+  assign subHeading = section.settings.subHeading
+  assign subHeadingPreset = section.settings.subHeadingPreset
+  assign btnUrl = section.settings.btnUrl
+  assign btnTxt = section.settings.btnTxt
+  assign btnStyle = section.settings.btnStyle
+
+  assign heading_color = section.settings.color_scheme.settings.scheme_heading
+  assign subheading_color = section.settings.color_scheme.settings.scheme_text
+-%}
+{% comment %}Spacing{% endcomment %}
+{%- liquid
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign padding_left = section.settings.padding_left
+  assign padding_right = section.settings.padding_right
+  assign margin_top = section.settings.margin_top
+  assign margin_bottom = section.settings.margin_bottom
+  assign padding_top_m = section.settings.padding_top_m
+  assign padding_bottom_m = section.settings.padding_bottom_m
+  assign padding_left_m = section.settings.padding_left_m
+  assign padding_right_m = section.settings.padding_right_m
+  assign margin_top_m = section.settings.margin_top_m
+  assign margin_bottom_m = section.settings.margin_bottom_m
+-%}
+{% comment %}Layout{% endcomment %}
+{%- liquid
+  assign width = section.settings.width
+  assign section_bg = section.settings.color_scheme.settings.scheme_background
+  if section.settings.color_scheme.settings.scheme_background_gradient != empty
+    assign section_bg = section.settings.color_scheme.settings.scheme_background_gradient
+  endif
+  assign animation = section.settings.animation | default: 'none'
+-%}
+{% comment %}Advanced{% endcomment %}
+{%- liquid
+  assign css_class = section.settings.css_class
+  assign custom_css = section.settings.custom_css
+-%}
+
+{% comment %}
+  Section specific CSS
+{% endcomment %}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+{% else %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{% endif %}
+{% capture section_css -%}
+
+h2.sectionHeading{
+color: {{ heading_color }};
+
+}
+h3.sectionSubHeading
+{
+    color: {{ subheading_color }};
+}
+.button--primary{
+    background: {{ primaryBtnBg }};
+    color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+    border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+  }
+
+  .button--primary:hover{
+     background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+      background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+      color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+      border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+  }
+
+  .button--secondary{
+    background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+    color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+  }
+
+  .button--secondary:hover{
+    background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+  }
+
+  .button--link-style{
+    color: {{ section.settings.color_scheme.settings.scheme_link }};
+  }
+
+  .button--link-style:hover{
+    color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+  }
+{%- endcapture -%}
+{% style %}
+  #shopify-section-{{ id }}{
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+    padding-left: {{ padding_left }}px;
+    padding-right: {{ padding_right }}px;
+    background: {{ section_bg }};
+    margin-top: {{ margin_top }}px;
+    margin-bottom: {{ margin_bottom }}px;
+    {% if width == 'wide' %}
+      width: 100%;
+    {% endif %}
+  }
+  @media screen and (max-width:798px) {
+    #shopify-section-{{ id }}{
+      padding-top: {{ padding_top_m }}px;
+      padding-bottom: {{ padding_bottom_m }}px;
+      padding-left: {{ padding_left_m }}px;
+      padding-right: {{ padding_right_m }}px;
+      margin-top: {{ margin_top_m }}px;
+      margin-bottom: {{ margin_bottom_m }}px;
+    }
+  }
+  {% render 'css-loop',
+            css: section_css,
+            id: id
+    %}
+  {% render 'css-loop',
+    css: custom_css,
+    id: id %}
+{% endstyle %}
+
+<section
+  class="
+    section
+    customImgTextGrids
+    {{ css_class }}
+    is-width-{{ width }}
+  "
+  {% if animation != 'none' %}
+    data-scroll-class="{{ animation }}"
+  {% endif %}
+>
+  {% if heading != blank or subHeading != blank %}
+    <div class="secHedingContainer">
+      {% if heading != blank %}
+        <h2 class="sectionHeading {{ headingPreset }}">
+          {{ heading }}
+        </h2>
+      {% endif %}
+      {% if subHeading != blank %}
+        <h3 class="sectionSubHeading {{ subHeadingPreset }}">
+          {{ subHeading }}
+        </h3>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="imgTxtGridsContainer">
+    <div class="imgTextGridsRow">
+      {% for block in section.blocks %}
+        {% case block.type %}
+            gridItem gridImg heading subHeading
+          {% when 'gridItem' %}
+            {%- liquid
+              assign gridImg = block.settings.gridImg
+              assign gridHeading = block.settings.heading
+              assign gridSubHeading = block.settings.subHeading
+              assign blockSectionHeading = block.settings.color_scheme.settings.scheme_heading
+              assign blockSubHeading = block.settings.color_scheme.settings.scheme_heading
+              assign gridBg = block.settings.color_scheme.settings.scheme_background
+              if block.settings.color_scheme.settings.scheme_background_gradient != empty
+                assign gridBg = block.settings.color_scheme.settings.scheme_background_gradient
+              endif
+            -%}
+            <div class="imgTxtGridCol" id="gridBlock-{{id}}-{{ block.id }}" style="background: {{ gridBg }};">
+              {% style %}
+                #gridBlock-{{id}}-{{ block.id }}{
+
+                }
+                #gridBlock-{{id}}-{{ block.id }} .gridSectionHeading{
+                    color: {{ blockSectionHeading }}
+                } #gridBlock-{{id}}-{{ block.id }} .gridText{
+                    color: {{ blockSubHeading }}
+                }
+              {% endstyle %}
+              <div class="gridTxtCol">
+                {% if gridHeading != blank %}
+                  <h4 class="gridSectionHeading">
+                    {{ gridHeading }}
+                  </h4>
+                {% endif %}
+                {% if gridSubHeading != blank %}
+                  <div class="gridText">
+                    {{ gridSubHeading }}
+                  </div>
+                {% endif %}
+              </div>
+              {% if gridImg != blank %}
+                <div class="gridSIdeImg">
+                  <img
+                    class="boxImg lazyload"
+                    src="{{ gridImg | img_url:'master' }}"
+                    alt="img"
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if btnTxt != blank %}
+    <a href="{{ btnUrl }}" class="secBtn button {{ btnStyle }}">
+      {{ btnTxt }}
+    </a>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Image Text Gids",
+  "class": "custImgTXTGrids",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "default"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "headingPreset",
+      "label": "Heading Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-h2"
+    },
+    {
+      "type": "text",
+      "id": "subHeading",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "select",
+      "id": "subHeadingPreset",
+      "label": "Sub Heading Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-text"
+    },
+    {
+      "type": "text",
+      "id": "btnTxt",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btnUrl",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "btnStyle",
+      "label": "Button  style",
+      "options": [
+        {
+          "value": "button--primary",
+          "label": "Primary"
+        },
+        {
+          "value": "button--secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "button--link-style",
+          "label": "Link style"
+        }
+      ],
+      "default": "button--secondary"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wide",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Spacing Desktop"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_left",
+      "label": "Left spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_right",
+      "label": "Right spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_top",
+      "label": "Top Gutter",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom",
+      "label": "Bottom Gutter",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Spacing Mobile"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_m",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_m",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_left_m",
+      "label": "Left spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_right_m",
+      "label": "Right spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_top_m",
+      "label": "Top Gutter",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_m",
+      "label": "Bottom Gutter",
+      "default": 0
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "linear-gradient(#ffffff, #ffffff)"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Animation",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fadeIn",
+          "label": "Fade in"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade in down"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade in right"
+        },
+        {
+          "value": "slideInLeft",
+          "label": "Slide in left"
+        },
+        {
+          "value": "slideInRight",
+          "label": "Slide in right"
+        },
+        {
+          "value": "zoomIn",
+          "label": "Zoom in"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gridItem",
+      "name": "Grid Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "gridImg",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subHeading",
+          "label": "Sub Text"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default": "default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Text Gids",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
