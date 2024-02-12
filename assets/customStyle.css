@@ -266,4 +266,44 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     overflow: hidden;
 }
 
+
+.product-thumbnail {
+    padding: 0;
+    margin-top: 16px;
+}
+
+.product-thumbnail a.is-h6.product-thumbnail__title {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 23px;
+}
+
+.prodAttributeItems {
+    margin-top: 5px;
+    color: #463F3A;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19px;
+    opacity: .6;
+}
+
+.prodAttributeItems span:not(:last-child)::after {
+    content: "";
+    height: 4px;
+    width: 4px;
+    opacity: 0.6;
+    background-color: #463F3A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+}
+
+.prodAttributeItems span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* featured collection product section css code end  */
