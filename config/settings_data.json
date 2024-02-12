@@ -556,6 +556,16 @@
               "social_icons_footer": false
             }
           },
+          "link_list_xkEPGL": {
+            "type": "link_list",
+            "settings": {
+              "width": "4",
+              "mobile_width": "one-whole",
+              "menu": "help",
+              "menu_preset": "is-h6",
+              "social_icons_footer": false
+            }
+          },
           "f33f3fdd-2f4a-4237-9a42-fc3a4639ab28": {
             "type": "newsletter",
             "settings": {
@@ -572,6 +582,7 @@
         "block_order": [
           "logo_GbkH8q",
           "link_list_cG8Bxt",
+          "link_list_xkEPGL",
           "f33f3fdd-2f4a-4237-9a42-fc3a4639ab28"
         ],
         "settings": {
