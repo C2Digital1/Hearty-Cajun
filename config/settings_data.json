@@ -1215,13 +1215,13 @@
       },
       "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91": {
         "settings": {
-          "scheme_background": "#d2d2d2",
-          "scheme_background_gradient": "",
+          "scheme_background": "rgba(0,0,0,0)",
+          "scheme_background_gradient": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)",
           "scheme_heading": "#121212",
           "scheme_text": "#212426",
           "scheme_pre_text": "#121212",
           "scheme_button": "#121212",
-          "scheme_button_gradient": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)",
+          "scheme_button_gradient": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
           "scheme_button_hover": "#7d2f2f",
           "scheme_button_border": "#121212",
           "scheme_button_label": "#ffffff",
