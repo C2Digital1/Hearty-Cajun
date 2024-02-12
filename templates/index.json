@@ -384,7 +384,7 @@
             "heading": "Guaranteed!",
             "text": "<p><strong>Freshness Guaranteed<br\/><\/strong>Each meal is a fresh, nutrient-rich culinary delight.<br\/><strong>Heart-Healthy<br\/><\/strong>Designed for cardiovascular well-being.<br\/><strong>Brain Boosters<br\/><\/strong>Ingredients that nurture mental health.<br\/><strong>Gut Health Focused<br\/><\/strong>Fiber-rich for digestive wellness. <br\/><strong>Nutrient-Rich Satisfaction<br\/><\/strong>Vitamins, minerals, and proteins in every bite. <br\/><strong>Balanced Blood Sugar<br\/><\/strong>Low-glycemic foods for healthful and hearty eating. <\/p>",
             "pre_heading_preset": "is-text",
-            "heading_preset": "is-h2",
+            "heading_preset": "is-h4",
             "text_preset": "is-text-small",
             "button_label": "",
             "link": "",
@@ -396,6 +396,7 @@
         "image_NEdraN": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_Portrait-025.jpg",
             "image_crop": "none",
             "image_link": ""
           }
