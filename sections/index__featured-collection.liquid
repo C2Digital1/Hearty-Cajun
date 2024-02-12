@@ -20,6 +20,9 @@
   assign button_link_view = section.settings.button_link_view
   assign button_alignment_view = section.settings.button_alignment_view
   assign button_style_view = section.settings.button_style_view
+  assign arrowIconColor = section.settings.arrowIconColor
+  assign arrowIconBg = section.settings.arrowIconBg
+  assign hidePrice = section.settings.hidePrice
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -85,7 +88,10 @@
       margin-bottom: {{ margin_bottom_m }}px;
     }
   }
-
+  #shopify-section-{{ id }} button.flickity-button{
+    background: {{ arrowIconBg  }};
+    color: {{ arrowIconColor }};  
+  }
   {%
     render 'css-loop',
     css: custom_css,
@@ -125,6 +131,17 @@
       {% endif %}
     </div>
   {% endif %}
+  {% style %}
+  .product__thumbnail .product-thumbnail .product-thumbnail__vendor{
+    color: {{ settings.color_scheme_product.settings.scheme_pre_text }};
+  }
+  .product__thumbnail .product-thumbnail .product-thumbnail__title{
+    color: {{ settings.color_scheme_product.settings.scheme_heading }};
+  }
+  .product__thumbnail .product-thumbnail .product-thumbnail__price{
+    color: {{ settings.color_scheme_product.settings.scheme_text }};
+  }
+{% endstyle %}
   <div
     class="container featuredCollectionItemContainer has-column-padding-bottom featured-collection layout--{{ layout }} is-justify-center"
     {% if layout == 'slider' %}
@@ -138,7 +155,9 @@
         products: collection.products,
         skip_product: product,
         items_per_row: items_per_row,
-        mobile_items_per_row: mobile_items_per_row
+        mobile_items_per_row: mobile_items_per_row,
+        showStyle: true,
+        hidePrice: hidePrice
       %}
     {% endif %}
   </div>
@@ -382,6 +401,12 @@
       "default": "button--primary"
     },
     {
+      "type": "checkbox",
+      "id": "hidePrice",
+      "label": "Hide Price",
+      "default": true
+    },  
+    {
       "type": "header",
       "content": "Layout"
     },
@@ -401,6 +426,18 @@
         }
       ]
     },
+    {
+      "type": "color",
+      "id": "arrowIconBg",
+      "label": "Arrow Icon BG",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "arrowIconColor",
+      "label": "Arrow Icon Color",
+      "default": "#28303F"
+    },  
     {
       "type": "select",
       "id": "width",

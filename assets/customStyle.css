@@ -223,4 +223,47 @@ h3.secSubHeading {
     padding-left: 48px;
 }
 
+.container.featuredCollectionHeading.align-center {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.featuredCollectionHeading .heading-wrapper--featured-collection {
+    margin-bottom: 16px;
+}
+
+.featuredCollectionHeading h3.secSubHeading.is-text {
+    line-height: 26px;
+}
+
+.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-whole.column.thumbnail {
+    margin-left: 0 !important;
+    margin-right: 16px !important;
+    width: calc(24.5% - 16px);
+    padding: 0 !important;
+}
+
+button.flickity-button.flickity-prev-next-button[disabled] {
+    opacity: 0 !important;
+}
+
+.featuredCollecionSec button.flickity-button.flickity-prev-next-button.next {
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.featuredCollecionSec button.flickity-button.flickity-prev-next-button.next {
+    right: 28px;
+}
+
+.featuredCollecionSec button.flickity-button.flickity-prev-next-button.previous {
+    left: 0;
+}
+
+.product__thumbnail .product-image__wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
 /* featured collection product section css code end  */

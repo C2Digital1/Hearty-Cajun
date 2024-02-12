@@ -11,21 +11,6 @@
   endif
 -%}
 
-{% if align_height == true %}
-  {% style %}
-    .product-{{ product.id }}.thumbnail .image__container img,
-    .product-{{ product.id }}.thumbnail .product-thumbnail__video .plyr {
-      max-width: 100%;
-      width: {{ height }}px;
-      margin: 0 auto;
-    }
-
-    .shopify-model-viewer-ui model-viewer {
-      --progress-bar-height: 2px;
-      --progress-bar-color: {{ settings.regular_color }};
-    }
-  {% endstyle %}
-{% endif %}
 <div
   class="
     {%
@@ -59,6 +44,22 @@
     data-load-more--grid-item
   {% endif %}
 >
+  
+{% if align_height == true %}
+  {% style %}
+    .product-{{ product.id }}.thumbnail .image__container img,
+    .product-{{ product.id }}.thumbnail .product-thumbnail__video .plyr {
+      max-width: 100%;
+      width: {{ height }}px;
+      margin: 0 auto;
+    }
+
+    .shopify-model-viewer-ui model-viewer {
+      --progress-bar-height: 2px;
+      --progress-bar-color: {{ settings.regular_color }};
+    }
+  {% endstyle %}
+{% endif %}
   <div class="product-wrap">
     <div class="product-image__wrapper">
       <div class="image__container product__imageContainer">
@@ -186,7 +187,8 @@
       {%
         render 'product-thumbnail__product-info',
         product: product,
-        collection_handles: collection_handles
+        collection_handles: collection_handles,
+        hidePrice: hidePrice
       %}
     </div>
   </div>

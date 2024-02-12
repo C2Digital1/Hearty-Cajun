@@ -22,15 +22,16 @@
 
       const slider = $sliderEl.flickity({
         lazyLoad: 2,
-        freeScroll: true,
+        freeScroll: false,
         imagesLoaded: true,
         draggable: true,
-        cellAlign: 'center',
-        wrapAround: true,
+        cellAlign: 'left',
+        wrapAround: false,
         pageDots: false,
-        contain: true,
+        contain: false,
         prevNextButtons: slideData.products_limit > slideData.products_per_slide ? true : false,
         initialIndex: 0,
+        watchCSS: false,
         arrowShape: arrowShape
       });
       slider.on('settle.flickity', function () {

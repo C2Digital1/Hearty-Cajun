@@ -17,7 +17,8 @@
     endif
   endfor
 -%}
-
+{% if showStyle %}
+{% else %}
 {% style %}
   .product__thumbnail .product-thumbnail .product-thumbnail__vendor{
     color: {{ settings.color_scheme_product.settings.scheme_pre_text }};
@@ -29,7 +30,7 @@
     color: {{ settings.color_scheme_product.settings.scheme_text }};
   }
 {% endstyle %}
-
+{%  endif %}
 {% comment %}  Loop over products and Skip product if we're on its product page {% endcomment %}
 {% for product in products limit: for_limit %}
   {% if product.id != skip_product.id %}
@@ -40,7 +41,8 @@
       mobile_items_per_row: mobile_items_per_row,
       hover_enabled: hover_enabled,
       related_products: related_items,
-      pagination_type: pagination_type
+      pagination_type: pagination_type,
+      hidePrice: hidePrice
     %}
   {% endif %}
 {% endfor %}
