@@ -295,7 +295,9 @@
       "settings": {
         "color_scheme": "",
         "link": "",
+        "image": "shopify:\/\/shop_images\/Copy_of_Portrait-084.jpg01.jpg",
         "desktop_height": 0,
+        "mobile_image": "shopify:\/\/shop_images\/Copy_of_Portrait-084.jpg01.jpg",
         "mobile_height": 0,
         "preheading": "<p>Preheading<\/p>",
         "heading": "Image with Text Overlay",
