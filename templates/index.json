@@ -445,15 +445,26 @@
         "grid_item_dPNQaC": {
           "type": "gridItem",
           "settings": {
+            "gridImg": "shopify:\/\/shop_images\/3.png",
             "heading": "We Prepare and Deliver",
             "subHeading": "<p>Freshly prepared by our chefs and delivered for your convenience.<\/p>",
+            "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91"
+          }
+        },
+        "grid_item_zDyLLP": {
+          "type": "gridItem",
+          "settings": {
+            "gridImg": "shopify:\/\/shop_images\/4.png",
+            "heading": "Heat, Eat, Repeat",
+            "subHeading": "<p>Simply heat and enjoy with zero hassle. Repeat weekly, or as often as you’d like, cancel anytime.<\/p>",
             "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91"
           }
         }
       },
       "block_order": [
         "grid_item_aNjJBn",
-        "grid_item_dPNQaC"
+        "grid_item_dPNQaC",
+        "grid_item_zDyLLP"
       ],
       "settings": {
         "color_scheme": "",
@@ -464,7 +475,7 @@
         "btnTxt": "How It Works",
         "btnUrl": "",
         "btnStyle": "button--secondary",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_left": 0,
