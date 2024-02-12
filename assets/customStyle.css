@@ -103,6 +103,67 @@ div.header-sticky-wrapper {
 
 /* header css code end  */
 
+/* dropdown css code start  */
+.navbar-dropdown {
+    background: transparent;
+    padding: 0 !important;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 350px !important;
+    min-width: 0 !important;
+    padding-top: 29px !important;
+}
+
+.navbar-item.header__item.has-dropdown.has-dropdown--vertical.is-hoverable {
+    position: relative;
+}
+
+.navbar-dropdown .navBarInnerItems {
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+    padding: 24px 10px;
+    min-width: 138px !important;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.navbar-dropdown .navBarInnerItems a.navbar-item {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    font-weight: normal;
+    padding: 0 !important;
+    width: 100%;
+    display: flex !important;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.navbar-dropdown .navBarInnerItems a.navbar-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+.navbar-item.header__item.has-dropdown a.navbar-link.header__link::after {
+    display: none !important;
+}
+
+a.navbar-link.header__link {
+    padding: 0 !important;
+}
+
+.navbar-item.header__item {
+    margin-right: 40px;
+}
+
+/* dropdown css code end  */
 
 /* =============================== HOME PAGE START ===============================  */
 
@@ -668,6 +729,8 @@ a.secBtn.button {
     margin: 20px auto 0 auto;
 }
 
+/* =============================== HOME PAGE END ===============================  */
+
 
 /* footer section css code start  */
 .container.has-padding-top.footerBottomRow {
@@ -781,4 +844,3 @@ p.footer__heading.is-h6 {
 }
 
 /* footer section css code end  */
-/* =============================== HOME PAGE END ===============================  */

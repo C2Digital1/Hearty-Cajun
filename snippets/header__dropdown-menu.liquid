@@ -8,6 +8,7 @@ prefix: <string>
 
 <input class="no-js-main-navigation" type="radio" id="dropdown-{{ link.title | handleize }}" name="no-js-main-navigation">
 <div class="navbar-dropdown navbar-dropdown--{{ settings.dropdown_position }} is-{{ settings.dropdown_style }} has-{{ settings.dropdown_link_spacing }}-vertical-spacing">
+<div class="navBarInnerItems">
   {% if settings.dropdown_style == 'horizontal' and settings.header_layout != 'vertical' %}
     <div class="section is-flex">
       {% for sub_link in link.links %}
@@ -68,4 +69,5 @@ prefix: <string>
         {% endif %}
       {% endfor %}
     {% endif %}
+</div>
 </div>
