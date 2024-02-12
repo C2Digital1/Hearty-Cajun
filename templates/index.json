@@ -165,7 +165,7 @@
       "type": "index__featured-collection",
       "settings": {
         "heading": "Ready-to-Eat Italian Cajun Dishes",
-        "subHeading": "Delivering Unbelievable Flavors with <br> Nutritional Goodness – Right to Your Doorstep.",
+        "subHeading": "Delivering Unbelievable Flavors with  Nutritional Goodness – Right to Your Doorstep.",
         "heading_preset": "is-h2",
         "subHeadingPreset": "is-text",
         "heading_alignment": "center",
@@ -179,8 +179,8 @@
         "button_style_view": "button--primary",
         "hidePrice": true,
         "collection_style": "slider",
-        "arrowIconBg": "#fff",
-        "arrowIconColor": "#28303F",
+        "arrowIconBg": "#ffffff",
+        "arrowIconColor": "#28303f",
         "width": "wide",
         "padding_top": 64,
         "padding_bottom": 64,
@@ -232,11 +232,65 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_image_with_text_pTgGyc": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "image_CC79PV": {
+          "type": "image",
+          "settings": {
+            "image_crop": "none",
+            "image_link": ""
+          }
+        },
+        "text_jbngnn": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "",
+            "heading": "Heading text here",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "heading_preset": "is-h2",
+            "text_preset": "is-text",
+            "button_label": "View all",
+            "link": "",
+            "button_style": "button--primary",
+            "alignment": "left",
+            "vertical_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_CC79PV",
+        "text_jbngnn"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "desktop_height": 0,
+        "mobile_height": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "index_slideshow_classic_AgdiX4",
     "index_featured_collection_dPTbUC",
-    "index_heading_e6YGkB"
+    "index_heading_e6YGkB",
+    "index_image_with_text_pTgGyc"
   ]
 }
