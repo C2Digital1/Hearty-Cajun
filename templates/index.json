@@ -319,7 +319,7 @@
         "color_scheme_mobile": "",
         "mobile_image_crop": "none",
         "mobile_text_below_image": true,
-        "width": "wide",
+        "width": "standard",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
