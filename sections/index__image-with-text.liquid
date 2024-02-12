@@ -112,6 +112,8 @@
           {%- liquid
             assign heading = block.settings.heading
             assign heading_preset = block.settings.heading_preset
+            assign preHeading = block.settings.preHeading
+            assign pre_heading_preset = block.settings.pre_heading_preset
             assign text = block.settings.text
             assign text_preset = block.settings.text_preset
             assign button_label = block.settings.button_label
@@ -123,6 +125,7 @@
             if block.settings.color_scheme.settings.scheme_background_gradient != empty
               assign background = block.settings.color_scheme.settings.scheme_background_gradient
             endif
+            assign preHeadingColor = block.settings.color_scheme.settings.scheme_pre_text
             assign heading_color = block.settings.color_scheme.settings.scheme_heading
             assign text_color = block.settings.color_scheme.settings.scheme_text
           -%}
@@ -133,6 +136,9 @@
             .image-with-text__heading { color: {{ heading_color }}; }
 
             .image-with-text__text { color: {{ text_color }}; }
+            .preHeadingTxt{
+              color: {{ preHeadingColor }};
+            }
           {%- endcapture -%}
 
           {% style %}
@@ -163,6 +169,11 @@
             id="shopify-section-{{ block.id }}"
           >
             <div class="image-with-text__wrapper">
+              {% if preHeading != blank %}
+                <h2 class="preHeadingTxt {{ pre_heading_preset }}">
+                  {{ preHeading }}
+                </h2>
+              {% endif %}
               {% if heading != blank %}
                 <h3 class="image-with-text__heading text-align-{{ alignment }} {{ heading_preset }}">
                   {{ heading }}
@@ -485,7 +496,12 @@
         },
         {
           "type": "text",
-          "id": "heading",
+          "id": "preHeading",
+          "label": "Pre Heading"
+        },
+        {
+          "type": "text",
+          "id": "heading", 
           "label": "Heading",
           "default": "Heading text here"
         },
@@ -498,6 +514,46 @@
         {
           "type": "header",
           "content": "Presets"
+        },
+        {
+          "type": "select",
+          "id": "pre_heading_preset",
+          "label": "Pre Heading",
+          "options": [
+            {
+              "value": "is-h1",
+              "label": "H1"
+            },
+            {
+              "value": "is-h2",
+              "label": "H2"
+            },
+            {
+              "value": "is-h3",
+              "label": "H3"
+            },
+            {
+              "value": "is-h4",
+              "label": "H4"
+            },
+            {
+              "value": "is-h5",
+              "label": "H5"
+            },
+            {
+              "value": "is-h6",
+              "label": "H6"
+            },
+            {
+              "value": "is-text",
+              "label": "Regular"
+            },
+            {
+              "value": "is-text-small",
+              "label": "Small"
+            }
+          ],
+          "default": "is-h5"
         },
         {
           "type": "select",
