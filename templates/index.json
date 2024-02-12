@@ -545,6 +545,38 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_heading_zXViky": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "",
+        "heading": "Follow Our Instagram",
+        "subheading": "",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h2",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 48,
+        "padding_bottom_m": 48,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -556,6 +588,7 @@
     "index_heading_fD6bB3",
     "index_image_with_text_VEBK3P",
     "image_text_grids_7UtzKd",
-    "index_image_with_text_overlay_7DhjQT"
+    "index_image_with_text_overlay_7DhjQT",
+    "index_heading_zXViky"
   ]
 }
