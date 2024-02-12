@@ -53,6 +53,14 @@
 -%}
 
 {% comment %} Section specific CSS {% endcomment %}
+
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{%  endif %}
 {% capture section_css -%}
 
   .heading-section__heading {
@@ -68,14 +76,16 @@
   }
 
   .button--primary{
-    background-color: {{ section.settings.color_scheme.settings.scheme_button }};
+    background: {{ primaryBtnBg }};
     color: {{ section.settings.color_scheme.settings.scheme_button_label }};
-    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+    border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }
 
   .button--primary:hover{
-    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
-    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+     background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+      background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+      color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+      border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }
 
   .button--secondary{
@@ -204,7 +214,7 @@
             </div>
           {% endif %}
           {% if btnTxt != blank %}
-            <a href="headinSecBtn Button {{ btnStyle }}" href="{{ btnUrl }}">
+            <a class="headinSecBtn button {{ btnStyle }}" href="{{ btnUrl }}">
               {{ btnTxt }}
             </a>
           {% endif %}
