@@ -112,15 +112,16 @@
 
       {% comment %} Submit button {% endcomment %}
       <div class="field is-default-width is-align-self-end">
-        <div class="control">
-          {%- assign button_label = 'general.newsletter_form.submit' | t -%}
-          {% render 'button',
+        <button type="submit" class="control">
+          {%- render 'nextArrowIcon' -%}
+          {% comment %} {%- assign button_label = 'general.newsletter_form.submit' | t -%} {% endcomment %}
+          {% comment %} {% render 'button',
             label: button_label,
             type: 'submit',
             style: settings.form_button_style,
             class: 'is-within-form'
-          %}
-        </div>
+          %} {% endcomment %}
+        </button>
       </div>
     </div>
   {% endform %}

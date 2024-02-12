@@ -6,6 +6,7 @@
   assign id = section.id
   assign heading_preset = section.settings.heading_preset
   assign copyright_text = section.settings.copyright_text
+  assign displayCopyText = section.settings.displayCopyText
   assign display_designed_by = section.settings.display_designed_by
   assign display_shopify = section.settings.display_shopify
   assign display_payment_methods = section.settings.display_payment_methods
@@ -65,10 +66,10 @@
 {% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
   {% assign borderWidth = 0 %}
-  {%  else %}      
+{% else %}
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
   {% assign borderWidth = 1 %}
-{%  endif %}
+{% endif %}
 
 {%- capture section_css -%}
   .footer__heading && .content && .footer__credits{ color: {{ text_color }}; } a && .icon{ color: {{ link_color }}; }
@@ -265,7 +266,7 @@
             %}
 
             {% if social_icons_footer %}
-              <div class="has-padding-bottom has-padding-top">
+              <div class="ftSocialMedia has-padding-bottom has-padding-top">
                 {% render 'social-icons', flex_alignment: 'left' %}
               </div>
             {% endif %}
@@ -274,7 +275,7 @@
       {% endfor %}
     </div>
 
-    <div class="container has-padding-top border-top">
+    <div class="container has-padding-top footerBottomRow">
       {% if locale_selector or currency_selector or settings.show_multiple_currencies == true %}
         <div class="one-whole column">
           <div class="footer-menu__disclosure footer-classic__disclosure">
@@ -297,10 +298,12 @@
       {% endif %}
 
       <div class="footer__credits is-text-small {% if display_payment_methods %}one-half {% else %} one-whole {% endif %} column small-down--one-whole">
-        <p>
-          &copy; {{ 'now' | date: '%Y' }}
-          {{ shop.name | link_to: '/' }}
-        </p>
+        {% if displayCopyText %}
+          <p>
+            &copy; {{ 'now' | date: '%Y' }}
+            {{ shop.name | link_to: '/' }}
+          </p>
+        {% endif %}
         {{ copyright_text }}
         {% if display_designed_by %}
           <p>{{ 'layout.general.designer_credits_html' | t }}</p>
@@ -379,6 +382,12 @@
       "type": "richtext",
       "id": "copyright_text",
       "label": "Copyright text"
+    },
+    {
+      "type": "checkbox",
+      "id": "displayCopyText",
+      "label": "Display Copy write Text",
+      "default": false
     },
     {
       "type": "checkbox",
@@ -1486,6 +1495,12 @@
           "type": "checkbox",
           "id": "display_last_name",
           "label": "Show last name"
+        },
+        {
+          "type": "checkbox",
+          "id": "social_icons_footer",
+          "label": "Show social media icons",
+          "default": false
         }
       ]
     },
