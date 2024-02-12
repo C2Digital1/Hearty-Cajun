@@ -534,6 +534,18 @@
       "footer-classic": {
         "type": "footer-classic",
         "blocks": {
+          "logo_GbkH8q": {
+            "type": "logo",
+            "settings": {
+              "width": "4",
+              "mobile_width": "one-whole",
+              "logo": "shopify:\/\/shop_images\/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
+              "size": "medium",
+              "text": "",
+              "text_preset": "is-text",
+              "social_icons_footer": false
+            }
+          },
           "link_list_cG8Bxt": {
             "type": "link_list",
             "settings": {
@@ -558,6 +570,7 @@
           }
         },
         "block_order": [
+          "logo_GbkH8q",
           "link_list_cG8Bxt",
           "f33f3fdd-2f4a-4237-9a42-fc3a4639ab28"
         ],
