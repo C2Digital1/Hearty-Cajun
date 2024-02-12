@@ -475,8 +475,52 @@ h3.image-with-text__heading.is-h5 {
 .imgTxtCol.imgTxtColChild-1.one-half.medium-down--one-whole.column {
     margin: 0 8px 0 0;
 }
+
 .imgTxtCol.imgTxtColChild-2.one-half.medium-down--one-whole.column {
     margin: 0 0 0 8px;
 }
 
 /* image with text section css code end  */
+
+/* image with text overlay section css code start  */
+
+.imageWitTextOverlay.hasRoundedCorner .image-with-text-overlay__banner.columns.one-whole {
+    width: 100% !important;
+    margin: 0px auto !important;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.imageWitTextOverlay.customStyleBanner h2.image-with-text-overlay__heading.banner__heading.title.is-h5 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 44px;
+}
+
+.imageWitTextOverlay.customStyleBanner .image-with-text-overlay__buttons.buttons.is-center {
+    display: block;
+    width: 100%;
+}
+
+
+.imageWitTextOverlay.customStyleBanner a.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 216px;
+    min-height: 54px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+
+.imageWitTextOverlay.customStyleBanner a.button.button--link-style {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    font-weight: normal !important;
+    border: 0px solid !important;
+}
+
+/* image with text overlay section css code end  */

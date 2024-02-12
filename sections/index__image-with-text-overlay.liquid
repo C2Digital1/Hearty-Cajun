@@ -6,6 +6,8 @@
 {%- liquid
   assign id = section.id
   assign mobile_text_below_media = section.settings.mobile_text_below_image
+  assign roundedCorner = section.settings.roundedCorner
+  assign useCustomStyling = section.settings.useCustomStyling
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -98,6 +100,13 @@
     section
     {{ css_class }}
     is-width-{{ width }}
+    imageWitTextOverlay
+    {%  if roundedCorner %}
+      hasRoundedCorner
+    {%  endif %}
+    {%  if useCustomStyling %}
+      customStyleBanner
+    {%  endif %}
     under-overlay-menu scheme_color-{{section.settings.color_scheme}}
     {% if mobile_text_below_media == true %}
         mobile-text--below-media
@@ -131,6 +140,18 @@
       "id": "color_scheme",
       "label": "Color Scheme",
       "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "roundedCorner", 
+      "label": "Rounded Corner?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "useCustomStyling",
+      "label": "Use Custom Styling?",
+      "default": true
     },
     {
       "type": "url",
