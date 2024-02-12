@@ -5,6 +5,7 @@
 {%- liquid
   assign id = section.id
   assign blocks = section.blocks
+  assign showRoundeBdr = section.settings.showRoundeBdr
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -90,6 +91,8 @@
   class="
     section
     {{ css_class }}
+    imageWithTextSection
+    {% if showRoundeBdr %}hasRoundedBorder{% endif %}
     is-width-{{ width }} scheme_color-{{section.settings.color_scheme}}
     {% if show_gutter == false %}
         has-no-side-gutter
@@ -271,6 +274,12 @@
           "label": "Wide"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "showRoundeBdr",
+      "label": "Show rounder borders",
+      "default": true
     },
     {
       "type": "checkbox",
