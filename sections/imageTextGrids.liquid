@@ -12,6 +12,9 @@
   assign btnTxt = section.settings.btnTxt
   assign btnStyle = section.settings.btnStyle
 
+  assign gridSubTextPreset= section.settings.gridSubTextPreset
+  assign gridHeadingPreset= section.settings.gridHeadingPreset  
+
   assign heading_color = section.settings.color_scheme.settings.scheme_heading
   assign subheading_color = section.settings.color_scheme.settings.scheme_text
 -%}
@@ -165,8 +168,8 @@ h3.sectionSubHeading
               assign gridImg = block.settings.gridImg
               assign gridHeading = block.settings.heading
               assign gridSubHeading = block.settings.subHeading
-              assign blockSectionHeading = block.settings.color_scheme.settings.scheme_heading
-              assign blockSubHeading = block.settings.color_scheme.settings.scheme_heading
+              assign blockSectionHeading = block.settings.color_scheme.settings.scheme_pre_text
+              assign blockSubHeading = block.settings.color_scheme.settings.scheme_text
               assign gridBg = block.settings.color_scheme.settings.scheme_background
               if block.settings.color_scheme.settings.scheme_background_gradient != empty
                 assign gridBg = block.settings.color_scheme.settings.scheme_background_gradient
@@ -174,9 +177,6 @@ h3.sectionSubHeading
             -%}
             <div class="imgTxtGridCol" id="gridBlock-{{id}}-{{ block.id }}" style="background: {{ gridBg }};">
               {% style %}
-                #gridBlock-{{id}}-{{ block.id }}{
-
-                }
                 #gridBlock-{{id}}-{{ block.id }} .gridSectionHeading{
                     color: {{ blockSectionHeading }}
                 } #gridBlock-{{id}}-{{ block.id }} .gridText{
@@ -184,13 +184,13 @@ h3.sectionSubHeading
                 }
               {% endstyle %}
               <div class="gridTxtCol">
-                {% if gridHeading != blank %}
-                  <h4 class="gridSectionHeading">
+                {% if gridHeading != blank %}  
+                  <h4 class="gridSectionHeading {{ gridHeadingPreset }}">
                     {{ gridHeading }}
                   </h4>
                 {% endif %}
                 {% if gridSubHeading != blank %}
-                  <div class="gridText">
+                  <div class="gridText {{ gridSubTextPreset }}">
                     {{ gridSubHeading }}
                   </div>
                 {% endif %}
@@ -334,6 +334,86 @@ h3.sectionSubHeading
       "type": "url",
       "id": "btnUrl",
       "label": "Button Link"
+    },
+    { 
+      "type": "select",
+      "id": "gridHeadingPreset",
+      "label": "Grid Heading Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-h5"
+    },
+    {
+      "type": "select",
+      "id": "gridSubTextPreset",
+      "label": "Grid Sub Text Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-text"
     },
     {
       "type": "select",
