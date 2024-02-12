@@ -441,10 +441,19 @@
             "subHeading": "<p>Pick from our menu of flavor-packed and health-focused meals.<\/p>",
             "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91"
           }
+        },
+        "grid_item_dPNQaC": {
+          "type": "gridItem",
+          "settings": {
+            "heading": "We Prepare and Deliver",
+            "subHeading": "<p>Freshly prepared by our chefs and delivered for your convenience.<\/p>",
+            "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91"
+          }
         }
       },
       "block_order": [
-        "grid_item_aNjJBn"
+        "grid_item_aNjJBn",
+        "grid_item_dPNQaC"
       ],
       "settings": {
         "color_scheme": "",
