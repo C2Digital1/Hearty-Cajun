@@ -306,4 +306,26 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     justify-content: center;
 }
 
+.featuredCollecionSec .buttons {
+    margin-top: 40px;
+}
+
+.featuredCollecionSec .buttons a.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    min-width: 224px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+}
+
+.featuredCollecionSec .buttons a.button.button--primary {
+    border: 1px solid #463F3A;
+}
+
 /* featured collection product section css code end  */
