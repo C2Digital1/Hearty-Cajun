@@ -294,6 +294,8 @@
       "type": "index__image-with-text-overlay",
       "settings": {
         "color_scheme": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
+        "roundedCorner": true,
+        "useCustomStyling": true,
         "link": "",
         "image": "shopify:\/\/shop_images\/Copy_of_Portrait-084.jpg01.jpg",
         "desktop_height": 0,
@@ -309,7 +311,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "Get Started",
@@ -338,6 +340,38 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_heading_fD6bB3": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "<p>Add a preheading<\/p>",
+        "heading": "Section heading",
+        "subheading": "<p>Additional text or description of section<\/p>",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h3",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 48,
+        "padding_bottom_m": 48,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -345,6 +379,7 @@
     "index_featured_collection_dPTbUC",
     "index_heading_e6YGkB",
     "index_image_with_text_pTgGyc",
-    "index_image_with_text_overlay_G4xMqP"
+    "index_image_with_text_overlay_G4xMqP",
+    "index_heading_fD6bB3"
   ]
 }
