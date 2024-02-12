@@ -17,6 +17,10 @@
   assign subheading_color = section.settings.color_scheme.settings.scheme_text
 
   assign heading_alignment = section.settings.heading_alignment
+  assign btnTxt = section.settings.btnTxt
+  assign btnUrl = section.settings.btnUrl
+  assign btnStyle = section.settings.btnStyle
+  assign topImg = section.settings.topImg
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -153,6 +157,7 @@
       section
       {{ css_class }} scheme_color-{{section.settings.color_scheme}}
       is-width-{{ width }}
+      headingAndBtnSection
     "
     data-section-id="{{ id }}"
     {% if animation != 'none' %}
@@ -170,6 +175,19 @@
             text-align-{{ heading_alignment }}
           "
         >
+          {% if topImg != blank %}
+            <div class="headingTopImg">
+              <img
+                class="boxImg lazyload"
+                src="{{ topImg | img_url:'master' }}"
+                alt="img"
+                width="200"
+                height="200"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+
           {% if preheading != blank %}
             <div class="heading-section__preheading subtitle {{ preheading_preset }}">
               {{ preheading }}
@@ -184,6 +202,11 @@
             <div class="heading-section__subheading subtitle {{ subheading_preset }}">
               {{ subheading }}
             </div>
+          {% endif %}
+          {% if btnTxt != blank %}
+            <a href="headinSecBtn Button {{ btnStyle }}" href="{{ btnUrl }}">
+              {{ btnTxt }}
+            </a>
           {% endif %}
         </div>
       </div>
@@ -203,6 +226,11 @@
       "default": "default"
     },
     {
+      "type": "image_picker",
+      "id": "topImg",
+      "label": "Top Image"
+    },
+    {
       "type": "richtext",
       "id": "preheading",
       "label": "Preheading",
@@ -219,6 +247,36 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "<p>Additional text or description of section</p>"
+    },
+    {
+      "type": "text",
+      "id": "btnTxt",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btnUrl",
+      "label": "Button Url"
+    },
+    {
+      "type": "select",
+      "id": "btnStyle",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "button--primary",
+          "label": "Primary"
+        },
+        {
+          "value": "button--secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "button--link-style",
+          "label": "Link style"
+        }
+      ],
+      "default": "button--secondary"
     },
     {
       "type": "header",

@@ -23,6 +23,11 @@ body {
     max-width: 100%;
     padding: 0 48px !important;
 }
+img.boxImg{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 /* common css code end  */
 
