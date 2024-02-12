@@ -552,7 +552,7 @@
               "width": "4",
               "mobile_width": "one-whole",
               "menu": "quick-links",
-              "menu_preset": "is-h6",
+              "menu_preset": "is-text",
               "social_icons_footer": false
             }
           },
@@ -562,7 +562,7 @@
               "width": "4",
               "mobile_width": "one-whole",
               "menu": "help",
-              "menu_preset": "is-h6",
+              "menu_preset": "is-text",
               "social_icons_footer": false
             }
           },
