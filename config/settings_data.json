@@ -1243,18 +1243,18 @@
           "scheme_text": "#ffffff",
           "scheme_pre_text": "#ffffff",
           "scheme_button": "#ffffff",
-          "scheme_button_gradient": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
-          "scheme_button_hover": "#121212",
-          "scheme_button_border": "#121212",
-          "scheme_button_label": "#000000",
+          "scheme_button_gradient": "",
+          "scheme_button_hover": "#463f3a",
+          "scheme_button_border": "#463f3a",
+          "scheme_button_label": "#463f3a",
           "scheme_button_label_hover": "#ffffff",
-          "scheme_s_button": "#121212",
-          "scheme_s_button_hover": "#7d2f2f",
-          "scheme_s_button_border": "#212426",
+          "scheme_s_button": "#463f3a",
+          "scheme_s_button_hover": "#ffffff",
+          "scheme_s_button_border": "#463f3a",
           "scheme_secondary_button_label": "#ffffff",
-          "scheme_secondary_button_label_hover": "#ffffff",
-          "scheme_link": "#7d2f2f",
-          "scheme_link_hover": "#cccccc"
+          "scheme_secondary_button_label_hover": "#463f3a",
+          "scheme_link": "#f15d5e",
+          "scheme_link_hover": "#463f3a"
         }
       },
       "scheme-8a16c616-abc9-4c2a-b48a-c26d30fdeddf": {
