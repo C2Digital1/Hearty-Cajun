@@ -549,8 +549,8 @@
             "settings": {
               "width": "4",
               "mobile_width": "one-whole",
-              "newsletter_title": "Subscribe",
-              "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more …<\/p>",
+              "newsletter_title": "Sign Up For Updates",
+              "newsletter_richtext": "<p>Promotions, new products, and sales. Directly to your inbox.<\/p>",
               "newsletter_richtext_preset": "is-text",
               "display_first_name": false,
               "display_last_name": false
