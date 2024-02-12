@@ -181,8 +181,19 @@
           {% endif %}
         </div>
       {% endif %}
+
+      {% if settings.showQuickAddBtn %}
+        {% liquid
+          assign selected_variant = product.selected_variant
+          if product.variants.size == 1 or settings.select_first_available_variant
+            assign selected_variant = product.selected_or_first_available_variant
+          endif
+        %}
+        {%- render 'quickAddToCartForm', product: product, selected_variant: selected_variant -%}
+      {% endif %}
     </div>
 
+    
     <div class="thumbnail__caption text-align-{{ settings.thumbnail_text_alignment }}">
       {%
         render 'product-thumbnail__product-info',

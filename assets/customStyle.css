@@ -264,6 +264,7 @@ button.flickity-button.flickity-prev-next-button[disabled] {
 .product__thumbnail .product-image__wrapper {
     border-radius: 16px;
     overflow: hidden;
+    position: relative;
 }
 
 
@@ -326,6 +327,45 @@ button.flickity-button.flickity-prev-next-button[disabled] {
 
 .featuredCollecionSec .buttons a.button.button--primary {
     border: 1px solid #463F3A;
+}
+
+.purchase-details__buttons  button.button.quickAddBtn {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #fff;
+    color: #463F3A;
+}
+
+.purchase-details__buttons button.button.quickAddBtn span.text.btnTxtWithPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+}
+
+.purchase-details__buttons button.button.quickAddBtn span.text.btnTxtWithPrice svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+.product__thumbnail .product-image__wrapper form.shopify-product-form {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px;
+    width: 100%;
+    align-items: flex-end;
 }
 
 /* featured collection product section css code end  */

@@ -2604,7 +2604,13 @@
   },
   {
     "name": "Quick shop",
-    "settings": [
+    "settings": [      
+      {
+        "type": "checkbox",
+        "id": "showQuickAddBtn",
+        "label": "Show Quick Add Button?",
+        "default": true
+      },
       {
         "type": "checkbox",
         "id": "enable_quickshop",
