@@ -29,6 +29,7 @@ img.boxImg {
     width: 100%;
     height: auto;
 }
+
 a.button,
 button.button {
     font-size: 16px !important;
@@ -395,6 +396,7 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     max-width: 664px;
     margin: 0px auto;
 }
+
 .headingAndBtnSection h2.heading-section__heading.title.is-h3 {
     line-height: 54px;
 }
@@ -404,12 +406,12 @@ button.flickity-button.flickity-prev-next-button[disabled] {
 }
 
 
-.headingAndBtnSection  .heading-section__subheading.subtitle {
+.headingAndBtnSection .heading-section__subheading.subtitle {
     margin-top: 0;
     margin-bottom: 32px;
 }
 
-.headingAndBtnSection  .heading-section__subheading.subtitle.is-text {
+.headingAndBtnSection .heading-section__subheading.subtitle.is-text {
     line-height: 26px;
 }
 
@@ -421,4 +423,60 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     min-height: 54px;
     min-width: 216px;
 }
-/* index headign section css code end F */
+
+/* index heading section css code end  */
+
+/* image with text section css code start  */
+.hasRoundedBorder .image-with-text__image-column,
+.hasRoundedBorder .image-with-text__text-column {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.image-with-text__text-column .image-with-text__wrapper {
+    width: 100%;
+    max-width: 436px;
+    margin: 0px auto;
+}
+
+.image-with-text__text-column h2.preHeadingTxt.is-h5 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 43px;
+}
+
+.image-with-text__text-column h2.preHeadingTxt {
+    margin-bottom: 16px;
+}
+
+.image-with-text__text-column h3.image-with-text__heading {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+h3.image-with-text__heading.is-h5 {
+    line-height: 35px;
+}
+
+.image-with-text__text.content.is-text {
+    line-height: 24px;
+}
+
+.imageWithTextSection .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.imageWithTextSection .container .imgTxtCol.one-half.medium-down--one-whole.column {
+    width: calc(50% - 8px);
+}
+
+.imgTxtCol.imgTxtColChild-1.one-half.medium-down--one-whole.column {
+    margin: 0 8px 0 0;
+}
+.imgTxtCol.imgTxtColChild-2.one-half.medium-down--one-whole.column {
+    margin: 0 0 0 8px;
+}
+
+/* image with text section css code end  */

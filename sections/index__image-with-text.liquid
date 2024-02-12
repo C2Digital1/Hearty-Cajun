@@ -92,7 +92,7 @@
     section
     {{ css_class }}
     imageWithTextSection
-    {% if showRoundeBdr %}hasRoundedBorder{% endif %}
+    {% if showRoundeBdr %} hasRoundedBorder {% endif %}
     is-width-{{ width }} scheme_color-{{section.settings.color_scheme}}
     {% if show_gutter == false %}
         has-no-side-gutter
@@ -156,6 +156,7 @@
 
           <div
             class="
+              imgTxtCol imgTxtColChild-{{ forloop.index }}
               image-with-text__text-column
               image-with-text__column scheme_color-{{block.settings.color_scheme}}
               {% render 'column-width', value: forloop.length %}
@@ -209,6 +210,7 @@
 
           <div
             class="
+              imgTxtCol imgTxtColChild-{{ forloop.index }}
               image-with-text__image-column
               image-with-text__column
               {% render 'column-width', value: forloop.length %}
