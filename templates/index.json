@@ -432,6 +432,19 @@
     },
     "image_text_grids_7UtzKd": {
       "type": "imageTextGrids",
+      "blocks": {
+        "grid_item_aNjJBn": {
+          "type": "gridItem",
+          "settings": {
+            "heading": "Choose Your Meals",
+            "subHeading": "<p>Pick from our menu of flavor-packed and health-focused meals.<\/p>",
+            "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_aNjJBn"
+      ],
       "settings": {
         "color_scheme": "",
         "heading": "Effortless Gourmet",
