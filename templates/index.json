@@ -429,6 +429,36 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "image_text_grids_7UtzKd": {
+      "type": "imageTextGrids",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Effortless Gourmet",
+        "headingPreset": "is-h2",
+        "subHeading": "Enjoy Italian Cajun Cuisine in 3 Easy Steps",
+        "subHeadingPreset": "is-text",
+        "btnTxt": "How It Works",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -438,6 +468,7 @@
     "index_image_with_text_pTgGyc",
     "index_image_with_text_overlay_G4xMqP",
     "index_heading_fD6bB3",
-    "index_image_with_text_VEBK3P"
+    "index_image_with_text_VEBK3P",
+    "image_text_grids_7UtzKd"
   ]
 }
