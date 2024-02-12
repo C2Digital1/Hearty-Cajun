@@ -165,7 +165,7 @@
       "type": "index__featured-collection",
       "settings": {
         "heading": "Ready-to-Eat Italian Cajun Dishes",
-        "subHeading": "Delivering Unbelievable Flavors with  Nutritional Goodness – Right to Your Doorstep.",
+        "subHeading": "Delivering Unbelievable Flavors with <br> Nutritional Goodness – Right to Your Doorstep.",
         "heading_preset": "is-h2",
         "subHeadingPreset": "is-text",
         "heading_alignment": "center",
