@@ -1253,8 +1253,8 @@
           "scheme_s_button_border": "#463f3a",
           "scheme_secondary_button_label": "#ffffff",
           "scheme_secondary_button_label_hover": "#463f3a",
-          "scheme_link": "#f15d5e",
-          "scheme_link_hover": "#463f3a"
+          "scheme_link": "#ffffff",
+          "scheme_link_hover": "#f15d5e"
         }
       },
       "scheme-8a16c616-abc9-4c2a-b48a-c26d30fdeddf": {
