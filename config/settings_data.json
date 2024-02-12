@@ -534,33 +534,13 @@
       "footer-classic": {
         "type": "footer-classic",
         "blocks": {
-          "footer-classic-1": {
-            "type": "link_list",
-            "settings": {
-              "width": "4",
-              "mobile_width": "one-half",
-              "menu": "main-menu",
-              "menu_preset": "is-text",
-              "social_icons_footer": true
-            }
-          },
-          "e988baed-a3b3-4491-8a49-f5dae727b207": {
-            "type": "link_list",
-            "settings": {
-              "width": "4",
-              "mobile_width": "one-half",
-              "menu": "footer",
-              "menu_preset": "is-text",
-              "social_icons_footer": false
-            }
-          },
-          "946a7f59-5a97-4ff6-ba90-19c1dbb7b8a0": {
+          "link_list_cG8Bxt": {
             "type": "link_list",
             "settings": {
               "width": "4",
               "mobile_width": "one-whole",
-              "menu": "footer",
-              "menu_preset": "is-text",
+              "menu": "quick-links",
+              "menu_preset": "is-h6",
               "social_icons_footer": false
             }
           },
@@ -578,9 +558,7 @@
           }
         },
         "block_order": [
-          "footer-classic-1",
-          "e988baed-a3b3-4491-8a49-f5dae727b207",
-          "946a7f59-5a97-4ff6-ba90-19c1dbb7b8a0",
+          "link_list_cG8Bxt",
           "f33f3fdd-2f4a-4237-9a42-fc3a4639ab28"
         ],
         "settings": {
