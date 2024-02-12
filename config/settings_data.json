@@ -552,7 +552,7 @@
               "width": "4",
               "mobile_width": "one-whole",
               "menu": "quick-links",
-              "menu_preset": "is-text",
+              "menu_preset": "is-text-small",
               "social_icons_footer": false
             }
           },
@@ -562,7 +562,7 @@
               "width": "4",
               "mobile_width": "one-whole",
               "menu": "help",
-              "menu_preset": "is-text",
+              "menu_preset": "is-text-small",
               "social_icons_footer": false
             }
           },
@@ -573,9 +573,10 @@
               "mobile_width": "one-whole",
               "newsletter_title": "Sign Up For Updates",
               "newsletter_richtext": "<p>Promotions, new products, and sales. Directly to your inbox.<\/p>",
-              "newsletter_richtext_preset": "is-text",
+              "newsletter_richtext_preset": "is-text-small",
               "display_first_name": false,
-              "display_last_name": false
+              "display_last_name": false,
+              "social_icons_footer": false
             }
           }
         },
@@ -589,6 +590,7 @@
           "color_scheme": "scheme-b1b451b2-47ff-4fbf-8dec-ee58d0b98338",
           "heading_preset": "is-h6",
           "copyright_text": "<p>Made with ❤️ for pasta, delicious taste, and health.<\/p>",
+          "displayCopyText": false,
           "display_designed_by": false,
           "display_shopify": false,
           "display_payment_methods": false,
