@@ -165,7 +165,7 @@
       "type": "index__featured-collection",
       "settings": {
         "heading": "Ready-to-Eat Italian Cajun Dishes",
-        "subHeading": "Delivering Unbelievable Flavors with <br> Nutritional Goodness – Right to Your Doorstep.",
+        "subHeading": "Delivering Unbelievable Flavors with  Nutritional Goodness – Right to Your Doorstep.",
         "heading_preset": "is-h2",
         "subHeadingPreset": "is-text",
         "heading_alignment": "center",
@@ -177,7 +177,10 @@
         "button_link_view": "",
         "button_alignment_view": "center",
         "button_style_view": "button--primary",
+        "hidePrice": true,
         "collection_style": "slider",
+        "arrowIconBg": "#fff",
+        "arrowIconColor": "#28303F",
         "width": "wide",
         "padding_top": 64,
         "padding_bottom": 64,
@@ -196,10 +199,43 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_heading_e6YGkB": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "<p>Add a preheading<\/p>",
+        "heading": "Section heading",
+        "subheading": "<p>Additional text or description of section<\/p>",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h3",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "index_slideshow_classic_AgdiX4",
-    "index_featured_collection_dPTbUC"
+    "index_featured_collection_dPTbUC",
+    "index_heading_e6YGkB"
   ]
 }

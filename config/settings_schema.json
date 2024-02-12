@@ -2604,7 +2604,7 @@
   },
   {
     "name": "Quick shop",
-    "settings": [      
+    "settings": [
       {
         "type": "checkbox",
         "id": "showQuickAddBtn",
