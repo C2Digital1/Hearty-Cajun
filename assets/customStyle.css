@@ -775,5 +775,10 @@ p.footer__heading.is-h6 {
     max-width: 324px;
 }
 
+.shopify-section.footer.footer--classic {
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
 /* footer section css code end  */
 /* =============================== HOME PAGE END ===============================  */
