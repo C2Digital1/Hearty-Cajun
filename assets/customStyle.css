@@ -628,6 +628,8 @@ h3.image-with-text__heading.is-h5 {
 .imgTextGridsRow .gridSIdeImg {
     height: 176px;
     width: 176px;
+    padding: 15px;
+    align-self: flex-start;
 }
 
 .imgTextGridsRow .gridSIdeImg img.boxImg {
