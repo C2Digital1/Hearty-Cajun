@@ -279,6 +279,85 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_icon_with_text_column_MAVUTy": {
+      "type": "index__icon-with-text-column",
+      "blocks": {
+        "logo_image_AWXLX6": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "truck",
+            "heading": "Icon with text",
+            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
+            "button_label": "Learn more",
+            "link": ""
+          }
+        },
+        "logo_image_96wcgw": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "bag",
+            "heading": "Icon with text",
+            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
+            "button_label": "Learn more",
+            "link": ""
+          }
+        },
+        "logo_image_rVnFwx": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "tag",
+            "heading": "Icon with text",
+            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
+            "button_label": "Learn more",
+            "link": ""
+          }
+        },
+        "logo_image_GDKA4f": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "star",
+            "heading": "Icon with text",
+            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
+            "button_label": "Learn more",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_AWXLX6",
+        "logo_image_96wcgw",
+        "logo_image_rVnFwx",
+        "logo_image_GDKA4f"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "icons_per_row": 4,
+        "icon_size": "medium",
+        "button_style": "button--primary",
+        "heading_preset": "is-h6",
+        "text_preset": "is-text",
+        "icon_color": "#000000",
+        "background": "#CCCCCC",
+        "align_text": "center",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 41,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 32,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -287,6 +366,7 @@
     "index_image_with_text_rMddd4",
     "index_image_with_text_UWxrYB",
     "index_image_with_text_L34qqQ",
-    "index_heading_xzgn3W"
+    "index_heading_xzgn3W",
+    "index_icon_with_text_column_MAVUTy"
   ]
 }
