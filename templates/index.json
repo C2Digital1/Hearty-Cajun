@@ -496,6 +496,37 @@
         "custom_css": ""
       }
     },
+    "custom_testimonial_m6TjUM": {
+      "type": "customTestimonial",
+      "settings": {
+        "color_scheme": "",
+        "testiMonialColorScheme": "",
+        "heading": "",
+        "headingPreset": "is-h2",
+        "subHeading": "",
+        "subHeadingPreset": "is-text",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "index_image_with_text_overlay_7DhjQT": {
       "type": "index__image-with-text-overlay",
       "settings": {
@@ -516,7 +547,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 60,
         "button_1": "Order Now",
@@ -588,6 +619,7 @@
     "index_heading_fD6bB3",
     "index_image_with_text_VEBK3P",
     "image_text_grids_7UtzKd",
+    "custom_testimonial_m6TjUM",
     "index_image_with_text_overlay_7DhjQT",
     "index_heading_zXViky"
   ]
