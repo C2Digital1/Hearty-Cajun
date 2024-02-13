@@ -306,10 +306,10 @@
         "logo_image_rVnFwx": {
           "type": "logo_image",
           "settings": {
-            "icon_label": "tag",
-            "heading": "Icon with text",
-            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
-            "button_label": "Learn more",
+            "icon_label": "",
+            "heading": "Brain Boosters",
+            "text": "<p>Ingredients that nurture mental health.<\/p>",
+            "button_label": "",
             "link": ""
           }
         },
