@@ -47,7 +47,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "",
@@ -73,7 +73,7 @@
         "margin_top_m": 0,
         "margin_bottom_m": 0,
         "animation": "none",
-        "css_class": "imageBanner",
+        "css_class": "heroBanner",
         "custom_css": ""
       }
     }
