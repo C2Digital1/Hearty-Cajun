@@ -287,6 +287,7 @@
           "type": "logo_image",
           "settings": {
             "icon_label": "",
+            "customIcon": "shopify:\/\/shop_images\/44444444AR.svg",
             "heading": "Freshness Guaranteed",
             "text": "<p>Freshness Guaranteed<\/p>",
             "button_label": "",
