@@ -322,13 +322,24 @@
             "button_label": "",
             "link": ""
           }
+        },
+        "logo_image_b8dNU4": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "",
+            "heading": "Nutrient-Rich Satisfaction",
+            "text": "<p>Packed with vitamins, minerals, and proteins in every bite.<\/p>",
+            "button_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "logo_image_AWXLX6",
         "logo_image_96wcgw",
         "logo_image_rVnFwx",
-        "logo_image_GDKA4f"
+        "logo_image_GDKA4f",
+        "logo_image_b8dNU4"
       ],
       "settings": {
         "color_scheme": "",
