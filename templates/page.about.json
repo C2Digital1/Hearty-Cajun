@@ -197,6 +197,7 @@
         "image_A7CyEz": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/CopyofPortrait-102.jpg01.jpg",
             "image_crop": "none",
             "image_link": ""
           }
