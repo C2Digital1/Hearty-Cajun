@@ -746,6 +746,7 @@ a.secBtn.button {
     position: relative;
     width: 100%;
     margin: 0px auto;
+    max-width: 700px;
 }
 
 .testimonialCard {
@@ -758,8 +759,7 @@ a.secBtn.button {
     border-radius: 16px;
     padding: 2px;
     position: relative;
-    max-width: 664px;
-    margin: 80px auto;
+    margin: 30px auto 25px auto;
 }
 
 .testimonialCardInnerContent {
@@ -820,6 +820,49 @@ h4.clientName.is-text {
     font-weight: bold;
     letter-spacing: 0;
     line-height: 21px;
+}
+
+.testiomonialAllCardsContainer {
+    width: 100%;
+    position: relative;
+}
+
+.testimonialCard.emptyCard1,
+.testimonialCard.emptyCard2 {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    width: 100%;
+}
+
+.testimonialCard.contentCard {
+    position: relative;
+    z-index: 2;
+    transform: scale(.9);
+}
+
+.testimonialCard.emptyCard2 {
+    height: 70%;
+    transform: translateY(-50%) scale(.95);
+    z-index: 1;
+}
+
+.testimonialCard.emptyCard1 {
+    z-index: 0;
+    height: 50%;
+    transform: translateY(-50%);
+}
+
+.customTestimonialContainer button.flickity-button.flickity-prev-next-button {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.customTestimonialContainer button.flickity-button.flickity-prev-next-button.next {
+    right: -60px;
+}
+
+.customTestimonialContainer button.flickity-button.flickity-prev-next-button.previous {
+    left: -60px;
 }
 
 /* testiomonial section css code end  */

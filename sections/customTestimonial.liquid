@@ -14,6 +14,9 @@
 
   assign heading_color = section.settings.color_scheme.settings.scheme_heading
   assign subheading_color = section.settings.color_scheme.settings.scheme_text
+  assign arrowIconColor = section.settings.arrowIconColor
+  assign arrowIconBg = section.settings.arrowIconBg
+  assign dotsBg = section.settings.dotsBg 
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -57,16 +60,14 @@
 {% endif %}
 
 {%- liquid
-
-    assign titlePreset = section.settings.titlePreset
-    assign textPreset = section.settings.textPreset
-    assign cardBorderBg = section.settings.cardBorderBg
-    assign cardMainBg = section.settings.cardMainBg
-    assign cardTitleColor = section.settings.cardTitleColor
-    assign cardTextColor = section.settings.cardTextColor
-    assign cardBtmTxtColor = section.settings.cardBtmTxtColor
+  assign titlePreset = section.settings.titlePreset
+  assign textPreset = section.settings.textPreset
+  assign cardBorderBg = section.settings.cardBorderBg
+  assign cardMainBg = section.settings.cardMainBg
+  assign cardTitleColor = section.settings.cardTitleColor
+  assign cardTextColor = section.settings.cardTextColor
+  assign cardBtmTxtColor = section.settings.cardBtmTxtColor
 -%}
-
 
 {% capture section_css -%}
   
@@ -153,6 +154,16 @@
       margin-bottom: {{ margin_bottom_m }}px;
     }
   }
+  #shopify-section-{{ id }} ol.flickity-page-dots li.dot{
+    background: {{ dotsBg }};
+  }
+  #shopify-section-{{ id }} ol.flickity-page-dots li.dot{
+    background: {{ dotsBg }};
+  }
+  #shopify-section-{{ id }} button.flickity-button{
+    background: {{ arrowIconBg  }};
+    color: {{ arrowIconColor }};  
+  }
   {% render 'css-loop',
             css: section_css,
             id: id
@@ -188,7 +199,7 @@
     </div>
   {% endif %}
   <div class="customTestimonialContainer">
-    <div class="testimonialCarouselContainer">
+    <div id="customTestiomonialsCarousel-{{id}}" class="testimonialCarouselContainer">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'testimonial' %}
@@ -198,37 +209,45 @@
               assign clientSubHeading = block.settings.subHeading
               assign clientName = block.settings.clientName
             -%}
-            <div class="testimonialCard">
-              <div class="testimonialCardInnerContent">
-                {% if clientImg != blank %}
-                  <div class="roundClientImg">
-                    <img
-                      class="boxImg lazyload"
-                      src="{{ clientImg | img_url:'master' }}"
-                      alt="img"
-                      width="200"
-                      height="200"
-                      loading="lazy"
-                    >
-                  </div>
-                {% endif %}
-                <div class="testimonialTextContent">
-                  {% if clientHeading != blank %}
-                    <h3 class="testimonialTitle {{ titlePreset }}">  
-                      {{ clientHeading }}
-                    </h3>
-                  {% endif %}
-                  {% if clientSubHeading != blank %}
-                    <div class="testimonialMessage {{ textPreset }}">
-                      {{ clientSubHeading }}
+            <div class="testiomonialAllCardsContainer">
+              <div class="testimonialCard contentCard">
+                <div class="testimonialCardInnerContent">
+                  {% if clientImg != blank %}
+                    <div class="roundClientImg">
+                      <img
+                        class="boxImg lazyload"
+                        src="{{ clientImg | img_url:'master' }}"
+                        alt="img"
+                        width="200"
+                        height="200"
+                        loading="lazy"
+                      >
                     </div>
                   {% endif %}
-                  {% if clientName != blank %}
-                    <h4 class="clientName is-text">
-                      {{ clientName }}
-                    </h4>
-                  {% endif %}
+                  <div class="testimonialTextContent">
+                    {% if clientHeading != blank %}
+                      <h3 class="testimonialTitle {{ titlePreset }}">
+                        {{ clientHeading }}
+                      </h3>
+                    {% endif %}
+                    {% if clientSubHeading != blank %}
+                      <div class="testimonialMessage {{ textPreset }}">
+                        {{ clientSubHeading }}
+                      </div>
+                    {% endif %}
+                    {% if clientName != blank %}
+                      <h4 class="clientName is-text">
+                        {{ clientName }}
+                      </h4>
+                    {% endif %}
+                  </div>
                 </div>
+              </div>
+              <div class="testimonialCard emptyCard1">
+                <div class="testimonialCardInnerContent"></div>
+              </div>
+              <div class="testimonialCard emptyCard2">
+                <div class="testimonialCardInnerContent"></div>
               </div>
             </div>
         {% endcase %}
@@ -242,6 +261,29 @@
     </a>
   {% endif %}
 </section>
+
+<script>
+  $(document).ready(function () {
+    var carousel = document.getElementById('customTestiomonialsCarousel-{{id}}');
+    var flkty = new Flickity(carousel, {
+      lazyLoad: 2,
+      freeScroll: false,
+      imagesLoaded: true,
+      draggable: true,
+      cellAlign: 'center',
+      wrapAround: true,
+      pageDots: true,
+      contain: true,
+      prevNextButtons: true,
+      initialIndex: 0,
+      fade: true,
+      watchCSS: false,
+    });
+    flkty.on('settle.flickity', function () {
+      flkty.flickity('resize');
+    });
+  });
+</script>
 
 {% schema %}
 {
@@ -423,8 +465,8 @@
       "default": "is-h5"
     },
     {
-      "type": "select", 
-      "id": "textPreset",  
+      "type": "select",
+      "id": "textPreset",
       "label": "Text Preset",
       "options": [
         {
@@ -470,7 +512,7 @@
     },
     {
       "type": "color_background",
-      "id": "cardMainBg",  
+      "id": "cardMainBg",
       "label": "Card Main Bg",
       "default": "#fff"
     },
@@ -478,10 +520,28 @@
       "type": "color",
       "id": "cardTitleColor",
       "label": "Card Title Color",
-      "default": "#F15D5E" 
+      "default": "#F15D5E"
     },
     { "type": "color", "id": "cardTextColor", "label": "Card Text Color", "default": "#463F3A" },
     { "type": "color", "id": "cardBtmTxtColor", "label": "Card Bottom Text Color", "default": "#463F3A" },
+    {
+        "type": "color",
+        "id": "arrowIconBg",
+        "label": "Arrow Icon BG",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "arrowIconColor",
+        "label": "Arrow Icon Color",
+        "default": "#28303F"
+      },    
+      {
+        "type": "color", 
+        "id": "dotsBg",
+        "label": "Dots Color",
+        "default": "#463F3A"
+      },
     {
       "type": "header",
       "content": "Layout"
