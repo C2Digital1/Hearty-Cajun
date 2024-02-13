@@ -29,7 +29,7 @@
     "index_image_with_text_overlay_9UVHyC": {
       "type": "index__image-with-text-overlay",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "roundedCorner": false,
         "useCustomStyling": true,
         "link": "",
