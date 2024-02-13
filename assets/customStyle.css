@@ -1187,4 +1187,21 @@ h3.icon-column__title.title {
     object-fit: contain;
 }
 
+.customAboutHeading .headingTopImg {
+    max-width: 212px;
+    margin-bottom: 24px;
+}
+
+.customAboutHeading .heading-section__content.is-flex.is-flex-column.is-align-center.text-align-center {
+    max-width: 436px;
+}
+
+.customAboutHeading .heading-section__subheading.subtitle.is-text {
+    line-height: 24px;
+}
+
+.customAboutHeading .heading-section__subheading.subtitle {
+    margin-bottom: 32px;
+}
+
 /* =========== ABOUT PAGE CSS CODE END =========== */
