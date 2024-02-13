@@ -286,10 +286,10 @@
         "logo_image_AWXLX6": {
           "type": "logo_image",
           "settings": {
-            "icon_label": "truck",
-            "heading": "Icon with text",
-            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
-            "button_label": "Learn more",
+            "icon_label": "",
+            "heading": "Freshness Guaranteed",
+            "text": "<p>Freshness Guaranteed<\/p>",
+            "button_label": "",
             "link": ""
           }
         },
@@ -338,7 +338,7 @@
         "heading_preset": "is-h6",
         "text_preset": "is-text",
         "icon_color": "#000000",
-        "background": "#CCCCCC",
+        "background": "#fff",
         "align_text": "center",
         "width": "standard",
         "show_gutter": true,
