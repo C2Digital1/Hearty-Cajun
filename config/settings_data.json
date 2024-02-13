@@ -644,6 +644,7 @@
       "popup": {
         "type": "popup",
         "settings": {
+          "color_scheme": "",
           "show_close_icon": true,
           "show_popup_on_mobile": true,
           "display_border": false,
@@ -664,7 +665,7 @@
           "image_position": "left",
           "overlay": "rgb(70 63 58 \/ 80%)",
           "popup_delay": 8,
-          "popup_days_to_hide": "0",
+          "popup_days_to_hide": "2",
           "padding_top": 80,
           "padding_bottom": 80,
           "padding_left": 0,
