@@ -247,6 +247,38 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_heading_xzgn3W": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "<p>Add a preheading<\/p>",
+        "heading": "Section heading",
+        "subheading": "<p>Additional text or description of section<\/p>",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h3",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 64,
+        "padding_bottom": 40,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -254,6 +286,7 @@
     "index_image_with_text_overlay_9UVHyC",
     "index_image_with_text_rMddd4",
     "index_image_with_text_UWxrYB",
-    "index_image_with_text_L34qqQ"
+    "index_image_with_text_L34qqQ",
+    "index_heading_xzgn3W"
   ]
 }
