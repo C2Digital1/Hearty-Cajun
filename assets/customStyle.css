@@ -100,10 +100,12 @@ header.header {
 div.header-sticky-wrapper {
     min-height: 112px;
 }
-#shopify-section-header-classic{
+
+#shopify-section-header-classic {
     position: relative;
     z-index: 55;
 }
+
 /* header css code end  */
 
 /* dropdown css code start  */
@@ -1110,8 +1112,22 @@ button.close.popup__close svg {
     height: 40px;
     color: #28303F;
 }
+
 /* =========== POPUP SECTION CSS CODE END =========== */
 
 /* =========== ABOUT PAGE CSS CODE START =========== */
-   
+.heroBanner .image-with-text-overlay__subheading.banner__subheading.subtitle {
+    margin-top: 0;
+}
+
+.heroBanner .caption-content.text-align-center {
+    padding: 0;
+    max-width: 438px;
+    margin: 0px auto;
+}
+
+.heroBanner h2.image-with-text-overlay__heading.banner__heading.title {
+    margin-bottom: 16px;
+}
+
 /* =========== ABOUT PAGE CSS CODE END =========== */
