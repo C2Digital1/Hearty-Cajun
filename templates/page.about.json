@@ -386,6 +386,38 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_heading_fX6WPm": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "",
+        "heading": "",
+        "subheading": "<p>The above are not just “taglines” that we say but rather with each and every ingredient that we use, from our core ingredients down to our spices, we aim to deliver on this promise. Our menu consists of whole food ingredients; for example, where others use regular pasta, we use nutrient and protein rich lentils, where others use standard white or brown rice we go the extra mile to use Basmati rice because it is less toxic, meaning better and healthier. <\/p>",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h3",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 64,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 48,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -395,6 +427,7 @@
     "index_image_with_text_UWxrYB",
     "index_image_with_text_L34qqQ",
     "index_heading_xzgn3W",
-    "index_icon_with_text_column_MAVUTy"
+    "index_icon_with_text_column_MAVUTy",
+    "index_heading_fX6WPm"
   ]
 }
