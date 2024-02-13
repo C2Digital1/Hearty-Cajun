@@ -133,11 +133,68 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_image_with_text_UWxrYB": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "text_hd7P7a": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "",
+            "preHeading": "",
+            "heading": "Heading text here",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "pre_heading_preset": "is-h5",
+            "heading_preset": "is-h2",
+            "text_preset": "is-text",
+            "button_label": "View all",
+            "link": "",
+            "button_style": "button--primary",
+            "alignment": "left",
+            "vertical_position": "center"
+          }
+        },
+        "image_3tdf3w": {
+          "type": "image",
+          "settings": {
+            "image_crop": "none",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_hd7P7a",
+        "image_3tdf3w"
+      ],
+      "settings": {
+        "width": "standard",
+        "showRoundeBdr": true,
+        "show_gutter": true,
+        "desktop_height": 0,
+        "mobile_height": 0,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
     "index_image_with_text_overlay_9UVHyC",
-    "index_image_with_text_rMddd4"
+    "index_image_with_text_rMddd4",
+    "index_image_with_text_UWxrYB"
   ]
 }
