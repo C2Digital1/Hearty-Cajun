@@ -83,6 +83,7 @@
         "image_dJeCJM": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_Portrait-098.jpg01.jpg",
             "image_crop": "none",
             "image_link": ""
           }
