@@ -297,9 +297,9 @@
           "type": "logo_image",
           "settings": {
             "icon_label": "bag",
-            "heading": "Icon with text",
-            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
-            "button_label": "Learn more",
+            "heading": "Heart-Healthy",
+            "text": "<p>Designed for cardiovascular well-being.<\/p>",
+            "button_label": "",
             "link": ""
           }
         },
