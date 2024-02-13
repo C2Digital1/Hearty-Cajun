@@ -190,12 +190,69 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_image_with_text_L34qqQ": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "image_A7CyEz": {
+          "type": "image",
+          "settings": {
+            "image_crop": "none",
+            "image_link": ""
+          }
+        },
+        "text_NMeeLC": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91",
+            "preHeading": "",
+            "heading": "Heading text here",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "pre_heading_preset": "is-h5",
+            "heading_preset": "is-h2",
+            "text_preset": "is-text",
+            "button_label": "View all",
+            "link": "",
+            "button_style": "button--primary",
+            "alignment": "left",
+            "vertical_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_A7CyEz",
+        "text_NMeeLC"
+      ],
+      "settings": {
+        "width": "standard",
+        "showRoundeBdr": true,
+        "show_gutter": true,
+        "desktop_height": 0,
+        "mobile_height": 0,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
     "index_image_with_text_overlay_9UVHyC",
     "index_image_with_text_rMddd4",
-    "index_image_with_text_UWxrYB"
+    "index_image_with_text_UWxrYB",
+    "index_image_with_text_L34qqQ"
   ]
 }
