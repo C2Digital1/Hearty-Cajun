@@ -131,6 +131,7 @@
   class="
     section
     {{ css_class }}
+    iconsWithTextColSections
     is-width-{{ width }} scheme_color-{{section.settings.color_scheme}}
     {% if show_gutter == false %}
       has-no-side-gutter
@@ -153,6 +154,7 @@
       {% comment %} Content settings {% endcomment %}
       {%- liquid
         assign icon = block.settings.icon_label | downcase
+        assign customIcon = block.settings.customIcon
         assign heading = block.settings.heading
         assign text = block.settings.text
         assign button_label = block.settings.button_label
@@ -172,8 +174,22 @@
           medium-down--one-whole
         "
       >
-        {% render 'icon', name: icon, icon_class: icon_size %}
-
+        {% if customIcon != blank %}
+          <div class="columnBoxIcon">
+            <img
+              class="boxImg lazyload"
+              src="{{ customIcon | img_url:'master' }}"
+              alt="img"
+              width="200"
+              height="200"
+              loading="lazy"
+            >
+          </div>
+        {% else %}
+          {% if icon != blank %}
+            {% render 'icon', name: icon, icon_class: icon_size %}
+          {% endif %}
+        {% endif %}
         {% if heading != blank or text != blank %}
           <div class="icon-column__text ">
             {% if heading != empty %}
@@ -557,6 +573,11 @@
           "placeholder": "Enter icon name",
           "info": "[Icon list](https://help.outofthesandbox.com/hc/en-us/articles/360021570294)",
           "default": "truck"
+        },
+        {
+          "type": "image_picker",
+          "id": "customIcon",
+          "label": "Custom Icon"
         },
         {
           "type": "text",

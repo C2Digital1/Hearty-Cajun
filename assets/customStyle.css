@@ -26,6 +26,13 @@ body {
     padding: 0 48px;
 }
 
+.is-width-small {
+    width: 100% !important;
+    max-width: 1440px !important;
+    padding: 0 162px !important;
+    margin: 0px auto;
+}
+
 .bannerCaptionContainer.caption {
     width: 100%;
     max-width: 100%;
@@ -1128,6 +1135,46 @@ button.close.popup__close svg {
 
 .heroBanner h2.image-with-text-overlay__heading.banner__heading.title {
     margin-bottom: 16px;
+}
+
+section.section.is-width-small {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 162px;
+    margin: 0px auto;
+}
+
+.iconsWithTextColSections {}
+
+.iconsWithTextColSections .container {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.iconsWithTextColSections .container .icon-with-text-column__column.has-gutter.column.has-padding.one-third.text-align-center.medium-down--one-whole {
+    padding: 0;
+    margin-bottom: 62px;
+    margin-left: 0;
+    margin-right: 24px;
+    width: calc(33.33% - 16px);
+}
+
+.iconsWithTextColSections .container .icon-with-text-column__column.has-gutter.column.has-padding.one-third.text-align-center.medium-down--one-whole:nth-child(3n) {
+    margin-right: 0 !important;
+}
+
+h3.icon-column__title.title.is-h6 {
+    font-weight: bold;
+    line-height: 24px;
+}
+
+h3.icon-column__title.title {
+    margin-bottom: 8px;
+}
+
+
+.icon-column__text .subtitle.content {
+    margin-top: 0;
 }
 
 /* =========== ABOUT PAGE CSS CODE END =========== */
