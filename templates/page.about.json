@@ -358,7 +358,7 @@
         "icon_size": "small",
         "button_style": "button--primary",
         "heading_preset": "is-h6",
-        "text_preset": "is-text",
+        "text_preset": "is-text-small",
         "icon_color": "#000000",
         "background": "#fff",
         "align_text": "center",
