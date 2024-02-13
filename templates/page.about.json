@@ -442,6 +442,7 @@
         "image_ETjiNY": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/p1_366fd462-6314-433e-a193-ca9579996690.jpg",
             "image_crop": "none",
             "image_link": ""
           }
