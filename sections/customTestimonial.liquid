@@ -12,9 +12,6 @@
   assign btnTxt = section.settings.btnTxt
   assign btnStyle = section.settings.btnStyle
 
-  assign gridSubTextPreset= section.settings.gridSubTextPreset
-  assign gridHeadingPreset= section.settings.gridHeadingPreset  
-
   assign heading_color = section.settings.color_scheme.settings.scheme_heading
   assign subheading_color = section.settings.color_scheme.settings.scheme_text
 -%}
@@ -58,48 +55,58 @@
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
   {% assign borderWidth = 1 %}
 {% endif %}
+
+{%- liquid
+  assign blockSectionHeading = section.settings.testiMonialColorScheme.settings.scheme_pre_text
+  assign blockSubHeading = section.settings.testiMonialColorScheme.settings.scheme_text
+  assign gridBg = section.settings.testiMonialColorScheme.settings.scheme_background
+  if section.settings.testiMonialColorScheme.settings.scheme_background_gradient != empty
+    assign gridBg = section.settings.testiMonialColorScheme.settings.scheme_background_gradient
+  endif
+-%}
+
 {% capture section_css -%}
-
-h2.sectionHeading{
-color: {{ heading_color }};
-
-}
-h3.sectionSubHeading
-{
-    color: {{ subheading_color }};
-}
-.button--primary{
-    background: {{ primaryBtnBg }};
-    color: {{ section.settings.color_scheme.settings.scheme_button_label }};
-    border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+  
+  h2.sectionHeading{
+  color: {{ heading_color }};
+  
   }
-
-  .button--primary:hover{
-     background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
-      background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
-      color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
-      border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+  h3.sectionSubHeading
+  {
+      color: {{ subheading_color }};
   }
-
-  .button--secondary{
-    background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
-    color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
-    border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
-  }
-
-  .button--secondary:hover{
-    background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
-    color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
-  }
-
-  .button--link-style{
-    color: {{ section.settings.color_scheme.settings.scheme_link }};
-  }
-
-  .button--link-style:hover{
-    color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
-  }
-{%- endcapture -%}
+  .button--primary{
+      background: {{ primaryBtnBg }};
+      color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+      border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+    }
+  
+    .button--primary:hover{
+       background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+        background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+        color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+        border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+    }
+  
+    .button--secondary{
+      background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+      color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+      border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+    }
+  
+    .button--secondary:hover{
+      background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+      color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+    }
+  
+    .button--link-style{
+      color: {{ section.settings.color_scheme.settings.scheme_link }};
+    }
+  
+    .button--link-style:hover{
+      color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+    }
+  {%- endcapture -%}
 {% style %}
   #shopify-section-{{ id }}{
     padding-top: {{ padding_top }}px;
@@ -135,7 +142,7 @@ h3.sectionSubHeading
 <section
   class="
     section
-    customImgTextGrids
+    custTestimonialSec
     {{ css_class }}
     is-width-{{ width }}
   "
@@ -157,48 +164,23 @@ h3.sectionSubHeading
       {% endif %}
     </div>
   {% endif %}
-
-  <div class="imgTxtGridsContainer">
-    <div class="imgTextGridsRow">
+  <div class="customTestimonialContainer">
+    <div class="testimonialCarouselContainer">
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when 'gridItem' %}
+          {% when 'testimonial' %}
             {%- liquid
-              assign gridImg = block.settings.gridImg
-              assign gridHeading = block.settings.heading
-              assign gridSubHeading = block.settings.subHeading
-              assign blockSectionHeading = block.settings.color_scheme.settings.scheme_pre_text
-              assign blockSubHeading = block.settings.color_scheme.settings.scheme_text
-              assign gridBg = block.settings.color_scheme.settings.scheme_background
-              if block.settings.color_scheme.settings.scheme_background_gradient != empty
-                assign gridBg = block.settings.color_scheme.settings.scheme_background_gradient
-              endif
+              assign clientImg = block.settings.clientImg
+              assign clientHeading = block.settings.heading
+              assign clientSubHeading = block.settings.subHeading
+              assign clientName = block.settings.clientName
             -%}
-            <div class="imgTxtGridCol" id="gridBlock-{{id}}-{{ block.id }}" style="background: {{ gridBg }};">
-              {% style %}
-                #gridBlock-{{id}}-{{ block.id }} .gridSectionHeading{
-                    color: {{ blockSectionHeading }}
-                } #gridBlock-{{id}}-{{ block.id }} .gridText{
-                    color: {{ blockSubHeading }}
-                }
-              {% endstyle %}
-              <div class="gridTxtCol">
-                {% if gridHeading != blank %}  
-                  <h4 class="gridSectionHeading {{ gridHeadingPreset }}">
-                    {{ gridHeading }}
-                  </h4>
-                {% endif %}
-                {% if gridSubHeading != blank %}
-                  <div class="gridText {{ gridSubTextPreset }}">
-                    {{ gridSubHeading }}
-                  </div>
-                {% endif %}
-              </div>
-              {% if gridImg != blank %}
-                <div class="gridSIdeImg">
+            <div class="testimonialCard">
+              {% if clientImg != blank %}
+                <div class="roundClientImg">
                   <img
                     class="boxImg lazyload"
-                    src="{{ gridImg | img_url:'master' }}"
+                    src="{{ clientImg | img_url:'master' }}"
                     alt="img"
                     width="200"
                     height="200"
@@ -206,6 +188,23 @@ h3.sectionSubHeading
                   >
                 </div>
               {% endif %}
+              <div cass="testimonialTextContent">
+                {% if clientHeading != blank %}
+                  <h3 class="testimonialTitle">
+                    {{ clientHeading }}
+                  </h3>
+                {% endif %}
+                {% if clientSubHeading != blank %}
+                  <div class="testimonialMessage">
+                    {{ clientSubHeading }}
+                  </div>
+                {% endif %}
+                {% if clientName != blank %}
+                  <h4 class="clientName">
+                    {{ clientName }}
+                  </h4>
+                {% endif %}
+              </div>
             </div>
         {% endcase %}
       {% endfor %}
@@ -221,12 +220,18 @@ h3.sectionSubHeading
 
 {% schema %}
 {
-  "name": "Image Text Gids",
-  "class": "custImgTXTGrids",
+  "name": "Custom Testimonial",
+  "class": "custTestimonial",
   "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "default"
+    },
+    {
+      "type": "color_scheme",
+      "id": "testiMonialColorScheme",
       "label": "Color Scheme",
       "default": "default"
     },
@@ -333,86 +338,6 @@ h3.sectionSubHeading
       "type": "url",
       "id": "btnUrl",
       "label": "Button Link"
-    },
-    { 
-      "type": "select",
-      "id": "gridHeadingPreset",
-      "label": "Grid Heading Preset",
-      "options": [
-        {
-          "value": "is-h1",
-          "label": "H1"
-        },
-        {
-          "value": "is-h2",
-          "label": "H2"
-        },
-        {
-          "value": "is-h3",
-          "label": "H3"
-        },
-        {
-          "value": "is-h4",
-          "label": "H4"
-        },
-        {
-          "value": "is-h5",
-          "label": "H5"
-        },
-        {
-          "value": "is-h6",
-          "label": "H6"
-        },
-        {
-          "value": "is-text",
-          "label": "Regular"
-        },
-        {
-          "value": "is-text-small",
-          "label": "Small"
-        }
-      ],
-      "default": "is-h5"
-    },
-    {
-      "type": "select",
-      "id": "gridSubTextPreset",
-      "label": "Grid Sub Text Preset",
-      "options": [
-        {
-          "value": "is-h1",
-          "label": "H1"
-        },
-        {
-          "value": "is-h2",
-          "label": "H2"
-        },
-        {
-          "value": "is-h3",
-          "label": "H3"
-        },
-        {
-          "value": "is-h4",
-          "label": "H4"
-        },
-        {
-          "value": "is-h5",
-          "label": "H5"
-        },
-        {
-          "value": "is-h6",
-          "label": "H6"
-        },
-        {
-          "value": "is-text",
-          "label": "Regular"
-        },
-        {
-          "value": "is-text-small",
-          "label": "Small"
-        }
-      ],
-      "default": "is-text"
     },
     {
       "type": "select",
@@ -601,13 +526,13 @@ h3.sectionSubHeading
   ],
   "blocks": [
     {
-      "type": "gridItem",
-      "name": "Grid Item",
+      "type": "testimonial",
+      "name": "Testimonial",
       "settings": [
         {
           "type": "image_picker",
-          "id": "gridImg",
-          "label": "Image"
+          "id": "clientImg",
+          "label": "Client Image"
         },
         {
           "type": "text",
@@ -620,17 +545,16 @@ h3.sectionSubHeading
           "label": "Sub Text"
         },
         {
-          "type": "color_scheme",
-          "id": "color_scheme",
-          "label": "Color Scheme",
-          "default": "default"
+          "type": "text",
+          "id": "clientName",
+          "label": "Client Name"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Image Text Gids",
+      "name": "Custom Testimonial",
       "category": "Custom",
       "settings": {}
     }
