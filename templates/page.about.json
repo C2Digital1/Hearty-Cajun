@@ -418,6 +418,62 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_image_with_text_MA7gk7": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "text_XpExib": {
+          "type": "text",
+          "settings": {
+            "color_scheme": "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91",
+            "preHeading": "Why Choose HeartyCajun",
+            "heading": "",
+            "text": "<p>In a world of meal delivery options, HeartyCajun stands out as the superior and unique choice. Let's be honest, many of the meals sold by most meal delivery services you can make yourself or find at a restaurant. In our case, every meal is a unique creation born out of our desire for great-tasting, health-maximizing food. As a husband and wife team ❤️, we had a problem: we wanted to eat great tasting food whenever we wanted and still have superior health benefits so we set out to find a solution. We took a year to work on our ingredients, sauces, food sampling and we succeeded! Now, we bring those unique culinary innovations to you at a far more reasonable cost than a comparable dish at your favorite restaurant. <\/p>",
+            "pre_heading_preset": "is-h5",
+            "heading_preset": "is-h2",
+            "text_preset": "is-text",
+            "button_label": "",
+            "link": "",
+            "button_style": "button--primary",
+            "alignment": "left",
+            "vertical_position": "center"
+          }
+        },
+        "image_ETjiNY": {
+          "type": "image",
+          "settings": {
+            "image_crop": "none",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_XpExib",
+        "image_ETjiNY"
+      ],
+      "settings": {
+        "width": "standard",
+        "showRoundeBdr": true,
+        "show_gutter": true,
+        "desktop_height": 0,
+        "mobile_height": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -428,6 +484,7 @@
     "index_image_with_text_L34qqQ",
     "index_heading_xzgn3W",
     "index_icon_with_text_column_MAVUTy",
-    "index_heading_fX6WPm"
+    "index_heading_fX6WPm",
+    "index_image_with_text_MA7gk7"
   ]
 }
