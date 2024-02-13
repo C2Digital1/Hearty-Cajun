@@ -100,7 +100,10 @@ header.header {
 div.header-sticky-wrapper {
     min-height: 112px;
 }
-
+#shopify-section-header-classic{
+    position: relative;
+    z-index: 55;
+}
 /* header css code end  */
 
 /* dropdown css code start  */
@@ -1108,3 +1111,7 @@ button.close.popup__close svg {
     color: #28303F;
 }
 /* =========== POPUP SECTION CSS CODE END =========== */
+
+/* =========== ABOUT PAGE CSS CODE START =========== */
+   
+/* =========== ABOUT PAGE CSS CODE END =========== */
