@@ -316,10 +316,10 @@
         "logo_image_GDKA4f": {
           "type": "logo_image",
           "settings": {
-            "icon_label": "star",
-            "heading": "Icon with text",
-            "text": "<p>Describe the feature, service or product that this icon represents.<\/p>",
-            "button_label": "Learn more",
+            "icon_label": "",
+            "heading": "Gut Health Focused",
+            "text": "<p>Fiber-rich for digestive wellness.<\/p>",
+            "button_label": "",
             "link": ""
           }
         }
