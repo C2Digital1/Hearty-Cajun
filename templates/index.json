@@ -502,14 +502,24 @@
         "testimonial_8WpT8L": {
           "type": "testimonial",
           "settings": {
+            "clientImg": "shopify:\/\/shop_images\/user.jpg",
             "heading": "Amazing Service!",
             "subHeading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae.<\/p>",
             "clientName": "- Stella Rich"
           }
+        },
+        "testimonial_C87nBd": {
+          "type": "testimonial",
+          "settings": {
+            "heading": "",
+            "subHeading": "",
+            "clientName": ""
+          }
         }
       },
       "block_order": [
-        "testimonial_8WpT8L"
+        "testimonial_8WpT8L",
+        "testimonial_C87nBd"
       ],
       "settings": {
         "color_scheme": "",
