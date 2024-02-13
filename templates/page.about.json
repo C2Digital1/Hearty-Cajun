@@ -357,7 +357,7 @@
         "icons_per_row": 3,
         "icon_size": "small",
         "button_style": "button--primary",
-        "heading_preset": "is-h5",
+        "heading_preset": "is-h6",
         "text_preset": "is-text",
         "icon_color": "#000000",
         "background": "#fff",
