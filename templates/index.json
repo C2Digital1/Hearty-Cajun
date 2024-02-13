@@ -498,6 +498,19 @@
     },
     "custom_testimonial_m6TjUM": {
       "type": "customTestimonial",
+      "blocks": {
+        "testimonial_8WpT8L": {
+          "type": "testimonial",
+          "settings": {
+            "heading": "Amazing Service!",
+            "subHeading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae.<\/p>",
+            "clientName": "- Stella Rich"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_8WpT8L"
+      ],
       "settings": {
         "color_scheme": "",
         "testiMonialColorScheme": "",
@@ -508,7 +521,7 @@
         "btnTxt": "",
         "btnUrl": "",
         "btnStyle": "button--secondary",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_left": 0,
