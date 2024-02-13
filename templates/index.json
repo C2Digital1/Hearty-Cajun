@@ -511,8 +511,8 @@
         "testimonial_C87nBd": {
           "type": "testimonial",
           "settings": {
-            "clientImg": "shopify:\/\/shop_images\/user.jpg",
-            "heading": "Amazing Service!",
+            "clientImg": "shopify:\/\/shop_images\/7d014b887212e9d71aa2821dc23e7b0f.png",
+            "heading": "Amazing Taste!",
             "subHeading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae.<\/p>",
             "clientName": "- Stella Rich"
           }
@@ -534,7 +534,6 @@
       ],
       "settings": {
         "color_scheme": "",
-        "testiMonialColorScheme": "",
         "heading": "We didn’t say it, they did!",
         "headingPreset": "is-h2",
         "subHeading": "",
@@ -542,6 +541,16 @@
         "btnTxt": "",
         "btnUrl": "",
         "btnStyle": "button--secondary",
+        "titlePreset": "is-h5",
+        "textPreset": "is-text",
+        "cardBorderBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
+        "cardMainBg": "#fff",
+        "cardTitleColor": "#F15D5E",
+        "cardTextColor": "#463F3A",
+        "cardBtmTxtColor": "#463F3A",
+        "arrowIconBg": "#fff",
+        "arrowIconColor": "#28303F",
+        "dotsBg": "#463F3A",
         "width": "standard",
         "padding_top": 0,
         "padding_bottom": 64,
