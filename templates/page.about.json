@@ -296,7 +296,7 @@
         "logo_image_96wcgw": {
           "type": "logo_image",
           "settings": {
-            "icon_label": "bag",
+            "icon_label": "",
             "heading": "Heart-Healthy",
             "text": "<p>Designed for cardiovascular well-being.<\/p>",
             "button_label": "",
@@ -332,6 +332,16 @@
             "button_label": "",
             "link": ""
           }
+        },
+        "logo_image_g8ezgm": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "",
+            "heading": "Balanced Blood Sugar",
+            "text": "<p>Low-glycemic foods for healthful and hearty eating.<\/p>",
+            "button_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -339,7 +349,8 @@
         "logo_image_96wcgw",
         "logo_image_rVnFwx",
         "logo_image_GDKA4f",
-        "logo_image_b8dNU4"
+        "logo_image_b8dNU4",
+        "logo_image_g8ezgm"
       ],
       "settings": {
         "color_scheme": "",
