@@ -53,8 +53,18 @@
   assign css_class = section.settings.css_class
   assign custom_css = section.settings.custom_css
 -%}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+{% else %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{% endif %}
 
 {% comment %} Section specific CSS {% endcomment %}
+{%- capture section_css -%}
+
+{%- endcapture -%}
 {% style %}
     .popup-modal-{{ id }} .fancybox-bg {
       background: {{ overlay }};
@@ -109,6 +119,38 @@
       {% endif %}
     {%- endfor -%}
   {%- endif -%}
+
+  .popup-modal-{{ id }} .button--primary{
+    background: {{ primaryBtnBg }}; 
+    color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+    border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+  }
+
+  .popup-modal-{{ id }} .button--primary:hover{
+    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+  }
+
+  .popup-modal-{{ id }} .button--secondary{
+    background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+    color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+  }
+
+  .popup-modal-{{ id }} .button--secondary:hover{
+    background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+  }
+
+  .popup-modal-{{ id }} .button--link-style{
+    color: {{ section.settings.color_scheme.settings.scheme_link }};
+  }
+
+  .popup-modal-{{ id }} .button--link-style:hover{
+    color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+  }
 {% endstyle %}
 
 <div
@@ -126,7 +168,7 @@
 >
   {% if show_close_icon %}
     <button class="close popup__close" aria-label="close">
-      {% render 'icon', name: 'x', icon_class: 'icon--vertical-align' %}
+      {% render 'crossIcon' %}
     </button>
   {% endif %}
 
@@ -152,10 +194,12 @@
 
       {% if show_signup_form %}
         <div class="popup__newsletter newsletter-section--popup">
-          {% render 'newsletter-form',
+          {%
+            render 'newsletter-form',
             type: 'section',
             display_first_name: display_first_name,
-            display_last_name: display_last_name
+            display_last_name: display_last_name,
+            originalBtn: true,
           %}
         </div>
       {% endif %}
@@ -183,6 +227,7 @@
   "name": "Popup",
   "class": "popup-section jsPopup",
   "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme For Buttons", "default": "default" },
     {
       "type": "checkbox",
       "id": "show_close_icon",

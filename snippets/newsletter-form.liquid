@@ -111,17 +111,20 @@
       </div>
 
       {% comment %} Submit button {% endcomment %}
-      <div class="field is-default-width is-align-self-end">
-        <button type="submit" class="control">
-          {%- render 'nextArrowIcon' -%}
-          {% comment %} {%- assign button_label = 'general.newsletter_form.submit' | t -%} {% endcomment %}
-          {% comment %} {% render 'button',
-            label: button_label,
-            type: 'submit',
-            style: settings.form_button_style,
-            class: 'is-within-form'
-          %} {% endcomment %}
-        </button>
+      <div class="field is-default-width is-align-self-end  {% if originalBtn %}showOriginalBtn{% endif %}">
+        {% if originalBtn %}
+          {%- assign button_label = 'general.newsletter_form.submit' | t -%}
+            {% render 'button',
+              label: button_label,
+              type: 'submit',
+              style: settings.form_button_style,
+              class: 'is-within-form'
+            %}
+        {% else %}
+          <button type="submit" class="control">
+            {%- render 'nextArrowIcon' -%}
+          </button>
+        {% endif %}
       </div>
     </div>
   {% endform %}
