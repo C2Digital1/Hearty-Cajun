@@ -57,13 +57,16 @@
 {% endif %}
 
 {%- liquid
-  assign blockSectionHeading = section.settings.testiMonialColorScheme.settings.scheme_pre_text
-  assign blockSubHeading = section.settings.testiMonialColorScheme.settings.scheme_text
-  assign gridBg = section.settings.testiMonialColorScheme.settings.scheme_background
-  if section.settings.testiMonialColorScheme.settings.scheme_background_gradient != empty
-    assign gridBg = section.settings.testiMonialColorScheme.settings.scheme_background_gradient
-  endif
+
+    assign titlePreset = section.settings.titlePreset
+    assign textPreset = section.settings.textPreset
+    assign cardBorderBg = section.settings.cardBorderBg
+    assign cardMainBg = section.settings.cardMainBg
+    assign cardTitleColor = section.settings.cardTitleColor
+    assign cardTextColor = section.settings.cardTextColor
+    assign cardBtmTxtColor = section.settings.cardBtmTxtColor
 -%}
+
 
 {% capture section_css -%}
   
@@ -105,6 +108,22 @@
   
     .button--link-style:hover{
       color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+    }
+    
+    .testimonialCard {    
+        background: {{cardBorderBg}};
+    }
+    .testimonialCardInnerContent{
+      background: {{ cardMainBg }};
+    }
+    .testimonialTextContent h3.testimonialTitle{
+        color: {{ cardTitleColor }};
+    }
+    .testimonialMessage{
+        color: {{ cardTextColor }};
+    }
+    h4.clientName{
+        color: {{ cardBtmTxtColor }};
     }
   {%- endcapture -%}
 {% style %}
@@ -176,34 +195,36 @@
               assign clientName = block.settings.clientName
             -%}
             <div class="testimonialCard">
-              {% if clientImg != blank %}
-                <div class="roundClientImg">
-                  <img
-                    class="boxImg lazyload"
-                    src="{{ clientImg | img_url:'master' }}"
-                    alt="img"
-                    width="200"
-                    height="200"
-                    loading="lazy"
-                  >
-                </div>
-              {% endif %}
-              <div cass="testimonialTextContent">
-                {% if clientHeading != blank %}
-                  <h3 class="testimonialTitle">
-                    {{ clientHeading }}
-                  </h3>
-                {% endif %}
-                {% if clientSubHeading != blank %}
-                  <div class="testimonialMessage">
-                    {{ clientSubHeading }}
+              <div class="testimonialCardInnerContent">
+                {% if clientImg != blank %}
+                  <div class="roundClientImg">
+                    <img
+                      class="boxImg lazyload"
+                      src="{{ clientImg | img_url:'master' }}"
+                      alt="img"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    >
                   </div>
                 {% endif %}
-                {% if clientName != blank %}
-                  <h4 class="clientName">
-                    {{ clientName }}
-                  </h4>
-                {% endif %}
+                <div class="testimonialTextContent">
+                  {% if clientHeading != blank %}
+                    <h3 class="testimonialTitle {{ titlePreset }}">  
+                      {{ clientHeading }}
+                    </h3>
+                  {% endif %}
+                  {% if clientSubHeading != blank %}
+                    <div class="testimonialMessage {{ textPreset }}">
+                      {{ clientSubHeading }}
+                    </div>
+                  {% endif %}
+                  {% if clientName != blank %}
+                    <h4 class="clientName is-text">
+                      {{ clientName }}
+                    </h4>
+                  {% endif %}
+                </div>
               </div>
             </div>
         {% endcase %}
@@ -226,12 +247,6 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color Scheme",
-      "default": "default"
-    },
-    {
-      "type": "color_scheme",
-      "id": "testiMonialColorScheme",
       "label": "Color Scheme",
       "default": "default"
     },
@@ -359,6 +374,110 @@
       ],
       "default": "button--secondary"
     },
+    {
+      "type": "header",
+      "content": "Testimonials Cards Settings"
+    },
+    {
+      "type": "select",
+      "id": "titlePreset",
+      "label": "Title Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-h5"
+    },
+    {
+      "type": "select", 
+      "id": "textPreset",  
+      "label": "Text Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-text"
+    },
+    {
+      "type": "color_background",
+      "id": "cardBorderBg",
+      "label": "Card Border Background",
+      "default": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)"
+    },
+    {
+      "type": "color_background",
+      "id": "cardMainBg",  
+      "label": "Card Main Bg",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "cardTitleColor",
+      "label": "Card Title Color",
+      "default": "#F15D5E" 
+    },
+    { "type": "color", "id": "cardTextColor", "label": "Card Text Color", "default": "#463F3A" },
+    { "type": "color", "id": "cardBtmTxtColor", "label": "Card Bottom Text Color", "default": "#463F3A" },
     {
       "type": "header",
       "content": "Layout"

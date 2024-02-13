@@ -729,6 +729,102 @@ a.secBtn.button {
     margin: 20px auto 0 auto;
 }
 
+
+/* testiomonial section css code start  */
+.custTestimonialSec {
+    position: relative;
+    width: 100%;
+}
+
+.testimonialCarouselContainer {
+    width: 100%;
+    max-width: 872px;
+    margin: 80px auto 0 auto;
+}
+
+.customTestimonialContainer {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.testimonialCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2px;
+    position: relative;
+    max-width: 664px;
+    margin: 80px auto;
+}
+
+.testimonialCardInnerContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 16px;
+}
+
+.roundClientImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    overflow: hidden;
+    background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%);
+    padding: 2px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+}
+
+.roundClientImg img.boxImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 2px solid #fff;
+}
+
+
+.testimonialTextContent {
+    text-align: center;
+    width: 100%;
+    padding: 40px 48px;
+}
+
+.testimonialTextContent h3.testimonialTitle {
+    margin-bottom: 16px;
+}
+
+.testimonialMessage.is-text {
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+h4.clientName {
+    text-align: center;
+    margin-top: 16px;
+}
+
+h4.clientName.is-text {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+/* testiomonial section css code end  */
+
 /* =============================== HOME PAGE END ===============================  */
 
 
