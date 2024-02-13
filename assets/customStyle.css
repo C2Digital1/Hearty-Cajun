@@ -1144,8 +1144,6 @@ section.section.is-width-small {
     margin: 0px auto;
 }
 
-.iconsWithTextColSections {}
-
 .iconsWithTextColSections .container {
     align-items: flex-start;
     justify-content: flex-start;
@@ -1175,6 +1173,18 @@ h3.icon-column__title.title {
 
 .icon-column__text .subtitle.content {
     margin-top: 0;
+}
+
+.columnBoxIcon {
+    height: 48px;
+    width: 72px;
+    margin: 0px auto 16px auto;
+}
+
+.columnBoxIcon img.boxImg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* =========== ABOUT PAGE CSS CODE END =========== */
