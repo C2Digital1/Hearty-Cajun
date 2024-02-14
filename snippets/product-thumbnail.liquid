@@ -64,7 +64,7 @@
   <div class="product-wrap">
     <div class="product-image__wrapper">
       <div class="image__container product__imageContainer">
-        <a href="{{ product.url | within: collection }}">
+        <a href="{{ product.url | within: collection }}">     
           {% if settings.stickers_enabled %}
             {%
               render 'product-thumbnail__sticker',

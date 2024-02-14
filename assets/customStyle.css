@@ -1500,4 +1500,28 @@ span.deliveryTimeLabel svg {
     margin-right: 8px;
 }
 
+.has-thumbnail-sticker.product__thumbnail .thumbnail-sticker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px !important;
+    width: 107px !important;
+    border-radius: 29px;
+    background: rgba(255, 255, 255, .9) !important;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+    color: #463F3A;
+    margin-bottom: 15px;
+}
+
+.has-thumbnail-sticker.product__thumbnail .thumbnail-sticker span.sticker-text {
+    color: #463F3A !important;
+}
+
+.sticker-holder.sticker-shape-square {
+    padding: 8px;
+}
 /* =========== Weekly MENU PAGE CSS CODE END =========== */

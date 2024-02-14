@@ -3,7 +3,6 @@
   Optional values
   context: <string>
 {% endcomment %}
-
 {% comment %} Check if product is on sale {% endcomment %}
 {% if product.compare_at_price_max > product.price %}
   {% assign product_on_sale = true %}
@@ -30,6 +29,9 @@
   or collection_handles contains 'staff-pick'
   or product_on_sale
   or custom_stickers_handles
+  or product.tags contains 'Best Sellers'
+  or product.tags contains 'New'
+  or product.tags contains 'Main Entrees'
 %}
   <div
     class="
@@ -51,12 +53,12 @@
         </div>
       {% endif %}
 
-      {% if collection_handles contains 'new'  or product.tags contains 'New' %}
+      {% if collection_handles contains 'new' or product.tags contains 'New' %}
         <div class="new-sticker thumbnail-sticker sticker-{{i}}">
           <span class="sticker-text">{{ 'collections.general.new' | t }}</span>
         </div>
       {% endif %}
-      {% if  or product.tags contains 'Main Entrees' %}
+      {% if product.tags contains 'Main Entrees' %}
         <div class="new-sticker thumbnail-sticker sticker-{{i}}">
           <span class="sticker-text">Main Entrees</span>
         </div>
