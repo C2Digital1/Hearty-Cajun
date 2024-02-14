@@ -110,8 +110,9 @@
               assign iconImg = block.settings.iconImg
               assign heading = block.settings.heading
               assign subHeading = block.settings.subHeading
+              assign columnSize = section.settings.columnSize
             -%}
-            <div class="iconTxtBoxCardCol">
+            <div class="iconTxtBoxCardCol {% render 'column-width', value: columnSize %}">
               {% if iconImg != blank %}
                 <div class="iconImgBox">
                   <img
@@ -428,6 +429,15 @@
           "type": "richtext",
           "id": "subHeading",
           "label": "Sub Text"
+        },
+        {
+          "type": "range",
+          "id": "columnSize",
+          "label": "Column-Size",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 4
         }
       ]
     }
