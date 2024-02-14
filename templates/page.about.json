@@ -509,8 +509,9 @@
         "icon_txt_box_rTPWjN": {
           "type": "iconTxtBox",
           "settings": {
-            "heading": "",
-            "subHeading": "",
+            "iconImg": "shopify:\/\/shop_images\/veg.svg",
+            "heading": "Commitment to Well-being",
+            "subHeading": "<p>With a focus on heart health, brain health, gut health, and nutrient-rich satisfaction, every meal is a step towards a healthier you.<\/p>",
             "columnSize": 4
           }
         }
