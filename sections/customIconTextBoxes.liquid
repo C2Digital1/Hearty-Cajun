@@ -45,7 +45,7 @@
 -%}
 
 {% capture section_css -%}   
-    .iconTxtBoxCardCol {    
+    .iconTxtCardContent {    
         background: {{cardBg}};
     }    
     .iconImgBox {        
@@ -105,38 +105,40 @@
     <div class="iconTxtBoxesRow">
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when 'iconImg' %}
+          {% when 'iconTxtBox' %}
             {%- liquid
               assign iconImg = block.settings.iconImg
               assign heading = block.settings.heading
               assign subHeading = block.settings.subHeading
-              assign columnSize = section.settings.columnSize
+              assign columnSize = block.settings.columnSize 
             -%}
             <div class="iconTxtBoxCardCol {% render 'column-width', value: columnSize %}">
-              {% if iconImg != blank %}
-                <div class="iconImgBox">
-                  <img
-                    class="boxImg lazyload"
-                    src="{{ iconImg | img_url:'master' }}"
-                    alt="img"
-                    width="200"
-                    height="200"
-                    loading="lazy"
-                  >
-                </div>
-              {% endif %}
-              <div class="innerTextContent">
-                {% if heading != blank %}
-                  <h3 class="cardHeading {{ titlePreset }}">
-                    {{ heading }}
-                  </h3>
-                {% endif %}
-                {% if subHeading != blank %}
-                  <div class="cardSubText {{ textPreset }}">
-                    {{ subHeading }}
+             <div class="iconTxtCardContent">
+                {% if iconImg != blank %}
+                    <div class="iconImgBox">
+                      <img
+                        class="boxImg lazyload"
+                        src="{{ iconImg | img_url:'master' }}"
+                        alt="img"
+                        width="200"
+                        height="200"
+                        loading="lazy"
+                      >
+                    </div>
+                  {% endif %}
+                  <div class="innerTextContent">
+                    {% if heading != blank %}
+                      <h3 class="cardHeading {{ titlePreset }}">
+                        {{ heading }}
+                      </h3>
+                    {% endif %}
+                    {% if subHeading != blank %}
+                      <div class="cardSubText {{ textPreset }}">
+                        {{ subHeading }}
+                      </div>
+                    {% endif %}
                   </div>
-                {% endif %}
-              </div>
+             </div>
             </div>
         {% endcase %}
       {% endfor %}
