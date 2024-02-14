@@ -80,7 +80,7 @@
     "custom_menu_product_tabs_fVNFPJ": {
       "type": "customMenuProductTabs",
       "settings": {
-        "heading_preset": "is-h2",
+        "heading_preset": "is-h3",
         "subHeadingPreset": "is-text",
         "width": "standard",
         "padding_top": 48,
