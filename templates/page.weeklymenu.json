@@ -47,7 +47,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "Get Started",
@@ -76,10 +76,35 @@
         "css_class": "heroBanner",
         "custom_css": ""
       }
+    },
+    "custom_menu_product_tabs_fVNFPJ": {
+      "type": "customMenuProductTabs",
+      "settings": {
+        "heading_preset": "is-h1",
+        "subHeadingPreset": "is-h1",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
-    "index_image_with_text_overlay_R44EMK"
+    "index_image_with_text_overlay_R44EMK",
+    "custom_menu_product_tabs_fVNFPJ"
   ]
 }
