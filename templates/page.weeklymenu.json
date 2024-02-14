@@ -157,12 +157,45 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_heading_feGz8N": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "",
+        "heading": "",
+        "subheading": "<p>*Portions in the photographs do not reflect the actual servings<\/p>",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h3",
+        "subheading_preset": "is-text-small",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
     "index_image_with_text_overlay_R44EMK",
     "custom_menu_product_tabs_fVNFPJ",
-    "index_image_with_text_fmCJKQ"
+    "index_image_with_text_fmCJKQ",
+    "index_heading_feGz8N"
   ]
 }
