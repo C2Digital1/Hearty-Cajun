@@ -39,7 +39,7 @@
     "
   >
     <div class="sticker-holder__content sticker-holder__content--{{ context }}">
-      {% if collection_handles contains 'best-seller' %}
+      {% if collection_handles contains 'best-seller' or product.tags contains 'Best Sellers' %}
         <div class="best-seller-sticker thumbnail-sticker sticker-{{i}}">
           <span class="sticker-text">{{ 'collections.general.best_seller' | t }}</span>
         </div>
@@ -51,9 +51,14 @@
         </div>
       {% endif %}
 
-      {% if collection_handles contains 'new' %}
+      {% if collection_handles contains 'new'  or product.tags contains 'New' %}
         <div class="new-sticker thumbnail-sticker sticker-{{i}}">
           <span class="sticker-text">{{ 'collections.general.new' | t }}</span>
+        </div>
+      {% endif %}
+      {% if  or product.tags contains 'Main Entrees' %}
+        <div class="new-sticker thumbnail-sticker sticker-{{i}}">
+          <span class="sticker-text">Main Entrees</span>
         </div>
       {% endif %}
 
