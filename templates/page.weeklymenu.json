@@ -82,7 +82,7 @@
       "settings": {
         "heading_preset": "is-h1",
         "subHeadingPreset": "is-h1",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 48,
         "padding_bottom": 48,
         "padding_left": 0,
