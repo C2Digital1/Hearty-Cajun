@@ -538,7 +538,7 @@
         "cardBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
         "cardTitleColor": "#463F3A",
         "cardTextColor": "#463F3A",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 0,
         "padding_bottom": 64,
         "padding_left": 0,
