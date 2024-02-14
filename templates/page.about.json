@@ -478,6 +478,20 @@
     },
     "custom_icon_text_boxes_wMhe47": {
       "type": "customIconTextBoxes",
+      "blocks": {
+        "icon_txt_box_kxfMwd": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/Group_3.svg",
+            "heading": "Growth",
+            "subHeading": "<p>We started with just a few plant-based Cajun pastas and our menu has grown to multiple pastas and many other meals. We hope to continue to grow together as we serve more delicious nutrient-dense meals that take your breath away with every bite. While many of our meals feature meat proteins along with natural Italian and Cajun spices, we are working to create unique meals that are solely plant-based while remaining true to our Italian and Cajun roots.<\/p>",
+            "columnSize": 4
+          }
+        }
+      },
+      "block_order": [
+        "icon_txt_box_kxfMwd"
+      ],
       "settings": {
         "titlePreset": "is-h5",
         "textPreset": "is-text",
