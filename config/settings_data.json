@@ -128,7 +128,7 @@
     "thumbnail_title_preset": "is-h6",
     "thumbnail_price_preset": "is-text",
     "stickers_enabled": true,
-    "sticker_shape": "round",
+    "sticker_shape": "square",
     "sticker_position": "right",
     "collection_swatches": false,
     "collection_swatches_shape": "circle",
