@@ -30,7 +30,7 @@ body {
     width: 100% !important;
     max-width: 1440px !important;
     padding: 0 162px !important;
-    margin: 0px auto;
+    margin: 0px auto !important;
 }
 
 .bannerCaptionContainer.caption {
@@ -1137,12 +1137,6 @@ button.close.popup__close svg {
     margin-bottom: 16px;
 }
 
-section.section.is-width-small {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 162px;
-    margin: 0px auto;
-}
 
 .iconsWithTextColSections .container {
     align-items: flex-start;
@@ -1291,3 +1285,173 @@ h3.cardHeading {
 }
 
 /* =========== ABOUT PAGE CSS CODE END =========== */
+
+
+/* =========== Weekly MENU PAGE CSS CODE START =========== */
+
+.customMenuProdTabsSection {
+    width: 100%;
+    position: relative;
+}
+
+.tabBtnsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabBtnsContainer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    margin: 0px auto;
+    border: 1px solid #463F3A;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    min-width: 213px;
+    min-height: 55px;
+}
+
+.tabBtnsContainer button.tabBtn {
+    width: max-content;
+    max-width: 100px;
+    min-width: 70px;
+    min-height: 49px;
+    border-radius: 12px;
+    border: 0px solid !important;
+    cursor: pointer;
+    transition: all linear .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: #463f3a;
+    background: transparent;
+}
+
+.tabBtnsContainer button.tabBtn span {
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 13px;
+    text-align: center;
+}
+
+.tabBtnsContainer button.tabBtn span.strong {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.tabBtnsContainer button.tabBtn.active {
+    background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%);
+    cursor: pointer;
+}
+
+.tabContentsContainer {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 40px auto;
+}
+
+.weeklyMenuTabItem {}
+
+.weeklyMenuTabItem h2.tabMenuTitle {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.tabMenuDesc {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.collectionItemsRow {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.collectionItemsRow .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
+    width: calc(33.333% - 10px);
+    margin-right: 15px;
+    margin-bottom: 40px;
+}
+
+.collectionItemsRow .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(3n) {
+    margin-right: 0;
+}
+
+.tabContentsContainer {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 40px auto;
+}
+
+.weeklyMenuTabItem h2.tabMenuTitle {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.tabMenuDesc {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.collectionItemsRow {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.collectionItemsRow .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
+    width: calc(33.333% - 10px);
+    margin-right: 15px;
+    margin-bottom: 40px;
+}
+
+.collectionItemsRow .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(3n) {
+    margin-right: 0;
+}
+
+.primarySec.imageWithTextSection .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    column-gap: 50px;
+}
+
+.primarySec.imageWithTextSection .container .imgTxtCol {
+    width: 100% !important;
+    margin: 0;
+}
+
+section.section.primarySec.imageWithTextSection.is-width-small .imgTxtCol.imgTxtColChild-1 {
+    max-width: 438px;
+    margin: 0;
+}
+
+section.section.primarySec.imageWithTextSection.is-width-small .imgTxtCol.imgTxtColChild-2 {
+    max-width: 436px !important;
+    margin: 0;
+    padding: 0 !important;
+}
+
+.primarySec a.button.button--primary {
+    background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%) !important;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #463F3A !important;
+}
+
+
+/* =========== Weekly MENU PAGE CSS CODE END =========== */
