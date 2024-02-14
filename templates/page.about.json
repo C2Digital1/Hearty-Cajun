@@ -497,6 +497,14 @@
             "columnSize": 4
           }
         },
+        "icon_txt_box_nGemgC": {
+          "type": "iconTxtBox",
+          "settings": {
+            "heading": "",
+            "subHeading": "",
+            "columnSize": 4
+          }
+        },
         "icon_txt_box_rTPWjN": {
           "type": "iconTxtBox",
           "settings": {
@@ -509,6 +517,7 @@
       "block_order": [
         "icon_txt_box_kxfMwd",
         "icon_txt_box_LfTV8N",
+        "icon_txt_box_nGemgC",
         "icon_txt_box_rTPWjN"
       ],
       "settings": {
