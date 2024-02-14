@@ -1475,4 +1475,29 @@ button.customLoadMoreBtm.button {
     margin-top: 64px;
 }
 
+span.deliveryTimeLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    width: 108px;
+    height: 32px;
+    border-radius: 29px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2;
+    color: #463F3A;
+}
+
+span.deliveryTimeLabel svg {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+}
+
 /* =========== Weekly MENU PAGE CSS CODE END =========== */

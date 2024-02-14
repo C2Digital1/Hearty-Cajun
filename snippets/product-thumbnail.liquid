@@ -183,6 +183,12 @@
         </div>
       {% endif %}
 
+      {% if product.metafields.custom.delivery_time != blank %}
+        <span class="deliveryTimeLabel">
+          {%  render 'clockIcon' %} {{ product.metafields.custom.delivery_time }}
+        </span>
+      {% endif %}
+
       {% if settings.showQuickAddBtn %}
         {% liquid
           assign selected_variant = product.selected_variant
