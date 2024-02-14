@@ -34,6 +34,9 @@
 {% comment %}  Loop over products and Skip product if we're on its product page {% endcomment %}
 {% for product in products limit: for_limit %}
   {% if product.id != skip_product.id %}
+    {% if forloop.index > 6 and hideNextItems %}
+      {% assign hideElement = true %}
+    {% endif %}
     {% render 'product-thumbnail',
       product: product,
       limit: limit,
@@ -42,7 +45,9 @@
       hover_enabled: hover_enabled,
       related_products: related_items,
       pagination_type: pagination_type,
-      hidePrice: hidePrice
+      hidePrice: hidePricem,
+      hideElement: hideElement,
+      
     %}
   {% endif %}
 {% endfor %}

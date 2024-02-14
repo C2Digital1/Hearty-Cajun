@@ -88,7 +88,10 @@
             assign menuDate = menuItem.menu_date
           -%}
           <li>
-            <button class="tabBtn {% if forloop.index == 1 %}active{% endif %}">
+            <button
+              class="tabBtn {% if forloop.index == 1 %}active{% endif %}"
+              data-id="#{{id}}-tab-{{ forloop.index }}"
+            >
               <span>{{ menuMonth }}</span> <span class="strong"> {{ menuDate }}</span>
             </button>
           </li>
@@ -97,32 +100,80 @@
     </div>
 
     <div class="tabContentsContainer">
+      <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
       {% for menuItem in page.metafields.custom.weekly_menu_tabs.value %}
         {%- liquid
           assign menuHeading = menuItem.menu_name
           assign menuDesc = menuItem.menu_description
           assign collection = menuItem.menu_collection.value
+          assign addOnsHeading = menuItem.add_ons_heading
+          assign addOnsDesc = menuItem.add_ons_description
+          assign addOnsProds = menuItem.add_ons
         -%}
-        <div class="weeklyMenuTabItem" style="{% if forloop.index == 1 %}{% else %}display:none;{% endif %}">
-            <h2 class="tabMenuTitle {{ heading_preset }}">
-                {{ menuHeading }}
-            </h2>
-            <div class="tabMenuDesc {{ subHeadingPreset }}">
-                {{ menuDesc }}
+        <div
+          id="{{id}}-tab-{{ forloop.index }}"
+          class="weeklyMenuTabItem"
+          style="{% if forloop.index == 1 %}{% else %}display:none;{% endif %}"
+        >
+          <h2 class="tabMenuTitle {{ heading_preset }}">
+            {{ menuHeading }}
+          </h2>
+          <div class="tabMenuDesc {{ subHeadingPreset }}">
+            {{ menuDesc }}
+          </div>
+          {% if collection != blank %}
+            <div class="collectionItemsRow">
+              {% render 'product-loop',
+                limit: 50,
+                products: collection.products,
+                skip_product: product,
+                items_per_row: 3,
+                mobile_items_per_row: 1,
+                showStyle: true,
+                hidePrice: true,
+                hideNextItems: true
+              %}
             </div>
-            {% if collection != blank %}
-                <div class="collectionItemsRow">
-                    {% render 'product-loop',
-                        limit: 50,
-                        products: collection.products,
-                        skip_product: product,
-                        items_per_row: 3,
-                        mobile_items_per_row: 1,
-                        showStyle: true,
-                        hidePrice: true
-                      %}
-                </div>
+            {% if collection.all_products_count > 6 %}
+              <button class="customLoadMoreBtm button button--primary pagination-button__load-more">
+                Load More Meals
+              </button>
             {% endif %}
+          {% endif %}
+          {% if addOnsHeading != blank or addOnsDesc != blank or addOnsProds != blank %}
+            <div class="addOnsContainer">
+              <h2 class="tabMenuTitle {{ heading_preset }}">
+                {{ addOnsHeading }}
+              </h2>
+              <div class="tabMenuDesc {{ subHeadingPreset }}">
+                {{ addOnsDesc }}
+              </div>
+              {% if addOnsProds != blank %}
+                <div class="collectionItemsRow">
+                  {% for product in addOnsProds.value %}
+                    {% if forloop.index > 3 %}
+                      {% assign hideElement = true %}
+                       {% else %}                      
+                      {% assign hideElement = false %}
+                    {% endif %}
+                    {% render 'product-thumbnail',
+                      product: product,
+                      limit: 50,
+                      items_per_row: 3,
+                      mobile_items_per_row: 1,
+                      hidePrice: true,
+                      hideElement: hideElement
+                    %}
+                  {% endfor %}
+                </div>
+                {% if hideElement %}
+                  <button class="customLoadMoreBtm button button--primary pagination-button__load-more">
+                    Load More Add-Ons
+                  </button>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

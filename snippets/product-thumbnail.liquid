@@ -39,6 +39,7 @@
     product__thumbnail
     thumbnail__hover-overlay--{{ hover_enabled }}
     has-padding-bottom
+    {% if hideElement %} hiddenItem {% endif %}
   "
   {% if pagination_type != 'basic_pagination' %}
     data-load-more--grid-item

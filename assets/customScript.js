@@ -8,5 +8,31 @@ $(document).ready(function () {
             $(".image-with-text__text strong").closest(".image-with-text__text").addClass("hasStrong");
         }
     }
+    $('.customLoadMoreBtm').click(function () {
+        var $thisBtn = $(this);
+        $($thisBtn).addClass("is-loading");
+        var $hiddenContainer = $(this).prev('.collectionItemsRow');
+        setTimeout(function () {
+            $($thisBtn).addClass("is-loading");
+            $hiddenContainer.find('.hiddenItem').slice(0, 6).removeClass('hiddenItem');
+            if ($hiddenContainer.find('.hiddenItem').length === 0) {
+                $($thisBtn).hide();
+            }
+        }, 2000);
+
+    });
+    $(".tabBtn").click(function () {
+        $(".tabBtn").removeClass("active");
+        $(this).addClass("active");     
+        var $activeTabContent = $(this).attr("data-id");
+        $(".tabContentsContainer").addClass("bigSection");
+        $(".weeklyMenuTabItem").hide();
+        $(".tabContentsContainer .collection__loading-icon").show();
+        setTimeout(function () {
+            $(".tabContentsContainer .collection__loading-icon").hide();
+            $($activeTabContent).show();            
+        $(".tabContentsContainer").removeClass("bigSection");
+        }, 1500);
+    });
 
 });

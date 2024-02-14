@@ -17,8 +17,6 @@ body {
     scroll-behavior: smooth;
 }
 
-
-
 .is-width-standard {
     width: 100% !important;
     max-width: 100% !important;
@@ -52,6 +50,10 @@ button.button {
     letter-spacing: 0 !important;
     line-height: 22px !important;
     text-align: center !important;
+}
+
+.hiddenItem {
+    display: none !important;
 }
 
 /* common css code end  */
@@ -1360,7 +1362,9 @@ h3.cardHeading {
     margin: 40px auto;
 }
 
-.weeklyMenuTabItem {}
+.tabContentsContainer.bigSection {
+    min-height: 80vh;
+}
 
 .weeklyMenuTabItem h2.tabMenuTitle {
     text-align: center;
@@ -1453,5 +1457,22 @@ section.section.primarySec.imageWithTextSection.is-width-small .imgTxtCol.imgTxt
     color: #463F3A !important;
 }
 
+button.customLoadMoreBtm.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 243px;
+    padding: 8px;
+    min-height: 54px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.addOnsContainer {
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    margin-top: 64px;
+}
 
 /* =========== Weekly MENU PAGE CSS CODE END =========== */
