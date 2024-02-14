@@ -500,8 +500,9 @@
         "icon_txt_box_nGemgC": {
           "type": "iconTxtBox",
           "settings": {
-            "heading": "",
-            "subHeading": "",
+            "iconImg": "shopify:\/\/shop_images\/cut.svg",
+            "heading": "Personalized Convenience",
+            "subHeading": "<p>Prioritizing your health without compromising on convenience or taste, our gourmet meals offer an escape from the hassle of cooking, tailored to your lifestyle.<\/p>",
             "columnSize": 4
           }
         },
