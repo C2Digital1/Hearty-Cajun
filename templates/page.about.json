@@ -533,8 +533,8 @@
         "icon_txt_box_DUEPWY"
       ],
       "settings": {
-        "titlePreset": "is-h5",
-        "textPreset": "is-text",
+        "titlePreset": "is-h6",
+        "textPreset": "is-text-small",
         "cardBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
         "cardTitleColor": "#463F3A",
         "cardTextColor": "#463F3A",
