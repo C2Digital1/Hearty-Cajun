@@ -467,6 +467,7 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     padding: 8px;
     width: 100%;
     align-items: flex-end;
+    z-index: 8;
 }
 
 /* featured collection product section css code end  */
@@ -1490,7 +1491,7 @@ span.deliveryTimeLabel {
     position: absolute;
     top: 8px;
     left: 8px;
-    z-index: 2;
+    z-index: 8;
     color: #463F3A;
 }
 
