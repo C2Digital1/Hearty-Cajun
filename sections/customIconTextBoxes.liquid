@@ -1,0 +1,443 @@
+{% comment %}
+  ** Single featured collection **
+{% endcomment %}
+
+{%- liquid
+  assign id = section.id
+-%}
+{% comment %}Spacing{% endcomment %}
+{%- liquid
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign padding_left = section.settings.padding_left
+  assign padding_right = section.settings.padding_right
+  assign margin_top = section.settings.margin_top
+  assign margin_bottom = section.settings.margin_bottom
+  assign padding_top_m = section.settings.padding_top_m
+  assign padding_bottom_m = section.settings.padding_bottom_m
+  assign padding_left_m = section.settings.padding_left_m
+  assign padding_right_m = section.settings.padding_right_m
+  assign margin_top_m = section.settings.margin_top_m
+  assign margin_bottom_m = section.settings.margin_bottom_m
+-%}
+{% comment %}Layout{% endcomment %}
+{%- liquid
+  assign width = section.settings.width
+  assign section_bg = section.settings.section_bg
+  assign animation = section.settings.animation | default: 'none'
+-%}
+{% comment %}Advanced{% endcomment %}
+{%- liquid
+  assign css_class = section.settings.css_class
+  assign custom_css = section.settings.custom_css
+-%}
+
+{% comment %}
+  Section specific CSS
+{% endcomment %}
+
+{%- liquid
+  assign titlePreset = section.settings.titlePreset
+  assign textPreset = section.settings.textPreset
+  assign cardBg = section.settings.cardBg
+  assign cardTitleColor = section.settings.cardTitleColor
+  assign cardTextColor = section.settings.cardTextColor
+-%}
+
+{% capture section_css -%}   
+    .iconTxtBoxCardCol {    
+        background: {{cardBg}};
+    }    
+    .iconImgBox {        
+        background: {{cardBg}};
+    }
+    .iconTxtBoxCardCol h3.cardHeading{
+        color: {{ cardTitleColor }};
+    }
+    .cardSubText{
+        color: {{ cardTextColor }};
+    }
+{%- endcapture -%}
+{% style %}
+  #shopify-section-{{ id }}{
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+    padding-left: {{ padding_left }}px;
+    padding-right: {{ padding_right }}px;
+    background: {{ section_bg }};
+    margin-top: {{ margin_top }}px;
+    margin-bottom: {{ margin_bottom }}px;
+    {% if width == 'wide' %}
+      width: 100%;
+    {% endif %}
+  }
+  @media screen and (max-width:798px) {
+    #shopify-section-{{ id }}{
+      padding-top: {{ padding_top_m }}px;
+      padding-bottom: {{ padding_bottom_m }}px;
+      padding-left: {{ padding_left_m }}px;
+      padding-right: {{ padding_right_m }}px;
+      margin-top: {{ margin_top_m }}px;
+      margin-bottom: {{ margin_bottom_m }}px;
+    }
+  }
+  {% render 'css-loop',
+            css: section_css,
+            id: id
+    %}
+  {% render 'css-loop',
+    css: custom_css,
+    id: id %}
+{% endstyle %}
+
+<section
+  class="
+    section
+    cusIconTxtBoxesSection
+    {{ css_class }}
+    is-width-{{ width }}
+  "
+  {% if animation != 'none' %}
+    data-scroll-class="{{ animation }}"
+  {% endif %}
+>
+  <div class="mainIconTxtBoxesContainer">
+    <div class="iconTxtBoxesRow">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'iconImg' %}
+            {%- liquid
+              assign iconImg = block.settings.iconImg
+              assign heading = block.settings.heading
+              assign subHeading = block.settings.subHeading
+            -%}
+            <div class="iconTxtBoxCardCol">
+              {% if iconImg != blank %}
+                <div class="iconImgBox">
+                  <img
+                    class="boxImg lazyload"
+                    src="{{ iconImg | img_url:'master' }}"
+                    alt="img"
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+              <div class="innerTextContent">
+                {% if heading != blank %}
+                  <h3 class="cardHeading {{ titlePreset }}">
+                    {{ heading }}
+                  </h3>
+                {% endif %}
+                {% if subHeading != blank %}
+                  <div class="cardSubText {{ textPreset }}">
+                    {{ subHeading }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Custom Icon Text Boxes",
+  "class": "custIconTxtBoxes",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Boxes Style Settings"
+    },
+    {
+      "type": "select",
+      "id": "titlePreset",
+      "label": "Title Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-h5"
+    },
+    {
+      "type": "select",
+      "id": "textPreset",
+      "label": "Text Preset",
+      "options": [
+        {
+          "value": "is-h1",
+          "label": "H1"
+        },
+        {
+          "value": "is-h2",
+          "label": "H2"
+        },
+        {
+          "value": "is-h3",
+          "label": "H3"
+        },
+        {
+          "value": "is-h4",
+          "label": "H4"
+        },
+        {
+          "value": "is-h5",
+          "label": "H5"
+        },
+        {
+          "value": "is-h6",
+          "label": "H6"
+        },
+        {
+          "value": "is-text",
+          "label": "Regular"
+        },
+        {
+          "value": "is-text-small",
+          "label": "Small"
+        }
+      ],
+      "default": "is-text"
+    },
+    {
+      "type": "color_background",
+      "id": "cardBg",
+      "label": "Card Background",
+      "default": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)"
+    },
+    {
+      "type": "color",
+      "id": "cardTitleColor",
+      "label": "Card Title Color",
+      "default": "#463F3A"
+    },
+    { "type": "color", "id": "cardTextColor", "label": "Card Text Color", "default": "#463F3A" },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wide",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Spacing Desktop"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_left",
+      "label": "Left spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_right",
+      "label": "Right spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_top",
+      "label": "Top Gutter",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom",
+      "label": "Bottom Gutter",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Spacing Mobile"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_m",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_m",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_left_m",
+      "label": "Left spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_right_m",
+      "label": "Right spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_top_m",
+      "label": "Top Gutter",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_m",
+      "label": "Bottom Gutter",
+      "default": 0
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "linear-gradient(#ffffff, #ffffff)"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Animation",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fadeIn",
+          "label": "Fade in"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade in down"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade in right"
+        },
+        {
+          "value": "slideInLeft",
+          "label": "Slide in left"
+        },
+        {
+          "value": "slideInRight",
+          "label": "Slide in right"
+        },
+        {
+          "value": "zoomIn",
+          "label": "Zoom in"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "iconTxtBox",
+      "name": "Icon Text Box",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "iconImg",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subHeading",
+          "label": "Sub Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Icon Text Boxes",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
