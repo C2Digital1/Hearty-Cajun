@@ -456,8 +456,6 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     width: 100%;
     height: 100%;
 }
-
-
 .product__thumbnail .product-image__wrapper form.shopify-product-form {
     display: flex;
     flex-direction: column-reverse;
