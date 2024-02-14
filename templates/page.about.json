@@ -485,7 +485,7 @@
             "iconImg": "shopify:\/\/shop_images\/noodles.svg",
             "heading": "Growth",
             "subHeading": "<p>We started with just a few plant-based Cajun pastas and our menu has grown to multiple pastas and many other meals. We hope to continue to grow together as we serve more delicious nutrient-dense meals that take your breath away with every bite. While many of our meals feature meat proteins along with natural Italian and Cajun spices, we are working to create unique meals that are solely plant-based while remaining true to our Italian and Cajun roots.<\/p>",
-            "columnSize": 4
+            "columnSize": 1
           }
         },
         "icon_txt_box_LfTV8N": {
@@ -514,13 +514,23 @@
             "subHeading": "<p>With a focus on heart health, brain health, gut health, and nutrient-rich satisfaction, every meal is a step towards a healthier you.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_DUEPWY": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/veg.svg",
+            "heading": "Unmatched Freshness",
+            "subHeading": "<p>Our commitment to freshness guarantees a culinary journey that is both delightful and nourishing.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
         "icon_txt_box_kxfMwd",
         "icon_txt_box_LfTV8N",
         "icon_txt_box_nGemgC",
-        "icon_txt_box_rTPWjN"
+        "icon_txt_box_rTPWjN",
+        "icon_txt_box_DUEPWY"
       ],
       "settings": {
         "titlePreset": "is-h5",
