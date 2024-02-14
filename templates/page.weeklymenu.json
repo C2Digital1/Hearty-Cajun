@@ -186,7 +186,7 @@
         "margin_top_m": 0,
         "margin_bottom_m": 0,
         "animation": "none",
-        "css_class": "",
+        "css_class": "bottomSmallText",
         "custom_css": ""
       }
     }
