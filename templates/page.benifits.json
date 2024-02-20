@@ -97,11 +97,20 @@
             "subHeading": "<p>Our signature pastas, featuring whole grains and red lentils, contribute to a heart-healthy diet. The fiber-rich red lentil pasta aids in lowering cholesterol levels, reducing the risk of heart disease, and promoting overall cardiovascular well-being. Greens, a staple in our meals, further amplify these heart-boosting benefits.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_RtkUFC": {
+          "type": "iconTxtBox",
+          "settings": {
+            "heading": "Brain-Boosting Brilliance",
+            "subHeading": "<p>Elevate your cognitive health with the power-packed combination of whole grains, avocados, and Cajun broccoli. Fresh avocado* slices, a star in our meals, are known for their brain-boosting properties, aiding in reducing high blood pressure and enhancing nutrient absorption. A win-win for your taste buds and your mind!<\/p><p>*Only basmati dishes are served with avocados.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
         "icon_txt_box_akeH7P",
-        "icon_txt_box_dEmK4w"
+        "icon_txt_box_dEmK4w",
+        "icon_txt_box_RtkUFC"
       ],
       "settings": {
         "titlePreset": "is-h6",
