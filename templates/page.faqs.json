@@ -92,11 +92,19 @@
             "question": "How do I know if your menu delivers energy and strength?",
             "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
           }
+        },
+        "faq_qV763K": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I choose my own meals?",
+            "answer": "<p>Yes! You choose what you want to eat from our menu with the option to change them every week.<\/p>"
+          }
         }
       },
       "block_order": [
         "heading_JtR9my",
-        "faq_QbBwJm"
+        "faq_QbBwJm",
+        "faq_qV763K"
       ],
       "settings": {
         "color_scheme": "",
