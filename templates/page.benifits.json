@@ -194,6 +194,7 @@
         "image_AaHPfb": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of_Portrait-074.jpg",
             "image_crop": "none",
             "image_link": ""
           }
