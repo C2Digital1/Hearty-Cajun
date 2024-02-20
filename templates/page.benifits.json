@@ -101,6 +101,7 @@
         "icon_txt_box_RtkUFC": {
           "type": "iconTxtBox",
           "settings": {
+            "iconImg": "shopify:\/\/shop_images\/brainicon.svg",
             "heading": "Brain-Boosting Brilliance",
             "subHeading": "<p>Elevate your cognitive health with the power-packed combination of whole grains, avocados, and Cajun broccoli. Fresh avocado* slices, a star in our meals, are known for their brain-boosting properties, aiding in reducing high blood pressure and enhancing nutrient absorption. A win-win for your taste buds and your mind!<\/p><p>*Only basmati dishes are served with avocados.<\/p>",
             "columnSize": 4
