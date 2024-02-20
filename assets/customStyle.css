@@ -17,6 +17,29 @@ body {
     scroll-behavior: smooth;
 }
 
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f15d5e;
+    border-radius: 20px;
+    width: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #f15d5e;
+}
+
 .is-width-standard {
     width: 100% !important;
     max-width: 100% !important;
@@ -456,6 +479,7 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     width: 100%;
     height: 100%;
 }
+
 .product__thumbnail .product-image__wrapper form.shopify-product-form {
     display: flex;
     flex-direction: column-reverse;
@@ -1523,4 +1547,220 @@ span.deliveryTimeLabel svg {
 .sticker-holder.sticker-shape-square {
     padding: 8px;
 }
+
+/* product ingredients popup css code start  */
+.prodIngPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    max-height: 100vh;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all linear .3s;
+    height: max-content;
+    overflow-y: auto;
+    min-height: 100vh;
+    background: rgba(70, 63, 58, 0.8);
+}
+
+
+.popupInnerBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 55;
+    max-width: 924px;
+    height: max-content;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    margin: 91px auto;
+}
+
+
+.popupContent {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.popupBannerArea {
+    width: 100%;
+    position: relative;
+}
+
+.prodIngPopup.openIt {
+    z-index: 55555;
+    visibility: visible;
+    opacity: 1;
+}
+
+.popupBannerContent {
+    padding: 24px 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.popupBannerContent .popupBannerOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 89%) 98.4%);
+    z-index: 0;
+    min-height: 130px;
+}
+
+.popupBannerContent h3.is-h6 {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 44px;
+    position: relative;
+    z-index: 2;
+}
+
+.popupPillsBtns {
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.popupPillsBtns span {
+    min-width: 86px;
+    border-radius: 29px;
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 21px;
+    padding: 5px;
+    color: #463F3A;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 13px;
+    margin-right: 4px;
+}
+
+.popupBodyContent {
+    padding: 16px;
+}
+
+.popupBoxContent {
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 8px;
+}
+
+.popupBoxContent h4.is-h6 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+    margin-bottom: 16px;
+    color: #463F3A;
+}
+
+.prodDescription .is-small {
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 25px;
+    color: #463F3A;
+}
+
+.popupBannerArea img.boxImg {
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.ingredientsRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ingredientCol {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(50% - 10px);
+    margin-bottom: 14px;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+.ingredientCol img.boxImg {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.nutritionRows {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.nutritionItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 24px;
+    color: #463F3A;
+    padding: 4px;
+    min-height: 24px;
+}
+
+.nutritionRows .nutritionItem:nth-child(odd) {
+    background: rgba(70, 63, 58, .05) !important;
+}
+
+a.popupBtn.button.button-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: #463F3A;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%);
+    width: 100%;
+    min-height: 54px;
+    padding: 10px;
+}
+
+/* product ingredients popup css code end  */
+
 /* =========== Weekly MENU PAGE CSS CODE END =========== */
