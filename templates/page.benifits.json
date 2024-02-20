@@ -110,6 +110,7 @@
         "icon_txt_box_gxMib4": {
           "type": "iconTxtBox",
           "settings": {
+            "iconImg": "shopify:\/\/shop_images\/maiddd.svg",
             "heading": "Gut-Friendly Feasts",
             "subHeading": "<p>Good gut health begins with a blend of soluble and insoluble fiber, abundantly present in our meals. Experience the myriad benefits of fiber, from maintaining a healthy weight, lowering cholesterol levels, normalizing bowel movements, to reducing the risk of diabetes, heart disease, and some cancers. Live longer with our meals that prioritize your gut health.<\/p>",
             "columnSize": 4
