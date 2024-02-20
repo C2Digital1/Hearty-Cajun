@@ -133,6 +133,15 @@
             "subHeading": "<p>Designed to be nutrient-dense, our meals are a feast for both body and soul. Experience long-lasting satisfaction with the abundance of vitamins, minerals, fiber, and protein; many people report feeling satisfied for many hours after consuming our meals. Whether it's the protein-rich red lentils or the low-glycemic index basmati rice, our meals keep your energy high and muscles strong.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_7j7bnG": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/meat.svg",
+            "heading": "Quality Meats for Discerning Tastes",
+            "subHeading": "<p>Indulge in our selection of free-range chicken, turkey sausage, shrimp, and tilapia filets. Our commitment to your health means little to no red meat on our menu for constant consumption, ensuring you maintain optimal physical shape. We love red meat but believe it is to be consumed on special occasions. When people are either on the verge of high cholesterol or are diagnosed with high cholesterol, diabetes, or high blood pressure, in addition to limiting sugar, doctors always warn and caution them against red meat and this is not because the doctors want to rain on their parade but because it is the best course of action for their health. Enjoy amazing flavor without compromise, all in a sophisticated culinary experience.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
@@ -141,7 +150,8 @@
         "icon_txt_box_RtkUFC",
         "icon_txt_box_gxMib4",
         "icon_txt_box_yhBCxj",
-        "icon_txt_box_QzYjaL"
+        "icon_txt_box_QzYjaL",
+        "icon_txt_box_7j7bnG"
       ],
       "settings": {
         "titlePreset": "is-h6",
