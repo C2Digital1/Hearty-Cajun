@@ -76,10 +76,38 @@
         "css_class": "heroBanner",
         "custom_css": ""
       }
+    },
+    "custom_icon_text_boxes_c3PeiB": {
+      "type": "customIconTextBoxes",
+      "settings": {
+        "titlePreset": "is-h5",
+        "textPreset": "is-text",
+        "cardBg": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)",
+        "cardTitleColor": "#463F3A",
+        "cardTextColor": "#463F3A",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(#ffffff, #ffffff)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
-    "index_image_with_text_overlay_4wqFt7"
+    "index_image_with_text_overlay_4wqFt7",
+    "custom_icon_text_boxes_c3PeiB"
   ]
 }
