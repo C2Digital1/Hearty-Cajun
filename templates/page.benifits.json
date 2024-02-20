@@ -166,7 +166,7 @@
       "settings": {
         "titlePreset": "is-h6",
         "textPreset": "is-text",
-        "cardBg": "linear-gradient(315deg, rgba(241,93,94,0.05) 0%, #EDF67D 100%)",
+        "cardBg": "linear-gradient(315deg, rgba(241,93,94,0.5) 0%, #EDF67D 100%)",
         "cardTitleColor": "#463F3A",
         "cardTextColor": "#463F3A",
         "width": "standard",
