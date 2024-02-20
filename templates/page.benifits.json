@@ -92,6 +92,7 @@
         "icon_txt_box_dEmK4w": {
           "type": "iconTxtBox",
           "settings": {
+            "iconImg": "shopify:\/\/shop_images\/brainicon.svg",
             "heading": "Heart Health at its Core",
             "subHeading": "<p>Our signature pastas, featuring whole grains and red lentils, contribute to a heart-healthy diet. The fiber-rich red lentil pasta aids in lowering cholesterol levels, reducing the risk of heart disease, and promoting overall cardiovascular well-being. Greens, a staple in our meals, further amplify these heart-boosting benefits.<\/p>",
             "columnSize": 4
