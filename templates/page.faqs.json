@@ -82,7 +82,7 @@
         "heading_JtR9my": {
           "type": "heading",
           "settings": {
-            "expand_heading": false,
+            "expand_heading": true,
             "heading": "General"
           }
         },
@@ -155,6 +155,20 @@
             "question": "How much does HeartyCajun cost?",
             "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
           }
+        },
+        "faq_4hExrE": {
+          "type": "faq",
+          "settings": {
+            "question": "Is HeartyCajun sustainable and environmentally friendly?",
+            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+          }
+        },
+        "heading_EC3akW": {
+          "type": "heading",
+          "settings": {
+            "expand_heading": false,
+            "heading": "Managing My Subscription"
+          }
         }
       },
       "block_order": [
@@ -168,7 +182,9 @@
         "faq_8YyyKi",
         "faq_KWP99c",
         "faq_gp9XaH",
-        "faq_8KfrtR"
+        "faq_8KfrtR",
+        "faq_4hExrE",
+        "heading_EC3akW"
       ],
       "settings": {
         "color_scheme": "",
