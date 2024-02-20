@@ -257,10 +257,20 @@
             "subHeading": "<p>These edible seeds from the legume family of foods are truly a wonder when it comes to nutrient rich foods. They are high in protein, high in fiber, and high in key vitamins. As a plant based protein, red Lentil pasta has a lower glycemic index compared to regular pasta, which helps regulate blood sugar levels and can be beneficial for individuals with diabetes.<\/p>",
             "columnSize": 3
           }
+        },
+        "icon_txt_box_qPBYUe": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/7.jpg",
+            "heading": "Basmati Rice",
+            "subHeading": "<p>This food item also has a lower glycemic index than regular rice to help regulate blood sugar levels and can be beneficial for individuals with diabetes. Basmati rice also has the lowest level of toxicity than any other long grain rice.<\/p>",
+            "columnSize": 3
+          }
         }
       },
       "block_order": [
-        "icon_txt_box_yrzeTd"
+        "icon_txt_box_yrzeTd",
+        "icon_txt_box_qPBYUe"
       ],
       "settings": {
         "showIconInBox": true,
