@@ -144,7 +144,7 @@
         "background_color": "",
         "border_color": "#FFFFFF",
         "border_width": 0,
-        "text_width": 50,
+        "text_width": 53,
         "button_1": "Order Now",
         "button_1_link": "",
         "button_1_style": "button--primary",
