@@ -45,9 +45,9 @@ $(document).ready(function () {
         $(popupId).addClass("openIt");
         $("body, html").addClass("hideScroll");
     });
-    $(".prodOverlay").click(function () {
+    $(".prodOverlay, .popupCloseBtn").click(function () {
         $(".prodIngPopup").removeClass("openIt");
         $("body, html").removeClass("hideScroll");
-    });
+    });    
 
 });

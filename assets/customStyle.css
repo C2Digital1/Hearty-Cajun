@@ -1759,6 +1759,30 @@ a.popupBtn.button.button-primary {
     width: 100%;
     min-height: 54px;
     padding: 10px;
+    margin-top: 20px;
+}
+button.close.popupCloseBtn {
+    max-height: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+    max-width: none !important;
+    margin: 16px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 555;
+    cursor: pointer;
+}
+
+button.close.popupCloseBtn svg {
+    width: 40px;
+    height: 40px;
+    color: #28303F;
 }
 
 /* product ingredients popup css code end  */
