@@ -142,6 +142,15 @@
             "subHeading": "<p>Indulge in our selection of free-range chicken, turkey sausage, shrimp, and tilapia filets. Our commitment to your health means little to no red meat on our menu for constant consumption, ensuring you maintain optimal physical shape. We love red meat but believe it is to be consumed on special occasions. When people are either on the verge of high cholesterol or are diagnosed with high cholesterol, diabetes, or high blood pressure, in addition to limiting sugar, doctors always warn and caution them against red meat and this is not because the doctors want to rain on their parade but because it is the best course of action for their health. Enjoy amazing flavor without compromise, all in a sophisticated culinary experience.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_kenfAM": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/badge.svg",
+            "heading": "Loyalty Discounts",
+            "subHeading": "<p>As a token of our gratitude, we offer loyalty discounts to our longstanding members, along with our seasonal discount programs. Your commitment to HeartyCajun deserves to be rewarded and we love to say thank you!<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
@@ -151,7 +160,8 @@
         "icon_txt_box_gxMib4",
         "icon_txt_box_yhBCxj",
         "icon_txt_box_QzYjaL",
-        "icon_txt_box_7j7bnG"
+        "icon_txt_box_7j7bnG",
+        "icon_txt_box_kenfAM"
       ],
       "settings": {
         "titlePreset": "is-h6",
