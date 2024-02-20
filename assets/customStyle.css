@@ -1250,7 +1250,7 @@ h3.icon-column__title.title {
     align-items: flex-start;
     justify-content: flex-start;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .iconTxtBoxCardCol.one-whole {
@@ -1320,7 +1320,13 @@ h3.cardHeading {
     line-height: 21px;
     text-align: center;
 }
-
+.iconTxtBoxCardCol h3.cardHeading.is-h6 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.13px;
+    line-height: 23px;
+    text-align: center;
+}
 /* =========== ABOUT PAGE CSS CODE END =========== */
 
 
