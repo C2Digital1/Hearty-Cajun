@@ -102,7 +102,7 @@
         "color_scheme": "",
         "enable_tags": false,
         "question_preset": "is-h6",
-        "answer_preset": "is-text",
+        "answer_preset": "is-text-small",
         "width": "standard",
         "padding_top": 48,
         "padding_bottom": 64,
