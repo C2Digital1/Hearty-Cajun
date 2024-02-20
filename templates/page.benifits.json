@@ -266,11 +266,21 @@
             "subHeading": "<p>This food item also has a lower glycemic index than regular rice to help regulate blood sugar levels and can be beneficial for individuals with diabetes. Basmati rice also has the lowest level of toxicity than any other long grain rice.<\/p>",
             "columnSize": 3
           }
+        },
+        "icon_txt_box_rDcAXt": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/8.jpg",
+            "heading": "Tilapia Filets",
+            "subHeading": "<p>Why tilapia and not salmon?  Tilapia compared to salmon is a much leaner fish which has both a lower salt and a lower fat content. The lower fat content is due to tilapia being a much leaner protein whereas salmon contains a much greater amount of fat leading to its strong fishy taste. Usually fish smells, well, fishy to some extent, but we can guarantee you that our Cajun Tilapia Pasta can be heated up in the break room and no one will post a \"do not heat fish sign\" but instead they will be asking, “what smells so GOOD?!?!” Then you can respond with, “Cajun Red Lentil Tilapia pasta” in all of your sophisticated glory.<\/p>",
+            "columnSize": 3
+          }
         }
       },
       "block_order": [
         "icon_txt_box_yrzeTd",
-        "icon_txt_box_qPBYUe"
+        "icon_txt_box_qPBYUe",
+        "icon_txt_box_rDcAXt"
       ],
       "settings": {
         "showIconInBox": true,
