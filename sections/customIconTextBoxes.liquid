@@ -4,6 +4,7 @@
 
 {%- liquid
   assign id = section.id
+  assign showIconInBox = section.settings.showIconInBox
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -115,7 +116,7 @@
             <div class="iconTxtBoxCardCol {% render 'column-width', value: columnSize %}">
              <div class="iconTxtCardContent">
                 {% if iconImg != blank %}
-                    <div class="iconImgBox">
+                    <div class="iconImgBox {% if showIconInBox %} showIconInBox {% endif %}">
                       <img
                         class="boxImg lazyload"
                         src="{{ iconImg | img_url:'master' }}"
@@ -153,6 +154,12 @@
     {
       "type": "header",
       "content": "Boxes Style Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "showIconInBox",
+      "label": "Show Icon In Box",
+      "default": false
     },
     {
       "type": "select",
