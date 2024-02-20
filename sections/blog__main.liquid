@@ -121,6 +121,7 @@
 {% comment %} HTML markup {% endcomment %}
 <section 
   class="section {{ css_class }} is-width-{{ width }}
+  blogPostSection
   {% if show_gutter == false %}
     has-no-side-gutter
     has-background
@@ -255,7 +256,7 @@
       </aside>
     {% endif %}
 
-    <div class="{% if section.blocks.size > 0 and show_sidebar %}three-fourths medium-down--one-whole column equal-columns--outside-trim {% else %} one-whole {% endif %}">
+    <div class="blogPostContainer {% if section.blocks.size > 0 and show_sidebar %}three-fourths medium-down--one-whole column equal-columns--outside-trim {% else %} one-whole {% endif %}">
       {% paginate blog.articles by blog_posts_per_page %}
         <div class="container" {% if pagination_type != 'basic_pagination' %}data-load-more--grid {% endif %}>
           {% if blog.articles.size == 0 %}
@@ -274,7 +275,7 @@
           {% endfor %}
         </div>
 
-        <div class="container">
+        <div class="container paginataionContainer">
           <div class="one-whole column text-align-center">
             {% assign load_more_text = 'blogs.general.pagination_button' | t %}
             {% render 'pagination',

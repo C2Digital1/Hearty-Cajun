@@ -15,7 +15,7 @@ blog_comment_count: <string>
   {% endif %}
   {% if blog_date %}
     <li class="meta-info-list__item">
-      <span class="featured-article__date">{% if article %}{{ article.published_at | date: "%B %d, %Y" }}{% else %}{{ "today" | date: "%B %d, %Y" }}{% endif %}</span>
+      <span class="featured-article__date">{% if article %}<span class="calendarIcon">{% render 'calendarIcon' %}</span>{{ article.published_at | date: "%B %d, %Y" }}{% else %}{{ "today" | date: "%B %d, %Y" }}{% endif %}</span>
     </li>
   {% endif %}
   {% if blog_read_time %}
