@@ -30,10 +30,12 @@
       "type": "index__image-with-text-overlay",
       "settings": {
         "color_scheme": "",
-        "roundedCorner": true,
+        "roundedCorner": false,
         "useCustomStyling": true,
         "link": "",
+        "image": "shopify:\/\/shop_images\/Copy_of_Portrait-106_jpg.jpg",
         "desktop_height": 0,
+        "mobile_image": "shopify:\/\/shop_images\/Copy_of_Portrait-106_jpg.jpg",
         "mobile_height": 0,
         "preheading": "<p>Preheading<\/p>",
         "heading": "Image with Text Overlay",
