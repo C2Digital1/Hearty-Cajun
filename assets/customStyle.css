@@ -1983,6 +1983,39 @@ span.featured-article__date {
     justify-content: center;
 }
 
+.articleContentSec .heading-wrapper--article.heading-wrapper.heading-wrapper--short.one-whole.column.is-flex.is-flex-column.is-align-left.text-align-left {
+    width: 100%;
+    margin: 0 0 24px 0;
+}
+
+.articleContentSec .one-whole.column.meta-info.is-text-small {
+    width: 100%;
+    margin: 0px auto !important;
+}
+
+.article-content.has-padding-top.has-padding-bottom {
+    padding: 40px 0 !important;
+}
+
+.article-content .one-whole.column.content {
+    width: 100%;
+    margin: 0px auto !important;
+}
+
+.article-content h5 {
+    line-height: 36px;
+    margin-bottom: 16px;
+}
+
+.article-content p {
+    margin-bottom: 40px;
+}
+
+.article-content img {
+    width: 100%;
+    height: auto;
+}
+
 /* =========== BlOG PAGE CSS CODE END =========== */
 
 
