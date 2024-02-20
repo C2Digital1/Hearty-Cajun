@@ -115,13 +115,23 @@
             "subHeading": "<p>Good gut health begins with a blend of soluble and insoluble fiber, abundantly present in our meals. Experience the myriad benefits of fiber, from maintaining a healthy weight, lowering cholesterol levels, normalizing bowel movements, to reducing the risk of diabetes, heart disease, and some cancers. Live longer with our meals that prioritize your gut health.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_yhBCxj": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/chilli.svg",
+            "heading": "Superstar Spices Unleashed",
+            "subHeading": "<p>Our signature Cajun seasonings not only enhance the taste but also summon the very best benefits of spices. One of the seasonings in our yuca for example(oregano), is well known for being anti-microbial and anti-inflammatory. From better circulation, aiding digestion, to being antioxidant-rich, our spices are a true delight for your senses and your health and also ensure your meals stay fresh and flavorful longer.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
         "icon_txt_box_akeH7P",
         "icon_txt_box_dEmK4w",
         "icon_txt_box_RtkUFC",
-        "icon_txt_box_gxMib4"
+        "icon_txt_box_gxMib4",
+        "icon_txt_box_yhBCxj"
       ],
       "settings": {
         "titlePreset": "is-h6",
