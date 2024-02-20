@@ -1958,6 +1958,10 @@ a.pagination-link.is-current {
     margin: 0 !important;
 }
 
+.nextPrevPagination a.disabledPagination {
+    cursor: not-allowed;
+}
+
 .nextPrevPagination a.pagination-previous {
     margin-right: 24px !important;
 }
@@ -2014,6 +2018,15 @@ span.featured-article__date {
 .article-content img {
     width: 100%;
     height: auto;
+}
+
+.articleContentSec {
+    width: 100%;
+}
+
+section.section.articleContentSec.is-width-small .articleContentSec {
+    max-width: 892px;
+    margin: 0px auto;
 }
 
 /* =========== BlOG PAGE CSS CODE END =========== */

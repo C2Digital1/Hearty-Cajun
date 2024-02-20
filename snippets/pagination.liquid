@@ -94,10 +94,10 @@
         </ul>
         <div class="nextPrevPagination">
           <a href="{{ paginate.previous.url }}"
-            class="pagination-previous {% if paginate.previous %}disabledPagination{% endif %}">
+            class="pagination-previous {% if paginate.previous %} {% else %}disabledPagination{% endif %}">
             {{- 'general.pagination.previous' | t -}}
           </a>
-          <a href="{{ paginate.next.url }}" class="pagination-next {% if paginate.next %}disabledPagination{% endif %}">
+          <a href="{{ paginate.next.url }}" class="pagination-next {% if paginate.next %} {% else %}disabledPagination{% endif %}">
             {{- 'general.pagination.next' | t -}}
           </a>
         </div>

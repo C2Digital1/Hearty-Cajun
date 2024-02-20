@@ -188,7 +188,7 @@
       </aside>
     {% endif %}
 
-    <div class="{% if section.blocks.size > 0 and show_sidebar %}three-fourths medium-down--one-whole column equal-columns--outside-trim{% endif %}">
+    <div class="{% if section.blocks.size > 0 and show_sidebar %}three-fourths medium-down--one-whole column equal-columns--outside-trim {% else %}articleContentSec{% endif %}">
       {% paginate article.comments by 50 %}
         {%- if show_heading != blank -%}
           <div class="container">
