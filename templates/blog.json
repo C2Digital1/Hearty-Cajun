@@ -124,11 +124,13 @@
     "index_image_with_text_overlay_nP6AcU": {
       "type": "index__image-with-text-overlay",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "roundedCorner": true,
         "useCustomStyling": true,
         "link": "",
+        "image": "shopify:\/\/shop_images\/Copy_of_Portrait-019_94852394-b313-4485-82dd-61af94ffe3e6.jpg",
         "desktop_height": 0,
+        "mobile_image": "shopify:\/\/shop_images\/Copy_of_Portrait-019.jpg",
         "mobile_height": 0,
         "preheading": "",
         "heading": "Order Your First Week Of Italian Cajun Cuisine NOW!",
@@ -149,7 +151,7 @@
         "button_2": "",
         "button_2_link": "",
         "button_2_style": "button--secondary",
-        "color_scheme_mobile": "background-1",
+        "color_scheme_mobile": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "mobile_image_crop": "none",
         "mobile_text_below_image": false,
         "width": "standard",
