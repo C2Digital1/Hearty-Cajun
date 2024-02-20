@@ -106,12 +106,21 @@
             "subHeading": "<p>Elevate your cognitive health with the power-packed combination of whole grains, avocados, and Cajun broccoli. Fresh avocado* slices, a star in our meals, are known for their brain-boosting properties, aiding in reducing high blood pressure and enhancing nutrient absorption. A win-win for your taste buds and your mind!<\/p><p>*Only basmati dishes are served with avocados.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_gxMib4": {
+          "type": "iconTxtBox",
+          "settings": {
+            "heading": "Gut-Friendly Feasts",
+            "subHeading": "<p>Good gut health begins with a blend of soluble and insoluble fiber, abundantly present in our meals. Experience the myriad benefits of fiber, from maintaining a healthy weight, lowering cholesterol levels, normalizing bowel movements, to reducing the risk of diabetes, heart disease, and some cancers. Live longer with our meals that prioritize your gut health.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
         "icon_txt_box_akeH7P",
         "icon_txt_box_dEmK4w",
-        "icon_txt_box_RtkUFC"
+        "icon_txt_box_RtkUFC",
+        "icon_txt_box_gxMib4"
       ],
       "settings": {
         "titlePreset": "is-h6",
