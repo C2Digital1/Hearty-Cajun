@@ -99,12 +99,28 @@
             "question": "Do I choose my own meals?",
             "answer": "<p>Yes! You choose what you want to eat from our menu with the option to change them every week.<\/p>"
           }
+        },
+        "faq_fRPT3k": {
+          "type": "faq",
+          "settings": {
+            "question": "Is there any cooking involved?",
+            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+          }
+        },
+        "faq_6HKnye": {
+          "type": "faq",
+          "settings": {
+            "question": "What kind of meals do you offer?",
+            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+          }
         }
       },
       "block_order": [
         "heading_JtR9my",
         "faq_QbBwJm",
-        "faq_qV763K"
+        "faq_qV763K",
+        "faq_fRPT3k",
+        "faq_6HKnye"
       ],
       "settings": {
         "color_scheme": "",
