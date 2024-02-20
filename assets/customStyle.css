@@ -1239,7 +1239,7 @@ h3.icon-column__title.title {
     flex-wrap: wrap;
     width: 100%;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;
     column-gap: 16px;
     row-gap: 40px;
 }
@@ -1292,6 +1292,15 @@ h3.icon-column__title.title {
     z-index: 1;
 }
 
+.iconImgBox.showIconInBox {
+    position: relative;
+    left: 0;
+    transform: none;
+    top: 0;
+    margin-bottom: -30px;
+    margin-top: 8px;
+}
+
 .iconImgBox img.boxImg {
     width: 100%;
     height: 100%;
@@ -1320,6 +1329,7 @@ h3.cardHeading {
     line-height: 21px;
     text-align: center;
 }
+
 .iconTxtBoxCardCol h3.cardHeading.is-h6 {
     font-size: 16px;
     font-weight: bold;
@@ -1327,6 +1337,7 @@ h3.cardHeading {
     line-height: 23px;
     text-align: center;
 }
+
 /* =========== ABOUT PAGE CSS CODE END =========== */
 
 
@@ -1814,6 +1825,10 @@ button.close.popupCloseBtn svg {
 @media only screen and (min-width: 798px) {
     .iconTxtBoxesRow .iconTxtBoxCardCol.one-fourth {
         width: calc(25% - 12px);
+    }
+
+    .iconTxtBoxesRow .iconTxtBoxCardCol.one-third {
+        width: calc(33.33% - 11px);
     }
 }
 
