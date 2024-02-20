@@ -79,13 +79,26 @@
     },
     "custom_icon_text_boxes_c3PeiB": {
       "type": "customIconTextBoxes",
+      "blocks": {
+        "icon_txt_box_akeH7P": {
+          "type": "iconTxtBox",
+          "settings": {
+            "heading": "Healthy Carbs Galore",
+            "subHeading": "<p>Indulge in the goodness of whole grains, lentils, legumes, and vegetables meticulously woven into our meals. Packed with essential vitamins, fiber, minerals, and phytonutrients, these sources of healthy carbs ensure you get the right balance of nutrients for a vibrant life.<\/p>",
+            "columnSize": 4
+          }
+        }
+      },
+      "block_order": [
+        "icon_txt_box_akeH7P"
+      ],
       "settings": {
-        "titlePreset": "is-h5",
+        "titlePreset": "is-h6",
         "textPreset": "is-text",
         "cardBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
         "cardTitleColor": "#463F3A",
         "cardTextColor": "#463F3A",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_left": 0,
