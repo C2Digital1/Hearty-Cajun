@@ -262,13 +262,13 @@
         "icon_txt_box_yrzeTd"
       ],
       "settings": {
-        "showIconInBox": false,
-        "titlePreset": "is-h5",
+        "showIconInBox": true,
+        "titlePreset": "is-h6",
         "textPreset": "is-text",
-        "cardBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
+        "cardBg": "#FFFFFF",
         "cardTitleColor": "#463F3A",
         "cardTextColor": "#463F3A",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
