@@ -124,6 +124,15 @@
             "subHeading": "<p>Our signature Cajun seasonings not only enhance the taste but also summon the very best benefits of spices. One of the seasonings in our yuca for example(oregano), is well known for being anti-microbial and anti-inflammatory. From better circulation, aiding digestion, to being antioxidant-rich, our spices are a true delight for your senses and your health and also ensure your meals stay fresh and flavorful longer.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_QzYjaL": {
+          "type": "iconTxtBox",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/vegies.svg",
+            "heading": "Nutrient-Rich & Satisfying",
+            "subHeading": "<p>Designed to be nutrient-dense, our meals are a feast for both body and soul. Experience long-lasting satisfaction with the abundance of vitamins, minerals, fiber, and protein; many people report feeling satisfied for many hours after consuming our meals. Whether it's the protein-rich red lentils or the low-glycemic index basmati rice, our meals keep your energy high and muscles strong.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
@@ -131,7 +140,8 @@
         "icon_txt_box_dEmK4w",
         "icon_txt_box_RtkUFC",
         "icon_txt_box_gxMib4",
-        "icon_txt_box_yhBCxj"
+        "icon_txt_box_yhBCxj",
+        "icon_txt_box_QzYjaL"
       ],
       "settings": {
         "titlePreset": "is-h6",
