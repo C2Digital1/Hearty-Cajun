@@ -88,10 +88,19 @@
             "subHeading": "<p>Indulge in the goodness of whole grains, lentils, legumes, and vegetables meticulously woven into our meals. Packed with essential vitamins, fiber, minerals, and phytonutrients, these sources of healthy carbs ensure you get the right balance of nutrients for a vibrant life.<\/p>",
             "columnSize": 4
           }
+        },
+        "icon_txt_box_dEmK4w": {
+          "type": "iconTxtBox",
+          "settings": {
+            "heading": "Heart Health at its Core",
+            "subHeading": "<p>Our signature pastas, featuring whole grains and red lentils, contribute to a heart-healthy diet. The fiber-rich red lentil pasta aids in lowering cholesterol levels, reducing the risk of heart disease, and promoting overall cardiovascular well-being. Greens, a staple in our meals, further amplify these heart-boosting benefits.<\/p>",
+            "columnSize": 4
+          }
         }
       },
       "block_order": [
-        "icon_txt_box_akeH7P"
+        "icon_txt_box_akeH7P",
+        "icon_txt_box_dEmK4w"
       ],
       "settings": {
         "titlePreset": "is-h6",
