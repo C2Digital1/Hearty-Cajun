@@ -113,6 +113,13 @@
             "question": "What kind of meals do you offer?",
             "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
           }
+        },
+        "faq_wCixrb": {
+          "type": "faq",
+          "settings": {
+            "question": "How soon can I get my first order?",
+            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -120,7 +127,8 @@
         "faq_QbBwJm",
         "faq_qV763K",
         "faq_fRPT3k",
-        "faq_6HKnye"
+        "faq_6HKnye",
+        "faq_wCixrb"
       ],
       "settings": {
         "color_scheme": "",
