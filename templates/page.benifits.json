@@ -83,6 +83,7 @@
         "icon_txt_box_akeH7P": {
           "type": "iconTxtBox",
           "settings": {
+            "iconImg": "shopify:\/\/shop_images\/leaf.svg",
             "heading": "Healthy Carbs Galore",
             "subHeading": "<p>Indulge in the goodness of whole grains, lentils, legumes, and vegetables meticulously woven into our meals. Packed with essential vitamins, fiber, minerals, and phytonutrients, these sources of healthy carbs ensure you get the right balance of nutrients for a vibrant life.<\/p>",
             "columnSize": 4
