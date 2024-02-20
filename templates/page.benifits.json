@@ -285,7 +285,7 @@
       "settings": {
         "showIconInBox": true,
         "titlePreset": "is-h6",
-        "textPreset": "is-text",
+        "textPreset": "is-text-small",
         "cardBg": "#FFFFFF",
         "cardTitleColor": "#463F3A",
         "cardTextColor": "#463F3A",
