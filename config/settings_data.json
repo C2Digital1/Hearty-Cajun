@@ -154,7 +154,7 @@
     "quickshop_truncate_words": true,
     "cart_action": "drawer",
     "show_lock_icon": false,
-    "display_special_instructions": false,
+    "display_special_instructions": true,
     "display_tos_checkbox": false,
     "display_ajax_quantity_box": true,
     "enable_shipping_calculator": false,
