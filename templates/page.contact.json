@@ -28,14 +28,46 @@
     },
     "contact": {
       "type": "index__contact-form",
+      "blocks": {
+        "paragraph_QwADyf": {
+          "type": "paragraph",
+          "settings": {
+            "width": "one-whole",
+            "text": "<p>Contact Us<\/p>",
+            "preset": "is-h3"
+          }
+        },
+        "textfield_HYqFbn": {
+          "type": "textfield",
+          "settings": {
+            "width": "one-half",
+            "label": "Your Name",
+            "required": true
+          }
+        },
+        "textarea_wVbNLq": {
+          "type": "textarea",
+          "settings": {
+            "width": "one-whole",
+            "label": "Your Message",
+            "required": true
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_QwADyf",
+        "textfield_HYqFbn",
+        "textarea_wVbNLq"
+      ],
       "settings": {
         "color_scheme": "",
-        "heading": "Get in touch today",
-        "subheading": "<p>Customize your contact form to suit your business! Add custom fields like a dropdown menu, checkbox, text fields and more, so that you can gather pertinent info from shoppers right from the get-go, to help answer their inquiries more effectively.<\/p>",
+        "content_image": "shopify:\/\/shop_images\/Copy_of_Portrait-025_f05b8b38-6bbf-4cf1-8d2b-ed30d503268e.jpg",
+        "heading": "",
+        "subheading": "",
         "heading_preset": "is-h2",
         "subheading_preset": "is-text",
         "form_position": "right",
-        "social_enable": true,
+        "social_enable": false,
         "text_alignment": "left",
         "width": "wide",
         "padding_top": 48,
