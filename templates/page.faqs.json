@@ -46,7 +46,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "",
@@ -272,11 +272,51 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_featured_collection_63NYnr": {
+      "type": "index__featured-collection",
+      "settings": {
+        "heading": "You May Also Like",
+        "subHeading": "",
+        "heading_preset": "is-h3",
+        "subHeadingPreset": "is-text",
+        "heading_alignment": "center",
+        "collection": "frontpage",
+        "items_per_row": 4,
+        "mobile_items_per_row": "2",
+        "products_limit": 4,
+        "button_label_view": "",
+        "button_link_view": "",
+        "button_alignment_view": "center",
+        "button_style_view": "button--primary",
+        "hidePrice": false,
+        "collection_style": "grid",
+        "arrowIconBg": "#fff",
+        "arrowIconColor": "#28303F",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
     "main",
     "index_image_with_text_overlay_fMhxHV",
-    "index_faq_xfkgGB"
+    "index_faq_xfkgGB",
+    "index_featured_collection_63NYnr"
   ]
 }
