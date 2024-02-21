@@ -45,11 +45,18 @@
             "required": true
           }
         },
+        "email_YjNcV7": {
+          "type": "email",
+          "settings": {
+            "width": "one-half",
+            "label": "Your Email"
+          }
+        },
         "textfield_drRTGG": {
           "type": "textfield",
           "settings": {
-            "width": "one-half",
-            "label": "Your Email",
+            "width": "one-whole",
+            "label": "Message Title",
             "required": true
           }
         },
@@ -65,6 +72,7 @@
       "block_order": [
         "paragraph_QwADyf",
         "textfield_HYqFbn",
+        "email_YjNcV7",
         "textfield_drRTGG",
         "textarea_wVbNLq"
       ],
