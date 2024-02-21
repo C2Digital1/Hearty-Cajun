@@ -13,6 +13,8 @@
   assign cart_message = section.settings.cart_message
   assign display_cart_headings = section.settings.display_cart_headings
   assign cart_headings_preset = section.settings.cart_headings_preset
+  assign heading_color = section.settings.color_scheme.settings.scheme_heading
+  assign textColor = section.settings.color_scheme.settings.scheme_text
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -31,18 +33,68 @@
 -%}
 {% comment %}Layout{% endcomment %}
 {%- liquid
-  assign width = section.settings.width 
-  assign section_bg = section.settings.section_bg 
-  assign animation = section.settings.animation | default: 'none' 
+  assign width = section.settings.width
+  assign section_bg = section.settings.color_scheme.settings.scheme_background
+  if section.settings.color_scheme.settings.scheme_background_gradient != empty
+    assign section_bg = section.settings.color_scheme.settings.scheme_background_gradient
+  endif
+  assign animation = section.settings.animation | default: 'none'
 -%}
 {% comment %}Advanced{% endcomment %}
 {%- liquid
   assign css_class = section.settings.css_class 
   assign custom_css = section.settings.custom_css 
 -%}
-
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{%  endif %}
 {% comment %} Section specific CSS {% endcomment %}
-{% capture section_css %}{% endcapture %}
+{% capture section_css %}
+h1.cart-page__title.title{
+color: {{heading_color}};
+}
+p.cart__subtotal__price{
+  color: {{ textColor }};
+}
+.cart__item-list{
+  color: {{ textColor }};
+}
+.button--primary{
+  background: {{ primaryBtnBg }};
+  color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+  border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--primary:hover{
+   background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--secondary{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+  border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+}
+
+.button--secondary:hover{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+}
+
+.button--link-style{
+  color: {{ section.settings.color_scheme.settings.scheme_link }};
+}
+
+.button--link-style:hover{
+  color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+}
+{% endcapture %}
 
 {% style %}
   #shopify-section-{{ id }} {
@@ -392,7 +444,7 @@
               {% endif %}
 
               <div class="cart__row is-flex is-align-center is-justify-end cart__checkout">
-                  <button type="submit" class="button add_to_cart checkout" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}">
+                  <button type="submit" class="button checkoutBtn button--primary" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}">
                     {% if settings.show_lock_icon %}
                       {%
                         render 'icon',
@@ -410,7 +462,7 @@
 
               {% if cart.item_count > 0 %}
                 <div class="cart__row is-flex is-align-center is-justify-center cart__additional">
-                  <a class="button button--link-style" href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
+                  <a class="button continueBtn button--secondary" href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
                 </div>
               {% endif %}
 
@@ -456,6 +508,12 @@
   "name": "Cart",
   "class": "cart-section jsCart jsShippingCalculator",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "default"
+    },
     {
       "type": "header",
       "content": "Heading"
