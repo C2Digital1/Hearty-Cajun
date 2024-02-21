@@ -126,7 +126,7 @@
     "thumbnail_hover_enabled": false,
     "thumbnail_text_alignment": "left",
     "thumbnail_title_preset": "is-h6",
-    "thumbnail_price_preset": "is-text",
+    "thumbnail_price_preset": "is-text-small",
     "stickers_enabled": true,
     "sticker_shape": "square",
     "sticker_position": "right",
