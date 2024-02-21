@@ -339,29 +339,7 @@ p.cart__subtotal__price{
             </div>
           {% endfor %}
 
-          <div class="container cartBottomAreaContainer has-no-side-gutter has-padding-top">
-
-            {% if settings.display_special_instructions %}
-              <span class="cart__notes">
-                  <div class="field">
-                    <label
-                      for="note"
-                      {% if settings.use_placeholders %}class="is-sr-only"{% endif %}
-                    >
-                      {{ 'cart.general.note' | t: shop_name: shop.name }}:
-                    </label>
-                    <div class="control">
-                      <textarea
-                        class="textarea"
-                        id="note"
-                        name="note"
-                        rows="3"
-                        {% if settings.use_placeholders %}placeholder="{{ 'cart.general.note_detailed' | t: shop_name: shop.name }}"{% endif %}
-                      >{{ cart.note }}</textarea>
-                    </div>
-                  </div>
-              </span>
-            {% endif %}
+          <div class="container cartBottomAreaContainer has-no-side-gutter has-padding-top">           
 
             <div class="cart__footer cartBtmCol">
 
@@ -395,6 +373,30 @@ p.cart__subtotal__price{
                   </p>
                 </div>
               {% endif %}
+
+
+              {% if settings.display_special_instructions %}
+                <div class="cart__notes">
+                    <div class="field">
+                      <label
+                        for="note"
+                        {% if settings.use_placeholders %}class="is-sr-only"{% endif %}
+                      >
+                        {{ 'cart.general.note' | t: shop_name: shop.name }}:
+                      </label>
+                      <div class="control">
+                        <textarea
+                          class="textarea"
+                          id="note"
+                          name="note"
+                          rows="3"
+                          {% if settings.use_placeholders %}placeholder="{{ 'cart.general.note_detailed' | t: shop_name: shop.name }}"{% endif %}
+                        >{{ cart.note }}</textarea>
+                      </div>
+                    </div>
+                  </div>
+              {% endif %}
+              
 
               {% if cart_message != blank %}
                 <div class="cart__row cart__cart-message is-flex is-justify-end is-text">
