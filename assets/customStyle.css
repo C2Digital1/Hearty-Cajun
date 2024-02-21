@@ -2254,12 +2254,31 @@ button.faqGroupOpener.button.button--secondary.active:hover {
 /* =========== CONTACT PAGE CSS CODE END =========== */
 
 /* =========== POLICY PAGE CSS CODE START =========== */
-.shopify-policy__container {
-    width: 100%;
-    max-width: 924px;
-    padding: 64px 16px;
+section.section.policyPageSection.is-width-small {
+    width: 100% !important;
+    max-width: 924px !important;
+    padding: 0px 16px !important;
 }
 
+.shopify-policy__container {
+    width: 100% !important;
+    max-width: 924px !important;
+    padding: 64px 16px !important;
+}
+
+.policyPageSection {
+    min-height: 50vh;
+}
+
+.policyPageSection .heading-wrapper--page.heading-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.policyPageSection .heading-wrapper--page.heading-wrapper h1.page__title.title {
+    margin-bottom: 48px !important;
+}
 
 .shopify-policy__title h1 {
     font-size: 40px !important;
@@ -2268,6 +2287,9 @@ button.faqGroupOpener.button.button--secondary.active:hover {
     text-align: center;
     margin-bottom: 48px !important;
 }
+.policyPageSection p,
+.policyPageSection span,
+.policyPageSection,
 .shopify-policy__body p,
 .shopify-policy__body span,
 .shopify-policy__body {
@@ -2276,10 +2298,15 @@ button.faqGroupOpener.button.button--secondary.active:hover {
     letter-spacing: 0;
     line-height: 28px !important;
 }
-
-.shopify-policy__body h3,
+.policyPageSection .page__content  h1,
+.policyPageSection .page__content  h2,
+.policyPageSection .page__content  h3,
+.policyPageSection .page__content  h4,
+.policyPageSection .page__content  h5,
+.policyPageSection .page__content  h6,
 .shopify-policy__body h1,
 .shopify-policy__body h2,
+.shopify-policy__body h3,
 .shopify-policy__body h4,
 .shopify-policy__body h5,
 .shopify-policy__body h6 {
