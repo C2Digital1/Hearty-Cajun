@@ -2535,6 +2535,88 @@ a.cart__remove.removeIcon.close.ajax-cart__delete:hover {
     z-index: 99999;
 }
 
+.container.cartBottomAreaContainer {
+    padding: 0 !important;
+    margin-top: 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 100%;
+}
+
+.cart__footer.cartBtmCol {
+    width: 100%;
+    max-width: 438px;
+}
+
+.cart__row.cart__subtotal.is-h6 {
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 32px;
+    text-transform: capitalize !important;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.cart__row.cart__subtotal .cart__subtotal__label {
+    text-transform: capitalize;
+}
+
+.cart__row.cart__taxes-shipping {
+    display: none;
+}
+
+.cart__row.is-flex.is-align-center.is-justify-end.cart__checkout {
+    width: 100%;
+    padding: 0;
+    margin: 0px auto;
+}
+
+button#checkout {}
+
+button.button.checkoutBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 5px;
+    min-height: 54px;
+    margin-bottom: 12px;
+}
+
+.additional-checkout-buttons:empty {
+    display: none !important;
+}
+
+
+.additional-checkout-buttons {
+    display: none !important;
+}
+
+.cart__row.is-flex.is-align-center.is-justify-center.cart__additional {
+    width: 100%;
+    padding: 0;
+    margin: 0px auto;
+}
+
+a.button.continueBtn.button--secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    background: #fff !important;
+    color: #463f3a !important;
+}
+
+a.button.continueBtn.button--secondary:hover {
+    background: #463f3a !important;
+    color: #fff !important;
+}
+
 /* =========== CART PAGE CSS CODE END =========== */
 
 
