@@ -77,7 +77,7 @@
         "textarea_wVbNLq"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "default",
         "content_image": "shopify:\/\/shop_images\/Copy_of_Portrait-025_f05b8b38-6bbf-4cf1-8d2b-ed30d503268e.jpg",
         "heading": "",
         "subheading": "",
@@ -86,7 +86,7 @@
         "form_position": "right",
         "social_enable": false,
         "text_alignment": "left",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 48,
         "padding_bottom": 48,
         "padding_left": 0,
