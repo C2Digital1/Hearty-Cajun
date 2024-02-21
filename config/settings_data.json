@@ -153,6 +153,7 @@
     "enable_quickshop": false,
     "quickshop_truncate_words": true,
     "cart_action": "drawer",
+    "show_lock_icon": false,
     "display_special_instructions": false,
     "display_tos_checkbox": false,
     "display_ajax_quantity_box": true,
