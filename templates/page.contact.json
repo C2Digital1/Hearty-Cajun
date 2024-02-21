@@ -85,7 +85,7 @@
         "subheading_preset": "is-text",
         "form_position": "right",
         "social_enable": false,
-        "text_alignment": "left",
+        "text_alignment": "center",
         "width": "standard",
         "padding_top": 48,
         "padding_bottom": 48,
