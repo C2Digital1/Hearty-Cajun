@@ -2527,6 +2527,14 @@ a.cart__remove.removeIcon.close.ajax-cart__delete:hover {
     color: #F15D5E;
 }
 
+.ajax-cart__overlay.is-visible {
+    z-index: 5555;
+}
+
+#theme-ajax-cart.is-drawer.is-visible {
+    z-index: 99999;
+}
+
 /* =========== CART PAGE CSS CODE END =========== */
 
 
