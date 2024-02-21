@@ -66,6 +66,16 @@
   endif
 -%}
 
+
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{%  endif %}
+
+
 {% comment %} Section specific CSS {% endcomment %}
 {% capture section_css -%}
   .title { color: {{ heading_color }}; }
@@ -74,14 +84,16 @@
 
 
   .button--primary{
-    background-color: {{ section.settings.color_scheme.settings.scheme_button }};
+    background: {{ primaryBtnBg }};
     color: {{ section.settings.color_scheme.settings.scheme_button_label }};
-    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+    border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }
 
   .button--primary:hover{
     background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
     color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }
 
   .button--secondary{
@@ -144,7 +156,7 @@
 {% endstyle %}
 
 <section
-  class="section {{ css_class }} is-width-{{ width }} scheme_color-{{section.settings.color_scheme}}"
+  class="section contactFormSec {{ css_class }} is-width-{{ width }} scheme_color-{{section.settings.color_scheme}}"
   {% if animation != 'none' %}
     data-scroll-class="{{ animation }}"
   {% endif %}
@@ -161,7 +173,7 @@
     "
   >
     {% if has_content == true %}
-      <div class="{% if section.blocks.size > 0 %}one-half{% else %}two-thirds offset-by-three{% endif %} medium-down--one-whole column">
+      <div class="contactFormSideContent {% if section.blocks.size > 0 %}one-half{% else %}two-thirds offset-by-three{% endif %} medium-down--one-whole column">
         <div class="text-align-{{ text_alignment }}">
           {% if heading != blank %}
             <h2 class="contact-form__heading title {{ heading_preset }}">{{ heading }}</h2>
@@ -187,7 +199,7 @@
     {% endif %}
 
     {% if section.blocks.size > 0 %}
-      <div class="one-half medium-down--one-whole column">
+      <div class="contactFormSideForm one-half medium-down--one-whole column">
         <div class="contact-form__form">
           {% form 'contact', class: 'custom-contact-form' %}
             {% if form.posted_successfully? %}
@@ -236,7 +248,7 @@
                 {%- assign required_highlight = '' -%}
                 {% if block.settings.required %}
                   {% capture required_highlight %}
-                    <span class="required">*</span>
+                    <span class="required"></span>
                   {% endcapture %}
                 {% endif %}
 
@@ -257,7 +269,7 @@
                       class="input is-{{ field_input_style }} is-{{ field_input_size }}"
                       type="text"
                       {% if settings.use_placeholders %}
-                        placeholder="{{ block.settings.label | escape }}{% if block.settings.required %}*{% endif %}"
+                        placeholder="{{ block.settings.label | escape }}{% if block.settings.required %}{% endif %}"
                       {% endif %}
                       name="contact[{{ block.settings.label | escape }}{{ suffix }}]"
                       {% if block.settings.required %}
@@ -270,14 +282,14 @@
                       for="email"
                     >
                       {{ block.settings.label | escape }}
-                      <span class="required">*</span>
+                      <span class="required"></span>
                     </label>
                     <input
                       id="email"
                       class="input is-{{ field_input_style }} is-{{ field_input_size }}"
                       type="email"
                       {% if settings.use_placeholders %}
-                        placeholder="{{ block.settings.label | escape }}*"
+                        placeholder="{{ block.settings.label | escape }}"
                       {% endif %}
                       name="contact[email]"
                       autocorrect="off"
@@ -297,7 +309,7 @@
                       id="textarea{{ suffix }}"
                       class="textarea is-{{ field_input_style }} is-{{ field_input_size }}"
                       {% if settings.use_placeholders %}
-                        placeholder="{{ block.settings.label | escape }}{% if block.settings.required %}*{% endif %}"
+                        placeholder="{{ block.settings.label | escape }}{% if block.settings.required %}{% endif %}"
                       {% endif %}
                       name="contact[{{ block.settings.label | escape }}{{ suffix }}]"
                       {% if block.settings.required %}

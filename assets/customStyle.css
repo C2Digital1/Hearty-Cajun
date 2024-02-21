@@ -501,6 +501,10 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     z-index: 8;
 }
 
+span.product-thumbnail__price.price {
+    margin-top: 5px;
+}
+
 /* featured collection product section css code end  */
 
 /* index heading section css code start  */
@@ -2137,6 +2141,121 @@ button.faqGroupOpener.button.button--secondary.active:hover {
 }
 
 /* =========== FAQ PAGE CSS CODE END =========== */
+
+/* =========== CONTACT PAGE CSS CODE START =========== */
+
+
+.container.contact-form {
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 48px;
+}
+
+.container.contact-form .contactFormSideContent.one-half.medium-down--one-whole.column {
+    width: 100%;
+    margin: 0px;
+}
+
+.container.contact-form .contactFormSideForm.one-half.medium-down--one-whole.column {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.container.contact-form .contactFormSideForm .contact-form__form {
+    max-width: 632px;
+    margin: 0px auto;
+}
+
+
+.contact-form__image .image-element__wrap {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.custom-contact-form__block.custom-contact-form__block--paragraph.one-whole.medium-down--one-whole.column {
+    text-align: center;
+    width: 100%;
+    margin: 0px auto 32px auto !important;
+}
+
+.custom-contact-form__block.one-half.medium-down--one-whole.column {
+    width: calc(50% - 4px);
+}
+
+.custom-contact-form__block.one-half.medium-down--one-whole.column:nth-child(even) {
+    margin-right: 4px;
+    margin-left: 0;
+}
+
+.custom-contact-form__blocks.is-flex.is-flex-wrap {
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.custom-contact-form__block.one-half.medium-down--one-whole.column:nth-child(odd) {
+    margin-left: 4px;
+    margin-right: 0 !important;
+}
+
+.custom-contact-form__block {
+    margin-bottom: 20px !important;
+}
+
+.custom-contact-form__block.one-whole.medium-down--one-whole.column {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.contact-form__form .textarea.is-primary-btn-style,
+.contact-form__form .input.is-primary-btn-style {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    min-height: 54px;
+    border: 1px solid #463F3A;
+    color: #463F3A !important;
+    border-radius: 15px;
+}
+
+.contact-form__form .input.is-primary-btn-style {
+    padding: 5px 16px !important;
+}
+
+.contact-form__form .textarea.is-primary-btn-style::placeholder,
+.contact-form__form .input.is-primary-btn-style::placeholder {
+    color: #463F3A !important;
+    opacity: 40% !important;
+}
+
+.contact-form__form .textarea.is-primary-btn-style {
+    padding: 16px !important;
+    min-height: 160px !important;
+}
+
+.custom-contact-form__block.custom-contact-form__block--paragraph {
+    color: #463F3A;
+
+}
+
+.contact-form__form .buttons.is-center.column.one-whole.has-margin-top {
+    margin: 0px auto;
+    width: 100%;
+}
+
+.contact-form__form .buttons button.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 216px;
+    min-height: 54px;
+    margin: 0px auto;
+}
+
+/* =========== CONTACT PAGE CSS CODE END =========== */
+
+
 
 /* media queires for desktop start  */
 @media only screen and (min-width: 798px) {
