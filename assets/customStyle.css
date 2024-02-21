@@ -1894,8 +1894,6 @@ span.featured-article__date {
     margin-bottom: 40px !important;
 }
 
-.container.paginataionContainer {}
-
 .container.paginataionContainer .one-whole {
     width: 100%;
     max-width: 100%;
@@ -2254,6 +2252,45 @@ button.faqGroupOpener.button.button--secondary.active:hover {
 }
 
 /* =========== CONTACT PAGE CSS CODE END =========== */
+
+/* =========== POLICY PAGE CSS CODE START =========== */
+.shopify-policy__container {
+    width: 100%;
+    max-width: 924px;
+    padding: 64px 16px;
+}
+
+
+.shopify-policy__title h1 {
+    font-size: 40px !important;
+    letter-spacing: 0;
+    line-height: 55px !important;
+    text-align: center;
+    margin-bottom: 48px !important;
+}
+
+.shopify-policy__body {
+    color: #463F3A !important;
+    font-size: 16px !important;
+    letter-spacing: 0;
+    line-height: 28px !important;
+}
+
+.shopify-policy__body h3,
+.shopify-policy__body h1,
+.shopify-policy__body h2,
+.shopify-policy__body h4,
+.shopify-policy__body h5,
+.shopify-policy__body h6 {
+    color: #463F3A !important;
+    font-family: "Montserrat" !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    letter-spacing: 0 !important;
+    line-height: 36px !important;
+}
+
+/* =========== POLICY PAGE CSS CODE END =========== */
 
 
 
