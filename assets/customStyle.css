@@ -2617,6 +2617,154 @@ a.button.continueBtn.button--secondary:hover {
     color: #fff !important;
 }
 
+.cartNotes {
+    position: relative;
+    width: 100%;
+    margin-bottom: 32px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 0 16px;
+}
+
+button.accordianOpener {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    min-height: 30px;
+    border: 0px solid !important;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+    color: #463F3A;
+    padding: 16px 0;
+    cursor: pointer;
+}
+
+span.accordianIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    background: #463F3A;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    position: relative;
+}
+
+span.accordianIcon::before {
+    content: "";
+    background: #fff;
+    width: 10px;
+    height: 2px;
+}
+
+span.accordianIcon::after {
+    content: "";
+    background: #fff;
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: 2;
+    transition: all linear .3s;
+    opacity: 1;
+}
+
+.accordianContent {
+    padding-bottom: 32px;
+    display: none;;
+}
+
+.deliverySmallNotes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+label.checkboxItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19px;
+    margin-bottom: 12px;
+    color: #463F3A;
+}
+
+label.checkboxItem span.checkmarkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 14px;
+    border: 1px solid #463F3A;
+    background: #fff;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    transition: all linear .3s;
+}
+
+
+span.checkmarkIcon::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    height: 5.28px;
+    width: 8.04px;
+    border: solid white;
+    border-width: 2px 0px 0px 2px;
+    -webkit-transform: rotate(132deg) scaleX(-1);
+    -ms-transform: rotate(132deg) scaleX(-1);
+    transform: rotate(132deg) scaleX(-1);
+    display: none;
+}
+
+label.checkboxItem input {
+    display: none;
+}
+
+label.checkboxItem input:checked~span.checkmarkIcon {
+    background: #463F3A;
+}
+
+label.checkboxItem input:checked~span.checkmarkIcon::after {
+    display: block;
+}
+
+
+.accordianContent .field {
+    width: 100%;
+}
+
+.accordianContent .field input.input.is-primary-btn-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    border-radius: 15px;
+}
+
+.accordianContent .field textarea {
+    border-radius: 15px;
+    min-height: 160px;
+    padding: 16px;
+}
+
 /* =========== CART PAGE CSS CODE END =========== */
 
 

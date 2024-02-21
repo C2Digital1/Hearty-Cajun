@@ -49,10 +49,10 @@ $(document).ready(function () {
     $(".prodOverlay, .popupCloseBtn").click(function () {
         $(".prodIngPopup").removeClass("openIt");
         $("body, html").removeClass("hideScroll");
-    });   
+    });
 
     $(".faqGroupOpener").click(function () {
-        var faqActiveItems = $(this).attr("data-heading");        
+        var faqActiveItems = $(this).attr("data-heading");
         var activeFaqGroupHeading = $(this).text();
         $(".faqItems").hide();
         $(".faqGroupOpener").removeClass("button--secondary active").addClass("button--primary");
@@ -60,6 +60,34 @@ $(document).ready(function () {
         $(faqActiveItems).fadeIn(200);
         $(".activeFaqHeading").text(activeFaqGroupHeading)
     });
-     
+
+    $(".accordianOpener").click(function () {
+        $(this).toggleClass("active");
+        $(this).next(".accordianContent").slideToggle("200");
+    });
+
+    // Cart Page Note Text Area code start 
+
+    function updateCartNote() {
+        var note = '';
+        $('.checkboxItem input:checked').each(function () {
+            note += $(this).parent().text().trim() + '\n';
+        });
+        var accessCode = $('input[name="accessCode"]').val().trim();
+        if (accessCode !== '') {
+            note += 'Access Code: ' + accessCode + '\n';
+        }
+        var dummyText = $('.dummyTextArea').val().trim();
+        if (dummyText !== '') {
+            note += 'Other: ' + dummyText + '\n';
+        }
+        $('#cartNote').val(note);
+    }
+    $('.checkboxItem input').change(updateCartNote);
+    $('input[name="accessCode"]').on('input', updateCartNote);
+    $('.dummyTextArea').on('input', updateCartNote);
+
+    // Cart Page Note Text Area code end
+
 
 });
