@@ -2268,7 +2268,8 @@ button.faqGroupOpener.button.button--secondary.active:hover {
     text-align: center;
     margin-bottom: 48px !important;
 }
-
+.shopify-policy__body p,
+.shopify-policy__body span,
 .shopify-policy__body {
     color: #463F3A !important;
     font-size: 16px !important;
