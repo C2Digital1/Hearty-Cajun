@@ -78,7 +78,7 @@
 {% endstyle %}
 
 {% comment %} HTML markup {% endcomment %}
-<section class="section {{ css_class }} is-width-{{ width }}"
+<section class="section cartSection {{ css_class }} is-width-{{ width }}"
         {% if animation != "none" %}
           data-scroll-class="{{ animation }}"
         {% endif %}>
@@ -277,11 +277,11 @@
                 </div>
 
               </div>
-              <a class="cart__remove close ajax-cart__delete" data-cart-page-delete data-cart-item-key="{{ item.key }}" data-line-item-key={{ forloop.index }} href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" title="{{ 'cart.general.remove' | t }}" >
+              <a class="cart__remove removeIcon close ajax-cart__delete" data-cart-page-delete data-cart-item-key="{{ item.key }}" data-line-item-key={{ forloop.index }} href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" title="{{ 'cart.general.remove' | t }}" >
                   {%
-                    render 'icon',
-                    name: 'x'
+                    render 'delIcon'
                   %}
+                  <span>Remove</span>
               </a>
             </div>
           {% endfor %}
