@@ -45,9 +45,21 @@ $(document).ready(function () {
         $(popupId).addClass("openIt");
         $("body, html").addClass("hideScroll");
     });
+
     $(".prodOverlay, .popupCloseBtn").click(function () {
         $(".prodIngPopup").removeClass("openIt");
         $("body, html").removeClass("hideScroll");
-    });    
+    });   
+
+    $(".faqGroupOpener").click(function () {
+        var faqActiveItems = $(this).attr("data-heading");        
+        var activeFaqGroupHeading = $(this).text();
+        $(".faqItems").hide();
+        $(".faqGroupOpener").removeClass("button--secondary active").addClass("button--primary");
+        $(this).removeClass("button--primary").addClass("button--secondary active");
+        $(faqActiveItems).fadeIn(200);
+        $(".activeFaqHeading").text(activeFaqGroupHeading)
+    });
+     
 
 });

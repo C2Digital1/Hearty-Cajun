@@ -2032,6 +2032,112 @@ section.section.articleContentSec.is-width-small .articleContentSec {
 /* =========== BlOG PAGE CSS CODE END =========== */
 
 
+/* =========== FAQ PAGE CSS CODE START =========== */
+
+.faqItemsMainRow {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.mainFaqContent.container.has-limit.has-no-side-gutter {
+    width: 100%;
+}
+
+.sideHeadingsBtnsCol {
+    max-width: 413px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-right: 40px;
+}
+
+button.faqGroupOpener.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 54px;
+    border-radius: 15px;
+    margin-bottom: 16px;
+}
+
+p.activeFaqHeading.is-h5 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 45px;
+    color: #463F3A;
+    margin-bottom: 21px;
+}
+
+button.faqGroupOpener.button.button--primary:hover {
+    background: #463f3a !important;
+    color: #fff !important;
+}
+
+h6.title.faq__item-question {
+    padding: 10px 24px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 88px;
+}
+
+.faq__block-faq.faqItems.column.one-whole {
+    margin: 0px auto;
+    border: 0px solid !important;
+}
+
+.faq__block-faq .faq__item {
+    border: 0px solid !important;
+    margin-bottom: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+section.faq__item-answer {
+    padding: 0 24px 24px 24px !important;
+}
+
+h6.title.faq__item-question.is-h6 {
+    font-weight: bold;
+    line-height: 26px;
+}
+
+section.faq__item-answer.is-text-small {
+    line-height: 25px;
+}
+
+.faq__block-faq .faq__item .faq__item-question .faq__item-symbol {
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 32px;
+    width: 32px;
+    background: #463F3A !important;
+}
+
+.faq__block-faq .faq__item .faq__item-question .faq__item-symbol::before,
+.faq__block-faq .faq__item .faq__item-question .faq__item-symbol::after {
+    background: #fff !important;
+}
+
+button.faqGroupOpener.button.button--secondary.active:hover {
+    background-color: #463f3a !important;
+    color: #ffffff !important;
+}
+
+/* =========== FAQ PAGE CSS CODE END =========== */
+
 /* media queires for desktop start  */
 @media only screen and (min-width: 798px) {
     .iconTxtBoxesRow .iconTxtBoxCardCol.one-fourth {
