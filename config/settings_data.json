@@ -188,6 +188,7 @@
     "checkout_body_font": "Roboto",
     "checkout_accent_color": "#463f3a",
     "checkout_button_color": "#463f3a",
+    "checkout_layout": "threepage",
     "show_border": true,
     "button_label": "Read More",
     "button_type": "button--link-style",
