@@ -42,7 +42,7 @@ $(document).ready(function () {
     $(".prodIngPopupOpener").click(function () {
         var popupId = $(this).attr("data-id");
         if ($(".popupBodyContainer").length > 0) {
-            $(".popupBodyContainer").html("");            
+            $(".popupBodyContainer").html("");
             $(".prodIngPopup").removeClass("openIt");
             var triggeredPopupHtml = $(popupId).html();
             $(".popupBodyContainer").html(triggeredPopupHtml);
@@ -51,10 +51,10 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on('click', '.popupCloseBtn', function() {
+    $(document).on('click', '.popupCloseBtn', function () {
         $(".prodIngPopup").removeClass("openIt");
         $("body, html").removeClass("hideScroll");
-        $(".popupBodyContainer").html("");     
+        $(".popupBodyContainer").html("");
     });
 
     $(".faqGroupOpener").click(function () {
@@ -64,7 +64,7 @@ $(document).ready(function () {
         $(".faqGroupOpener").removeClass("button--secondary active").addClass("button--primary");
         $(this).removeClass("button--primary").addClass("button--secondary active");
         $(faqActiveItems).fadeIn(200);
-        $(".activeFaqHeading").text(activeFaqGroupHeading)
+        $(".activeFaqHeading").text(activeFaqGroupHeading);
     });
 
     $(".accordianOpener").click(function () {
