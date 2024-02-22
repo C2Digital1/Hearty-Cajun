@@ -85,13 +85,6 @@ $(document).ready(function () {
             }
         }
     });
-    if ($(".showSquareImages").length > 0) {
-        var firstImageWidth = $('.showSquareImages .product__imageContainer .image-element__wrap img').first().width();
-        var cssRule = '.showSquareImages .product__imageContainer .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
-        if($("#extraStyle").length < 1){
-            $('body').append('<style id="extraStyle">' + cssRule + '</style>');
-        }
-    }
     
     // Cart Page Note Text Area code start 
 
