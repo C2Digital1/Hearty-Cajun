@@ -356,11 +356,7 @@
       function setHeightBasedOnWidth() {
         $('.showSquareImages .image-element__wrap img').each(function () {
           var width = $(this).width();
-          var aspectRatio = 1;
-          if (width > 0) {
-            aspectRatio = $(this).height() / width;
-          }
-          $(this).css('height', width * aspectRatio + 'px');
+          $(this).css('height', width);
         });
       }
       setHeightBasedOnWidth();
