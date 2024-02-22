@@ -33,6 +33,57 @@
         "custom_css": ""
       }
     },
+    "index_image_with_text_overlay_gBpcmt": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "color_scheme": "",
+        "roundedCorner": false,
+        "useCustomStyling": true,
+        "link": "",
+        "image": "shopify:\/\/shop_images\/Copy_of_Portrait-028.jpg02.jpg",
+        "desktop_height": 0,
+        "mobile_image": "shopify:\/\/shop_images\/Copy_of_Portrait-028.jpg02.jpg",
+        "mobile_height": 0,
+        "preheading": "",
+        "heading": "{{ collection.title }}",
+        "subheading": "",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h2",
+        "subheading_preset": "is-text",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "center",
+        "background_color": "",
+        "border_color": "#FFFFFF",
+        "border_width": 0,
+        "text_width": 40,
+        "button_1": "",
+        "button_1_link": "",
+        "button_1_style": "button--secondary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "color_scheme_mobile": "",
+        "mobile_image_crop": "none",
+        "mobile_text_below_image": true,
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "main": {
       "type": "collection__main",
       "settings": {
@@ -76,6 +127,7 @@
   },
   "order": [
     "banner",
+    "index_image_with_text_overlay_gBpcmt",
     "main"
   ]
 }
