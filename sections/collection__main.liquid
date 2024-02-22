@@ -136,16 +136,15 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
-  <div class="container">
+  <div class="container collectionMainInfo">
     {% comment %} Breadcrumb {% endcomment %}
     {% if collection_breadcrumb %}
       <div class="one-whole column has-padding-bottom">
         {% render 'breadcrumb', context: 'collection' %}
       </div>
     {% endif %}
-
-    <div class="{% if has_dropdowns %}two-fifths{% else %}one-whole{% endif %} medium-down--one-whole column has-no-side-gutter hide-when-banner-enabled">
-      {%- if show_heading != blank -%}
+    {%- if show_heading != blank -%}
+      <div class="fullWidthCol">
         {% comment %} Collection title {% endcomment %}
         {% render 'heading',
           title: collection.title,
@@ -154,26 +153,54 @@
           text_alignment: heading_alignment,
           preset: heading_preset
         %}
-      {% endif %}
-    </div>
-    {% if has_dropdowns %}
-      <div class="collection__filters three-fifths medium-down--one-whole column">
-        {% comment %} Collection filters {% endcomment %}
-        {% render 'collection__filters' %}
       </div>
     {% endif %}
-  </div>
-
-  {% comment %} Collection description {% endcomment %}
-  {% if collection.description != blank and showDescription %}
-    <div class="container">
-      <div class="one-whole column">
+    {% if collection.description != blank and showDescription %}
+      <div class="fullWidthCol">
         <div class="collection__description content is-text has-padding-bottom">
           {{ collection.description }}
         </div>
       </div>
+    {% endif %}
+  </div>
+
+  {% if has_dropdowns %}
+    <div class="collectionSortingFilters">
+      <div class="customSortBtnsContainer">
+        <button class="customDropDownBtn">
+          Sort by {% render 'arrowDown' %}
+        </button>
+        <div class="dropDownItems">
+          <button class="sortBtn" data-val="manual">
+            {{ 'collections.sorting.featured' | t }}
+          </button>
+          <button class="sortBtn" data-val="best-selling">
+            {{ 'collections.sorting.best_selling' | t }}
+          </button>
+          <button class="sortBtn" data-val="title-ascending">
+            {{ 'collections.sorting.az' | t }}
+          </button>
+          <button class="sortBtn" data-val="title-descending">
+            {{ 'collections.sorting.za' | t }}
+          </button>
+          <button class="sortBtn" data-val="price-ascending">
+            {{ 'collections.sorting.price_ascending' | t }}
+          </button>
+          <button class="sortBtn" data-val="price-descending">
+            {{ 'collections.sorting.price_descending' | t }}
+          </button>
+          <button class="sortBtn" data-val="created-descending">
+            {{ 'collections.sorting.date_descending' | t }}
+          </button>
+          <button class="sortBtn" data-val="created-ascending">
+            {{ 'collections.sorting.date_ascending' | t }}
+          </button>
+        </div>
+      </div>
+      {% render 'collection__filters' %}
     </div>
   {% endif %}
+  {% comment %} Collection description {% endcomment %}
 
   {% comment %} Collection sidebar and main content area {% endcomment %}
   <div class="container collectionMainContainer {% if showSquareImages %} showSquareImages {% endif %}">
@@ -350,19 +377,31 @@
       </script>
     {% endpaginate %}
   </div>
-</section>
+</section> 
 
 <script data-theme-editor-load-script src="{{ 'z__jsSidebar.js' | asset_url }}"></script>
 <script src="{{ 'z__jsCollection.js' | asset_url }}"></script>
 {% if showSquareImages %}
-<script>
-  $(document).ready(function () {
-    $('.showSquareImages .image-element__wrap img').each(function () {
-      var width = $(this).width();
-      $(this).css('height', width);
+  <script>
+    $(document).ready(function () {
+      function setHeightBasedOnWidth() {
+        $('.product-image__wrapper img').each(function () {
+          var width = $(this).width();
+          var aspectRatio = 1;
+          if (width > 0) {
+            aspectRatio = $(this).height() / width;
+          }
+          $(this).css('height', width * aspectRatio + 'px');
+        });
+      }
+
+      setHeightBasedOnWidth();
+
+      $(window).resize(function () {
+        setHeightBasedOnWidth();
+      });
     });
-  });
-</script>
+  </script>
 {% endif %}
 {% schema %}
 {
@@ -1076,4 +1115,3 @@
   }
 }
 {% endschema %}
-

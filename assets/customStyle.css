@@ -2907,7 +2907,14 @@ button.sidebar-block__toggle-icon.icon-style--plus_and_minus span.icon {
     max-width: 100%;
     min-height: 54px;
 }
-
+.fullWidthCol{
+    width: 100%;
+    margin: 20px auto;
+}
+.collectionMainInfo{
+    width: 100%;
+    flex-direction: column;
+}
 /* =========== COLLECCTION PAGE CSS CODE END =========== */
 
 /* media queires for desktop start  */
