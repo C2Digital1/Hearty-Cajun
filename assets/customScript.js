@@ -78,16 +78,16 @@ $(document).ready(function () {
         $(".customSortBtnsContainer").removeClass("activeDropDown");
         $("#sort-by").val(activeSortVal).change();
         if ($(".showSquareImages").length > 0) {
-            var firstImageWidth = $('.showSquareImages .image-element__wrap img').first().width();
-            var cssRule = '.showSquareImages .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
+            var firstImageWidth = $('.showSquareImages .product__imageContainer .image-element__wrap img').first().width();
+            var cssRule = '.showSquareImages .product__imageContainer .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
             if($("#extraStyle").length < 1){
                 $('body').append('<style id="extraStyle">' + cssRule + '</style>');
             }
         }
     });
     if ($(".showSquareImages").length > 0) {
-        var firstImageWidth = $('.showSquareImages .image-element__wrap img').first().width();
-        var cssRule = '.showSquareImages .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
+        var firstImageWidth = $('.showSquareImages .product__imageContainer .image-element__wrap img').first().width();
+        var cssRule = '.showSquareImages .product__imageContainer .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
         if($("#extraStyle").length < 1){
             $('body').append('<style id="extraStyle">' + cssRule + '</style>');
         }
