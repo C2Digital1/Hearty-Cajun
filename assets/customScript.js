@@ -49,10 +49,9 @@ $(document).ready(function () {
             $(".popupBodyContainer .prodIngPopup").addClass("openIt");
             $("body, html").addClass("hideScroll");
         }
-
     });
 
-    $(".prodOverlay, .popupCloseBtn").click(function () {        
+    $(document).on('click', '.popupCloseBtn', function() {
         $(".prodIngPopup").removeClass("openIt");
         $("body, html").removeClass("hideScroll");
         $(".popupBodyContainer").html("");     
