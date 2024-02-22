@@ -110,7 +110,7 @@
         "pagination_limit": 3,
         "pagination_type": "basic_pagination",
         "show_sidebar": true,
-        "sidebar_heading_preset": "is-h5",
+        "sidebar_heading_preset": "is-h6",
         "sidebar_position": "left",
         "show_promo_banner": false,
         "image_darken": false,
