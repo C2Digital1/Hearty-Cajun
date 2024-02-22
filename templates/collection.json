@@ -36,7 +36,7 @@
     "index_image_with_text_overlay_gBpcmt": {
       "type": "index__image-with-text-overlay",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "roundedCorner": false,
         "useCustomStyling": true,
         "link": "",
@@ -71,7 +71,7 @@
         "padding_bottom": 0,
         "padding_left": 0,
         "padding_right": 0,
-        "margin_top": 0,
+        "margin_top": -54,
         "margin_bottom": 0,
         "padding_top_m": 0,
         "padding_bottom_m": 0,
