@@ -54,8 +54,8 @@ $(document).ready(function () {
 
     $(".prodOverlay, .popupCloseBtn").click(function () {        
         $(".prodIngPopup").removeClass("openIt");
-        $(".popupBodyContainer").html("");     
         $("body, html").removeClass("hideScroll");
+        $(".popupBodyContainer").html("");     
     });
 
     $(".faqGroupOpener").click(function () {
