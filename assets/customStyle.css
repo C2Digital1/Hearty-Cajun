@@ -2899,6 +2899,17 @@ button.sidebar-block__toggle-icon.icon-style--plus_and_minus span.icon {
     color: #fff;
 }
 
+.faceted-filter-group-display__submit {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.faceted-filter-group-display__submit button.button {
+    width: 100%;
+    max-width: 100%;
+    min-height: 54px;
+}
+
 /* =========== COLLECCTION PAGE CSS CODE END =========== */
 
 /* media queires for desktop start  */

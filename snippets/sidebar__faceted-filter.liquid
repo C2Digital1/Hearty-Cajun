@@ -164,18 +164,17 @@
                     max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                   >
                 </div>
-              </div>
-
-              <div class="faceted-filter-group-display__submit">
-                {%- assign label = 'collections.sidebar.apply_filter' | t | escape -%}
-                {% render 'button',
-                      label: label,
-                      type: 'submit',
-                      style: 'button--primary' %}
-              </div>
+              </div>                          
           {%- endcase -%}
         </div>
       </div>
     </div>
   {%- endfor -%}
+  <div class="faceted-filter-group-display__submit">
+    {%- assign label = 'collections.sidebar.apply_filter' | t | escape -%}
+    {% render 'button',
+          label: label,
+          type: 'submit',
+          style: 'button--secondary' %}
+  </div>
 </form>
