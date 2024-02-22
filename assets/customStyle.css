@@ -2579,8 +2579,6 @@ a.cart__remove.removeIcon.close.ajax-cart__delete:hover {
     margin: 0px auto;
 }
 
-button#checkout {}
-
 button.button.checkoutBtn {
     display: flex;
     align-items: center;
@@ -2907,14 +2905,113 @@ button.sidebar-block__toggle-icon.icon-style--plus_and_minus span.icon {
     max-width: 100%;
     min-height: 54px;
 }
-.fullWidthCol{
+
+.fullWidthCol {
     width: 100%;
     margin: 20px auto;
 }
-.collectionMainInfo{
+
+.collectionMainInfo {
     width: 100%;
     flex-direction: column;
 }
+
+.collectionSortingFilters {
+    width: 100%;
+}
+
+.collection__sort-by-filter.select {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 27px 0;
+}
+
+.customSortBtnsContainer {
+    position: relative;
+    width: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.dropDownItems {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px #0000001a;
+    margin-bottom: 8px;
+    padding: 16px;
+    position: absolute;
+    top: 200%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all linear .3s;
+    z-index: 5;
+    height: max-content;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.activeDropDown .dropDownItems {
+    top: 110%;
+    opacity: 1;
+    visibility: visible;
+}
+
+button.customDropDownBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #463F3A;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 21px;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    width: max-content;
+    max-width: 100%;
+    border: 0px solid !important;
+    min-height: 21px;
+}
+
+button.customDropDownBtn svg {
+
+    width: 20px;
+    height: 20px;
+    margin-left: 14px;
+}
+
+.collection__sort-by-filter.select::after {
+    opacity: 0;
+}
+
+.dropDownItems button.sortBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none !important;
+    color: #463F3A;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+    background: transparent;
+    border: 0px solid !important;
+}
+
+.dropDownItems button.sortBtn:hover {
+    font-weight: 600;
+}
+
 /* =========== COLLECCTION PAGE CSS CODE END =========== */
 
 /* media queires for desktop start  */
