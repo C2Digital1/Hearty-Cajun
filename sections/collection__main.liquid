@@ -165,38 +165,7 @@
   </div>
 
   {% if has_dropdowns %}
-    <div class="collectionSortingFilters">
-      <div class="customSortBtnsContainer">
-        <button class="customDropDownBtn">
-          Sort by {% render 'arrowDown' %}
-        </button>
-        <div class="dropDownItems">
-          <button class="sortBtn" data-val="manual">
-            {{ 'collections.sorting.featured' | t }}
-          </button>
-          <button class="sortBtn" data-val="best-selling">
-            {{ 'collections.sorting.best_selling' | t }}
-          </button>
-          <button class="sortBtn" data-val="title-ascending">
-            {{ 'collections.sorting.az' | t }}
-          </button>
-          <button class="sortBtn" data-val="title-descending">
-            {{ 'collections.sorting.za' | t }}
-          </button>
-          <button class="sortBtn" data-val="price-ascending">
-            {{ 'collections.sorting.price_ascending' | t }}
-          </button>
-          <button class="sortBtn" data-val="price-descending">
-            {{ 'collections.sorting.price_descending' | t }}
-          </button>
-          <button class="sortBtn" data-val="created-descending">
-            {{ 'collections.sorting.date_descending' | t }}
-          </button>
-          <button class="sortBtn" data-val="created-ascending">
-            {{ 'collections.sorting.date_ascending' | t }}
-          </button>
-        </div>
-      </div>
+    <div class="collectionSortingFilters">      
       {% render 'collection__filters' %}
     </div>
   {% endif %}
@@ -385,7 +354,7 @@
   <script>
     $(document).ready(function () {
       function setHeightBasedOnWidth() {
-        $('.product-image__wrapper img').each(function () {
+        $('.showSquareImages .image-element__wrap img').each(function () {
           var width = $(this).width();
           var aspectRatio = 1;
           if (width > 0) {
@@ -394,9 +363,7 @@
           $(this).css('height', width * aspectRatio + 'px');
         });
       }
-
       setHeightBasedOnWidth();
-
       $(window).resize(function () {
         setHeightBasedOnWidth();
       });

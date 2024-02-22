@@ -24,6 +24,37 @@
     {% endif %}
 
     <div class="collection__sort-by-filter select">
+      <div class="customSortBtnsContainer">
+        <button class="customDropDownBtn">
+          Sort by {% render 'arrowDown' %}
+        </button>
+        <div class="dropDownItems">
+          <button class="sortBtn" data-val="manual">
+            {{ 'collections.sorting.featured' | t }}
+          </button>
+          <button class="sortBtn" data-val="best-selling">
+            {{ 'collections.sorting.best_selling' | t }}
+          </button>
+          <button class="sortBtn" data-val="title-ascending">
+            {{ 'collections.sorting.az' | t }}
+          </button>
+          <button class="sortBtn" data-val="title-descending">
+            {{ 'collections.sorting.za' | t }}
+          </button>
+          <button class="sortBtn" data-val="price-ascending">
+            {{ 'collections.sorting.price_ascending' | t }}
+          </button>
+          <button class="sortBtn" data-val="price-descending">
+            {{ 'collections.sorting.price_descending' | t }}
+          </button>
+          <button class="sortBtn" data-val="created-descending">
+            {{ 'collections.sorting.date_descending' | t }}
+          </button>
+          <button class="sortBtn" data-val="created-ascending">
+            {{ 'collections.sorting.date_ascending' | t }}
+          </button>
+        </div>
+      </div>
     
       <select style="display:none;" class="sort_by" id="sort-by" data-default-sort="{{ collection.sort_by | default: collection.default_sort_by  }}">
         <option value="manual">{{ 'collections.sorting.featured' | t }}</option>
