@@ -6,6 +6,13 @@
   assign preheading = object.settings.preheading
   assign heading = object.settings.heading
   assign subheading = object.settings.subheading
+  assign showCollDesc = object.settings.showCollDesc
+  if showCollDesc
+    if template.name == 'collection'
+      assign subheading = collection.description
+      assign yesInCondition = true
+    endif
+  endif
 
   assign heading_preset = object.settings.heading_preset
   assign subheading_preset = object.settings.subheading_preset
@@ -51,6 +58,7 @@
     assign allow_padding = false
   endif
 -%}
+
 
 <div
   {% if type == 'block' %}

@@ -2662,6 +2662,8 @@ span.accordianIcon::before {
     background: #fff;
     width: 10px;
     height: 2px;
+    transition: all linear .3s;
+    opacity: 1;
 }
 
 span.accordianIcon::after {
@@ -2677,7 +2679,13 @@ span.accordianIcon::after {
     transition: all linear .3s;
     opacity: 1;
 }
+button.accordianOpener.active span::after {
+    transform: translate(-50%, -50%) rotate(270deg);
+}
 
+button.accordianOpener.active span::before {
+    opacity: 0;
+}
 .accordianContent {
     padding-bottom: 32px;
     display: none;;
