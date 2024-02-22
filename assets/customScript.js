@@ -69,7 +69,7 @@ $(document).ready(function () {
     $(".customDropDownBtn").click(function () {
         $(this).parent(".customSortBtnsContainer").toggleClass("activeDropDown");
     });
-    $(".sortBtn").click(function(){        
+    $(".sortBtn").click(function () {
         var activeSortTxt = $(this).text();
         var activeSortVal = $(this).attr("data-val");
         $(".sortBtn").removeClass("active");
@@ -77,6 +77,13 @@ $(document).ready(function () {
         $(this).parent(".dropDownItems").prev(".customDropDownBtn").children("span").text(activeSortTxt);
         $(".customSortBtnsContainer").removeClass("activeDropDown");
         $("#sort-by").val(activeSortVal).change();
+        if ($(".showSquareImages").length > 0) {
+            var firstImageWidth = $('.showSquareImages .image-element__wrap img').first().width();
+            var cssRule = '.showSquareImages .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
+            if($("#extraStyle").length < 1){
+                $('body').append('<style id="extraStyle">' + cssRule + '</style>');
+            }
+        }
     });
 
     // Cart Page Note Text Area code start 
