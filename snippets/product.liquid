@@ -226,7 +226,15 @@
 
             {% endif %}
           </div>
-
+          {% if product.metafields.custom.attributes != blank %}
+            <div class="prodPageProdAttributes">
+             {% for prodAttribute in product.metafields.custom.attributes.value %}
+               {%  if forloop.index < 4 %}
+                 <span>{{  prodAttribute }}</span>
+               {% endif %}
+             {% endfor %}
+            </div>
+           {% endif %}
         {%- elsif block.type == 'description' -%}
           {% comment %} Description {% endcomment %}
           {% if block.settings.custom_description != blank %}

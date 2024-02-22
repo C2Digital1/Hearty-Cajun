@@ -3040,19 +3040,50 @@ button.customDropDownBtn svg {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: flex-start;
+    justify-content: flex-start;
+
 }
 
 .prodInfoInnerBox {
     width: 100%;
-    max-width: 550px;
+    max-width: 600px;
+}
+
+
+.prodInfoInnerBox h1.product_name.title.is-h5 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 44px;
+}
+
+.prodInfoInnerBox h1.product_name.title {
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.prodInfoInnerBox .modal_price.subtitle.is-h5 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.prodInfoInnerBox .modal_price.subtitle {
+    margin-bottom: 12px;
 }
 
 /* =========== PRODUCT PAGE CSS CODE END =========== */
 
 
 /* media queires for desktop start  */
+@media only screen and (min-width: 1500px) {
+    .productMainSection .product__information.has-product-sticker.one-half.column.medium-down--one-whole {
+        margin-left: 100px;
+    }
+}
+
 @media only screen and (min-width: 798px) {
     .iconTxtBoxesRow .iconTxtBoxCardCol.one-fourth {
         width: calc(25% - 12px);
