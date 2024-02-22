@@ -92,6 +92,38 @@
         "custom_css": ""
       }
     },
+    "index_heading_8F7mLK": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "",
+        "heading": "Reviews",
+        "subheading": "",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h2",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 40,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "index_image_with_text_q8QFqn": {
       "type": "index__image-with-text",
       "blocks": {
@@ -184,6 +216,7 @@
     "breadcrumbs",
     "sidebar",
     "main",
+    "index_heading_8F7mLK",
     "index_image_with_text_q8QFqn",
     "recommendations"
   ]
