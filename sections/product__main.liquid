@@ -52,6 +52,13 @@
 
 {% comment %} Section specific CSS {% endcomment %}
 {% comment %} Section specific CSS {% endcomment %}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{%  endif %}
 {% capture section_css %}{% endcapture %}
 {% style %}
   #shopify-section-{{ id }} {
@@ -131,15 +138,16 @@
   }
 
   #shopify-section-{{ id }} .purchase-details__buttons .button.button--add-to-cart{
-    background-color: {{ section.settings.color_scheme.settings.scheme_button }};
+    background: {{ primaryBtnBg }};
     color: {{ section.settings.color_scheme.settings.scheme_button_label }};
-    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+    border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }
 
   #shopify-section-{{ id }} .purchase-details__buttons .button.button--add-to-cart:hover{
-    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
-    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
-    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }} !important;
+    background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+      background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+      color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+      border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
   }
 
 

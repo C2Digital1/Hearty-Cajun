@@ -3074,6 +3074,59 @@ button.customDropDownBtn svg {
     margin-bottom: 12px;
 }
 
+.prodPageProdAttributes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 5px;
+}
+
+.prodPageProdAttributes span {
+    border-radius: 29px;
+    background-color: #463F3A;
+    min-height: 21px;
+    color: #fff;
+    padding: 2px 12px;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+}
+
+.description.content.is-text {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.product-block.product-block--description .description.content {
+    padding-top: 16px;
+    margin-top: 16px;
+    position: relative;
+    border-top: 1px solid #463f3a;
+}
+
+.product-block.product-block--form button.button.ajax-submit.action_button {
+    width: 100%;
+    max-width: 100%;
+    min-height: 54px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-block.product-block--form .purchase-details__buttons.purchase-details__spb--false {
+    margin: 0 !important;
+    padding: 0;
+    height: max-content;
+}
+
 /* =========== PRODUCT PAGE CSS CODE END =========== */
 
 
