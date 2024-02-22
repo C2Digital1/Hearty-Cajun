@@ -3011,7 +3011,7 @@ button.customDropDownBtn svg {
     background: transparent;
     border: 0px solid !important;
 }
-
+.dropDownItems button.sortBtn.active, 
 .dropDownItems button.sortBtn:hover {
     font-weight: 600;
 }

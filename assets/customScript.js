@@ -67,7 +67,16 @@ $(document).ready(function () {
     });
 
     $(".customDropDownBtn").click(function () {
-        $(this).parent("customSortBtnsContainer").toggleClass("activeDropDown");
+        $(this).parent(".customSortBtnsContainer").toggleClass("activeDropDown");
+    });
+    $(".sortBtn").click(function(){        
+        var activeSortTxt = $(this).text();
+        var activeSortVal = $(this).attr("data-val");
+        $(".sortBtn").removeClass("active");
+        $(this).addClass("active");
+        $(this).parent(".dropDownItems").prev(".customDropDownBtn").children("span").text(activeSortTxt);
+        $(".customSortBtnsContainer").removeClass("activeDropDown");
+        $("#sort-by").val(activeSortVal).change();
     });
 
     // Cart Page Note Text Area code start 
