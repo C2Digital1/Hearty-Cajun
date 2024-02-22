@@ -1828,6 +1828,16 @@ button.close.popupCloseBtn svg {
     color: #28303F;
 }
 
+.prodInfoTabs {
+    width: 100%;
+    position: relative;
+    margin-top: 48px;
+}
+
+.accordianContainer .ingredientItems .ingredientCol {
+    width: 100%;
+}
+
 /* product ingredients popup css code end  */
 
 /* =========== Weekly MENU PAGE CSS CODE END =========== */
@@ -2620,6 +2630,7 @@ a.button.continueBtn.button--secondary:hover {
     background: #463f3a !important;
     color: #fff !important;
 }
+
 .accordianContainer,
 .cartNotes {
     position: relative;
