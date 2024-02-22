@@ -41,13 +41,20 @@ $(document).ready(function () {
 
     $(".prodIngPopupOpener").click(function () {
         var popupId = $(this).attr("data-id");
-        $(".prodIngPopup").removeClass("openIt");
-        $(popupId).addClass("openIt");
-        $("body, html").addClass("hideScroll");
+        if ($(".popupBodyContainer").length > 0) {
+            $(".popupBodyContainer").html("");            
+            $(".prodIngPopup").removeClass("openIt");
+            var triggeredPopupHtml = $(popupId).html();
+            $(".popupBodyContainer").html(triggeredPopupHtml);
+            $(".popupBodyContainer .prodIngPopup").addClass("openIt");
+            $("body, html").addClass("hideScroll");
+        }
+
     });
 
-    $(".prodOverlay, .popupCloseBtn").click(function () {
+    $(".prodOverlay, .popupCloseBtn").click(function () {        
         $(".prodIngPopup").removeClass("openIt");
+        $(".popupBodyContainer").html("");     
         $("body, html").removeClass("hideScroll");
     });
 
@@ -80,12 +87,12 @@ $(document).ready(function () {
         if ($(".showSquareImages").length > 0) {
             var firstImageWidth = $('.showSquareImages .product__imageContainer .image-element__wrap img').first().width();
             var cssRule = '.showSquareImages .product__imageContainer .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
-            if($("#extraStyle").length < 1){
+            if ($("#extraStyle").length < 1) {
                 $('body').append('<style id="extraStyle">' + cssRule + '</style>');
             }
         }
     });
-    
+
     // Cart Page Note Text Area code start 
 
     function updateCartNote() {

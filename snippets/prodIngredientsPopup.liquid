@@ -8,7 +8,8 @@
   assign btnTxt = prodMetObj.button_text
   assign btnUrl = prodMetObj.button_url
 -%}
-<div id="{{ product.id }}-popup" class="prodIngPopup">
+<div id="{{ product.id }}-popup">
+<div class="prodIngPopup">
   <div class="popupInnerBox">
     <button class="close popupCloseBtn" aria-label="close">
         {% render 'crossIcon' %}
@@ -113,4 +114,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
