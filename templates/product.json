@@ -23,23 +23,17 @@
     "main": {
       "type": "product__main",
       "blocks": {
-        "9f108169-afd0-4c26-9b66-5c2cd4287bcb": {
-          "type": "vendor",
-          "settings": {
-            "preset": "is-h6"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
-            "preset": "is-h3"
+            "preset": "is-h5"
           }
         },
         "price": {
           "type": "price",
           "settings": {
-            "display_savings": true,
-            "preset": "is-h6"
+            "display_savings": false,
+            "preset": "is-h5"
           }
         },
         "description": {
@@ -64,7 +58,6 @@
         }
       },
       "block_order": [
-        "9f108169-afd0-4c26-9b66-5c2cd4287bcb",
         "title",
         "price",
         "description",
