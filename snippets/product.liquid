@@ -257,6 +257,28 @@
 
         {%- elsif block.type == 'form' -%}
           {% comment %} Purchase form {% endcomment %}
+          {% if product.metafields.custom.popup_content.value != blank %}
+            {%- liquid
+              assign prodMetObj = product.metafields.custom.popup_content.value
+              assign btnTxt = prodMetObj.button_text
+              assign btnUrl = prodMetObj.button_url
+            -%}
+            <div class="product-form-container has-padding-top">
+              <div class="purchase-details">
+                <div class="purchase-details__buttons purchase-details__spb--false">
+                  <a href="{{ btnUrl }}" class="button ajax-submit action_button button--add-to-cart">
+                    <span class="text animated">
+                      {% if btnTxt != blank %}
+                         {{ btnTxt }}
+                        {% else %}
+                         Get Started
+                      {% endif %}
+                    </span>
+                  </a>
+                </div>
+              </div>              
+            </div>
+          {% endif  %}
           {% if section_onboarding %}
             <div class="product-form-container has-padding-top">
               <div class="purchase-details">
