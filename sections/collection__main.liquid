@@ -130,6 +130,7 @@
 <section
   class="
     section
+    mainCollectionSec
     {{ css_class }}
     is-width-{{ width }}
   "
@@ -178,7 +179,7 @@
   {% endif %}
 
   {% comment %} Collection sidebar and main content area {% endcomment %}
-  <div class="container">
+  <div class="container collectionMainContainer">
 
     {% if section.blocks.size > 0 and show_sidebar %}
       <aside class="
@@ -369,7 +370,8 @@
                 items_per_row: items_per_row,
                 mobile_items_per_row: mobile_items_per_row,
                 limit: pagination_limit,
-                pagination_type: pagination_type
+                pagination_type: pagination_type,
+                showStyle: true,
               %}
             </div>
           </div>

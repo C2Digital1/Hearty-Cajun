@@ -1932,11 +1932,13 @@ a.pagination-link {
     border: 0px solid !important;
     margin: 0 16px 0 0 !important;
 }
+
 a.pagination-ellipsis {
     color: #463F3A;
     padding: 0;
     margin: 0 16px 0 0 !important;
 }
+
 a.pagination-link.is-current {
     min-width: 28px !important;
     min-height: 28px !important;
@@ -2683,6 +2685,7 @@ span.accordianIcon::after {
     transition: all linear .3s;
     opacity: 1;
 }
+
 button.accordianOpener.active span::after {
     transform: translate(-50%, -50%) rotate(270deg);
 }
@@ -2690,9 +2693,11 @@ button.accordianOpener.active span::after {
 button.accordianOpener.active span::before {
     opacity: 0;
 }
+
 .accordianContent {
     padding-bottom: 32px;
-    display: none;;
+    display: none;
+    ;
 }
 
 .deliverySmallNotes {
@@ -2780,6 +2785,55 @@ label.checkboxItem input:checked~span.checkmarkIcon::after {
 /* =========== CART PAGE CSS CODE END =========== */
 
 
+
+/* =========== COLLECCTION PAGE CSS CODE START =========== */
+.container.collectionMainContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.container.collectionMainContainer .collection__main {
+    width: 100%;
+}
+
+.container.collectionMainContainer aside.sidebar-section.one-fourth.medium-down--one-whole.column {
+    width: 324px;
+    margin-right: 16px;
+    margin-left: 0;
+    max-width: 324px;
+}
+
+.container.collectionMainContainer .collection__main.three-fourths.has-sidebar.medium-down--one-whole.equal-columns--outside-trim {
+    width: calc(100% - 340px);
+    margin: 0px !important;
+}
+
+
+.container.collection-matrix {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.container.collectionMainContainer .product-image__wrapper .image-element__wrap img {
+    min-height: 324px;
+    max-height: 324px;
+    object-fit: cover;
+}
+
+span.product-thumbnail__price.price.sale span.money {
+    color: #463F3A;
+}
+
+span.product-thumbnail__was-price.compare-at-price {
+    color: #B5B2B0;
+}
+
+/* =========== COLLECCTION PAGE CSS CODE END =========== */
+
 /* media queires for desktop start  */
 @media only screen and (min-width: 798px) {
     .iconTxtBoxesRow .iconTxtBoxCardCol.one-fourth {
@@ -2797,6 +2851,16 @@ label.checkboxItem input:checked~span.checkmarkIcon::after {
     }
 
     .blogPostSection .blogPostContainer .featured-article.blog-card.one-third.columns.article.card:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .container.collectionMainContainer .collection__main .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
+        width: calc(33.333% - 11px);
+        margin-right: 16px;
+        margin-left: 0;
+    }
+
+    .container.collectionMainContainer .collection__main .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(3n) {
         margin-right: 0;
     }
 
