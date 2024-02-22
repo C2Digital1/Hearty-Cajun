@@ -8,7 +8,7 @@
   assign showDescription = section.settings.showDescription
   assign heading_preset = section.settings.heading_preset
   assign heading_alignment = section.settings.heading_alignment
-  
+
   assign sidebar_position = section.settings.sidebar_position
   assign show_sidebar = section.settings.show_sidebar
   assign sidebar_heading_preset = section.settings.sidebar_heading_preset
@@ -27,6 +27,8 @@
   assign promo_title = section.settings.promo_title
   assign promo_text = section.settings.promo_text
   assign banner_height = section.settings.banner_height
+
+  assign showSquareImages = section.settings.showSquareImages
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -56,13 +58,11 @@
 -%}
 
 {%- liquid
-  assign has_dropdowns = false 
-  if collection_tags or collection_sort 
-    assign has_dropdowns = true 
-  endif 
+  assign has_dropdowns = false
+  if collection_tags or collection_sort
+    assign has_dropdowns = true
+  endif
 -%}
-
-
 
 {% comment %} Section specific CSS {% endcomment %}
 {% capture section_css %}{% endcapture %}
@@ -125,8 +125,6 @@
   %}
 {% endstyle %}
 
-
-
 <section
   class="
     section
@@ -134,7 +132,7 @@
     {{ css_class }}
     is-width-{{ width }}
   "
-  {% if animation != "none" %}
+  {% if animation != 'none' %}
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
@@ -149,8 +147,7 @@
     <div class="{% if has_dropdowns %}two-fifths{% else %}one-whole{% endif %} medium-down--one-whole column has-no-side-gutter hide-when-banner-enabled">
       {%- if show_heading != blank -%}
         {% comment %} Collection title {% endcomment %}
-        {%
-          render 'heading',
+        {% render 'heading',
           title: collection.title,
           heading_tag: 'h1',
           context: 'collection',
@@ -179,18 +176,19 @@
   {% endif %}
 
   {% comment %} Collection sidebar and main content area {% endcomment %}
-  <div class="container collectionMainContainer">
-
+  <div class="container collectionMainContainer {% if showSquareImages %} showSquareImages {% endif %}">
     {% if section.blocks.size > 0 and show_sidebar %}
-      <aside class="
+      <aside
+        class="
           sidebar-section
           one-fourth
           medium-down--one-whole
           column
-        ">
+        "
+      >
         {% liquid
           assign has_faceted_filtering_block = false
-          assign faceted_filtering_blocks_count = section.blocks | where: "type", "faceted_filtering" | size
+          assign faceted_filtering_blocks_count = section.blocks | where: 'type', 'faceted_filtering' | size
           if faceted_filtering_blocks_count > 0
             assign has_faceted_filtering_block = true
           endif
@@ -199,11 +197,7 @@
 
         {% for block in section.blocks %}
           {% if block.type == 'faceted_filtering' %}
-            {%
-              render 'sidebar__faceted-filter',
-              block: block,
-              collection: collection
-            %}
+            {% render 'sidebar__faceted-filter', block: block, collection: collection %}
           {% else %}
             {%- comment -%} Non-faceted filter blocks {%- endcomment -%}
             <div
@@ -220,89 +214,44 @@
             >
               {% if block.type == 'collection_list' %}
                 {% comment %} Tag list {% endcomment %}
-                {% 
-                  render 'sidebar__collection-list', 
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__collection-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'featured_promo' %}
                 {% comment %} Featured promo {% endcomment %}
-                {%
-                  render 'sidebar__featured-promo',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__featured-promo', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'html' %}
                 {% comment %} Custom HTML {% endcomment %}
-                {% 
-                  render 'sidebar__html', 
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__html', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'menu' %}
                 {% comment %} Menu {% endcomment %}
-                {%
-                  render 'sidebar__menu',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  menu: block.settings.menu
-                %}
+                {% render 'sidebar__menu', sidebar_heading_preset: sidebar_heading_preset, menu: block.settings.menu %}
               {% elsif block.type == 'newsletter' %}
                 {% comment %} Newsletter {% endcomment %}
-                {% 
-                  render 'sidebar__newsletter',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__newsletter', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'page' %}
                 {% comment %} Page {% endcomment %}
-                {% 
-                  render 'sidebar__page',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  page: block.settings.page
-                %}
+                {% render 'sidebar__page', sidebar_heading_preset: sidebar_heading_preset, page: block.settings.page %}
               {% elsif block.type == 'search' %}
                 {% comment %} Search {% endcomment %}
-                {%
-                  render 'sidebar__search',
+                {% render 'sidebar__search',
                   sidebar_heading_preset: sidebar_heading_preset,
                   block: block,
                   context: 'sidebar'
                 %}
               {% elsif block.type == 'tag_filter' and has_faceted_filtering_block == false %}
                 {% comment %} Tag filter {% endcomment %}
-                {% 
-                  render 'sidebar__tag-filter', 
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__tag-filter', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'tag_list' and has_faceted_filtering_block == false %}
                 {% comment %} Tag list {% endcomment %}
-                {% 
-                  render 'sidebar__tag-list',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__tag-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'text' %}
                 {% comment %} Text {% endcomment %}
-                {% 
-                  render 'sidebar__text', 
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block 
-                %}
+                {% render 'sidebar__text', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'type_list' and has_faceted_filtering_block == false %}
                 {% comment %} Type list {% endcomment %}
-                {% 
-                  render 'sidebar__type-list',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__type-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% elsif block.type == 'vendor_list' and has_faceted_filtering_block == false %}
                 {% comment %} Vendor list {% endcomment %}
-                {% 
-                  render 'sidebar__vendor-list',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block
-                %}
+                {% render 'sidebar__vendor-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
               {% endif %}
             </div>
           {% endif %}
@@ -317,21 +266,18 @@
       >
         {% if show_promo_banner %}
           <div class="container">
-            <div class="
+            <div
+              class="
                 banner__wrapper
                 one-whole
                 column
                 dark-overlay-{{ image_darken }}
                 is-{{ banner_height }}
                 has-margin-bottom
-              ">
+              "
+            >
               {% if promo_image != blank %}
-                {%
-                  render 'image-element',
-                  image: promo_image,
-                  alt: promo_image.alt,
-                  stretch_width: true
-                %}
+                {% render 'image-element', image: promo_image, alt: promo_image.alt, stretch_width: true %}
               {% else %}
                 {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
               {% endif %}
@@ -364,14 +310,13 @@
             >
               {%- assign items_per_row = items_per_row -%}
               {%- assign mobile_items_per_row = mobile_items_per_row -%}
-              {%
-                render 'product-loop',
+              {% render 'product-loop',
                 products: collection.products,
                 items_per_row: items_per_row,
                 mobile_items_per_row: mobile_items_per_row,
                 limit: pagination_limit,
                 pagination_type: pagination_type,
-                showStyle: true,
+                showStyle: true
               %}
             </div>
           </div>
@@ -380,8 +325,7 @@
         <div class="container container--pagination has-padding-top">
           <div class="one-whole column text-align-center">
             {%- assign load_more_text = 'collections.general.pagination_button' | t -%}
-            {%
-              render 'pagination',
+            {% render 'pagination',
               paginate: paginate,
               pagination_type: pagination_type,
               load_more_text: load_more_text
@@ -410,6 +354,16 @@
 
 <script data-theme-editor-load-script src="{{ 'z__jsSidebar.js' | asset_url }}"></script>
 <script src="{{ 'z__jsCollection.js' | asset_url }}"></script>
+{% if showSquareImages %}
+<script>
+  $(document).ready(function () {
+    $('.showSquareImages .image-element__wrap img').each(function () {
+      var width = $(this).width();
+      $(this).css('height', width);
+    });
+  });
+</script>
+{% endif %}
 {% schema %}
 {
   "name": "Collection",
@@ -507,6 +461,12 @@
       "type": "checkbox",
       "id": "collection_sort",
       "label": "Show sort by filter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "showSquareImages",
+      "label": "Show Square Images",
       "default": true
     },
     {
@@ -1116,3 +1076,4 @@
   }
 }
 {% endschema %}
+

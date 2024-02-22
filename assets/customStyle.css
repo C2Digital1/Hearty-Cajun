@@ -2819,8 +2819,6 @@ label.checkboxItem input:checked~span.checkmarkIcon::after {
 }
 
 .container.collectionMainContainer .product-image__wrapper .image-element__wrap img {
-    min-height: 324px;
-    max-height: 324px;
     object-fit: cover;
 }
 
