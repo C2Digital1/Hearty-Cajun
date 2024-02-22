@@ -589,7 +589,7 @@
               "newsletter_richtext_preset": "is-text-small",
               "display_first_name": false,
               "display_last_name": false,
-              "social_icons_footer": false
+              "social_icons_footer": true
             }
           }
         },
