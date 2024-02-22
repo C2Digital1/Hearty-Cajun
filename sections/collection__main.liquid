@@ -5,6 +5,7 @@
 {%- liquid
   assign id = section.id
   assign show_heading = section.settings.show_heading
+  assign showDescription = section.settings.showDescription
   assign heading_preset = section.settings.heading_preset
   assign heading_alignment = section.settings.heading_alignment
   
@@ -166,7 +167,7 @@
   </div>
 
   {% comment %} Collection description {% endcomment %}
-  {% if collection.description != blank %}
+  {% if collection.description != blank and showDescription %}
     <div class="container">
       <div class="one-whole column">
         <div class="collection__description content is-text has-padding-bottom">
@@ -421,6 +422,12 @@
       "id": "show_heading",
       "label": "Show Page title",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "showDescription",
+      "label": "Show Description",
+      "default": false
     },
     {
       "type": "select",
