@@ -2832,6 +2832,73 @@ span.product-thumbnail__was-price.compare-at-price {
     color: #B5B2B0;
 }
 
+h2.facetedFilterHeading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+h2.facetedFilterHeading.is-h5 {
+    line-height: 32px;
+}
+
+h2.facetedFilterHeading svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 9px;
+}
+
+.collectionMainContainer .sidebar__block.block__faceted-filtering {
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+    padding: 16px;
+}
+
+h3.sidebar-block__heading.is-h6 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+    color: #463F3A;
+}
+
+h3.sidebar-block__heading {
+    cursor: pointer;
+}
+
+span.faceted-filter-group-display__list-item-label-text {
+    color: #463F3A;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19px;
+}
+
+.faceted-filter-group-display__checkmark {
+    height: 14px;
+    width: 14px;
+    border: 1px solid #463F3A;
+    border-radius: 4px;
+}
+
+button.sidebar-block__toggle-icon.icon-style--plus_and_minus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    background: #463F3A;
+    border-radius: 100%;
+    color: #fff;
+}
+
+button.sidebar-block__toggle-icon.icon-style--plus_and_minus span.icon {
+    color: #fff;
+}
+
 /* =========== COLLECCTION PAGE CSS CODE END =========== */
 
 /* media queires for desktop start  */
