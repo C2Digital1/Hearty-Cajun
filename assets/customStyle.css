@@ -1932,7 +1932,11 @@ a.pagination-link {
     border: 0px solid !important;
     margin: 0 16px 0 0 !important;
 }
-
+a.pagination-ellipsis {
+    color: #463F3A;
+    padding: 0;
+    margin: 0 16px 0 0 !important;
+}
 a.pagination-link.is-current {
     min-width: 28px !important;
     min-height: 28px !important;
