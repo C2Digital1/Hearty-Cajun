@@ -2620,7 +2620,7 @@ a.button.continueBtn.button--secondary:hover {
     background: #463f3a !important;
     color: #fff !important;
 }
-
+.accordianContainer,
 .cartNotes {
     position: relative;
     width: 100%;
@@ -2695,7 +2695,6 @@ button.accordianOpener.active span::before {
 .accordianContent {
     padding-bottom: 32px;
     display: none;
-    ;
 }
 
 .deliverySmallNotes {
@@ -3126,6 +3125,10 @@ button.customDropDownBtn svg {
     margin: 0 !important;
     padding: 0;
     height: max-content;
+}
+
+.product-form-container.has-padding-top {
+    padding-top: 50px;
 }
 
 /* =========== PRODUCT PAGE CSS CODE END =========== */

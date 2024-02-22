@@ -1,0 +1,80 @@
+<div class="prodInfoTabs">
+  {%- liquid
+    assign prodMetObj = product.metafields.custom.popup_content.value
+    assign ingredients = prodMetObj.ingredients
+    assign ingredientsImgs = prodMetObj.ingredients_images
+    assign nutritionHeadings = prodMetObj.nutrition_headings
+    assign nutritionValues = prodMetObj.nutrition_values
+    assign btnTxt = prodMetObj.button_text
+    assign btnUrl = prodMetObj.button_url
+  -%}
+
+  <div class="accordianContainer">
+    <button class="accordianOpener" type="button">
+      Ingredients
+      <span class="accordianIcon"></span>
+    </button>
+    <div class="accordianContent">
+      <div class="ingredientItems">
+        {% if ingredients != blank or ingredientsImgs != blank %}
+          <div class="popupBoxContent">
+            <h4 class="is-h6">Ingredients</h4>
+            <div class="ingredientsRow">
+              {% for ingredient in ingredients.value %}
+                {% assign mainLoopIndex = forloop.index %}
+                <div class="ingredientCol">
+                  {% for ingredientsImg in ingredientsImgs.value %}
+                    {% if forloop.index == mainLoopIndex %}
+                      {% if ingredientsImg != blank %}
+                        <img
+                          class="boxImg lazyload"
+                          src="{{ ingredientsImg | img_url:'master' }}"
+                          alt="img"
+                          width="24"
+                          height="24"
+                          loading="lazy"
+                        >
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                  <p>{{ ingredient }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="accordianContainer">
+    <button class="accordianOpener" type="button">
+      Nutrition
+      <span class="accordianIcon"></span>
+    </button>
+    <div class="accordianContent">
+      <div class="nutritionItems">
+        {% if nutritionHeadings != blank or nutritionValues != blank %}
+          <div class="popupBoxContent">
+            <h4 class="is-h6">Nutrition</h4>
+            <div class="nutritionRows">
+              {% for nutritionHeading in nutritionHeadings.value %}
+                {% assign mainLoopIndex = forloop.index %}
+                <div class="nutritionItem">
+                  <p>{{ nutritionHeading }}</p>
+                  {% for nutritionValue in nutritionValues.value %}
+                    {% if forloop.index == mainLoopIndex %}
+                      {% if nutritionValue != blank %}
+                        <p>{{ nutritionValue }}</p>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

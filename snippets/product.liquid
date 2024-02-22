@@ -403,6 +403,9 @@
           {%- endif -%}
         </div>
       {%- endfor -%}
+      {% if product.metafields.custom.popup_content != blank %}
+       {% render 'prodPageTabs', product: product %}
+      {% endif %}
     </div>
   </div>
 </div>
