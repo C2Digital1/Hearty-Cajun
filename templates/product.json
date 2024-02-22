@@ -2,6 +2,7 @@
   "sections": {
     "breadcrumbs": {
       "type": "product__breadcrumb",
+      "disabled": true,
       "settings": {
         "show_breadcrumbs": true,
         "width": "small",
@@ -13,6 +14,7 @@
     },
     "sidebar": {
       "type": "product__sidebar",
+      "disabled": true,
       "settings": {
         "padding_top": 0,
         "padding_bottom": 0,
@@ -49,20 +51,13 @@
             "show_payment_button": false,
             "enable_giftCard_recipient": false
           }
-        },
-        "fe5c419e-6ab6-4634-9af9-466b64d23c3a": {
-          "type": "share",
-          "disabled": true,
-          "settings": {
-          }
         }
       },
       "block_order": [
         "title",
         "price",
         "description",
-        "form",
-        "fe5c419e-6ab6-4634-9af9-466b64d23c3a"
+        "form"
       ],
       "settings": {
         "color_scheme": "",
