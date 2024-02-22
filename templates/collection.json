@@ -46,6 +46,7 @@
         "mobile_height": 0,
         "preheading": "",
         "heading": "{{ collection.title }}",
+        "showCollDesc": false,
         "subheading": "",
         "preheading_preset": "is-h6",
         "heading_preset": "is-h2",
@@ -54,7 +55,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "",
@@ -86,8 +87,19 @@
     },
     "main": {
       "type": "collection__main",
+      "blocks": {
+        "faceted_filtering_hV8J6k": {
+          "type": "faceted_filtering",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "faceted_filtering_hV8J6k"
+      ],
       "settings": {
         "show_heading": false,
+        "showDescription": false,
         "heading_preset": "is-h1",
         "heading_alignment": "left",
         "collection_breadcrumb": false,
@@ -96,7 +108,7 @@
         "items_per_row": 3,
         "mobile_items_per_row": "1",
         "pagination_limit": 3,
-        "pagination_type": "load_more",
+        "pagination_type": "basic_pagination",
         "show_sidebar": false,
         "sidebar_heading_preset": "is-h5",
         "sidebar_position": "left",
