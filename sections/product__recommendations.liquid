@@ -114,6 +114,7 @@
 <section
   class="
     section
+    recommendedProdSec
     {{ css_class }}
     is-width-{{ width }}
   "
@@ -135,7 +136,7 @@
   {% capture product_collections_markup %}
     {% if products != blank and products.size > 0 %}
       <div
-        class="container"
+        class="container showSquareImages"
         {% if layout == 'slider' %}
           data-slider
         {% endif %}
