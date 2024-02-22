@@ -66,6 +66,7 @@
               column
               medium-down--one-whole">
 
+  <div class="prodInfoInnerBox">
     {% comment %} Sale sticker {% endcomment %}
     {% if stickers_enabled %}
       {% assign collection_handles = product.collections | map: 'handle' %}
@@ -334,6 +335,6 @@
       </div>
 
     {%- endfor -%}
-
+    </div>
   </div>
 </div>

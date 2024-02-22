@@ -2990,7 +2990,8 @@ button.customDropDownBtn svg {
     transform: rotate(0);
     transition: all linear .3s;
 }
-.activeDropDown button.customDropDownBtn svg{    
+
+.activeDropDown button.customDropDownBtn svg {
     transform: rotate(180deg);
 }
 
@@ -3011,12 +3012,45 @@ button.customDropDownBtn svg {
     background: transparent;
     border: 0px solid !important;
 }
-.dropDownItems button.sortBtn.active, 
+
+.dropDownItems button.sortBtn.active,
 .dropDownItems button.sortBtn:hover {
     font-weight: 600;
 }
 
 /* =========== COLLECCTION PAGE CSS CODE END =========== */
+
+/* =========== PRODUCT PAGE CSS CODE START =========== */
+
+.productMainSection .product_section.js-product_section.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.productMainSection .product__images.one-half.column.medium-down--one-whole {
+    width: 100%;
+    margin: 0 30px 0 0;
+}
+
+.productMainSection .product__information.has-product-sticker.one-half.column.medium-down--one-whole {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.prodInfoInnerBox {
+    width: 100%;
+    max-width: 550px;
+}
+
+/* =========== PRODUCT PAGE CSS CODE END =========== */
+
 
 /* media queires for desktop start  */
 @media only screen and (min-width: 798px) {
