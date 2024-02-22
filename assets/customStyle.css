@@ -3111,7 +3111,7 @@ button.customDropDownBtn svg {
     border-top: 1px solid #463f3a;
 }
 
-.product-block.product-block--form button.button.ajax-submit.action_button {
+.product-block.product-block--form .button.action_button {
     width: 100%;
     max-width: 100%;
     min-height: 54px;
@@ -3120,6 +3120,7 @@ button.customDropDownBtn svg {
     align-items: center;
     justify-content: center;
 }
+
 
 .product-block.product-block--form .purchase-details__buttons.purchase-details__spb--false {
     margin: 0 !important;
