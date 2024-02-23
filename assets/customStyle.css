@@ -3411,6 +3411,34 @@ form#headerZipCode input[type="text"]::placeholder {
         margin-bottom: 24px;
     }
 
+    .imageWithTextSection .container .imgTxtCol {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .imageWithTextSection.hasRoundedBorder .container .imgTxtCol.imgTxtColChild-1 {
+        margin-bottom: 8px !important;
+    }
+
+    .imgTxtCol.image-with-text__text-column.image-with-text__column {
+        padding: 16px;
+    }
+
+    .image-with-text__text-column h2.preHeadingTxt.is-h5 {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    h3.image-with-text__heading.is-h5 {
+        line-height: 28px;
+    }
+
+    .image-with-text__text.content {
+        margin-bottom: 32px;
+    }
+
 }
 
 @media only screen and (max-width: 798px) {
@@ -3503,36 +3531,10 @@ form#headerZipCode input[type="text"]::placeholder {
         margin: 0px auto;
         max-block-size: 1;
     }
+
     .headingAndBtnSection a.headinSecBtn.button {
         width: 100%;
         max-width: 100%;
-    }
-    .imageWithTextSection .container .imgTxtCol {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
-    .imageWithTextSection.hasRoundedBorder .container .imgTxtCol.imgTxtColChild-1 {
-        margin-bottom: 8px !important;
-    }
-
-    .imgTxtCol.image-with-text__text-column.image-with-text__column {
-        padding: 16px;
-    }
-
-    .image-with-text__text-column h2.preHeadingTxt.is-h5 {
-        font-size: 24px;
-        font-weight: bold;
-        letter-spacing: 0;
-        line-height: 33px;
-    }
-
-    h3.image-with-text__heading.is-h5 {
-        line-height: 28px;
-    }
-
-    .image-with-text__text.content {
-        margin-bottom: 32px;
     }
 }
 
