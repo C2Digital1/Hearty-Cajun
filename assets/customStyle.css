@@ -3846,6 +3846,10 @@ form#headerZipCode input[type="text"]::placeholder {
         padding: 5px 90px 5px 0px;
     }
 
+    #mobile-header .mobile-header__logo {
+        width: max-content;
+    }
+
     /* mobile header css code end  */
 
 }
