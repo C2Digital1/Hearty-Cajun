@@ -169,7 +169,7 @@
           assign text_alignment = block.settings.text_alignment
           assign text_horizontal_position = block.settings.text_horizontal_position
           assign text_vertical_position = block.settings.text_vertical_position
-          
+
           assign preheading = block.settings.preheading
           assign heading = block.settings.heading
           assign subheading = block.settings.subheading
@@ -186,7 +186,7 @@
           or button_1 != blank
           or button_2 != blank
         %}
-          <div class="bannerCaptionContainer caption is-justify-{{ text_horizontal_position }} is-align-{{ text_vertical_position }}">
+          <div id="shopify-section-{{ block.id }}" class="bannerCaptionContainer caption is-justify-{{ text_horizontal_position }} is-align-{{ text_vertical_position }}">
             <div class="caption-content text-align-{{ text_alignment }} {% if allow_padding %}has-padding{% endif %}">
               {% if preheading != blank %}
                 <div class="slideshow-classic__preheading banner__subheading {{ preheading_preset }} subheading">
