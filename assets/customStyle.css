@@ -3280,7 +3280,9 @@ form#headerZipCode input[type="text"]::placeholder {
     min-height: 398px;
     object-fit: cover;
 }
-
+.mobileBottomTxtEnabled{
+    display: none !important;
+}
 /* extra styles css code end  */
 
 

@@ -153,7 +153,62 @@
     {% endfor %}
   </div>
   {% if mobile_text_below_image == true %}
-    <div class="mobileBottomTxtEnabled"></div>
+    <div class="mobileBottomTxtEnabled">
+      {% for block in blocks %}
+        {% liquid
+          assign button_1 = block.settings.button_1
+          assign button_1_link = block.settings.button_1_link
+          assign button_1_style = block.settings.button_1_style
+          assign button_2 = block.settings.button_2
+          assign button_2_link = block.settings.button_2_link
+          assign button_2_style = block.settings.button_2_style
+          assign heading_preset = block.settings.heading_preset
+          assign subheading_preset = block.settings.subheading_preset
+          assign preheading_preset = block.settings.preheading_preset
+
+          assign preheading = block.settings.preheading
+          assign heading = block.settings.heading
+          assign subheading = block.settings.subheading
+        %}
+
+        {% if preheading != blank
+          or heading != blank
+          or subheading != blank
+          or button_1 != blank
+          or button_2 != blank
+        %}
+          <div class="bannerCaptionContainer caption is-justify-{{ text_horizontal_position }} is-align-{{ text_vertical_position }}">
+            <div class="caption-content text-align-{{ text_alignment }} {% if allow_padding %}has-padding{% endif %}">
+              {% if preheading != blank %}
+                <div class="{{ context }}__preheading banner__subheading {{ preheading_preset }} subheading">
+                  {{ preheading }}
+                </div>
+              {% endif %}
+              {% if heading != blank %}
+                <h2 class="{{ context }}__heading banner__heading title {{ heading_preset }}">
+                  <span>{{ heading }}</span>
+                </h2>
+              {% endif %}
+              {% if subheading != blank %}
+                <div class="{{ context }}__subheading banner__subheading subtitle {{ subheading_preset }}">
+                  {{ subheading }}
+                </div>
+              {% endif %}
+              {% if buttons %}
+                <div class="{{ context }}__buttons buttons is-{{ text_alignment }}">
+                  {% if button_1 != blank %}
+                    {% render 'button', label: button_1, href: button_1_link, type: 'link', style: button_1_style %}
+                  {% endif %}
+                  {% if button_2 != blank %}
+                    {% render 'button', label: button_2, href: button_2_link, type: 'link', style: button_2_style %}
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   {% endif %}
 </section>
 
