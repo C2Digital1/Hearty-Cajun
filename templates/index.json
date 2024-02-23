@@ -180,6 +180,7 @@
         "button_style_view": "button--primary",
         "hidePrice": true,
         "collection_style": "slider",
+        "dotsBg": "#463F3A",
         "arrowIconBg": "#ffffff",
         "arrowIconColor": "#28303f",
         "width": "wide",
@@ -270,6 +271,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": false,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
@@ -411,6 +413,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": true,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
