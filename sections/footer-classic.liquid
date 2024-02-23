@@ -278,6 +278,9 @@
       {% endfor %}
     </div>
 
+    <div class="ftSocialMedia MobileSocialMedia">
+      {% render 'social-icons', flex_alignment: 'left' %}
+    </div>
     <div class="container has-padding-top footerBottomRow">
       {% if locale_selector or currency_selector or settings.show_multiple_currencies == true %}
         <div class="one-whole column">

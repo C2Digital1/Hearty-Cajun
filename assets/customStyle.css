@@ -1045,6 +1045,10 @@ p.footer__heading.is-h6 {
     width: 100%;
 }
 
+.ftSocialMedia.MobileSocialMedia {
+    display: none !important;
+}
+
 .ftSocialMedia ul.social-icons li:not(:last-child) {
     padding-right: 12px;
 }
@@ -3311,9 +3315,11 @@ form#headerZipCode input[type="text"]::placeholder {
 .ftAccordianBtn .accordianIcon {
     display: none !important;
 }
-.ftNewsLetterContent{
+
+.ftNewsLetterContent {
     width: 100%;
 }
+
 /* extra styles css code end  */
 
 
@@ -3737,6 +3743,17 @@ form#headerZipCode input[type="text"]::placeholder {
     .ftAccordianContent {
         display: none;
     }
+
+    .footer__block.block__newsletter {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .ftSocialMedia.has-padding-bottom.has-padding-top {
+        display: none !important;
+    }
+
 }
 
 @media only screen and (max-width: 380px) {
