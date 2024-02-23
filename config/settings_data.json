@@ -153,7 +153,7 @@
     "notify_me_form": false,
     "enable_quickshop": false,
     "quickshop_truncate_words": true,
-    "cart_action": "drawer",
+    "cart_action": "redirect_cart",
     "show_lock_icon": false,
     "display_special_instructions": true,
     "display_tos_checkbox": false,
