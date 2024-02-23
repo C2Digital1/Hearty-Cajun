@@ -3693,7 +3693,12 @@ form#headerZipCode input[type="text"]::placeholder {
     }
 }
 
-
+@media only screen and (max-width: 380px) {
+    .imageWitTextOverlay.customStyleBanner h2.image-with-text-overlay__heading.banner__heading.title.is-h5 {
+        font-size: 18px !important;
+        line-height: 100%;
+    }
+}
 
 /* media queires for desktop end  */
 
