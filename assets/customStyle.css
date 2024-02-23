@@ -3362,6 +3362,16 @@ form#headerZipCode input[type="text"]::placeholder {
     .product-gallery--left-thumbnails:not(.product-gallery--image-amount-1) .product-gallery__main {
         width: calc(100% - 96px);
     }
+
+    .mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 222;
+        border-radius: 0 0 16px 16px;
+        background-color: #FFFFFF;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+    }
 }
 
 /* media queires for desktop end  */
@@ -3616,6 +3626,13 @@ form#headerZipCode input[type="text"]::placeholder {
 
     .mobile-header__content .mobile-icons {
         display: none !important;
+    }
+
+    div#shopify-section-header-classic {
+        border-radius: 0 0 16px 16px;
+        background-color: #FFFFFF;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+        min-height: 85px !important;
     }
 
     /* mobile header css code end  */
