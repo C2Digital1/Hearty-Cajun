@@ -3810,8 +3810,40 @@ form#headerZipCode input[type="text"]::placeholder {
         width: 100%;
         z-index: 5;
     }
-    .submenu__input:checked~.mobile-menu__submenu.has-dropdown{
+
+    .submenu__input:checked~.mobile-menu__submenu.has-dropdown {
         margin: 20px auto;
+    }
+
+    .mobile-menu .headerZipCodeCollector {
+        margin: 0px auto;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 16px 16px 0 0;
+        background-color: #FFFFFF;
+        box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 78px;
+        position: relative;
+        top: -10px;
+        padding: 0 16px;
+    }
+
+    .mobile-menu .headerZipCodeCollector form#headerZipCode {
+        width: 100%;
+        border: 0px solid !important;
+    }
+
+    .headerZipCodeCollector svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+
+    form#headerZipCode input[type=text] {
+        padding: 5px 90px 5px 0px;
     }
 
     /* mobile header css code end  */
