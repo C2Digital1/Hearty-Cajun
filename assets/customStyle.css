@@ -3458,6 +3458,7 @@ form#headerZipCode input[type="text"]::placeholder {
     .header--classic nav.header__menu-items.is-justify-start {
         margin-left: 20px;
     }
+
     section.section.is-width-standard {
         padding: 0 16px !important;
     }
@@ -3678,9 +3679,31 @@ form#headerZipCode input[type="text"]::placeholder {
     button.mobileMenuOpener span.mobileMenuIcon.closeIcon {
         opacity: 0;
     }
+
     div.header-sticky-wrapper {
         min-height: 112px;
     }
+
+    .mobile-menu {
+        left: 0 !important;
+        border: 0px solid !important;
+        transition: all cubic-bezier(.25, .75, .5, 1) .4s;
+        transform: translateX(-200%);
+    }
+
+    .isOpen button.mobileMenuOpener span.mobileMenuIcon.closeIcon {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    .isOpen button.mobileMenuOpener span.mobileMenuIcon.hamBurger {
+        opacity: 0;
+    }
+
+    .isOpen .mobile-menu {
+        transform: translateX(0);
+    }
+
     /* mobile header css code end  */
 
 }
@@ -3909,6 +3932,7 @@ form#headerZipCode input[type="text"]::placeholder {
     .footer.footer--classic .container .footer__block:last-child .ftAccordianContent {
         padding-bottom: 16px;
     }
+
     div.header-sticky-wrapper {
         min-height: 0;
     }

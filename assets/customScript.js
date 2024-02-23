@@ -11,6 +11,11 @@ $(document).ready(function () {
         }
     }
 
+    $(".mobileMenuOpener").click(function(){
+        $(".mobile-header").toggleClass("isOpen");
+        $("body, html").toggleClass("hideScroll");
+    });
+
     $('.customLoadMoreBtm').click(function () {
         var $thisBtn = $(this);
         $($thisBtn).addClass("is-loading");
