@@ -129,9 +129,7 @@ header.header {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-div.header-sticky-wrapper {
-    min-height: 112px;
-}
+
 
 #shopify-section-header-classic {
     position: relative;
@@ -3368,8 +3366,9 @@ form#headerZipCode input[type="text"]::placeholder {
         top: 0;
         left: 0;
         z-index: 9999;
-
     }
+
+
 }
 
 /* media queires for desktop end  */
@@ -3458,6 +3457,9 @@ form#headerZipCode input[type="text"]::placeholder {
 
     .header--classic nav.header__menu-items.is-justify-start {
         margin-left: 20px;
+    }
+    section.section.is-width-standard {
+        padding: 0 16px !important;
     }
 }
 
@@ -3616,7 +3618,7 @@ form#headerZipCode input[type="text"]::placeholder {
     }
 
     .mobile-header__content {
-        padding: 12px 16px;
+        padding: 12px 16px !important;
         width: 100%;
     }
 
@@ -3676,7 +3678,9 @@ form#headerZipCode input[type="text"]::placeholder {
     button.mobileMenuOpener span.mobileMenuIcon.closeIcon {
         opacity: 0;
     }
-
+    div.header-sticky-wrapper {
+        min-height: 112px;
+    }
     /* mobile header css code end  */
 
 }
@@ -3904,6 +3908,9 @@ form#headerZipCode input[type="text"]::placeholder {
 
     .footer.footer--classic .container .footer__block:last-child .ftAccordianContent {
         padding-bottom: 16px;
+    }
+    div.header-sticky-wrapper {
+        min-height: 0;
     }
 
 }
