@@ -3359,9 +3359,27 @@ form#headerZipCode input[type="text"]::placeholder {
 /* =========== MOBILE RESPONSIVNESS CSS CODE START =========== */
 
 /* media queires for desktop start  */
+@media only screen and (max-width: 1400px) {
+    .imgTextGridsRow .gridSIdeImg {
+        padding: 0;
+        width: 128px;
+        height: 128px;
+        display: flex;
+        align-items: center;
+    }
+
+    .imgTextGridsRow .imgTxtGridCol .gridTxtCol {
+        max-width: 100%;
+    }
+
+    h4.gridSectionHeading {
+        max-width: 100%;
+    }
+}
+
 @media only screen and (max-width: 1350px) {
     section.section.is-width-standard {
-        padding: 0 16px !important;
+        padding: 0 32px !important;
     }
 
     .is-width-small {
@@ -3370,12 +3388,34 @@ form#headerZipCode input[type="text"]::placeholder {
     }
 
     .bannerCaptionContainer.caption {
-        padding: 0 16px !important;
+        padding: 0 32px !important;
+    }
+
+    .imgTxtGridsContainer .imgTextGridsRow {
+        align-items: stretch;
+    }
+
+    .imgTextGridsRow .gridSIdeImg {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .imgTextGridsRow .imgTxtGridCol .gridTxtCol {
+        width: calc(100% - 100px);
     }
 
 }
 
 @media only screen and (max-width: 991px) {
+    section.section.is-width-standard {
+        padding: 0 16px !important;
+    }
+
+    .bannerCaptionContainer.caption {
+        padding: 0 16px !important;
+    }
+
     .is-width-small {
         padding: 0 16px !important;
         max-width: 900px !important;
@@ -3473,6 +3513,28 @@ form#headerZipCode input[type="text"]::placeholder {
 
     .imageWithTextSection .container.flipInMob .imgTxtCol.imgTxtColChild-1 {
         margin-bottom: 0px !important;
+    }
+
+    .testimonialCarouselContainer {
+        margin: 44px auto !important;
+    }
+
+    .customTestimonialContainer button {
+        display: none !important;
+    }
+
+    section.section.custTestimonialSec.is-width-standard {
+        padding: 0 8px !important;
+    }
+
+    .testimonialTextContent {
+        padding: 20px 16px;
+    }
+
+    .roundClientImg {
+        width: 64px;
+        height: 64px;
+        margin-top: -35px;
     }
 }
 
@@ -3576,9 +3638,62 @@ form#headerZipCode input[type="text"]::placeholder {
 
         padding: 0 !important;
     }
+
+    .secHedingContainer h2.sectionHeading.is-h2 {
+        line-height: 54px;
+    }
+
+    .secHedingContainer h3.sectionSubHeading.is-text {
+        line-height: 24px;
+    }
+
+    .secHedingContainer {
+        margin-bottom: 32px;
+    }
+
+    .imgTextGridsRow .imgTxtGridCol {
+        width: 100%;
+        max-width: 100%;
+        margin: 0px auto 8px auto !important;
+        padding: 16px;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .imgTextGridsRow .gridSIdeImg {
+        padding: 0;
+        width: 128px;
+        height: 128px;
+        display: flex;
+        align-items: center;
+    }
+
+    .imgTextGridsRow .imgTxtGridCol .gridTxtCol {
+        max-width: 254px;
+        width: calc(100% - 128px);
+    }
+
+    .imgTextGridsRow .imgTxtGridCol h4.gridSectionHeading.is-h5 {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .gridText.is-text {
+        line-height: 23px;
+    }
+
+    h4.gridSectionHeading {
+        max-width: 100% !important;
+    }
+
+    a.secBtn.button {
+        margin: 24px auto;
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 405px) {}
+
 
 /* media queires for desktop end  */
 
