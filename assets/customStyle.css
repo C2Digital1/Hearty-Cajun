@@ -3691,6 +3691,18 @@ form#headerZipCode input[type="text"]::placeholder {
         margin: 24px auto;
         width: 100%;
     }
+
+    a.footer__logo-wrapper.has-padding-bottom {
+        max-width: 168px;
+        padding: 0;
+        margin: 0px auto;
+    }
+
+    .footer__block.block__logo.medium-down--one-whole.column.four {
+        padding-bottom: 32px;
+        margin: 0px auto;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 380px) {

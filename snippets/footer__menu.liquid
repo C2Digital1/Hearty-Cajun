@@ -12,12 +12,12 @@ heading_preset: <string>
 <div class="footer__menu is-justify-space-between {{ linklist_class }}">
 {% if menu_link != blank %}
   {% assign menu = linklists[menu_link] %}
-  <p class="footer__heading  {{ heading_preset }}">
-    {% if link_setting != blank %}<a href="{{ link_setting }}">{% endif %}
+  <p class="footer__heading  ftAccordianBtn{{ heading_preset }}">
       {{ menu.title }}
-    {% if link_setting != blank %}</a>{% endif %}
+      <span class="accordianIcon">
+      </span>
   </p>
-  <ul>
+  <ul class="ftAccordianContent">
     {% for link in menu.links %}
       <li class="footer__menu-link {{ menu_preset }}">
         <a href="{{ link.url }}" class="{% if link.active %}is-active{% endif %}">
