@@ -3704,6 +3704,96 @@ form#headerZipCode input[type="text"]::placeholder {
         transform: translateX(0);
     }
 
+
+    .isOpen .mobile-header__content {
+        border-radius: 0 0 16px 16px;
+        background-color: #FFFFFF;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 555;
+    }
+
+    .mobile-menu__content {
+        padding-bottom: 0 !important;
+        padding-top: 24px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .mobile-menu__content .mobile-menu__list {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .mobile-menu__content {
+        height: max-content;
+        max-height: calc(100vh - 20px) !important;
+        min-height: calc(100vh - 150px) !important;
+        overflow-y: scroll;
+        width: 100%;
+    }
+
+    .mobile-menu__content a.header__link.action-area__link.specialLoginBtn {
+        min-height: 46px !important;
+        margin-bottom: 24px;
+    }
+
+    .mobile-menu__content li.mobile-menu__list-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mobile-menu__content li.mobile-menu__list-item li.mobile-menu__list-item:not(:last-child) {
+        border-bottom: 1px solid #463F3A !important;
+    }
+
+    ul.mobile-menu__list li.mobile-menu__list-item {
+        border-top: 1px solid rgb(70 63 58 / 10%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 0;
+    }
+
+
+    ul.mobile-menu__list.has-margin-bottom.is-h6 {
+        font-weight: bold !important;
+    }
+
+    ul.mobile-menu__list.has-margin-bottom.is-h6 li:nth-child(2) {
+        border-top: 0px solid !important;
+        padding-top: 0 !important;
+    }
+
+
+    .mobile-menu__first-level.has-submenu a.mobile-menu-link::after {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        opacity: 0 !important;
+        cursor: pointer;
+    }
+
+    .mobile-menu__first-level.has-submenu a.mobile-menu-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    .mobile-menu span.close-dropdown {
+        display: none !important;
+    }
+
     /* mobile header css code end  */
 
 }
