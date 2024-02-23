@@ -3367,10 +3367,8 @@ form#headerZipCode input[type="text"]::placeholder {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 222;
-        border-radius: 0 0 16px 16px;
-        background-color: #FFFFFF;
-        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+        z-index: 9999;
+
     }
 }
 
@@ -3612,6 +3610,9 @@ form#headerZipCode input[type="text"]::placeholder {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
+        border-radius: 0 0 16px 16px;
+        background-color: #FFFFFF;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
     }
 
     .mobile-header__content {
@@ -3629,9 +3630,6 @@ form#headerZipCode input[type="text"]::placeholder {
     }
 
     div#shopify-section-header-classic {
-        border-radius: 0 0 16px 16px;
-        background-color: #FFFFFF;
-        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
         min-height: 85px !important;
     }
 
