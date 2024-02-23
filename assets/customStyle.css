@@ -3198,7 +3198,13 @@ button.customDropDownBtn svg {
 .showSquareImages .image-element__wrap img {
     object-fit: cover;
 }
-
+.prodInfoInnerBox .sticker-holder.sticker-shape-square {
+    display: none;
+}
+.price-ui.price-ui--loading {
+    display: block;
+    opacity: 1 !important;
+}
 /* =========== PRODUCT PAGE CSS CODE END =========== */
 
 
@@ -3244,3 +3250,14 @@ button.customDropDownBtn svg {
 }
 
 /* media queires for desktop end  */
+
+
+
+/* =========== MOBILE RESPONSIVNESS CSS CODE START =========== */
+
+/* media queires for desktop start  */
+@media only screen and (max-width: 991px) {
+}
+/* media queires for desktop end  */
+
+/* =========== MOBILE RESPONSIVNESS CSS CODE END =========== */
