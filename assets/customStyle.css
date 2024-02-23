@@ -3635,6 +3635,50 @@ form#headerZipCode input[type="text"]::placeholder {
         min-height: 85px !important;
     }
 
+    button.mobileMenuOpener {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: 32px;
+        width: 32px;
+        position: relative;
+        background: transparent;
+        color: #463F3A;
+        border: 0px solid !important;
+        cursor: pointer;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    button.mobileMenuOpener span.mobileMenuIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all linear .3s;
+    }
+
+    button.mobileMenuOpener span.mobileMenuIcon svg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button.mobileMenuOpener span.mobileMenuIcon.hamBurger {
+        opacity: 1;
+    }
+
+    button.mobileMenuOpener span.mobileMenuIcon.closeIcon {
+        opacity: 0;
+    }
+
     /* mobile header css code end  */
 
 }
