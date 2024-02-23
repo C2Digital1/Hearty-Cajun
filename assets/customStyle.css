@@ -3414,6 +3414,9 @@ form#headerZipCode input[type="text"]::placeholder {
     .mobileBottomTxtEnabled{
         display: block  !important;
     }
+    .mainSlideShowSec.mobile-text--below-media .bannersCaptionTxtBox.caption{
+        display: none !important;
+    }
 }
 
 @media only screen and (max-width: 405px) {}
