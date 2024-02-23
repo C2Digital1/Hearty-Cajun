@@ -3201,7 +3201,7 @@ button.customDropDownBtn svg {
 .prodInfoInnerBox .sticker-holder.sticker-shape-square {
     display: none;
 }
-.price-ui.price-ui--loading {
+.prodInfoInnerBox .price-ui.price-ui--loading {
     display: block;
     opacity: 1 !important;
 }
