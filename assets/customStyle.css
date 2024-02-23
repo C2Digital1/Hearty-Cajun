@@ -4042,6 +4042,7 @@ form#headerZipCode input[type="text"]::placeholder {
     .footer__block.block__link-list.medium-down--one-whole.column.four {
         width: 100%;
         margin: 0 !important;
+        padding: 0 !important;
     }
 
     .ftAccordianContent {
