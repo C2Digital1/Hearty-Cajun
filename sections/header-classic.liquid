@@ -280,7 +280,7 @@
       </div>
     </section>
   </header>
-  {% render 'mobile-header' %}
+  {% render 'mobile-header' displayZipCodeForm: displayZipCodeForm,  showSpecialLoginButton: showSpecialLoginButton, %}
   {% if settings.search_display_style == 'overlay' %}
     {% render 'search-overlay' %}
   {% endif %}
