@@ -3766,6 +3766,15 @@ form#headerZipCode input[type="text"]::placeholder {
         padding-top: 32px;
     }
 
+
+    .footer.footer--classic .container .footer__block:last-child {
+        border-bottom: 1px solid #463f3a;
+    }
+
+    .footer.footer--classic .container .footer__block:last-child .ftAccordianContent {
+        padding-bottom: 16px;
+    }
+
 }
 
 @media only screen and (max-width: 380px) {
