@@ -3354,7 +3354,27 @@ form#headerZipCode input[type="text"]::placeholder {
 /* =========== MOBILE RESPONSIVNESS CSS CODE START =========== */
 
 /* media queires for desktop start  */
+@media only screen and (max-width: 1350px) {
+    section.section.is-width-standard {
+        padding: 0 16px !important;
+    }
+
+    .is-width-small {
+        padding: 0 30px !important;
+        max-width: 1080px !important;
+    }
+
+    .bannerCaptionContainer.caption {
+        padding: 0 16px !important;
+    }
+}
+
 @media only screen and (max-width: 991px) {
+    .is-width-small {
+        padding: 0 16px !important;
+        max-width: 900px !important;
+    }
+
     .featuredCollecionSec.is-width-wide.hasSlider {
         padding-left: 16px !important;
     }
@@ -3377,6 +3397,18 @@ form#headerZipCode input[type="text"]::placeholder {
     section.section.is-width-wide.featuredCollecionSec.hasSlider .buttons {
         padding-right: 16px !important;
         width: 100%;
+    }
+
+    .headingAndBtnSection h2.heading-section__heading.title.is-h3 {
+        line-height: 43px;
+    }
+
+    .headingAndBtnSection .heading-section__subheading.subtitle.is-text {
+        line-height: 24px;
+    }
+
+    .headingAndBtnSection .heading-section__subheading.subtitle {
+        margin-bottom: 24px;
     }
 
 }
@@ -3470,6 +3502,37 @@ form#headerZipCode input[type="text"]::placeholder {
         width: 100%;
         margin: 0px auto;
         max-block-size: 1;
+    }
+    .headingAndBtnSection a.headinSecBtn.button {
+        width: 100%;
+        max-width: 100%;
+    }
+    .imageWithTextSection .container .imgTxtCol {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .imageWithTextSection.hasRoundedBorder .container .imgTxtCol.imgTxtColChild-1 {
+        margin-bottom: 8px !important;
+    }
+
+    .imgTxtCol.image-with-text__text-column.image-with-text__column {
+        padding: 16px;
+    }
+
+    .image-with-text__text-column h2.preHeadingTxt.is-h5 {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    h3.image-with-text__heading.is-h5 {
+        line-height: 28px;
+    }
+
+    .image-with-text__text.content {
+        margin-bottom: 32px;
     }
 }
 
