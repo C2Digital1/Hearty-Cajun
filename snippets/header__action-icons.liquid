@@ -19,6 +19,15 @@
 
 <div class="header__icons header__icon-style-{{ icon_style | replace: '_', '-' }} {{ header_icon_class }}">
   {% comment %} Currency converter select {% endcomment %}
+  {% if displayZipCodeForm %}
+    <div class="headerZipCodeCollector">
+      {% render 'locationPin' %}
+      <form id="headerZipCode">
+        <input type="text" name="zipCode" placeholder="Enter Zip Code" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  {% endif %}
   <div class="header__link">
     {% render 'localization-switcher',
       additional_classes: 'header-menu__disclosure',
@@ -37,19 +46,24 @@
     </a>
   {% endif %}
 
-
   {% if shop.customer_accounts_enabled %}
     {% comment %} Account icon {% endcomment %}
     {% if customer %}
-      {% comment %} Logout {% endcomment %}   
+      {% comment %} Logout {% endcomment %}
 
-      <a href="{{ routes.account_url }}" class="header__link action-area__link {% if showSpecialLoginButton %}specialLoginBtn{% endif %}">
+      <a
+        href="{{ routes.account_url }}"
+        class="header__link action-area__link {% if showSpecialLoginButton %}specialLoginBtn{% endif %}"
+      >
         {% render 'icon', name: 'avatar', icon_class: 'header__icon' %}
         <span class="icon-caption">{{ 'layout.customer.my_account' | t | escape }}</span>
       </a>
     {% else %}
       {% comment %} Login {% endcomment %}
-      <a href="{{ routes.account_login_url }}" class="header__link action-area__link {% if showSpecialLoginButton %}specialLoginBtn{% endif %}">
+      <a
+        href="{{ routes.account_login_url }}"
+        class="header__link action-area__link {% if showSpecialLoginButton %}specialLoginBtn{% endif %}"
+      >
         {% render 'icon', name: 'avatar', icon_class: 'header__icon' %}
         <span class="icon-caption">{{ 'layout.customer.log_in' | t | escape }}</span>
       </a>

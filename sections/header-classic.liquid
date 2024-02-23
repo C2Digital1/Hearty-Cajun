@@ -21,6 +21,7 @@
   assign dropdown_click = section.settings.dropdown_click
 
   assign display_search = section.settings.display_search
+  assign displayZipCodeForm = section.settings.displayZipCodeForm
   assign showSpecialLoginButton = section.settings.showSpecialLoginButton
 
   assign icon_style = section.settings.icon_style
@@ -158,17 +159,9 @@
           id: id
   %}
 {% endstyle %}
-
 {% comment %} HTML markup {% endcomment %}
-<div
-  class="is-relative {{ css_class }}"
-  data-enable_overlay="{{ enable_overlay }}"
-  data-enable_sticky="{{ enable_sticky }}"
->
-  <header
-    id="header"
-    class="header dropdown-style-{{ settings.dropdown_style }} box-shadow-{{ settings.show_dropdown_shadow }} scheme_color-{{section.settings.color_scheme}}"
-  >
+<div class="is-relative {{ css_class }}" data-enable_overlay="{{ enable_overlay }}" data-enable_sticky="{{ enable_sticky }}">
+  <header id="header" class="header dropdown-style-{{ settings.dropdown_style }} box-shadow-{{ settings.show_dropdown_shadow }} scheme_color-{{section.settings.color_scheme}}">
     <section class="section is-width-{{ width }} ">
       <div class="container">
         <div class="navbar dropdown-click--{{ dropdown_click }} is-align-center is-justify-space-between  one-whole column">
@@ -282,25 +275,18 @@
               {% endfor %}
             </nav>
           </div>
-          {% render 'header__action-icons', display_search: display_search, icon_style: icon_style, showSpecialLoginButton: showSpecialLoginButton, %}
+          {% render 'header__action-icons', displayZipCodeForm: displayZipCodeForm, display_search: display_search, icon_style: icon_style, showSpecialLoginButton: showSpecialLoginButton, %}
         </div>
       </div>
     </section>
   </header>
-
   {% render 'mobile-header' %}
-
   {% if settings.search_display_style == 'overlay' %}
     {% render 'search-overlay' %}
   {% endif %}
 </div>
-
 {% comment %}JavaScript{% endcomment %}
-<script
-  type="application/json"
-  data-section-id="{{ section.id }}"
-  data-section-data
->
+<script type="application/json" data-section-id="{{ section.id }}" data-section-data>
   {
     "enable_overlay": {{ enable_overlay | json }},
     "enable_sticky": {{ enable_sticky | json }},
@@ -426,6 +412,12 @@
       "type": "checkbox",
       "id": "display_search",
       "label": "Show search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "displayZipCodeForm",
+      "label": "Show Zip Code Form",
       "default": true
     },
     {
