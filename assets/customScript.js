@@ -92,6 +92,10 @@ $(document).ready(function () {
         }
     });
 
+    $(".ftAccordianBtn").click(function () {
+        $(this).toggleClass("active");
+        $(this).next(".ftAccordianContent").slideToggle("200");
+    });
     // Cart Page Note Text Area code start 
 
     function updateCartNote() {

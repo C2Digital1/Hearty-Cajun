@@ -248,23 +248,26 @@
             -%}
 
             {% if newsletter_title != blank %}
-              <p class="footer__heading {{ heading_preset }}">
+              <p class="footer__heading ftAccordianBtn {{ heading_preset }}">
                 {{ newsletter_title }}
+                <span class="accordianIcon">
+                </span>
               </p>
-            {% endif %}
+            {% endif %}          
 
-            {% if newsletter_richtext != blank %}
-              <div class="content {{ newsletter_richtext_preset }}">
-                {{ newsletter_richtext }}
-              </div>
-            {% endif %}
-
-            {% render 'newsletter-form',
-              type: 'block',
-              display_first_name: display_first_name,
-              display_last_name: display_last_name
-            %}
-
+            <div class="ftNewsLetterContent ftAccordianContent">
+              {% if newsletter_richtext != blank %}
+                <div class="content {{ newsletter_richtext_preset }}">
+                  {{ newsletter_richtext }}
+                </div>
+              {% endif %}
+              {% render 'newsletter-form',
+                type: 'block',
+                display_first_name: display_first_name,
+                display_last_name: display_last_name
+              %}
+  
+            </div>
             {% if social_icons_footer %}
               <div class="ftSocialMedia has-padding-bottom has-padding-top">
                 {% render 'social-icons', flex_alignment: 'left' %}
