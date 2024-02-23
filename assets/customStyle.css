@@ -647,9 +647,9 @@ h3.image-with-text__heading.is-h5 {
 
 
 .imageWitTextOverlay.customStyleBanner a.button.button--link-style {
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 22px;
+    font-size: 16px !important;
+    letter-spacing: 0 !important;
+    line-height: 22px !important;
     font-weight: normal !important;
     border: 0px solid !important;
 }
@@ -3303,6 +3303,11 @@ form#headerZipCode input[type="text"]::placeholder {
     padding: 0 !important;
 }
 
+.image-with-text-overlay__banner img {
+    min-height: 279px;
+    object-fit: cover;
+}
+
 /* extra styles css code end  */
 
 
@@ -3367,6 +3372,7 @@ form#headerZipCode input[type="text"]::placeholder {
     .bannerCaptionContainer.caption {
         padding: 0 16px !important;
     }
+
 }
 
 @media only screen and (max-width: 991px) {
@@ -3416,7 +3422,7 @@ form#headerZipCode input[type="text"]::placeholder {
         margin: 0 !important;
     }
 
-    .imageWithTextSection.hasRoundedBorder .container .imgTxtCol.imgTxtColChild-1 {
+    .imageWithTextSection .container .imgTxtCol.imgTxtColChild-1 {
         margin-bottom: 8px !important;
     }
 
@@ -3439,6 +3445,35 @@ form#headerZipCode input[type="text"]::placeholder {
         margin-bottom: 32px;
     }
 
+    .image-with-text__text-column .image-with-text__wrapper {
+        max-width: 100%;
+        padding: 32px;
+    }
+
+    .image-with-text-overlay__banner .bannerCaptionContainer.bannersCaptionTxtBox.caption {
+        padding: 0 16px !important;
+    }
+
+    .imageWitTextOverlay.customStyleBanner h2.image-with-text-overlay__heading.banner__heading.title.is-h5 {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+        text-align: center;
+    }
+
+    .container.flipInMob {
+        flex-direction: column-reverse;
+    }
+
+    .imageWithTextSection .container.flipInMob .imgTxtCol.imgTxtColChild-2 {
+        margin-bottom: 8px !important;
+
+    }
+
+    .imageWithTextSection .container.flipInMob .imgTxtCol.imgTxtColChild-1 {
+        margin-bottom: 0px !important;
+    }
 }
 
 @media only screen and (max-width: 798px) {
@@ -3535,6 +3570,11 @@ form#headerZipCode input[type="text"]::placeholder {
     .headingAndBtnSection a.headinSecBtn.button {
         width: 100%;
         max-width: 100%;
+    }
+
+    .image-with-text__text-column .image-with-text__wrapper {
+
+        padding: 0 !important;
     }
 }
 

@@ -6,6 +6,7 @@
   assign id = section.id
   assign blocks = section.blocks
   assign showRoundeBdr = section.settings.showRoundeBdr
+  assign flipInMob = section.settings.flipInMob
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -107,7 +108,7 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
-  <div class="container">
+  <div class="container {% if flipInMob %} flipInMob {% endif %}">
     {% if blocks.size > 0 %}
       {% for block in blocks %}
         {% if block.type != 'image' %}
@@ -282,6 +283,12 @@
       "id": "showRoundeBdr",
       "label": "Show rounder borders",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "flipInMob",
+      "label": "Flip In Mobile",
+      "default": false
     },
     {
       "type": "checkbox",
