@@ -39,14 +39,14 @@
       header__icon-style-{{ settings.mobile_icon_style | replace: '_', '-' }}
     ">
     <div class="mobile-dropdown mobile-dropdown__position--{{ settings.logo_menu_position }}">
-      <div class="mobile-menu__toggle-icon">
-        <div class="mobile-header__open-menu">
-          {% render 'icon', name: 'menu' %}
-        </div>
-        <div class="mobile-header__close-menu">
-          {% render 'icon', name: 'x' %}
-        </div>
-      </div>
+      <button class="mobileMenuOpener">
+        <span class="mobileMenuIcon hamBurger">
+          {% render 'hamBurger' %}
+        </span>
+        <span class="mobileMenuIcon closeIcon">
+          {% render 'closeIcon' %}
+        </span>
+      </button>
       {% render 'mobile-menu', nav_blocks: nav_blocks %}
     </div>
     <div class="mobile-logo">
