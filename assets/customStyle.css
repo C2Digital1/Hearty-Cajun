@@ -3281,7 +3281,7 @@ form#headerZipCode input[type="text"]::placeholder {
     object-fit: cover;
 }
 .mobileBottomTxtEnabled{
-    display: none !important;
+    /* display: none !important; */
 }
 .mobileBottomTxtEnabled .bannerBtmCaptionContainer{
     width: 100%;

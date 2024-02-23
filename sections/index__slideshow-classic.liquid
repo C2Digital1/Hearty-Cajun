@@ -153,7 +153,7 @@
     {% endfor %}
   </div>
   {% if mobile_text_below_image == true %}
-    <div class="mobileBottomTxtEnabled">
+    <div class="mobileBottomTxtEnabled" data-slideshow-classic>
       {% for block in blocks %}
         {% liquid
           assign button_1 = block.settings.button_1
@@ -186,7 +186,7 @@
           or button_1 != blank
           or button_2 != blank
         %}
-         <div id="shopify-section-{{ block.id }}"  class="bannerBtmCaptionContainer" data-slideshow-classic>
+         <div id="shopify-section-{{ block.id }}"  class="bannerBtmCaptionContainer" >
           <div class="bannerCaptionContainer caption is-justify-{{ text_horizontal_position }} is-align-{{ text_vertical_position }}">
             <div class="caption-content text-align-{{ text_alignment }} {% if allow_padding %}has-padding{% endif %}">
               {% if preheading != blank %}
