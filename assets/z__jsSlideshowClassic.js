@@ -6,6 +6,7 @@ Shopify.theme.jsSlideshowClassic = {
     // Add settings from schema to current object
     Shopify.theme.jsSlideshowClassic = $.extend(this, Shopify.theme.getSectionData($section));
 
+    const textTransition = this.text_transition;
     // Selectors
     const $slideshowClassicEl = $section.find('[data-slideshow-classic]').removeClass('is-hidden');    
     const $textSlideshowEl = $section.find('[data-text-slideshow]').removeClass('is-hidden');
@@ -28,8 +29,8 @@ Shopify.theme.jsSlideshowClassic = {
       imagesLoaded: true,
       lazyload: 4,
       prevNextButtons: false,
-      pageDots: this.number_of_slides > 1 ? this.show_nav_buttons : false,
-      draggable: false,
+      pageDots:  false,
+      draggable: true,
       on: {
         ready: function () {
           const $currentTextSlide = $textSlideshowEl.find('.is-selected .text-slideshow__content');
