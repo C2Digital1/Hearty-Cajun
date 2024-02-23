@@ -3208,6 +3208,70 @@ button.customDropDownBtn svg {
     opacity: 1 !important;
 }
 
+.headerZipCodeCollector {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 25px;
+    width: max-content;
+}
+
+.headerZipCodeCollector svg {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 11px;
+    color: #463F3A;
+}
+
+form#headerZipCode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 228px;
+    position: relative;
+    border: 1px solid #463F3A;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+form#headerZipCode input[type="text"] {
+    width: 100%;
+    color: #463F3A;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    border: 0px solid !important;
+    outline: none !important;
+    min-height: 40px;
+    padding: 5px 90px 5px 17px;
+}
+
+form#headerZipCode button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #463F3A;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    border: 0px solid !important;
+    cursor: pointer;
+    outline: none !important;
+    background: transparent;
+    padding: 0;
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+form#headerZipCode input[type="text"]::placeholder {
+    opacity: 0.4;
+}
+
 /* =========== PRODUCT PAGE CSS CODE END =========== */
 
 
