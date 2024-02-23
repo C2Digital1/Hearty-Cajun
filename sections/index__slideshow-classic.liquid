@@ -169,6 +169,11 @@
           assign preheading = block.settings.preheading
           assign heading = block.settings.heading
           assign subheading = block.settings.subheading
+          if button_1 != blank or button_2 != blank
+            assign buttons = true
+          else
+            assign buttons = false
+          endif
         %}
 
         {% if preheading != blank
@@ -180,22 +185,22 @@
           <div class="bannerCaptionContainer caption is-justify-{{ text_horizontal_position }} is-align-{{ text_vertical_position }}">
             <div class="caption-content text-align-{{ text_alignment }} {% if allow_padding %}has-padding{% endif %}">
               {% if preheading != blank %}
-                <div class="{{ context }}__preheading banner__subheading {{ preheading_preset }} subheading">
+                <div class="slideshow-classic__preheading banner__subheading {{ preheading_preset }} subheading">
                   {{ preheading }}
                 </div>
               {% endif %}
               {% if heading != blank %}
-                <h2 class="{{ context }}__heading banner__heading title {{ heading_preset }}">
+                <h2 class="slideshow-classic__heading banner__heading title {{ heading_preset }}">
                   <span>{{ heading }}</span>
                 </h2>
               {% endif %}
               {% if subheading != blank %}
-                <div class="{{ context }}__subheading banner__subheading subtitle {{ subheading_preset }}">
+                <div class="slideshow-classic__subheading banner__subheading subtitle {{ subheading_preset }}">
                   {{ subheading }}
                 </div>
               {% endif %}
               {% if buttons %}
-                <div class="{{ context }}__buttons buttons is-{{ text_alignment }}">
+                <div class="slideshow-classic__buttons buttons is-{{ text_alignment }}">
                   {% if button_1 != blank %}
                     {% render 'button', label: button_1, href: button_1_link, type: 'link', style: button_1_style %}
                   {% endif %}
