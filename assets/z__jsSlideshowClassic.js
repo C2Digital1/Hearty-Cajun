@@ -7,7 +7,8 @@ Shopify.theme.jsSlideshowClassic = {
     Shopify.theme.jsSlideshowClassic = $.extend(this, Shopify.theme.getSectionData($section));
 
     // Selectors
-    const $slideshowClassicEl = $section.find('[data-slideshow-classic]').removeClass('is-hidden');
+    const $slideshowClassicEl = $section.find('[data-slideshow-classic]').removeClass('is-hidden');    
+    const $textSlideshowEl = $section.find('[data-text-slideshow]').removeClass('is-hidden');
 
     const $slideshowClassic = $slideshowClassicEl.flickity({
       wrapAround: true,
@@ -21,11 +22,38 @@ Shopify.theme.jsSlideshowClassic = {
       autoPlay: this.image_slideshow_speed * 1000,
       arrowShape: arrowShape
     });
+    const $textSlideshow = $textSlideshowEl.flickity({
+      autoplay: false,
+      contain: true,
+      imagesLoaded: true,
+      lazyload: 4,
+      prevNextButtons: false,
+      pageDots: this.number_of_slides > 1 ? this.show_nav_buttons : false,
+      draggable: false,
+      on: {
+        ready: function () {
+          const $currentTextSlide = $textSlideshowEl.find('.is-selected .text-slideshow__content');
+          Shopify.theme.animation.slideTransition($currentTextSlide, textTransition);
+        }
+      }
+    });
 
     // Resize flickity when the slider is settled
     $slideshowClassicEl.on( 'settle.flickity', function() {
       $slideshowClassicEl.flickity('resize');
     })
+
+    $slideshowClassic.on('change.flickity', function (event, index) {
+      $textSlideshow.flickity('select', index, true, true);
+
+      const $currentTextSlide = $textSlideshowEl.find('.is-selected .text-slideshow__content');
+      Shopify.theme.animation.slideTransition($currentTextSlide, textTransition);
+
+    });
+
+    $textSlideshow.on('change.flickity', function (event, index) {
+      $slideshowClassic.flickity('select', index, true, false);
+    });
 
   },
   blockSelect: function($section, blockId) {

@@ -153,7 +153,7 @@
     {% endfor %}
   </div>
   {% if mobile_text_below_image == true %}
-    <div class="mobileBottomTxtEnabled" data-slideshow-classic>
+    <div class="mobileBottomTxtEnabled" data-text-slideshow  data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
       {% for block in blocks %}
         {% liquid
           assign button_1 = block.settings.button_1
