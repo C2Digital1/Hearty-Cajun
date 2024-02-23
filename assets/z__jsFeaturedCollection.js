@@ -27,7 +27,7 @@
         draggable: true,
         cellAlign: 'left',
         wrapAround: false,
-        pageDots: false,
+        pageDots: true,
         contain: false,
         prevNextButtons: slideData.products_limit > slideData.products_per_slide ? true : false,
         initialIndex: 0,

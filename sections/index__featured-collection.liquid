@@ -23,6 +23,8 @@
   assign arrowIconColor = section.settings.arrowIconColor
   assign arrowIconBg = section.settings.arrowIconBg
   assign hidePrice = section.settings.hidePrice
+  
+  assign dotsBg = section.settings.dotsBg  
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -91,6 +93,12 @@
   #shopify-section-{{ id }} button.flickity-button{
     background: {{ arrowIconBg  }};
     color: {{ arrowIconColor }};  
+  }
+  #shopify-section-{{ id }} ol.flickity-page-dots li.dot{
+    background: {{ dotsBg }};
+  }
+  #shopify-section-{{ id }} ol.flickity-page-dots li.dot{
+    background: {{ dotsBg }};
   }
   {%
     render 'css-loop',
@@ -425,6 +433,13 @@
           "label": "Grid"
         }
       ]
+    },
+    
+    {
+      "type": "color",
+      "id": "dotsBg",
+      "label": "Slider Dots Color",
+      "default": "#463F3A"
     },
     {
       "type": "color",

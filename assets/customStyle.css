@@ -301,6 +301,15 @@ ol.flickity-page-dots li.dot.is-selected {
     width: 10px;
 }
 
+.featuredCollecionSec ol.flickity-page-dots {
+    position: relative !important;
+    width: 100% !important;
+    top: unset !important;
+    bottom: unset !important;
+    margin: 0px auto !important;
+    display: none !important;
+}
+
 .mainSlideShowSec .customStyleSlideShow ol.flickity-page-dots {
     position: relative !important;
     width: 100% !important;
@@ -3280,16 +3289,20 @@ form#headerZipCode input[type="text"]::placeholder {
     min-height: 398px;
     object-fit: cover;
 }
-.mobileBottomTxtEnabled{
+
+.mobileBottomTxtEnabled {
     display: none !important;
 }
-.mobileBottomTxtEnabled .bannerBtmCaptionContainer{
+
+.mobileBottomTxtEnabled .bannerBtmCaptionContainer {
     width: 100%;
     max-width: 100%;
 }
+
 .bannerBtmCaptionContainer .caption-content {
     padding: 0 !important;
 }
+
 /* extra styles css code end  */
 
 
@@ -3341,7 +3354,32 @@ form#headerZipCode input[type="text"]::placeholder {
 /* =========== MOBILE RESPONSIVNESS CSS CODE START =========== */
 
 /* media queires for desktop start  */
-@media only screen and (max-width: 991px) {}
+@media only screen and (max-width: 991px) {
+    .featuredCollecionSec.is-width-wide.hasSlider {
+        padding-left: 16px !important;
+    }
+
+    .featuredCollecionSec.is-width-wide.hasSlider .container.featuredCollectionHeading {
+        margin: 0 auto 32px auto;
+        padding-right: 16px;
+    }
+
+    .featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-whole.column.thumbnail {
+        width: calc(60% - 20px);
+        margin-right: 8px !important;
+        min-width: 262px;
+    }
+
+    .featuredCollecionSec .buttons {
+        margin: 32px auto 0 auto;
+    }
+
+    section.section.is-width-wide.featuredCollecionSec.hasSlider .buttons {
+        padding-right: 16px !important;
+        width: 100%;
+    }
+
+}
 
 @media only screen and (max-width: 798px) {
     .mainSlideShowSec button.flickity-button {
@@ -3411,11 +3449,27 @@ form#headerZipCode input[type="text"]::placeholder {
         margin: 0 !important;
         padding: 0 !important;
     }
-    .mobileBottomTxtEnabled{
-        display: block  !important;
+
+    .mobileBottomTxtEnabled {
+        display: block !important;
     }
-    .mainSlideShowSec.mobile-text--below-media .bannersCaptionTxtBox.caption{
+
+    .mainSlideShowSec.mobile-text--below-media .bannersCaptionTxtBox.caption {
         display: none !important;
+    }
+
+    .slideshow-classic__subheading.banner__subheading.subtitle p br {
+        display: none;
+    }
+
+    .featuredCollecionSec ol.flickity-page-dots {
+        display: flex !important;
+    }
+
+    .featuredCollecionSec .buttons a.button {
+        width: 100%;
+        margin: 0px auto;
+        max-block-size: 1;
     }
 }
 
