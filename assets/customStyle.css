@@ -3283,6 +3283,13 @@ form#headerZipCode input[type="text"]::placeholder {
 .mobileBottomTxtEnabled{
     display: none !important;
 }
+.mobileBottomTxtEnabled .bannerBtmCaptionContainer{
+    width: 100%;
+    max-width: 100%;
+}
+.bannerBtmCaptionContainer .caption-content {
+    padding: 0 !important;
+}
 /* extra styles css code end  */
 
 
