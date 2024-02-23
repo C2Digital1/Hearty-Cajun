@@ -3246,7 +3246,7 @@ form#headerZipCode input[type="text"] {
     border: 0px solid !important;
     outline: none !important;
     min-height: 40px;
-    padding: 5px 90px 5px 17px;
+    padding: 5px 90px 5px 12px;
 }
 
 form#headerZipCode button {
@@ -3273,6 +3273,15 @@ form#headerZipCode input[type="text"]::placeholder {
 }
 
 /* =========== PRODUCT PAGE CSS CODE END =========== */
+
+
+/* extra styles css code start  */
+.slideshow-classic__banner .image-element__wrap img {
+    min-height: 398px;
+    object-fit: cover;
+}
+
+/* extra styles css code end  */
 
 
 /* media queires for desktop start  */
@@ -3324,6 +3333,78 @@ form#headerZipCode input[type="text"]::placeholder {
 
 /* media queires for desktop start  */
 @media only screen and (max-width: 991px) {}
+
+@media only screen and (max-width: 798px) {
+    .mainSlideShowSec button.flickity-button {
+        display: none !important;
+    }
+
+    .mainSlideShowSec .customStyleSlideShow .slideshow-classic__banner.columns.one-whole {
+        border-radius: 0;
+        width: 94%;
+        margin: 0 3px;
+    }
+
+    .mainSlideShowSec .customStyleSlideShow .image-element__wrap img {
+        border-radius: 12px;
+    }
+
+    .bannerCaptionContainer.caption {
+        padding: 0 16px !important;
+    }
+
+    .mainSlideShowSec .customStyleSlideShow .slideshow-classic__banner.columns.one-whole .bannerCaptionContainer.caption {
+        padding: 0 !important;
+        width: 100%;
+        margin-top: 56px;
+    }
+
+    .caption-content.text-align-left.has-padding {
+        padding: 0;
+    }
+
+    .bannerCaptionContainer h2.slideshow-classic__heading.banner__heading.title.is-h1 {
+        letter-spacing: 0;
+        line-height: 48px;
+    }
+
+    .bannerCaptionContainer h2.slideshow-classic__heading.banner__heading.title {
+        margin-bottom: 8px;
+    }
+
+    .slideshow-classic__subheading.banner__subheading.subtitle.is-h5 {
+        line-height: 29px;
+    }
+
+    .slideshow-classic__subheading.banner__subheading.subtitle {
+        margin-bottom: 24px !important;
+        line-height: 29px !important;
+    }
+
+    .slideshow-classic__buttons.buttons {
+        flex-direction: column;
+    }
+
+    .bannerCaptionContainer.caption a.button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .slideshow-classic__banner.columns.one-whole.is-selected .bannerCaptionContainer.caption {
+        opacity: 1;
+    }
+
+    .slideshow-classic__banner.columns.one-whole .bannerCaptionContainer.caption {
+        opacity: 0;
+    }
+
+    .slideshow-classic.page-dots--true {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 405px) {}
 
 /* media queires for desktop end  */
 

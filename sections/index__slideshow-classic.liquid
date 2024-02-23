@@ -14,8 +14,7 @@
 
   assign arrowIconColor = section.settings.arrowIconColor
   assign arrowIconBg = section.settings.arrowIconBg
-  assign dotsBg = section.settings.dotsBg 
-    
+  assign dotsBg = section.settings.dotsBg
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -101,7 +100,7 @@
   }
   #shopify-section-{{ id }} button.flickity-button{
     background: {{ arrowIconBg  }};
-    color: {{ arrowIconColor }};  
+    color: {{ arrowIconColor }};
   }
 
   {%
@@ -148,10 +147,14 @@
         context: 'slideshow-classic',
         object: block,
         type: 'block',
-        class: class
+        class: class,
+        mobileDots: true
       %}
     {% endfor %}
   </div>
+  {% if mobile_text_below_image == true %}
+    <div class="mobileBottomTxtEnabled"></div>
+  {% endif %}
 </section>
 
 {% comment %}JavaScript{% endcomment %}
@@ -244,9 +247,9 @@
       "id": "arrowIconColor",
       "label": "Arrow Icon Color",
       "default": "#28303F"
-    },    
+    },
     {
-      "type": "color", 
+      "type": "color",
       "id": "dotsBg",
       "label": "Dots Color",
       "default": "#463F3A"
