@@ -14,7 +14,9 @@
 
   assign arrowIconColor = section.settings.arrowIconColor
   assign arrowIconBg = section.settings.arrowIconBg
-  assign dotsBg = section.settings.dotsBg
+  assign dotsBg = section.settings..
+  
+  assign text_transition = section.settings.text_transition
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -231,6 +233,7 @@
 >
   {
     "image_transition": {{ image_transition | json }},
+    "text_transition": {{ text_transition | json }},
     "image_slideshow_speed": {{ image_slideshow_speed | json }},
     "show_arrows": {{ show_arrows | json }},
     "show_nav_buttons": {{ show_nav_buttons | json }},
@@ -265,6 +268,38 @@
         }
       ],
       "default": "slide"
+    },
+    {
+      "type": "select",
+      "id": "text_transition",
+      "label": "Text transition in mobile",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fadeIn",
+          "label": "Fade in"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade in down"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade in right"
+        },
+        {
+          "value": "zoomIn",
+          "label": "Zoom in"
+        }
+      ],
+      "default": "fadeIn"
     },
     {
       "type": "range",
