@@ -3790,8 +3790,25 @@ form#headerZipCode input[type="text"]::placeholder {
     }
 
 
+    ul.mobile-submenu__list.mobile-menu__submenu.has-dropdown {
+        border: 0px solid !important;
+        padding: 0 !important;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        background: #f5f4f4 !important;
+        border-radius: 5px;
+    }
+
     .mobile-menu span.close-dropdown {
-        display: none !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
     }
 
     /* mobile header css code end  */
