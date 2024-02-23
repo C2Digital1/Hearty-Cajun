@@ -3793,7 +3793,7 @@ form#headerZipCode input[type="text"]::placeholder {
     ul.mobile-submenu__list.mobile-menu__submenu.has-dropdown {
         border: 0px solid !important;
         padding: 0 !important;
-        margin: 20px auto;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -3809,6 +3809,9 @@ form#headerZipCode input[type="text"]::placeholder {
         left: 0;
         width: 100%;
         z-index: 5;
+    }
+    .submenu__input:checked~.mobile-menu__submenu.has-dropdown{
+        margin: 20px auto;
     }
 
     /* mobile header css code end  */
