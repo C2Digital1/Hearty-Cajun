@@ -3754,6 +3754,18 @@ form#headerZipCode input[type="text"]::placeholder {
         display: none !important;
     }
 
+    .ftSocialMedia.MobileSocialMedia {
+        margin: 32px auto 0 auto !important;
+        width: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container.has-padding-top.footerBottomRow {
+        padding-top: 32px;
+    }
+
 }
 
 @media only screen and (max-width: 380px) {
