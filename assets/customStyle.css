@@ -4802,6 +4802,29 @@ h3.search__results-count {
 
 }
 
+
+
+@media only screen and (max-width: 450px) {
+    .small-down--one-half.column.thumbnail.product__thumbnail span.deliveryTimeLabel {
+        width: 95px;
+        max-height: none !important;
+        height: max-content;
+        min-height: 23px;
+        font-size: 12px !important;
+    }
+
+    .small-down--one-half.column.thumbnail.product__thumbnail .thumbnail-sticker {
+        width: 70px !important;
+        padding: 0 2px;
+        margin-bottom: 85px !important;
+    }
+
+    .small-down--one-half.column.thumbnail.product__thumbnail span.deliveryTimeLabel svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
 @media only screen and (max-width: 414px) {
     .faq__block-faq .faq__item .faq__item-answer {
         padding: 0 16px 32px 16px !important;
