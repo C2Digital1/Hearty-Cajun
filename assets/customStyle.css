@@ -2970,6 +2970,17 @@ button.sidebar-block__toggle-icon.icon-style--plus_and_minus span.icon {
 
 .collectionSortingFilters {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button.mobileFilterOpener {
+    display: none;
+}
+
+.collectionSortingFilters .field.is-grouped.is-flex-wrap {
+    width: 100%;
 }
 
 .collection__sort-by-filter.select {
