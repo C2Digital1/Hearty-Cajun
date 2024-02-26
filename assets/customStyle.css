@@ -4172,6 +4172,10 @@ h3.search__results-count {
         transform: translateX(-200%);
     }
 
+    .mainCollectionSec.showFilters aside.sidebar-section {
+        transform: translateX(0%);
+    }
+
     .sidebar__block {
         display: none !important;
     }
@@ -4606,6 +4610,16 @@ h3.search__results-count {
     .policyPageSection .heading-wrapper--page.heading-wrapper h1.page__title.title {
         margin-bottom: 40px !important;
         line-height: 43px;
+    }
+
+    .faceted-filter-group-display__submit {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        padding: 24px 16px;
+        bottom: 0;
+        background: #fff;
+        z-index: 22;
     }
 }
 

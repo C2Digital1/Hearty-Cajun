@@ -44,6 +44,15 @@ $(document).ready(function () {
         }, 1500);
     });
 
+    $(".mobileFilterOpener").click(function(){
+        $(".mainCollectionSec").addClass("showFilters");
+        $("body, html").addClass("hideScroll");
+    });
+    $(".mobileFilterCloseBtn").click(function(){
+        $(".mainCollectionSec").removeClass("showFilters");
+        $("body, html").removeClass("hideScroll");
+    });
+
     $(".prodIngPopupOpener").click(function () {
         var popupId = $(this).attr("data-id");
         if ($(".popupBodyContainer").length > 0) {
