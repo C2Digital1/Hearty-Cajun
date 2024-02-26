@@ -1186,6 +1186,7 @@ button.close.popup__close {
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
     max-width: none !important;
     margin: 16px;
+    z-index: 5;
 }
 
 button.close.popup__close svg {
@@ -3880,24 +3881,30 @@ form#headerZipCode input[type="text"]::placeholder {
         flex: 100%;
         min-width: 0 !important;
     }
+
     .fancybox-slide.fancybox-slide--html.fancybox-slide--current.fancybox-slide--complete {
         padding: 0;
     }
-    
+
     .popup__header {
         width: 100% !important;
         margin: 0 !important;
     }
-    
+
     .popup-modal-popup .fancybox-bg {
         background: rgb(70 63 58 / 80%) !important;
     }
-    
+
     h3.popup__title.title.is-h5 {
         font-size: 24px;
         font-weight: bold;
         letter-spacing: 0;
         line-height: 33px;
+    }
+
+    button.close.popup__close {
+        top: 7px;
+        right: 7px;
     }
 
 }
