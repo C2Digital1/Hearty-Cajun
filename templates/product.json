@@ -160,6 +160,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": false,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
@@ -207,7 +208,7 @@
         "margin_bottom_m": 0,
         "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "animation": "none",
-        "css_class": "",
+        "css_class": "extraProdCol",
         "custom_css": ""
       }
     }
