@@ -3100,6 +3100,7 @@ button.customDropDownBtn svg {
     justify-content: space-between;
     width: 100%;
     flex-wrap: nowrap;
+    padding-bottom: 0;
 }
 
 .productMainSection .product__images.one-half.column.medium-down--one-whole {
@@ -3114,7 +3115,7 @@ button.customDropDownBtn svg {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 24px auto !important;
+    margin: 24px auto 0 auto !important;
 }
 
 .prodInfoInnerBox {
@@ -4312,6 +4313,29 @@ h3.search__results-count {
 
     section.section.recommendedProdSec .thumbnail.product__thumbnail {
         margin-bottom: 20px !important;
+    }
+
+    .container.contact-form {
+        flex-direction: column;
+    }
+
+    .custom-contact-form__block.one-half.medium-down--one-whole.column {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .contact-form__form .buttons button.button {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .contact-form .contact-form__image {
+        margin-bottom: 32px;
+    }
+
+    .custom-contact-form__block.custom-contact-form__block--paragraph.one-whole.medium-down--one-whole.column {
+        margin: 0 auto 24px auto !important;
     }
 }
 
