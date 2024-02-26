@@ -4539,12 +4539,12 @@ h3.search__results-count {
         padding-bottom: 0 !important;
     }
 
-    .faqProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
+    .extraProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
         display: none !important;
     }
 
-    .faqProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(1),
-    .faqProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(2) {
+    .extraProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(1),
+    .extraProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(2) {
         display: block !important;
     }
 
