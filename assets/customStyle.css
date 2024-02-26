@@ -4342,6 +4342,96 @@ h3.search__results-count {
     .custom-contact-form__block.custom-contact-form__block--paragraph.one-whole.medium-down--one-whole.column {
         margin: 0 auto 24px auto !important;
     }
+
+    h1.cart-page__title.title {
+        margin-bottom: 32px;
+    }
+
+    .cart__card.container {
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 16px !important;
+        align-items: stretch;
+    }
+
+    .cart__card.container .cart__info {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        padding-left: 16px !important;
+        position: relative;
+    }
+
+    a.cart__image {
+        width: 96px;
+    }
+
+    .cart__card.container .cart__info .cart__description {
+        width: calc(100% - 32px);
+    }
+
+    .cart__info .cart__price {
+        width: 100%;
+        text-align: left;
+        display: none;
+    }
+
+    .cart__card.container .cart__info .cart__quantity {
+        width: 100%;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 8px !important;
+    }
+
+    .cart__card.container .cart__info .cart__quantity .purchase-details__quantity.product-quantity-box {
+        margin: 0 !important;
+    }
+
+    p.item__properties.is-text-small {
+
+        color: #463F3A;
+        font-size: 8px;
+        letter-spacing: 0;
+        line-height: 13px;
+        margin: 8px 0;
+    }
+
+    .cart__total {
+        display: flex !important;
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        left: unset;
+        width: max-content;
+        max-width: 100%;
+    }
+
+    a.cart__remove.removeIcon.close {
+        font-size: 0 !important;
+        position: absolute;
+        top: 16px !important;
+        transform: none !important;
+        right: 16px !important;
+        margin: 0 !important;
+    }
+
+    .cart__total.is-h6 {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+
+    h1.cart-page__title.title.is-h2 {
+        line-height: normal;
+    }
+
+    .cart__footer.cartBtmCol {
+        max-width: 600px !important;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 798px) {
