@@ -3114,7 +3114,7 @@ button.customDropDownBtn svg {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-
+    margin: 24px auto !important;
 }
 
 .prodInfoInnerBox {
@@ -4295,6 +4295,20 @@ h3.search__results-count {
         width: 100%;
     }
 
+    .product-gallery .product-gallery__main .flickity-prev-next-button {
+        display: none !important;
+    }
+
+
+
+    .product-gallery .flickity-page-dots {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        position: relative !important;
+        bottom: 0 !important;
+        margin: 24px auto 0 auto !important;
+    }
 }
 
 @media only screen and (max-width: 798px) {
