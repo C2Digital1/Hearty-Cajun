@@ -3386,6 +3386,11 @@ h3.search__results-count {
     width: 100%;
 }
 
+.product-block variant-selection.variant-selection {
+    margin-bottom: 20px !important;
+    display: block;
+}
+
 /* extra styles css code end  */
 
 
