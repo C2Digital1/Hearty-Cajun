@@ -3929,6 +3929,18 @@ form#headerZipCode input[type="text"]::placeholder {
         max-width: 100%;
     }
 
+    .mobile-text--below-media .image-with-text-overlay__banner img {
+        min-height: 0;
+    }
+
+
+    .mobile-text--below-media .caption-content {
+        margin: 24px 0 0 0 !important;
+    }
+
+    .image-with-text__text-column h2.preHeadingTxt {
+        margin-top: 24px;
+    }
 
 
 }
