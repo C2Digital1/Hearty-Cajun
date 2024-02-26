@@ -3942,6 +3942,41 @@ form#headerZipCode input[type="text"]::placeholder {
         margin-top: 24px;
     }
 
+    .collectionItemsRow .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
+        width: 100%;
+        margin-bottom: 32px;
+        margin-right: 0;
+        padding-bottom: 0;
+    }
+
+    button.customLoadMoreBtm.button {
+        width: 100%;
+    }
+
+    .primarySec.imageWithTextSection .container {
+        flex-direction: column;
+    }
+
+    section.section.primarySec.imageWithTextSection.is-width-small .imgTxtCol.imgTxtColChild-1 {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto 24px auto !important;
+    }
+
+    section.section.primarySec.imageWithTextSection.is-width-small .imgTxtCol.imgTxtColChild-2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0px auto !important;
+    }
+
+    .primarySec a.button {
+        width: 100%;
+    }
+
+    .collectionItemsRow .image-element__wrap {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
 
 }
 
