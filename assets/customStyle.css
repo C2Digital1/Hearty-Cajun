@@ -3989,6 +3989,57 @@ form#headerZipCode input[type="text"]::placeholder {
         line-height: 20px !important;
     }
 
+    .popupInnerBox {
+        width: calc(100% - 32px);
+        margin: 20px auto;
+    }
+
+    button.close.popupCloseBtn {
+        right: 8px;
+        top: 8px;
+        margin: 0;
+    }
+
+    .popupBannerArea img.boxImg {
+        min-height: 224px;
+    }
+
+    .popupBannerContent h3.is-h6 {
+        font-size: 24px !important;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .popupBannerContent {
+        padding: 16px;
+    }
+
+    .popupBodyContent {
+        padding: 8px;
+    }
+
+    .popupBoxContent {
+        padding: 20px 16px;
+    }
+
+    .ingredientsRow {
+        flex-direction: column;
+    }
+
+    .ingredientCol {
+        width: 100%;
+    }
+
+    .popupBoxContent h4.is-h6 {
+        line-height: 24px;
+    }
+
+    .prodDescription.is-small {
+        font-size: 14px !important;
+        line-height: 21px !important;
+    }
+
 }
 
 @media only screen and (max-width: 798px) {
