@@ -53,7 +53,7 @@
       "continue_shopping_html": "Try searching or <a href=\"\/collections\/all\">continue shopping &rarr;<\/a>"
     },
     "pagination": {
-      "previous": "Previous",
+      "previous": "Prev",
       "next": "Next",
       "pagination_button": "Load more"
     },
