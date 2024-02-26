@@ -2979,9 +2979,10 @@ button.mobileFilterOpener {
     display: none;
 }
 
-.mobileFilterOpenerContainer{
+.mobileFilterOpenerContainer {
     width: 100%;
 }
+
 .collectionSortingFilters .field.is-grouped.is-flex-wrap {
     width: 100%;
 }
@@ -4431,9 +4432,8 @@ h3.search__results-count {
         min-height: 0;
     }
 
-
     .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
-        width: calc(50% - 8px);
+        width: calc(50% - 4px);
         margin-left: 0 !important;
         margin-right: 8px !important;
     }
@@ -4441,6 +4441,19 @@ h3.search__results-count {
     .one-fourth.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(2n) {
         margin-right: 0 !important;
     }
+
+
+    .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail {
+        width: calc(50% - 4px);
+        margin-left: 0;
+        margin-right: 8px;
+        margin-bottom: 32px;
+    }
+
+    .one-third.medium-down--one-half.small-down--one-half.column.thumbnail.product__thumbnail:nth-child(2n) {
+        margin-right: 0;
+    }
+
 
     .thumbnail.product__thumbnail.thumbnail__hover-overlay--false.has-padding-bottom {
         padding-bottom: 0 !important;
