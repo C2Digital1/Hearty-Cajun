@@ -4440,6 +4440,44 @@ h3.search__results-count {
     .article-content.has-padding-top.has-padding-bottom p:last-child {
         margin-bottom: 0 !important;
     }
+
+    .shopify-policy__container {
+        padding: 48px 16px !important;
+    }
+
+    .shopify-policy__title h1 {
+        font-size: 32px !important;
+        line-height: 43px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .policyPageSection p,
+    .policyPageSection span,
+    .policyPageSection,
+    .shopify-policy__body p,
+    .shopify-policy__body span,
+    .shopify-policy__body {
+        line-height: 24px !important;
+        margin-bottom: 32px !important;
+    }
+
+    .policyPageSection .page__content h1,
+    .policyPageSection .page__content h2,
+    .policyPageSection .page__content h3,
+    .policyPageSection .page__content h4,
+    .policyPageSection .page__content h5,
+    .policyPageSection .page__content h6,
+    .shopify-policy__body h1,
+    .shopify-policy__body h2,
+    .shopify-policy__body h3,
+    .shopify-policy__body h4,
+    .shopify-policy__body h5,
+    .shopify-policy__body h6 {
+        font-size: 20px !important;
+        line-height: 29px !important;
+        margin-top: 0 !important;
+        margin-bottom: 16px !important;
+    }
 }
 
 @media only screen and (max-width: 414px) {
