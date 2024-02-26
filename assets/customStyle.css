@@ -3376,12 +3376,15 @@ h3.search__results-count {
     margin-bottom: 20px !important;
     font-family: 'Montserrat' !important;
 }
-.fakeMobSubmitBtn{
+
+.fakeMobSubmitBtn {
     display: none !important;
 }
-.filtersContainer{
+
+.filtersContainer {
     width: 100%;
 }
+
 /* extra styles css code end  */
 
 
@@ -4159,7 +4162,11 @@ h3.search__results-count {
 
 
     .mainCollectionSec aside.sidebar-section {
-        display: block !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
         width: 100% !important;
         max-width: 100% !important;
         background: #fff;
@@ -4170,7 +4177,7 @@ h3.search__results-count {
         z-index: 30;
         top: 0;
         left: 0;
-        padding: 88px 16px !important;
+        padding: 88px 16px 22px 16px !important;
         min-height: 100vh;
         max-height: 100vh;
         transition: all cubic-bezier(.25, .75, .5, 1) .4s;
@@ -4181,12 +4188,31 @@ h3.search__results-count {
         transform: translateX(0%);
     }
 
+    .fakeMobSubmitBtn {
+        display: block !important;
+        width: 100%;
+    }
+
+    .fakeMobSubmitBtn button.button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        min-height: 54px;
+    }
+
+
+
     .sidebar__block {
         display: none !important;
     }
 
     .faceted-filter-form .sidebar__block {
         display: block !important;
+    }
+
+    .faceted-filter-form .faceted-filter-group-display__submit.hideInMob {
+        display: none !important;
     }
 
     .collection__main.three-fourths.has-sidebar.medium-down--one-whole.equal-columns--outside-trim {
