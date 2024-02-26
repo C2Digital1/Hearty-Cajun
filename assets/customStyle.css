@@ -4478,6 +4478,11 @@ h3.search__results-count {
         margin-top: 0 !important;
         margin-bottom: 16px !important;
     }
+
+    .policyPageSection .heading-wrapper--page.heading-wrapper h1.page__title.title {
+        margin-bottom: 40px !important;
+        line-height: 43px;
+    }
 }
 
 @media only screen and (max-width: 414px) {
