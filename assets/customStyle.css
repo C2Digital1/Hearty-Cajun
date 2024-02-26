@@ -3323,7 +3323,7 @@ form#headerZipCode input[type="text"]::placeholder {
 .ftNewsLetterContent {
     width: 100%;
 }
-
+.searchPageSection  input.input,
 .notFoundContainer input.input {
     min-height: 50px;
     border-radius: 50px !important;
@@ -3335,6 +3335,13 @@ section.section.notFoundContainer {
 
 section.section.notFoundContainer.is-width-standard {
     max-width: 1440px !important;
+}
+.searchPageSection{
+    min-height: 60vh;
+}
+.fullSearchContainer{
+    width: 100% !important;
+    max-width: 100%;
 }
 
 /* extra styles css code end  */
