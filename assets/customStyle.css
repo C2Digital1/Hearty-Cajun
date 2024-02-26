@@ -3526,10 +3526,10 @@ h3.search__results-count {
         padding-right: 16px;
     }
 
-    .featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-whole.column.thumbnail {
-        width: calc(60% - 20px);
+    .featuredCollectionItemContainer.layout--slider .one-fourth.medium-down--one-half.small-down--one-whole.column.thumbnail {
+        width: calc(60% - 20px) !important;
         margin-right: 8px !important;
-        min-width: 262px;
+        min-width: 262px !important;
     }
 
     .featuredCollecionSec .buttons {
@@ -3959,7 +3959,7 @@ h3.search__results-count {
     .iconTxtBoxesRow .iconTxtBoxCardCol.one-fourth {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto 24px auto;
+        margin: 0 auto 50px auto;
     }
 
     .iconTxtBoxCardCol.one-whole .iconTxtCardContent {
@@ -4411,6 +4411,10 @@ h3.search__results-count {
         padding-bottom: 0 !important;
         max-width: 100% !important;
         margin-bottom: 32px !important;
+    }
+
+    .popupBannerContent .popupBannerOverlay {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 26%, rgb(0 0 0 / 89%) 98.4%) !important;
     }
 }
 
