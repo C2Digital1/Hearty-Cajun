@@ -4309,6 +4309,10 @@ h3.search__results-count {
         bottom: 0 !important;
         margin: 24px auto 0 auto !important;
     }
+
+    section.section.recommendedProdSec .thumbnail.product__thumbnail {
+        margin-bottom: 20px !important;
+    }
 }
 
 @media only screen and (max-width: 798px) {
