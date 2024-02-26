@@ -679,7 +679,7 @@
           "image_position": "left",
           "overlay": "rgb(70 63 58 \/ 80%)",
           "popup_delay": 8,
-          "popup_days_to_hide": "2",
+          "popup_days_to_hide": "0",
           "padding_top": 80,
           "padding_bottom": 80,
           "padding_left": 0,
