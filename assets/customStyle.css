@@ -3376,7 +3376,12 @@ h3.search__results-count {
     margin-bottom: 20px !important;
     font-family: 'Montserrat' !important;
 }
-
+.fakeMobSubmitBtn{
+    display: none !important;
+}
+.filtersContainer{
+    width: 100%;
+}
 /* extra styles css code end  */
 
 
@@ -4612,15 +4617,6 @@ h3.search__results-count {
         line-height: 43px;
     }
 
-    .faceted-filter-group-display__submit {
-        position: fixed;
-        left: 0;
-        width: 100%;
-        padding: 24px 16px;
-        bottom: 0;
-        background: #fff;
-        z-index: 22;
-    }
 }
 
 @media only screen and (max-width: 414px) {
