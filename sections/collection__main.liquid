@@ -169,9 +169,11 @@
   {% if has_dropdowns or showMobileFilterBtn %}
     <div class="collectionSortingFilters">
       {% if showMobileFilterBtn %}
+       <div class="mobileFilterOpenerContainer">
         <button type="button" class="mobileFilterOpener">
           <span>Filter by</span>{% render 'arrowDown' %}
         </button>
+       </div>
       {% endif %}
       {% if has_dropdowns %}
         {% render 'collection__filters' %}
