@@ -3332,6 +3332,9 @@ form#headerZipCode input[type="text"]::placeholder {
 section.section.notFoundContainer {
     min-height: 60vh;
 }
+.searchPageSection  form.search-form {
+    max-width: 400px;
+}
 
 section.section.notFoundContainer.is-width-standard {
     max-width: 1440px !important;
