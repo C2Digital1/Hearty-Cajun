@@ -163,10 +163,19 @@
       </div>
     {% endif %}
   </div>
-
-  {% if has_dropdowns %}
-    <div class="collectionSortingFilters">      
-      {% render 'collection__filters' %}
+  {% if section.blocks.size > 0 and show_sidebar %}
+    {% assign showMobileFilterBtn = true %}
+  {% endif %}
+  {% if has_dropdowns or showMobileFilterBtn %}
+    <div class="collectionSortingFilters">
+      {% if showMobileFilterBtn %}
+        <button type="button" class="mobileFilterOpener">
+          <span>Filter by</span>{% render 'arrowDown' %}
+        </button>
+      {% endif %}
+      {% if has_dropdowns %}
+        {% render 'collection__filters' %}
+      {% endif %}
     </div>
   {% endif %}
   {% comment %} Collection description {% endcomment %}
@@ -346,7 +355,7 @@
       </script>
     {% endpaginate %}
   </div>
-</section> 
+</section>
 
 <script data-theme-editor-load-script src="{{ 'z__jsSidebar.js' | asset_url }}"></script>
 <script src="{{ 'z__jsCollection.js' | asset_url }}"></script>
@@ -356,7 +365,7 @@
       function setHeightBasedOnWidth() {
         $('.showSquareImages .product__imageContainer .image-element__wrap img').each(function () {
           var width = $(this).width();
-          $(this).css('height', width);         
+          $(this).css('height', width);
         });
       }
       setHeightBasedOnWidth();
