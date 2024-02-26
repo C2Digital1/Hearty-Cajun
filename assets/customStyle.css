@@ -2897,9 +2897,11 @@ h2.facetedFilterHeading svg {
     height: 20px;
     margin-left: 9px;
 }
-.mobileFilterCloseBtn{
+
+.mobileFilterCloseBtn {
     display: none !important;
 }
+
 .collectionMainContainer .sidebar__block.block__faceted-filtering {
     border-radius: 15px;
     background-color: #FFFFFF;
@@ -4166,6 +4168,8 @@ h3.search__results-count {
         padding: 88px 16px !important;
         min-height: 100vh;
         max-height: 100vh;
+        transition: all cubic-bezier(.25, .75, .5, 1) .4s;
+        transform: translateX(-200%);
     }
 
     .sidebar__block {
@@ -4214,6 +4218,29 @@ h3.search__results-count {
         margin-left: 14px;
         transform: rotate(0);
         transition: all linear .3s;
+    }
+
+    button.mobileFilterCloseBtn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        color: #463F3A;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 16px;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0px solid !important;
+        margin-bottom: 27px;
+    }
+
+    button.mobileFilterCloseBtn svg {
+        height: 22px;
+        width: 22px;
+        margin-right: 2px;
+        margin-left: -4px;
     }
 
 
