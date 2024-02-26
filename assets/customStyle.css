@@ -2897,7 +2897,9 @@ h2.facetedFilterHeading svg {
     height: 20px;
     margin-left: 9px;
 }
-
+.mobileFilterCloseBtn{
+    display: none !important;
+}
 .collectionMainContainer .sidebar__block.block__faceted-filtering {
     border-radius: 15px;
     background-color: #FFFFFF;
@@ -3020,7 +3022,7 @@ button.mobileFilterOpener {
     opacity: 0;
     visibility: hidden;
     transition: all linear .3s;
-    z-index: 5;
+    z-index: 0;
     height: max-content;
     max-height: 600px;
     overflow-y: auto;
@@ -3030,6 +3032,7 @@ button.mobileFilterOpener {
     top: 110%;
     opacity: 1;
     visibility: visible;
+    z-index: 15;
 }
 
 button.customDropDownBtn {
@@ -4149,13 +4152,28 @@ h3.search__results-count {
 
 
     .mainCollectionSec aside.sidebar-section {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: #fff;
+        flex: 100% !important;
         position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 55;
+        height: max-content;
+        overflow-y: auto;
+        z-index: 30;
         top: 0;
         left: 0;
-        display: none;
+        padding: 88px 16px !important;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .sidebar__block {
+        display: none !important;
+    }
+
+    .faceted-filter-form .sidebar__block {
+        display: block !important;
     }
 
     .collection__main.three-fourths.has-sidebar.medium-down--one-whole.equal-columns--outside-trim {
