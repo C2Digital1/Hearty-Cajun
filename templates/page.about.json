@@ -29,7 +29,7 @@
     "index_image_with_text_overlay_9UVHyC": {
       "type": "index__image-with-text-overlay",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "roundedCorner": false,
         "useCustomStyling": true,
         "link": "",
@@ -39,6 +39,7 @@
         "mobile_height": 0,
         "preheading": "",
         "heading": "About Us",
+        "showCollDesc": false,
         "subheading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula.<\/p>",
         "preheading_preset": "is-h6",
         "heading_preset": "is-h2",
@@ -56,7 +57,7 @@
         "button_2": "",
         "button_2_link": "",
         "button_2_style": "button--secondary",
-        "color_scheme_mobile": "",
+        "color_scheme_mobile": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "mobile_image_crop": "none",
         "mobile_text_below_image": true,
         "width": "wide",
@@ -113,6 +114,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": false,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
@@ -170,6 +172,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": false,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
@@ -227,6 +230,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": false,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
@@ -455,6 +459,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
+        "flipInMob": false,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
@@ -533,11 +538,12 @@
         "icon_txt_box_DUEPWY"
       ],
       "settings": {
+        "showIconInBox": false,
         "titlePreset": "is-h6",
         "textPreset": "is-text-small",
         "cardBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
-        "cardTitleColor": "#463F3A",
-        "cardTextColor": "#463F3A",
+        "cardTitleColor": "#463f3a",
+        "cardTextColor": "#463f3a",
         "width": "standard",
         "padding_top": 0,
         "padding_bottom": 64,
