@@ -4040,6 +4040,15 @@ form#headerZipCode input[type="text"]::placeholder {
         line-height: 21px !important;
     }
 
+    .iconTxtBoxCardCol.one-third {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .iconTxtBoxesRow {
+        row-gap: 16px;
+    }
+
 }
 
 @media only screen and (max-width: 798px) {
