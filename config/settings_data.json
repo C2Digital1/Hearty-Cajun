@@ -119,6 +119,7 @@
     "text_small_font_size_max": 14,
     "text_small_font_size_min": 14,
     "search_option": "product",
+    "search_heading_color": "#463f3a",
     "color_scheme_product": "default",
     "show_secondary_image": false,
     "align_height": false,
