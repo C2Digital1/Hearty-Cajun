@@ -4395,6 +4395,7 @@ h3.search__results-count {
         letter-spacing: 0;
         line-height: 13px;
         margin: 8px 0 0 0;
+        opacity: .8;
     }
 
     .cart__total {
