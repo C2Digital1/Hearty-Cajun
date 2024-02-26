@@ -36,7 +36,7 @@
     "index_image_with_text_overlay_gBpcmt": {
       "type": "index__image-with-text-overlay",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "roundedCorner": false,
         "useCustomStyling": true,
         "link": "",
@@ -78,7 +78,7 @@
         "padding_bottom_m": 0,
         "padding_left_m": 0,
         "padding_right_m": 0,
-        "margin_top_m": 0,
+        "margin_top_m": -30,
         "margin_bottom_m": 0,
         "animation": "none",
         "css_class": "heroBanner",
