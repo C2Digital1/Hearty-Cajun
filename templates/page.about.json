@@ -172,7 +172,7 @@
       "settings": {
         "width": "standard",
         "showRoundeBdr": true,
-        "flipInMob": false,
+        "flipInMob": true,
         "show_gutter": true,
         "desktop_height": 0,
         "mobile_height": 0,
