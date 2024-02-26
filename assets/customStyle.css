@@ -4346,6 +4346,15 @@ form#headerZipCode input[type="text"]::placeholder {
     .thumbnail.product__thumbnail.thumbnail__hover-overlay--false.has-padding-bottom {
         padding-bottom: 0 !important;
     }
+
+    .faqProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.has-thumbnail-sticker.thumbnail.product__thumbnail {
+        display: none !important;
+    }
+
+    .faqProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.has-thumbnail-sticker.thumbnail.product__thumbnail:nth-child(1),
+    .faqProdCol.featuredCollecionSec .container.featuredCollectionItemContainer .one-fourth.medium-down--one-half.small-down--one-half.column.has-thumbnail-sticker.thumbnail.product__thumbnail:nth-child(2) {
+        display: block !important;
+    }
 }
 
 @media only screen and (max-width: 380px) {
