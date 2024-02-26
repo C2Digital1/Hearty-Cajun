@@ -4424,6 +4424,28 @@ h3.search__results-count {
         margin-right: 0 !important;
         margin-left: 0 !important;
     }
+
+
+    h1.article__title.title.is-h3 {
+        font-size: 32px !important;
+        letter-spacing: 0;
+        line-height: 43px !important;
+    }
+
+    .article-content img {
+        max-width: none !important;
+        width: calc(100% + 32px);
+        margin-left: -16px !important;
+    }
+
+    .article-content.has-padding-top.has-padding-bottom {
+        padding: 40px 0 0 0 !important;
+    }
+
+
+    .article-content.has-padding-top.has-padding-bottom p:last-child {
+        margin-bottom: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 380px) {
