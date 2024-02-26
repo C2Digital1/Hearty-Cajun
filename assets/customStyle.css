@@ -1318,6 +1318,7 @@ h3.icon-column__title.title {
     padding: 16px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
     height: 100%;
+    width: 100%;
     position: relative;
 }
 
@@ -3907,6 +3908,29 @@ form#headerZipCode input[type="text"]::placeholder {
         right: 7px;
     }
 
+    .iconsWithTextColSections .container .icon-with-text-column__column.has-gutter.column.has-padding.one-third.text-align-center.medium-down--one-whole {
+        width: 100%;
+        margin: 0px auto 32px auto;
+    }
+
+    .iconTxtBoxCardCol.one-whole {
+        width: 100%;
+        max-width: 100% !important;
+        margin: 0 auto 24px auto;
+    }
+
+    .iconTxtBoxesRow .iconTxtBoxCardCol.one-fourth {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 24px auto;
+    }
+
+    .iconTxtBoxCardCol.one-whole .iconTxtCardContent {
+        max-width: 100%;
+    }
+
+
+
 }
 
 @media only screen and (max-width: 798px) {
@@ -3917,7 +3941,7 @@ form#headerZipCode input[type="text"]::placeholder {
     .mainSlideShowSec .customStyleSlideShow .slideshow-classic__banner.columns.one-whole {
         border-radius: 0;
         width: 94%;
-        margin: 0 3px;
+        margin: 0 3px 10px 3px;
     }
 
     .mainSlideShowSec .customStyleSlideShow .image-element__wrap img {
