@@ -4390,12 +4390,11 @@ h3.search__results-count {
     }
 
     p.item__properties.is-text-small {
-
         color: #463F3A;
         font-size: 8px;
         letter-spacing: 0;
         line-height: 13px;
-        margin: 8px 0;
+        margin: 8px 0 0 0;
     }
 
     .cart__total {
