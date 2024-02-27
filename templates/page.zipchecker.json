@@ -37,7 +37,7 @@
         "heading_preset": "is-h3",
         "formHeadingPreset": "is-h5",
         "formDescPreset": "is-text",
-        "width": "standard",
+        "width": "small",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
