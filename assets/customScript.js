@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
     }
 
-    $(".mobileMenuOpener").click(function(){
+    $(".mobileMenuOpener").click(function () {
         $(".mobile-header").toggleClass("isOpen");
         $("body, html").toggleClass("hideScroll");
     });
@@ -44,11 +44,11 @@ $(document).ready(function () {
         }, 1500);
     });
 
-    $(".mobileFilterOpener").click(function(){
+    $(".mobileFilterOpener").click(function () {
         $(".mainCollectionSec").addClass("showFilters");
         $("body, html").addClass("hideScroll");
     });
-    $(".mobileFilterCloseBtn").click(function(){
+    $(".mobileFilterCloseBtn").click(function () {
         $(".mainCollectionSec").removeClass("showFilters");
         $("body, html").removeClass("hideScroll");
     });
@@ -132,5 +132,54 @@ $(document).ready(function () {
     $('.dummyTextArea').on('input', updateCartNote);
 
     // Cart Page Note Text Area code end
+
+
+    // zip code checker code start 
+    $('.zipCodeSubmit').click(function () {
+        var enteredZipCode = $('input#zipCodeCollector').val().trim();
+        var availableZipCodes = $('#availableZipCodes').length ? JSON.parse($('#availableZipCodes').text()) : null;
+        if (enteredZipCode === '') {
+            $('input#zipCodeCollector').addClass('error').attr('placeholder', 'Please enter a zip code').val("");
+        } else if (!/^\d{5}$/.test(enteredZipCode)) {
+            $('input#zipCodeCollector').addClass('error').attr('placeholder', 'Invalid zip code format').val("");
+            return;
+        } else {
+            $('input#zipCodeCollector').removeClass('error').attr('placeholder', 'Zip Code');
+            if (availableZipCodes && availableZipCodes.zipCodes.includes(enteredZipCode)) {
+                $(".zipCodeCheckerSection .collection__loading-icon").show();
+                $(".zipCodeCheckerFormContainer").hide();              
+                setTimeout(function () {
+                    $(".zipCodeCheckerSection .collection__loading-icon").hide();
+                    window.location.href = "specific-page-url";
+                }, 1500);
+
+            } else {
+                $(".zipCodeCheckerSection .collection__loading-icon").show();
+                $(".zipCodeCheckerFormContainer").hide();
+                setTimeout(function () {
+                    $(".zipCodeCheckerSection .collection__loading-icon").hide();
+                    $('.zipCodeCheckerFormContainer.errorZipCodeForm').fadeIn(200);
+                    $("#zipForSubmission").val($("input#zipCodeCollector").val());
+                }, 1500);
+
+            }
+        }
+    });
+    $('input#zipCodeCollector').on('focus', function () {
+        $(this).removeClass('error').attr('placeholder', 'Zip Code');
+    });
+
+    $('input#zipCodeCollector').on('input', function () {
+        $(this).removeClass('error').attr('placeholder', 'Zip Code');
+    });
+    $('input#zipCodeCollector').on('paste', function () {
+        var input = $(this);
+        setTimeout(function () {
+            input.removeClass('error').attr('placeholder', 'Zip Code');
+        }, 10);
+    });
+
+    // zip code checker code end
+
 
 });

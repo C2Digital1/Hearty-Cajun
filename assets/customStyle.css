@@ -4857,7 +4857,6 @@ h3.search__results-count {
 
 
 /* =========== PURCHASE FLOW CSS CODE START =========== */
-
 .sectionBoxContainer {
     position: relative;
     width: 100%;
@@ -4911,6 +4910,7 @@ h2.secHeading {
     opacity: .4 !important;
 }
 
+.mainZipCheckerForm button.formSubmitBtn.button,
 .mainZipCheckerForm button.zipCodeSubmit.button {
     display: flex;
     align-items: center;
@@ -4984,6 +4984,28 @@ p.footerBtmTxt {
 .custFooterBar {
     border-radius: 24px 24px 0 0;
     box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+input.input.is-primary-btn-style.error {
+    border: 1px solid #f15d5e !important;
+    color: #f15d5e !important;
+}
+
+input.input.is-primary-btn-style.error::placeholder {
+    color: #f15d5e !important;
+    opacity: .8 !important;
+}
+
+.errorZipCodeForm label.label {
+    display: none !important;
+}
+
+.shopify-challenge__container div#g-recaptcha {
+    margin: 20px auto;
+}
+
+.shopify-challenge__container {
+    min-height: 50vh;
 }
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */

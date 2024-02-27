@@ -159,6 +159,7 @@
         {{ heading }}
       </h1>
     {% endif %}
+    <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
     <div class="zipCodeCheckerFormContainer">
       {% if zipCodeFormHeading != blank %}
         <h2 class="secHeading {{ formHeadingPreset }}">
@@ -172,6 +173,7 @@
       {% endif %}
       <div class="mainZipCheckerForm">
         <input
+          id="zipCodeCollector"
           class="input is-primary-btn-style"
           name="zipCode"
           placeholder="Zip Code"
@@ -182,8 +184,92 @@
         <button role="button" type="button" class="zipCodeSubmit button {{ btnStyle }}">Continue</button>
       </div>
     </div>
+    <div class="zipCodeCheckerFormContainer errorZipCodeForm" style="display:none;">
+      {% if zipCodeFormHeading != blank %}
+        <h2 class="secHeading {{ formHeadingPreset }}">Oops, We're Not There Yet</h2>
+      {% endif %}
+      {% if zipCodeFormDesc != blank %}
+        <div class="formDesc {{ formDescPreset }}">
+          We will contact you by email when we are able to service your area.
+        </div>
+      {% endif %}
+      <div class="mainZipCheckerForm">
+        {% form 'contact', class: 'custom-contact-form' %}
+          {% if form.posted_successfully? %}
+            <div class="custom-contact-form__success subtitle {{ subheading_preset }}">
+              <p>{{ 'contact.form.post_success' | t }}</p>
+            </div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div class="custom-contact-form__errors">
+              <p>{{ 'general.forms.post_error' | t }}</p>
+
+              {%- assign message = 'contact.form.message' | t -%}
+
+              {% for field in form.errors %}
+                {% if field == 'form' %}
+                  <p>{{ form.errors.messages[field] }}</p>
+                {% else %}
+                  {%- assign field_name = field | replace: 'body', message -%}
+                  <p>
+                    {{
+                      'general.forms.post_field_error_html'
+                      | t: field: field_name, error: form.errors.messages[field]
+                    }}
+                  </p>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+          <label
+            class="label hidden"
+            for="customerEmail"
+          >
+            Email
+          </label>
+          <input
+            id="customerEmail"
+            class="input is-primary-btn-style"
+            type="email"
+            placeholder="Your Email"
+            name="contact[email]"
+            autocorrect="off"
+            autocapitalize="off"
+            value=""
+            required="required"
+          >
+          <label
+            class="label{% if settings.use_placeholders %} is-sr-only{% endif %} hidden"
+            for="zipForSubmission"
+          >
+          </label>
+          <textarea
+            id="zipForSubmission"
+            class="input is-primary-btn-style hidden"
+
+            name="contact[zipcode]"
+          ></textarea>
+
+          <input type="hidden" name="challenge" value="false">
+          <button role="button" type="submit" class="formSubmitBtn button {{ btnStyle }}">Ok</button>
+        {% endform %}
+      </div>
+    </div>
   </div>
 </section>
+
+{% if page.metafields.custom.list_of_zip_code != blank %}
+  <script id="availableZipCodes" type="application/json">
+    {
+      "zipCodes": [
+        {% for zipcode in page.metafields.custom.list_of_zip_code.value %}
+         "{{ zipcode | strip }}"{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
+{% endif %}
 {% schema %}
 {
   "name": "Confirm Zip Code",
