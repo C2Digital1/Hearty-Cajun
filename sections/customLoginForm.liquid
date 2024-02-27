@@ -1,0 +1,73 @@
+<div id="customer" class="account__form register_form one-whole column">
+    {% form 'create_customer' %}
+      {{ form.errors | default_errors }}
+
+      <div id="first_name" class="field">
+        <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
+        <div class="control">
+          <input
+            type="text"
+            value=""
+            name="customer[first_name]"
+            id="first_name"
+            class="input"
+            size="30"
+            placeholder="{{ 'customer.register.first_name' | t }}"
+          >
+        </div>
+      </div>
+
+      <div id="last_name" class="field">
+        <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
+        <div class="control">
+          <input
+            type="text"
+            value=""
+            name="customer[last_name]"
+            id="last_name"
+            class="input"
+            size="30"
+            placeholder="{{ 'customer.register.last_name' | t }}"
+          >
+        </div>
+      </div>
+
+      <div id="email" class="field">
+        <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
+        <div class="control">
+          <input
+            type="email"
+            value=""
+            name="customer[email]"
+            id="email"
+            class="input"
+            size="30"
+            placeholder="{{ 'customer.register.email' | t }}*"
+          >
+        </div>
+      </div>
+
+      <div id="password" class="field">
+        <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
+        <div class="control">
+          <input
+            type="password"
+            value=""
+            name="customer[password]"
+            id="password"
+            class="input"
+            size="30"
+            placeholder="{{ 'customer.register.password' | t }}"
+          >
+        </div>
+      </div>
+
+      <div class="buttons has-margin-top is-center">
+        <input
+          class="button {{ settings.form_button_style }} is-within-form"
+          type="submit"
+          value="{{ 'customer.register.sign_up' | t }}"
+        >
+      </div>
+    {% endform %}
+  </div>
