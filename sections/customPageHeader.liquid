@@ -79,16 +79,18 @@
   {% endif %}
 >
   <div class="pageHeaderContainer">
-    <a href="{{ shop.url }}" class="headerLogoLink">
-      <img
-        class="boxImg lazyload"
-        src="{{ logoImg | img_url:'master' }}"
-        alt="img"
-        width="200"
-        height="48"
-        loading="lazy"
-      >
-    </a>
+    {% if logoImg != blank %}
+      <a href="{{ shop.url }}" class="headerLogoLink">
+        <img
+          class="boxImg lazyload"
+          src="{{ logoImg | img_url:'master' }}"
+          alt="img"
+          width="200"
+          height="48"
+          loading="lazy"
+        >
+      </a>
+    {% endif %}
   </div>
 </section>
 
