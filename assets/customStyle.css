@@ -3396,6 +3396,171 @@ h3.search__results-count {
 /* extra styles css code end  */
 
 
+
+/* =========== PURCHASE FLOW CSS CODE START =========== */
+.sectionBoxContainer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+h1.secHeading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.zipCodeCheckerFormContainer {
+    border-radius: 16px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1116px;
+    text-align: center;
+    padding: 48px;
+}
+
+h2.secHeading {
+    margin-bottom: 16px;
+}
+
+.zipCodeCheckerFormContainer .formDesc {
+    width: 100%;
+    max-width: 478px;
+    margin: 0px auto 32px auto;
+}
+
+.mainZipCheckerForm {
+    width: 100%;
+    max-width: 338px;
+    margin: 0px auto;
+}
+
+.mainZipCheckerForm input.input {
+    width: 100%;
+    min-height: 54px;
+    margin-bottom: 20px;
+}
+
+.mainZipCheckerForm input.input {
+    color: #463F3A !important;
+    font-size: 16px !important;
+    letter-spacing: 0;
+    line-height: 22px !important;
+}
+
+.mainZipCheckerForm input.input::placeholder {
+    opacity: .4 !important;
+}
+
+.mainZipCheckerForm button.formSubmitBtn.button,
+.mainZipCheckerForm button.zipCodeSubmit.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+}
+
+.pageHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+a.headerLogoLink {
+    display: block;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+.custPageHeader {
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5555;
+}
+
+.zipCodeCheckerSection {
+    min-height: calc(100vh - 285px);
+}
+
+p.announcementMessage {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 8px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+p.announcementMessage.is-text {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+}
+
+p.footerBtmTxt {
+    margin: 16px auto !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footerBtmTxt.is-text-small {
+
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: center;
+}
+
+.custFooterBar {
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100% !important;
+    bottom: 0;
+    left: 0;
+    z-index: 22;
+}
+
+input.input.is-primary-btn-style.error {
+    border: 1px solid #f15d5e !important;
+    color: #f15d5e !important;
+}
+
+input.input.is-primary-btn-style.error::placeholder {
+    color: #f15d5e !important;
+    opacity: .8 !important;
+}
+
+.errorZipCodeForm label.label {
+    display: none !important;
+}
+
+.shopify-challenge__container div#g-recaptcha {
+    margin: 20px auto;
+}
+
+.shopify-challenge__container {
+    min-height: 50vh;
+}
+
+textarea#zipForSubmission {
+    display: none;
+}
+
+/* =========== PURCHASE FLOW CSS CODE END =========== */
+
+
 /* media queires for desktop start  */
 @media only screen and (min-width: 1500px) {
     .productMainSection .product__information.has-product-sticker.one-half.column.medium-down--one-whole {
@@ -3447,7 +3612,6 @@ h3.search__results-count {
 }
 
 /* media queires for desktop end  */
-
 
 
 /* =========== MOBILE RESPONSIVNESS CSS CODE START =========== */
@@ -4444,6 +4608,26 @@ h3.search__results-count {
         max-width: 600px !important;
         width: 100%;
     }
+
+
+    p.announcementMessage.is-text {
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+
+    a.headerLogoLink {
+        width: 134px;
+        margin: 0px auto;
+    }
+
+    h1.secHeading {
+        margin-bottom: 32px;
+    }
+
+    .zipCodeCheckerFormContainer {
+        padding: 40px 16px;
+    }
 }
 
 @media only screen and (max-width: 798px) {
@@ -4853,163 +5037,3 @@ h3.search__results-count {
 /* media queires for desktop end  */
 
 /* =========== MOBILE RESPONSIVNESS CSS CODE END =========== */
-
-
-
-/* =========== PURCHASE FLOW CSS CODE START =========== */
-.sectionBoxContainer {
-    position: relative;
-    width: 100%;
-    text-align: center;
-}
-
-h1.secHeading {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.zipCodeCheckerFormContainer {
-    border-radius: 16px;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 1116px;
-    text-align: center;
-    padding: 48px;
-}
-
-h2.secHeading {
-    margin-bottom: 16px;
-}
-
-.zipCodeCheckerFormContainer .formDesc {
-    width: 100%;
-    max-width: 478px;
-    margin: 0px auto 32px auto;
-}
-
-.mainZipCheckerForm {
-    width: 100%;
-    max-width: 338px;
-    margin: 0px auto;
-}
-
-.mainZipCheckerForm input.input {
-    width: 100%;
-    min-height: 54px;
-    margin-bottom: 20px;
-}
-
-.mainZipCheckerForm input.input {
-    color: #463F3A !important;
-    font-size: 16px !important;
-    letter-spacing: 0;
-    line-height: 22px !important;
-}
-
-.mainZipCheckerForm input.input::placeholder {
-    opacity: .4 !important;
-}
-
-.mainZipCheckerForm button.formSubmitBtn.button,
-.mainZipCheckerForm button.zipCodeSubmit.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 54px;
-}
-
-.pageHeaderContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-a.headerLogoLink {
-    display: block;
-    width: 200px;
-    cursor: pointer;
-}
-
-
-.custPageHeader {
-    border-radius: 0 0 24px 24px;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5555;
-}
-
-.zipCodeCheckerSection {
-    min-height: calc(100vh - 285px);
-}
-
-p.announcementMessage {
-    text-align: center;
-    display: flex;
-    width: 100%;
-    max-width: 100%;
-    margin: 8px auto;
-    align-items: center;
-    justify-content: center;
-}
-
-p.announcementMessage.is-text {
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 24px;
-    text-align: center;
-}
-
-p.footerBtmTxt {
-    margin: 16px auto !important;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.footerBtmTxt.is-text-small {
-
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 21px;
-    text-align: center;
-}
-
-.custFooterBar {
-    border-radius: 24px 24px 0 0;
-    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
-}
-
-input.input.is-primary-btn-style.error {
-    border: 1px solid #f15d5e !important;
-    color: #f15d5e !important;
-}
-
-input.input.is-primary-btn-style.error::placeholder {
-    color: #f15d5e !important;
-    opacity: .8 !important;
-}
-
-.errorZipCodeForm label.label {
-    display: none !important;
-}
-
-.shopify-challenge__container div#g-recaptcha {
-    margin: 20px auto;
-}
-
-.shopify-challenge__container {
-    min-height: 50vh;
-}
-
-textarea#zipForSubmission {
-    display: none;
-}
-
-/* =========== PURCHASE FLOW CSS CODE END =========== */
