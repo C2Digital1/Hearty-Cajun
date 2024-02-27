@@ -25,14 +25,16 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #fff;
+    background: #e9e9e9;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #f15d5e;
+    transition: all linear .3s;
+    /* background-image: linear-gradient(0deg, #F15D5E 0%, #EDF67D 100%); */
     border-radius: 20px;
-    width: 6px;
+    width: 8px;
 }
 
 /* Handle on hover */
@@ -3513,6 +3515,16 @@ h3.search__results-count {
     .mainSlideShowSec .customStyleSlideShow .flickity-prev-next-button.next {
         right: 15px;
     }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        width: 6px;
+    }
+
 }
 
 @media only screen and (max-width: 1150px) {
@@ -4933,6 +4945,45 @@ a.headerLogoLink {
 
 .zipCodeCheckerSection {
     min-height: 100vh;
+}
+
+p.announcementMessage {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 8px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+p.announcementMessage.is-text {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+}
+
+p.footerBtmTxt {
+    margin: 16px auto !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footerBtmTxt.is-text-small {
+
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: center;
+}
+
+.custFooterBar {
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */

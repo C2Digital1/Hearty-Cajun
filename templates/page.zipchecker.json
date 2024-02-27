@@ -1,9 +1,13 @@
 {
   "sections": {
+    "customPageAnnouncementBar": {
+      "type": "customPageAnnouncementBar",
+      "settings": {}
+    },
     "customPageHeader": {
       "type": "customPageHeader",
       "settings": {
-        "logoImg": "shopify:\/\/shop_images\/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
+        "logoImg": "shopify://shop_images/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
         "width": "standard",
         "padding_top": 24,
         "padding_bottom": 24,
@@ -55,7 +59,7 @@
         "color_scheme": "default",
         "heading": "Plans",
         "zipCodeFormHeading": "Confirm Your Zip Code",
-        "zipCodeFormDesc": "<p>We currently only deliver to South Florida in the greater Fort Lauderdale and Miami area and we are working on expanding our service area. Do you live in the Fort Lauderdale or Miami area?<\/p>",
+        "zipCodeFormDesc": "<p>We currently only deliver to South Florida in the greater Fort Lauderdale and Miami area and we are working on expanding our service area. Do you live in the Fort Lauderdale or Miami area?</p>",
         "btnStyle": "button--primary",
         "heading_preset": "is-h3",
         "formHeadingPreset": "is-h5",
@@ -77,11 +81,17 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "customPageFooter": {
+      "type": "customPageFooter",
+      "settings": {}
     }
   },
   "order": [
+    "customPageAnnouncementBar",
     "customPageHeader",
     "main",
-    "confrmZipCode"
+    "confrmZipCode",
+    "customPageFooter"
   ]
 }
