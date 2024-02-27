@@ -54,6 +54,11 @@
         "custom_css": ""
       }
     },
+    "customPurchaseFlow":{
+      "type": "customPurchaseFlow",
+      "settings": {
+      }
+    },
     "customPageFooter": {
       "type": "customPageFooter",
       "settings": {
@@ -64,6 +69,7 @@
     "customPageAnnouncementBar",
     "customPageHeader",
     "main",
+    "customPurchaseFlow",
     "customPageFooter"
   ]
 }
