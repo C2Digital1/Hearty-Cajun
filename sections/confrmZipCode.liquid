@@ -285,8 +285,16 @@
       return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
     var zipCodeParam = getUrlParameter('zipCode');
+    var savedZipCode = localStorage.getItem('correctZipcode');
+
     if ($('#zipCodeCollector').length > 0) {
-      $('#zipCodeCollector').val(zipCodeParam);
+      if (zipCodeParam) {
+        $('#zipCodeCollector').val(zipCodeParam);
+      } else {
+        if (savedZipCode) {
+          $('#zipCodeCollector').val(savedZipCode);
+        }
+      }
     }
   });
 </script>

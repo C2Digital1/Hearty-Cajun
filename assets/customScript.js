@@ -143,6 +143,12 @@ $(document).ready(function () {
             window.location.href = url;
         }
     });
+    if ($('#headerZipCode input[name="zipCode"]').length > 0) {
+        var savedZipCode = localStorage.getItem('correctZipcode');
+        if (savedZipCode) {
+            $('#headerZipCode input[name="zipCode"]').val(savedZipCode);
+        }
+    }
     // header zip code collector form code end 
 
     // zip code checker code start 
@@ -159,6 +165,7 @@ $(document).ready(function () {
             if (availableZipCodes && availableZipCodes.zipCodes.includes(enteredZipCode)) {
                 $(".zipCodeCheckerSection .collection__loading-icon").show();
                 $(".zipCodeCheckerFormContainer").hide();
+                localStorage.setItem('correctZipcode', enteredZipCode);
                 setTimeout(function () {
                     $(".zipCodeCheckerSection .collection__loading-icon").hide();
                     window.location.href = "/pages/customize-plans";
@@ -188,8 +195,7 @@ $(document).ready(function () {
         setTimeout(function () {
             input.removeClass('error').attr('placeholder', 'Zip Code');
         }, 10);
-    });
-
+    }); 
     // zip code checker code end
 
 
