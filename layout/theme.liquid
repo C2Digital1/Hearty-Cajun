@@ -276,62 +276,64 @@
     {% comment %}Inject @pixelunion/shopify-price-ui/price-ui-globals end{% endcomment %}
 
    
-     <h2> {{ template.name }} </h2>
-    {% if template.name contains  'page.zipchecker.json' %}
-      <h2>YES</h2>
-    {% endif %}
     
-    {%- if settings.show_announcement_bar -%}
-      {% section 'announcement-bar' %}
-    {%- endif -%}
-    {%- if settings.show_age_verification -%}
-      {% section 'index__age-verification' %}
+    {% if page.metafields.custom.hide_header_and_footer %}
+     {% assign hideHeaderAndFooter = true %}
     {% endif %}
 
-    {% section 'header__top-bar' %}
-    {%- if settings.header_layout == 'classic' -%}
-      {% section 'header-classic' %}
-    {%- elsif settings.header_layout == 'centered' -%}
-      {% section 'header-centered' %}
-    {%- elsif settings.header_layout == 'vertical' -%}
-      {% section 'header-vertical' %}
-    {%- elsif settings.header_layout == 'search_focus' -%}
-      {% section 'header-search-focus' %}
-    {%- endif -%}
+    {% if hideHeaderAndFooter != true %}
+      {%- if settings.show_announcement_bar -%}
+        {% section 'announcement-bar' %}
+      {%- endif -%}
+      {%- if settings.show_age_verification -%}
+        {% section 'index__age-verification' %}
+      {% endif %}
+  
+      {% section 'header__top-bar' %}
+      {%- if settings.header_layout == 'classic' -%}
+        {% section 'header-classic' %}
+      {%- elsif settings.header_layout == 'centered' -%}
+        {% section 'header-centered' %}
+      {%- elsif settings.header_layout == 'vertical' -%}
+        {% section 'header-vertical' %}
+      {%- elsif settings.header_layout == 'search_focus' -%}
+        {% section 'header-search-focus' %}
+      {%- endif -%}
 
-    {%- if settings.cart_action == 'drawer' -%}
-      {% render 'ajax-cart' %}
-    {%- endif -%}
-
-    {% if settings.mega_menu_1 == true %}
-      {% section 'mega-menu-1' %}
-    {% endif %}
-    {% if settings.mega_menu_2 == true %}
-      {% section 'mega-menu-2' %}
-    {% endif %}
-    {% if settings.mega_menu_3 == true %}
-      {% section 'mega-menu-3' %}
-    {% endif %}
-    {% if settings.mega_menu_4 == true %}
-      {% section 'mega-menu-4' %}
-    {% endif %}
-    {% if settings.mega_menu_5 == true %}
-      {% section 'mega-menu-5' %}
-    {% endif %}
-    {% if settings.mega_menu_6 == true %}
-      {% section 'mega-menu-6' %}
-    {% endif %}
-    {% if settings.mega_menu_7 == true %}
-      {% section 'mega-menu-7' %}
-    {% endif %}
-    {% if settings.mega_menu_8 == true %}
-      {% section 'mega-menu-8' %}
-    {% endif %}
-    {% if settings.mega_menu_9 == true %}
-      {% section 'mega-menu-9' %}
-    {% endif %}
-    {% if settings.mega_menu_10 == true %}
-      {% section 'mega-menu-10' %}
+      {%- if settings.cart_action == 'drawer' -%}
+        {% render 'ajax-cart' %}
+      {%- endif -%}
+  
+      {% if settings.mega_menu_1 == true %}
+        {% section 'mega-menu-1' %}
+      {% endif %}
+      {% if settings.mega_menu_2 == true %}
+        {% section 'mega-menu-2' %}
+      {% endif %}
+      {% if settings.mega_menu_3 == true %}
+        {% section 'mega-menu-3' %}
+      {% endif %}
+      {% if settings.mega_menu_4 == true %}
+        {% section 'mega-menu-4' %}
+      {% endif %}
+      {% if settings.mega_menu_5 == true %}
+        {% section 'mega-menu-5' %}
+      {% endif %}
+      {% if settings.mega_menu_6 == true %}
+        {% section 'mega-menu-6' %}
+      {% endif %}
+      {% if settings.mega_menu_7 == true %}
+        {% section 'mega-menu-7' %}
+      {% endif %}
+      {% if settings.mega_menu_8 == true %}
+        {% section 'mega-menu-8' %}
+      {% endif %}
+      {% if settings.mega_menu_9 == true %}
+        {% section 'mega-menu-9' %}
+      {% endif %}
+      {% if settings.mega_menu_10 == true %}
+        {% section 'mega-menu-10' %}
+      {% endif %}    
     {% endif %}
 
     {% if settings.header_layout == 'vertical' %}
