@@ -3558,6 +3558,11 @@ textarea#zipForSubmission {
     display: none;
 }
 
+.custom-contact-form__success.subtitle {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 
