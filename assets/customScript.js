@@ -150,7 +150,7 @@ $(document).ready(function () {
                 $(".zipCodeCheckerFormContainer").hide();              
                 setTimeout(function () {
                     $(".zipCodeCheckerSection .collection__loading-icon").hide();
-                    window.location.href = "specific-page-url";
+                    window.location.href = "/pages/customize-plans";
                 }, 1500);
 
             } else {

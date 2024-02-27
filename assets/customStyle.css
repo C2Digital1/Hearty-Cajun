@@ -5008,4 +5008,8 @@ input.input.is-primary-btn-style.error::placeholder {
     min-height: 50vh;
 }
 
+textarea#zipForSubmission {
+    display: none;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
