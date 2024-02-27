@@ -273,8 +273,20 @@
 <script>
   $(document).ready(function () {
     if (window.location.href.indexOf('?contact_posted=true#contact_form') > -1) {
-      $('.zipCodeCheckerFormContainer').hide();
-      $('.zipCodeCheckerFormContainer.errorZipCodeForm').fadeIn(300);
+      if ($('.zipCodeCheckerFormContainer').length > 0) {
+        $('.zipCodeCheckerFormContainer').hide();
+        $('.zipCodeCheckerFormContainer.errorZipCodeForm').fadeIn(300);
+      }
+    }
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+    var zipCodeParam = getUrlParameter('zipCode');
+    if ($('#zipCodeCollector').length > 0) {
+      $('#zipCodeCollector').val(zipCodeParam);
     }
   });
 </script>
