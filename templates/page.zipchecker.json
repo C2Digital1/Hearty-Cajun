@@ -28,9 +28,36 @@
     },
     "confrmZipCode": {
       "type": "confrmZipCode",
-      "disabled": true,
-      "settings": {}
+      "settings": {
+        "color_scheme": "default",
+        "heading": "Section heading",
+        "zipCodeFormHeading": "Confirm Your Zip Code",
+        "zipCodeFormDesc": "<p>We currently only deliver to South Florida in the greater Fort Lauderdale and Miami area and we are working on expanding our service area. Do you live in the Fort Lauderdale or Miami area?<\/p>",
+        "btnStyle": "button--primary",
+        "heading_preset": "is-h3",
+        "formHeadingPreset": "is-h5",
+        "formDescPreset": "is-text",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
-  "order": ["main", "confrmZipCode"]
+  "order": [
+    "main",
+    "confrmZipCode"
+  ]
 }
