@@ -4846,11 +4846,6 @@ h3.search__results-count {
 
 /* =========== PURCHASE FLOW CSS CODE START =========== */
 
-
-
-
-
-
 .sectionBoxContainer {
     position: relative;
     width: 100%;
@@ -4910,6 +4905,34 @@ h2.secHeading {
     justify-content: center;
     width: 100%;
     min-height: 54px;
+}
+
+.pageHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+a.headerLogoLink {
+    display: block;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+.custPageHeader {
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5555;
+}
+
+.zipCodeCheckerSection {
+    min-height: 100vh;
 }
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
