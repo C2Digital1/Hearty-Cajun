@@ -25,9 +25,12 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "confrmZipCode": {
+      "type": "confrmZipCode",
+      "disabled": true,
+      "settings": {}
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main", "confrmZipCode"]
 }
