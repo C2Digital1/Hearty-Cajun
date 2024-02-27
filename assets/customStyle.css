@@ -4841,3 +4841,75 @@ h3.search__results-count {
 /* media queires for desktop end  */
 
 /* =========== MOBILE RESPONSIVNESS CSS CODE END =========== */
+
+
+
+/* =========== PURCHASE FLOW CSS CODE START =========== */
+
+
+
+
+
+
+.sectionBoxContainer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+h1.secHeading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.zipCodeCheckerFormContainer {
+    border-radius: 16px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1116px;
+    text-align: center;
+    padding: 48px;
+}
+
+h2.secHeading {
+    margin-bottom: 16px;
+}
+
+.zipCodeCheckerFormContainer .formDesc {
+    width: 100%;
+    max-width: 478px;
+    margin: 0px auto 32px auto;
+}
+
+.mainZipCheckerForm {
+    width: 100%;
+    max-width: 338px;
+    margin: 0px auto;
+}
+
+.mainZipCheckerForm input.input {
+    width: 100%;
+    min-height: 54px;
+    margin-bottom: 20px;
+}
+
+.mainZipCheckerForm input.input {
+    color: #463F3A !important;
+    font-size: 16px !important;
+    letter-spacing: 0;
+    line-height: 22px !important;
+}
+
+.mainZipCheckerForm input.input::placeholder {
+    opacity: .4 !important;
+}
+
+.mainZipCheckerForm button.zipCodeSubmit.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+}
+
+/* =========== PURCHASE FLOW CSS CODE END =========== */
