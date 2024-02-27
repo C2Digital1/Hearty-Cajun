@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "sections": {
       "customPageAnnouncementBar": {
         "type": "customPageAnnouncementBar",
@@ -75,3 +76,73 @@
     ]
   }
   
+=======
+  "sections": {
+    "customPageAnnouncementBar": {
+      "type": "customPageAnnouncementBar",
+      "settings": {
+      }
+    },
+    "customPageHeader": {
+      "type": "customPageHeader",
+      "settings": {
+        "logoImg": "shopify:\/\/shop_images\/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
+        "width": "standard",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 16,
+        "padding_bottom_m": 16,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "page-content__main",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_preset": "is-h1",
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "customPageFooter": {
+      "type": "customPageFooter",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "customPageAnnouncementBar",
+    "customPageHeader",
+    "main",
+    "customPageFooter"
+  ]
+}
+>>>>>>> 958cebf8969b0020822d4c518b6f364b1414b858
