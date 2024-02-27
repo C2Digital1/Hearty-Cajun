@@ -61,10 +61,10 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "set_smaller_side_sticky": false,
+        "set_smaller_side_sticky": true,
         "product_images_position": "left",
-        "set_product_height": false,
-        "product_height": 550,
+        "set_product_height": true,
+        "product_height": 600,
         "video_looping": false,
         "gallery_arrows": true,
         "enable_zoom": false,
