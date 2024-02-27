@@ -30,7 +30,7 @@
       "type": "confrmZipCode",
       "settings": {
         "color_scheme": "default",
-        "heading": "Section heading",
+        "heading": "Plans",
         "zipCodeFormHeading": "Confirm Your Zip Code",
         "zipCodeFormDesc": "<p>We currently only deliver to South Florida in the greater Fort Lauderdale and Miami area and we are working on expanding our service area. Do you live in the Fort Lauderdale or Miami area?<\/p>",
         "btnStyle": "button--primary",
