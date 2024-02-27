@@ -3563,6 +3563,104 @@ textarea#zipForSubmission {
     font-weight: bold;
 }
 
+
+
+.purchaseFlowNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    column-gap: 0;
+}
+
+.flowBtn {
+    color: #DAD9D8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    border: 0px solid !important;
+    outline: none;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.flowBtn span.checkSign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18.33px;
+    width: 18.33px;
+    background-color: #DAD9D8;
+    border-radius: 100%;
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.purchaseFlowNav .flowBtn:not(:first-child)::before {
+    content: "";
+    height: 2px;
+    width: 87px;
+    background-color: #DAD9D8;
+    display: flex;
+    position: relative;
+    margin-left: 0;
+    top: -14px;
+    right: 44px;
+    z-index: 1;
+}
+
+span.checkSign::before {
+    content: "";
+    background: #fff;
+    left: 10px;
+    top: 6px;
+    width: 2px;
+    height: 9px;
+    -webkit-transform: rotate(39deg);
+    -ms-transform: rotate(39deg);
+    transform: rotate(39deg);
+    position: absolute;
+    opacity: 0;
+}
+
+span.checkSign::after {
+    content: "";
+    background: #fff;
+    left: 5px;
+    top: 9px;
+    width: 2px;
+    height: 5px;
+    -webkit-transform: rotate(308deg);
+    -ms-transform: rotate(308deg);
+    transform: rotate(308deg);
+    position: absolute;
+    opacity: 0;
+}
+
+.flowBtn.active {
+    color: #F15D5E;
+}
+
+.flowBtn.active span.checkSign {
+    background: #F15D5E;
+}
+
+.flowBtn.active span.checkSign::before,
+.flowBtn.active span.checkSign::after {
+    opacity: 1;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 
