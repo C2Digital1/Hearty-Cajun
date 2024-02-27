@@ -4,7 +4,7 @@
       "type": "customPageHeader",
       "settings": {
         "logoImg": "shopify:\/\/shop_images\/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
-        "width": "wide",
+        "width": "standard",
         "padding_top": 24,
         "padding_bottom": 24,
         "padding_left": 0,
