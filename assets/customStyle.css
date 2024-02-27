@@ -4944,7 +4944,7 @@ a.headerLogoLink {
 }
 
 .zipCodeCheckerSection {
-    min-height: 100vh;
+    min-height: calc(100vh - 285px);
 }
 
 p.announcementMessage {
