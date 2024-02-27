@@ -5,6 +5,7 @@
 {%- liquid
   assign id = section.id
   assign logoImg = section.settings.logoImg
+  assign showPurchaseFlowNav = section.settings.showPurchaseFlowNav
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -91,6 +92,30 @@
         >
       </a>
     {% endif %}
+    {% if showPurchaseFlowNav %}
+      <div class="purchaseFlowNav">
+        <button class="flowBtn">
+          <span class="checkSign"> </span>
+          Select Plan
+        </button>
+        <button class="flowBtn">
+          <span class="checkSign"> </span>
+          Register
+        </button>
+        <button class="flowBtn">
+          <span class="checkSign"> </span>
+          Select Meals
+        </button>
+        <button class="flowBtn">
+          <span class="checkSign"> </span>
+          Add-Ons
+        </button>
+        <button class="flowBtn">
+          <span class="checkSign"> </span>
+          Checkout
+        </button>
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -103,6 +128,12 @@
       "type": "image_picker",
       "id": "logoImg",
       "label": "Logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "showPurchaseFlowNav",
+      "label": "Show Purchase Flow Nav",
+      "default": false
     },
     {
       "type": "header",
