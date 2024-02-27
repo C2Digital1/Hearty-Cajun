@@ -1,5 +1,11 @@
 {
   "sections": {
+    "customPageHeader": {
+      "type": "customPageHeader",
+      "settings": {
+        
+      }
+    },
     "main": {
       "type": "page-content__main",
       "disabled": true,
@@ -54,9 +60,10 @@
         "css_class": "",
         "custom_css": ""
       }
-    }
+    }    
   },
   "order": [
+    "customPageHeader",
     "main",
     "confrmZipCode"
   ]
