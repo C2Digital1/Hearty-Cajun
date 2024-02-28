@@ -4057,7 +4057,9 @@ button.selectThisPlanBtn.button {
 .collection__loading-icon.prodChangeLoader {
     margin-top: 40px;
 }
-
+button.prefrenceBtn.showError {
+    border: 1px solid #F15D5E !important;
+}
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 

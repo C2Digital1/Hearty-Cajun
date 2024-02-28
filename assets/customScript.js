@@ -220,12 +220,13 @@ $(document).ready(function () {
     }
 
     $("button.prefrenceBtn").click(function () {
+        $("button.prefrenceBtn").removeClass("showError");
         $(this).toggleClass("active");
         updatePreferences();
     });
     function loadPreferences() {
         var storedPreferences = localStorage.getItem("preferences");
-        if (storedPreferences && $(".prefrenceBtn").length > 0) {
+        if (storedPreferences && storedPreferences.trim() !== "" && storedPreferences.trim() !== "[]" && $(".prefrenceBtn").length > 0) {
             var preferences = JSON.parse(storedPreferences);
             preferences.forEach(function (preference) {
                 $(".prefrenceBtn .btnTxt:contains('" + preference + "')").closest("button").addClass("active");
@@ -261,10 +262,27 @@ $(document).ready(function () {
         }, 600);
 
     });
-
-
-
     // Select Prod Box Tab Buttons, Variant Tab Buttons and  Function Code End
+
+    // Select Plan Final Button Function Code Sart
+    $("button.selectThisPlanBtn").click(function () {
+        var storedPreferences = localStorage.getItem("preferences");
+        console.log(storedPreferences);
+        if (storedPreferences && storedPreferences.trim() !== "" && storedPreferences.trim() !== "[]") {
+            $("body").addClass("showSecondStep");
+        }
+        else {
+            $(this).addClass("animated bounceIn")
+            $("button.prefrenceBtn").addClass("showError animated bounceIn");
+            $("body").removeClass("showSecondStep");
+            setTimeout(function () {
+                $(this).removeClass("animated bounceIn");
+                $("button.prefrenceBtn").removeClass("showError animated bounceIn");
+            }.bind(this), 500);
+
+        }
+    });
+    // Select Plan Final Button Function Code end
 
     /* =========== PURCHASE FLOW  CODE END =========== */
 
