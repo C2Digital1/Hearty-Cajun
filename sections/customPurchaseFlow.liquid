@@ -119,7 +119,7 @@
           <div class="prefrencesMultipleOpt">
             {% for block in section.blocks %}
               {% case block.type %}
-                {% when 'testimonial' %}
+                {% when 'prefrencesCol' %}
                   {%- liquid
                     assign iconImg = block.settings.iconImg
                     assign btnHeading = block.settings.heading
