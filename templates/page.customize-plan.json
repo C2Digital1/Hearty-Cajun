@@ -76,6 +76,18 @@
     },
     "customPurchaseFlow": {
       "type": "customPurchaseFlow",
+      "blocks": {
+        "prefrences_col_yUNRPn": {
+          "type": "prefrencesCol",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/38383838AL.svg",
+            "heading": "Healthy Carbs Galore"
+          }
+        }
+      },
+      "block_order": [
+        "prefrences_col_yUNRPn"
+      ],
       "settings": {
         "heading": "Craft Your First Box",
         "heading_preset": "is-h2",
