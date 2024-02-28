@@ -122,13 +122,13 @@
         "plan_products_nhpgcM": {
           "type": "planProducts",
           "settings": {
-            "product": ""
+            "product": "2-people-box"
           }
         },
         "plan_products_iXAtEV": {
           "type": "planProducts",
           "settings": {
-            "product": ""
+            "product": "4-person-meal-box"
           }
         }
       },
