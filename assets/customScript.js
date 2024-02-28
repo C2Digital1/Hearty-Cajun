@@ -134,6 +134,12 @@ $(document).ready(function () {
     // Cart Page Note Text Area code end
 
 
+
+
+
+    /* =========== PURCHASE FLOW  CODE START =========== */
+
+
     // header zip code collector form code start 
     $('#headerZipCode').submit(function (event) {
         event.preventDefault();
@@ -199,9 +205,37 @@ $(document).ready(function () {
     // zip code checker code end
 
     $(".flowBtn").click(function () {
-        $(".flowBtn").removeClass("active prevActive"); 
-        $(this).prevAll(".flowBtn").addClass("prevActive"); 
+        $(".flowBtn").removeClass("active prevActive");
+        $(this).prevAll(".flowBtn").addClass("prevActive");
         $(this).addClass("active");
     });
+
+    // Prefrences Button and Prefrences Function Code Start
+    function updatePreferences() {
+        var preferences = [];
+        $(".prefrenceBtn.active .btnTxt").each(function () {
+            preferences.push($(this).text().trim());
+        });
+        localStorage.setItem("preferences", JSON.stringify(preferences));
+    }
+
+    $("button.prefrenceBtn").click(function () {
+        $(this).toggleClass("active");
+        updatePreferences();
+    });
+    function loadPreferences() {
+        var storedPreferences = localStorage.getItem("preferences");
+        if (storedPreferences && $(".prefrenceBtn").length > 0) {
+            var preferences = JSON.parse(storedPreferences);
+            preferences.forEach(function (preference) {
+                $(".prefrenceBtn .btnTxt:contains('" + preference + "')").closest("button").addClass("active");
+            });
+        }
+    }
+    loadPreferences();
+    // Prefrences Button and Prefrences Function Code End
+
+
+    /* =========== PURCHASE FLOW  CODE END =========== */
 
 });

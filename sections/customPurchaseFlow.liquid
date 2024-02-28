@@ -13,6 +13,9 @@
   assign leftColSubText = section.settings.leftColSubText
   assign rightColHeading = section.settings.rightColHeading
   assign leftColBtmTxt = section.settings.leftColBtmTxt
+
+  assign boxBtnActiveTxt = section.settings.boxBtnActiveTxt
+  assign boxBtnActiveBg = section.settings.boxBtnActiveBg
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -46,7 +49,15 @@
 {% endcomment %}
 
 {% capture section_css -%}
-  {%- endcapture -%}
+button.prefrenceBtn.active{
+  background: {{ boxBtnActiveBg }};
+  color: {{ boxBtnActiveTxt }};
+}
+button.prefrenceBtn:hover{
+  background: {{ boxBtnActiveBg }};
+  color: {{ boxBtnActiveTxt }};
+}
+{%- endcapture -%}
 {% style %}
   #shopify-section-{{ id }}{
     padding-top: {{ padding_top }}px;
@@ -138,7 +149,9 @@
                           >
                         </span>
                       {% endif %}
-                      {{ btnHeading }}
+                      <span class="btnTxt">
+                        {{ btnHeading }}
+                      </span>
                     </button>
                   {% endif %}
               {% endcase %}
@@ -289,6 +302,18 @@
       "type": "text",
       "id": "rightColHeading",
       "label": "Right Column Heading"
+    },
+    {
+      "type": "color_background",
+      "id": "boxBtnActiveBg",
+      "label": "Box Button Active Bg",
+      "default": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)"
+    },
+    {
+      "type": "color",
+      "id": "boxBtnActiveTxt",
+      "label": "Box Button Active Text",
+      "default": "#463F3A"
     },
     {
       "type": "header",

@@ -3757,19 +3757,19 @@ button.prefrenceBtn {
     justify-content: center;
     padding: 5px;
     border-radius: 8px;
-    background-color: #FFFFFF;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
     border: 0px solid !important;
     width: calc(50% - 4px);
     min-height: 106px;
     margin-bottom: 8px;
     cursor: pointer;
-    color: #463F3A;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0;
     line-height: 18px;
     text-align: center;
+    background: transparent;
+    transition: all linear .3s;
 }
 
 button.prefrenceBtn span.boxBtnIcon {
