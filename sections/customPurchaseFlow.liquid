@@ -62,10 +62,13 @@
 {% endcomment %}
 
 {% capture section_css -%}
+
+.prodBoxProdBtns button.selectionBtn.active &&
 button.prefrenceBtn.active{
   background: {{ boxBtnActiveBg }};
   color: {{ boxBtnActiveTxt }};
 }
+.prodBoxProdBtns button.selectionBtn:hover &&
 button.prefrenceBtn:hover{
   background: {{ boxBtnActiveBg }};
   color: {{ boxBtnActiveTxt }};
@@ -226,15 +229,11 @@ button.prefrenceBtn:hover{
               {{ rightColHeading }}
             </h2>
           {% endif %}
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'planProducts' %}
-                {%- liquid
-                  assign product = block.settings.product
-                -%}
-                {% render 'boxProdSelection', product: product, block: block, id: id %}
-            {% endcase %}
-          {% endfor %}
+          {%- liquid
+            assign prodLabel = section.settings.prodLabel
+            assign variantsLabel = section.settings.variantsLabel
+          -%}
+          {% render 'boxProdSelection', prodLabel: prodLabel, variantsLabel: variantsLabel, section: section, id: id %}
         </div>
       </div>
     </div>
@@ -367,15 +366,6 @@ button.prefrenceBtn:hover{
       "label": "Left Column Bottom Text"
     },
     {
-      "type": "header",
-      "content": "Box Right Side Column Settings"
-    },
-    {
-      "type": "text",
-      "id": "rightColHeading",
-      "label": "Right Column Heading"
-    },
-    {
       "type": "color_background",
       "id": "boxBtnActiveBg",
       "label": "Box Button Active Bg",
@@ -386,6 +376,27 @@ button.prefrenceBtn:hover{
       "id": "boxBtnActiveTxt",
       "label": "Box Button Active Text",
       "default": "#463F3A"
+    },
+    {
+      "type": "header",
+      "content": "Box Right Side Column Settings"
+    },
+    {
+      "type": "text",
+      "id": "rightColHeading",
+      "label": "Right Column Heading"
+    },
+    {
+      "type": "text",
+      "id": "prodLabel",
+      "label": "Right Column Product Label",
+      "default": "Number of people"
+    },
+    {
+      "type": "text",
+      "id": "variantsLabel",
+      "label": "Right Column Variants Label",
+      "default": "How many meals would you like?"
     },
     {
       "type": "header",
@@ -578,6 +589,17 @@ button.prefrenceBtn:hover{
           "type": "product",
           "id": "product",
           "label": "Choose Product"
+        },
+        {
+          "type": "text",
+          "id": "customProdName",
+          "label": "Custom Name"
+        },
+        {
+          "type": "text",
+          "id": "prodSmallInfo",
+          "label": "Small Info",
+          "default": "No fluff. Just the best tasting nutrient-dense meals."
         }
       ]
     }

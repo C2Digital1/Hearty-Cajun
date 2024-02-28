@@ -1,0 +1,62 @@
+{% comment %}
+  prodLabel: prodLabel
+  variantsLabel: variantsLabel
+{% endcomment %}
+<div class="prodBoxSelectorContainer">
+  <p class="prodBoxSelectorLabel">
+    {{ prodLabel }}
+  </p>
+  <div class="prodBoxProdBtns">
+    {% assign blockProdIndex = 1 %}
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'planProducts' %}
+          {%- liquid
+            assign product = block.settings.product
+          -%}
+          <button class="prodBoxMainSelector button selectionBtn {% if blockProdIndex == 1 %}active{% endif %}">
+            {{ product.title }}
+          </button>
+          {% liquid
+            assign blockProdIndex = forloop.index
+          %}
+      {% endcase %}
+    {% endfor %}
+    {% assign blockProdIndex = 1 %}
+    <div class="prodBoxVariantsInfo">
+      <p class="prodBoxSelectorLabel">
+        {{ variantsLabel }}
+      </p>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'planProducts' %}
+            {%- liquid
+              assign product = block.settings.product
+            -%}
+            <div
+              class="prodBoxVariantSelectionBox"
+              {% if blockProdIndex != 1 %}
+                style="display:none"
+              {% endif %}
+            >
+              {% if product.variants.size > 1 %}
+                <div class="variantBtnsContainer">
+                  {% for variant in product.variants %}
+                    <button
+                      data-variant="{{ variant.id }}"
+                      class="variantBtn button selectionBtn {% if forloop.index == 1 %} active{% endif %}"
+                    >
+                      {{ variant.title }}
+                    </button>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            {% liquid
+              assign blockProdIndex = forloop.index
+            %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
