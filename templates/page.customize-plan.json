@@ -108,7 +108,15 @@
         "prefrences_col_nqePHk": {
           "type": "prefrencesCol",
           "settings": {
+            "iconImg": "shopify:\/\/shop_images\/43434343AQ.svg",
             "heading": "Gluten Free"
+          }
+        },
+        "prefrences_col_8QyaVq": {
+          "type": "prefrencesCol",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/42424242AP.svg",
+            "heading": "Low Calories"
           }
         }
       },
@@ -117,7 +125,8 @@
         "prefrences_col_VUW6b4",
         "prefrences_col_EheKai",
         "prefrences_col_4QH8dE",
-        "prefrences_col_nqePHk"
+        "prefrences_col_nqePHk",
+        "prefrences_col_8QyaVq"
       ],
       "settings": {
         "heading": "Craft Your First Box",
