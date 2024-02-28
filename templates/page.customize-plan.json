@@ -129,6 +129,7 @@
         "prefrences_col_8QyaVq"
       ],
       "settings": {
+        "color_scheme": "",
         "heading": "Craft Your First Box",
         "heading_preset": "is-h2",
         "subHeading": "<p>You can pause, cancel, or change your plan at any time. New items added every week<\/p>",
@@ -137,6 +138,8 @@
         "leftColSubText": "<p>All of our meals fall into the categories of “Balanced Blood Sugar, Gut Health Focused, Heart Healthy, Brain Boosters, and Nutrient-rich satisfaction. These additional preferences will help us show you the most relevant meals first. You will still have access to all the meals each week.<\/p>",
         "leftColBtmTxt": "Indulge in healthy food that is as delicious as it is nutritious",
         "rightColHeading": "2. Customize your plan size",
+        "boxBtnActiveBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
+        "boxBtnActiveTxt": "#463F3A",
         "width": "small",
         "padding_top": 48,
         "padding_bottom": 88,
