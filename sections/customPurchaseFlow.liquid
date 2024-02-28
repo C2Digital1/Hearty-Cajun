@@ -4,6 +4,15 @@
 
 {%- liquid
   assign id = section.id
+  assign heading = section.settings.heading
+  assign subHeading = section.settings.subHeading
+  assign subHeadingPreset = section.settings.subHeadingPreset
+  assign heading_preset = section.settings.heading_preset
+
+  assign leftColHeading = section.settings.leftColHeading
+  assign leftColSubText = section.settings.leftColSubText
+  assign rightColHeading = section.settings.rightColHeading
+  assign leftColBtmTxt = section.settings.leftColBtmTxt
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -81,8 +90,75 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
-  <div class="purchaseFlowContainer">
-   
+  <div class="sectionBoxContainer">
+    <div class="purchaseFlowHeadingArea">
+      {% if heading != blank %}
+        <h1 class="secHeading {{ heading_preset }}">
+          {{ heading }}
+        </h1>
+      {% endif %}
+      {% if subHeading != blank %}
+        <div class="secSubHeading {{ subHeadingPreset }}">
+          {{ subHeading }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="boxShadowContainer">
+      <div class="inneBoxRow">
+        <div class="boxCol planPrefrencesChoosingContainer">
+          {% if leftColHeading %}
+            <h2 class="boxHeading is-h5">
+              {{ leftColHeading }}
+            </h2>
+          {% endif %}
+          {% if leftColSubText %}
+            <div class="boxSubTxt is-text">
+              {{ leftColSubText }}
+            </div>
+          {% endif %}
+          <div class="prefrencesMultipleOpt">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'testimonial' %}
+                  {%- liquid
+                    assign iconImg = block.settings.iconImg
+                    assign btnHeading = block.settings.heading
+                  -%}
+                  {% if btnHeading != blank %}
+                    <button id="prefrence-{{id}}-{{block.id}}" class="prefrenceBtn">
+                      {% if iconImg != blank %}
+                        <span class="boxBtnIcon">
+                          <img
+                            class="boxImg lazyload"
+                            src="{{ iconImg | img_url:'master' }}"
+                            alt="img"
+                            width="40"
+                            height="40"
+                            loading="lazy"
+                          >
+                        </span>
+                      {% endif %}
+                      {{ btnHeading }}
+                    </button>
+                  {% endif %}
+              {% endcase %}
+            {% endfor %}
+          </div>
+          {% if leftColBtmTxt %}
+            <p class="colbtmTxt is-text-small">
+              {{ leftColBtmTxt }}
+            </p>
+          {% endif %}
+        </div>
+        <div class="boxCol planProdChoosingContainer">
+          {% if rightColHeading %}
+            <h2 class="boxHeading is-h5">
+              {{ rightColHeading }}
+            </h2>
+          {% endif %}
+        </div>
+      </div>
+    </div>
     {% comment %} {% render 'customLoginForm' %} {% endcomment %}
   </div>
 </section>
@@ -142,7 +218,7 @@
       "default": "is-h1"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "subHeading",
       "label": "Sub Heading"
     },
@@ -185,6 +261,34 @@
         }
       ],
       "default": "is-h1"
+    },
+    {
+      "type": "header",
+      "content": "Box Left Side Column Settings"
+    },
+    {
+      "type": "text",
+      "id": "leftColHeading",
+      "label": "Left Column Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "leftColSubText",
+      "label": "Left Column Sub Text"
+    },
+    {
+      "type": "text",
+      "id": "leftColBtmTxt",
+      "label": "Left Column Bottom Text"
+    },
+    {
+      "type": "header",
+      "content": "Box Right Side Column Settings"
+    },
+    {
+      "type": "text",
+      "id": "rightColHeading",
+      "label": "Right Column Heading"
     },
     {
       "type": "header",
@@ -349,6 +453,24 @@
       "type": "textarea",
       "id": "custom_css",
       "label": "Custom CSS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prefrencesCol",
+      "name": "Preferences",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "iconImg",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        }
+      ]
     }
   ]
 }
