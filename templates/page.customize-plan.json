@@ -122,13 +122,17 @@
         "plan_products_nhpgcM": {
           "type": "planProducts",
           "settings": {
-            "product": "2-people-box"
+            "product": "2-people-box",
+            "customProdName": "2",
+            "prodSmallInfo": "No fluff. Just the best tasting nutrient-dense meals."
           }
         },
         "plan_products_iXAtEV": {
           "type": "planProducts",
           "settings": {
-            "product": "4-person-meal-box"
+            "product": "4-person-meal-box",
+            "customProdName": "4",
+            "prodSmallInfo": "No fluff. Just the best tasting nutrient-dense meals."
           }
         }
       },
@@ -151,9 +155,11 @@
         "leftColHeading": "1. Choose Your Preferences",
         "leftColSubText": "<p>All of our meals fall into the categories of “Balanced Blood Sugar, Gut Health Focused, Heart Healthy, Brain Boosters, and Nutrient-rich satisfaction. These additional preferences will help us show you the most relevant meals first. You will still have access to all the meals each week.<\/p>",
         "leftColBtmTxt": "Indulge in healthy food that is as delicious as it is nutritious",
-        "rightColHeading": "2. Customize your plan size",
         "boxBtnActiveBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
-        "boxBtnActiveTxt": "#463F3A",
+        "boxBtnActiveTxt": "#463f3a",
+        "rightColHeading": "2. Customize your plan size",
+        "prodLabel": "Number of people",
+        "variantsLabel": "How many meals would you like?",
         "width": "small",
         "padding_top": 48,
         "padding_bottom": 88,
