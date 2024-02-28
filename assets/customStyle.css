@@ -3787,6 +3787,10 @@ button.prefrenceBtn span.boxBtnIcon img.boxImg {
     object-fit: contain;
 }
 
+p.colbtmTxt {
+    margin-top: 20px;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 
