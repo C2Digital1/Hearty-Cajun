@@ -4,7 +4,7 @@
       "type": "customPageAnnouncementBar",
       "settings": {
         "mainText": "Nutrient rich meals starting at $11.60 and free shipping",
-        "textColor": "#463F3A",
+        "textColor": "#463f3a",
         "width": "wide",
         "padding_top": 0,
         "padding_bottom": 0,
@@ -77,11 +77,15 @@
     "customPurchaseFlow": {
       "type": "customPurchaseFlow",
       "settings": {
-        "heading": "",
-        "heading_preset": "is-h1",
-        "subHeading": "",
-        "subHeadingPreset": "is-h1",
-        "width": "wide",
+        "heading": "Craft Your First Box",
+        "heading_preset": "is-h2",
+        "subHeading": "<p>You can pause, cancel, or change your plan at any time.<\/p>",
+        "subHeadingPreset": "is-text",
+        "leftColHeading": "1. Choose Your Preferences",
+        "leftColSubText": "<p>All of our meals fall into the categories of “Balanced Blood Sugar, Gut Health Focused, Heart Healthy, Brain Boosters, and Nutrient-rich satisfaction. These additional preferences will help us show you the most relevant meals first. You will still have access to all the meals each week.<\/p>",
+        "leftColBtmTxt": "Indulge in healthy food that is as delicious as it is nutritious",
+        "rightColHeading": "2. Customize your plan size",
+        "width": "small",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
@@ -94,7 +98,7 @@
         "padding_right_m": 0,
         "margin_top_m": 0,
         "margin_bottom_m": 0,
-        "section_bg": "linear-gradient(#ffffff, #ffffff)",
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -104,7 +108,7 @@
       "type": "customPageFooter",
       "settings": {
         "mainText": "Made with ❤️ for pasta, delicious taste, and health.",
-        "textColor": "#463F3A",
+        "textColor": "#463f3a",
         "width": "standard",
         "padding_top": 0,
         "padding_bottom": 0,
