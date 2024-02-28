@@ -83,10 +83,18 @@
             "iconImg": "shopify:\/\/shop_images\/38383838AL.svg",
             "heading": "Healthy Carbs Galore"
           }
+        },
+        "prefrences_col_VUW6b4": {
+          "type": "prefrencesCol",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/38383838AL.svg",
+            "heading": "Vegetarian"
+          }
         }
       },
       "block_order": [
-        "prefrences_col_yUNRPn"
+        "prefrences_col_yUNRPn",
+        "prefrences_col_VUW6b4"
       ],
       "settings": {
         "heading": "Craft Your First Box",
