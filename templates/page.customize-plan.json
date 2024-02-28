@@ -90,11 +90,19 @@
             "iconImg": "shopify:\/\/shop_images\/38383838AL.svg",
             "heading": "Vegetarian"
           }
+        },
+        "prefrences_col_EheKai": {
+          "type": "prefrencesCol",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/40404040AN.svg",
+            "heading": "Low Salt"
+          }
         }
       },
       "block_order": [
         "prefrences_col_yUNRPn",
-        "prefrences_col_VUW6b4"
+        "prefrences_col_VUW6b4",
+        "prefrences_col_EheKai"
       ],
       "settings": {
         "heading": "Craft Your First Box",
