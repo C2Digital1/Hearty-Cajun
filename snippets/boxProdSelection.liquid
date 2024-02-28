@@ -13,12 +13,17 @@
         {% when 'planProducts' %}
           {%- liquid
             assign product = block.settings.product
+            assign productCustomTitle = block.settings.customProdName
           -%}
           <button
             data-tabId="#prod-{{ product.id }}"
             class="prodBoxMainSelector button selectionBtn {% if blockProdIndex == 1 %}active{% endif %}"
           >
-            {{ product.title }}
+            {% if productCustomTitle != blank %}
+              {{ productCustomTitle }}
+            {% else %}
+              {{ product.title }}
+            {% endif %}
           </button>
           {% liquid
             assign blockProdIndex = forloop.index
@@ -26,16 +31,15 @@
       {% endcase %}
     {% endfor %}
   </div>
+
   {% assign blockProdIndex = 1 %}
   <div class="prodBoxVariantsInfo">
-    <p class="prodBoxSelectorLabel">
-      {{ variantsLabel }}
-    </p>
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'planProducts' %}
           {%- liquid
             assign product = block.settings.product
+            assign prodSmallInfo = block.settings.prodSmallInfo
           -%}
           <div
             id="prod-{{ product.id }}"
@@ -44,6 +48,15 @@
               style="display:none"
             {% endif %}
           >
+            {% if prodSmallInfo != blank %}
+              <p class="is-text-small prodSmallInfo">
+                {{ prodSmallInfo }}
+              </p>
+            {% endif %}
+            <p class="prodBoxSelectorLabel">
+              {{ variantsLabel }}
+            </p>
+
             {% if product.variants.size > 1 %}
               <div class="variantBtnsContainer">
                 {% for variant in product.variants %}
@@ -55,86 +68,96 @@
                     {{ variant.title }}
                   </button>
                 {% endfor %}
-                <div class="variantsInfoBoxes">
-                  {% for variant in product.variants %}
-                    <div
-                      id="variant-{{ product.id }}-{{ variant.id }}"
-                      class="varianInfoTabContent"
-                      {% if forloop.index != 1 %}
-                        style="display:none"
-                      {% endif %}
-                    >
-                      {% if variant.metafields.custom.feed_for != blank %}
-                        <p class="is-text-small feedForTxt">
-                          {{ variant.metafields.custom.feed_for }}
+              </div>
+              <div class="variantsInfoBoxes">
+                {% for variant in product.variants %}
+                  <div
+                    id="variant-{{ product.id }}-{{ variant.id }}"
+                    class="varianInfoTabContent"
+                    {% if forloop.index != 1 %}
+                      style="display:none"
+                    {% endif %}
+                  >
+                    {% if variant.metafields.custom.feed_for != blank %}
+                      <p class="is-text-small feedForTxt">
+                        {{ variant.metafields.custom.feed_for }}
+                      </p>
+                    {% endif %}
+                    {% if variant.metafields.custom.small_description != blank %}
+                      <p class="is-text-small smallDesc">
+                        {{ variant.metafields.custom.small_description }}
+                      </p>
+                    {% endif %}
+                    <div class="variantInfoGrayBox">
+                      <div class="variantBadgeRow">
+                        <p class="boldBadge">
+                          {% if variant.metafields.custom.heart_healthy %}
+                            Heart-Healthy
+                          {% endif %}
                         </p>
-                      {% endif %}
-                      {% if variant.metafields.custom.small_description != blank %}
-                        <p class="is-text-small smallDesc">
-                          {{ variant.metafields.custom.small_description }}
-                        </p>
-                      {% endif %}
-                      <div class="variantInfoGrayBox">
-                        <div class="variantBadgeRow">
-                          <p class="boldBadge">
-                            {% if variant.metafields.custom.heart_healthy %}
-                              Heart-Healthy
-                            {% endif %}
+                        {% if variant.metafields.custom.most_popular %}
+                          <p class="mosPopularBox">Most Popular</p>
+                        {% endif %}
+                      </div>
+                      <div class="boxMealInfoList">
+                        {% for mealInfo in variant.metafields.custom.info_list.value %}
+                          <p class="is-text-small">
+                            {{ mealInfo }}
                           </p>
-                          {% if variant.metafields.custom.most_popular %}
-                            <p class="mosPopularBox">Most Popular</p>
-                          {% endif %}
-                        </div>
-                        <div class="boxMealInfoList">
-                          {% for mealInfo in variant.metafields.custom.info_list.value %}
-                            <p class="is-text-small">
-                              {{ mealInfo }}
-                            </p>
-                          {% endfor %}
-                        </div>
-                        <div class="boxMealPrice">
-                          {% if variant.compare_at_price > 0 %}
-                            <p class="boxOldPrice">
-                              Box Price <strong>{{ variant.compare_at_price | money }}</strong>
-                            </p>
-                          {% endif %}
-                          {% if variant.metafields.custom.price_per_meal != blank %}
-                            <p class="boxPerMealPrice {% if variant.metafields.custom.compare_price_per_meal != blank %}hasComparePrice{% endif %}">
-                              Price per meal
-                              <strong>
-                                {% if variant.metafields.custom.compare_price_per_meal != blank %}
-                                  <span class="mealComparePrice">
-                                    ${{ variant.metafields.custom.compare_price_per_meal }}
+                        {% endfor %}
+                      </div>
+                      <div class="boxMealPrice">
+                        {% if variant.compare_at_price > 0 %}
+                          <p class="boxOldPrice">
+                            Box Price <strong>{{ variant.compare_at_price | money }}</strong>
+                          </p>
+                        {% endif %}
+                        {% if variant.metafields.custom.price_per_meal != blank %}
+                          <p class="boxPerMealPrice {% if variant.metafields.custom.compare_price_per_meal != blank %}hasComparePrice{% endif %}">
+                            Price per meal
+                            <strong>
+                              {% if variant.metafields.custom.compare_price_per_meal != blank %}
+                                <span class="mealComparePrice">
+                                  ${{ variant.metafields.custom.compare_price_per_meal }}
+                                </span>
+                              {% endif %}
+                              ${{ variant.metafields.custom.price_per_meal }}
+                            </strong>
+                          </p>
+                        {% endif %}
+                        <div class="finalBoxPrice">
+                          <p class="totalPriceContainer">
+                            First box total
+
+                            <span class="priceArea  {% if variant.compare_at_price > 0 %}hasDiscount{% endif %}">
+                              {% if variant.compare_at_price > 0 %}
+                                <span class="discountBadge">
+                                  {% assign regular_price = variant.price %}
+                                  {% assign compare_at_price = variant.compare_at_price %}
+
+                                  {% if compare_at_price %}
+                                    {% assign total_discount = compare_at_price | minus: regular_price %}
+                                    {% if total_discount > 0 %}
+                                      {{ total_discount | money }} off
+                                    {% endif %}
+                                  {% endif %}
+                                </span>
+                              {% endif %}
+                              <span class="finalPriceElement">
+                                {% if variant.compare_at_price > 0 %}
+                                  <span class="compareAtPrice">
+                                    {{ variant.compare_at_price | money }}
                                   </span>
                                 {% endif %}
-                                ${{ variant.metafields.custom.price_per_meal }}
-                              </strong>
-                            </p>
-                          {% endif %}
-                          <div class="finalBoxPrice">
-                            <p class="totalPriceContainer">
-                              First box total
-
-                              <span class="priceArea  {% if variant.compare_at_price > 0 %}hasDiscount{% endif %}">
-                                {% if variant.compare_at_price > 0 %}
-                                  <span class="discountBadge"> </span>
-                                {% endif %}
-                                <span class="finalPriceElement">
-                                  {% if variant.compare_at_price > 0 %}
-                                    <span class="compareAtPrice">
-                                      {{ variant.compare_at_price | money }}
-                                    </span>
-                                  {% endif %}
-                                  {{ variant.price | money }}
-                                </span>
+                                {{ variant.price | money }}
                               </span>
-                            </p>
-                          </div>
+                            </span>
+                          </p>
                         </div>
                       </div>
                     </div>
-                  {% endfor %}
-                </div>
+                  </div>
+                {% endfor %}
               </div>
             {% endif %}
           </div>
