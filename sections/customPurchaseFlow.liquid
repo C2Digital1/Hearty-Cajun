@@ -68,11 +68,6 @@ button.prefrenceBtn.active{
   background: {{ boxBtnActiveBg }};
   color: {{ boxBtnActiveTxt }};
 }
-.prodBoxProdBtns button.selectionBtn:hover &&
-button.prefrenceBtn:hover{
-  background: {{ boxBtnActiveBg }};
-  color: {{ boxBtnActiveTxt }};
-}
 .button--primary{
   background: {{ primaryBtnBg }};
   color: {{ section.settings.color_scheme.settings.scheme_button_label }};
@@ -116,7 +111,9 @@ button.prefrenceBtn:hover{
 .colbtmTxt{
   color: {{ subheading_color }};
 }
-    
+.prodBoxSelectorContainer{
+  color:  {{ subheading_color }};
+} 
 {%- endcapture -%}
 {% style %}
   #shopify-section-{{ id }}{
