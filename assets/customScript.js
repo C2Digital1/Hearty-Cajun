@@ -265,16 +265,37 @@ $(document).ready(function () {
     // Select Prod Box Tab Buttons, Variant Tab Buttons and  Function Code End
 
     // Select Plan Final Button Function Code Sart
+ 
+    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection) {
+        var boxProdInfo = JSON.parse(localStorage.getItem("boxProdInfo")) || [];
+        var freshValues = {
+            "activeProdId": activeProdId,
+            "selectedVariantId": selectedVariantId,
+            "availabelSelection": availabelSelection
+        };
+        boxProdInfo.push(freshValues);
+        localStorage.setItem("boxProdInfo", JSON.stringify(boxProdInfo));
+    }
+
+
     $("button.selectThisPlanBtn").click(function () {
         var storedPreferences = localStorage.getItem("preferences");
-        console.log(storedPreferences);
         if (storedPreferences && storedPreferences.trim() !== "" && storedPreferences.trim() !== "[]") {
+            var activeProdBoxButton = $(".prodBoxMainSelector.active");
+            var activeProdTabContent = $(activeProdBoxButton).attr("data-tabId");
+            var activeProdId = $(activeProdBoxButton).attr("data-product").trim();
+            var activeProdActiveVariant = $(activeProdTabContent).find(".variantBtn.active");
+            var selectedVariantId = $(activeProdActiveVariant).attr("data-variant").trim();
+            var availabelSelection = $(activeProdActiveVariant).text().trim();
+
+            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection);
             $("body").addClass("showSecondStep");
         }
         else {
             $(this).addClass("animated bounceIn")
             $("button.prefrenceBtn").addClass("showError animated bounceIn");
             $("body").removeClass("showSecondStep");
+
             setTimeout(function () {
                 $(this).removeClass("animated bounceIn");
                 $("button.prefrenceBtn").removeClass("showError animated bounceIn");
