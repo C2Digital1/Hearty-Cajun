@@ -34,6 +34,7 @@
 
   {% assign blockProdIndex = 1 %}
   <div class="prodBoxVariantsInfo">
+    <div class="collection__loading-icon button is-loading is-loading--icon-only prodChangeLoader"></div>
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'planProducts' %}
@@ -69,7 +70,9 @@
                   </button>
                 {% endfor %}
               </div>
+
               <div class="variantsInfoBoxes">
+                <div class="collection__loading-icon button is-loading is-loading--icon-only variantChangeLoader"></div>
                 {% for variant in product.variants %}
                   <div
                     id="variant-{{ product.id }}-{{ variant.id }}"

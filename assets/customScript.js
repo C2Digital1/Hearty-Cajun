@@ -236,6 +236,36 @@ $(document).ready(function () {
     // Prefrences Button and Prefrences Function Code End
 
 
+    // Select Prod Box Tab Buttons, Variant Tab Buttons and  Function Code Start
+    $("button.prodBoxMainSelector").click(function () {
+        $("button.prodBoxMainSelector").removeClass("active");
+        $(this).addClass("active");
+        $(".prodBoxVariantSelectionBox").hide();
+        $(".prodChangeLoader").show();
+        var thisTabContent = $(this).attr("data-tabId");
+        setTimeout(function () {
+            $(".variantChangeLoader, .prodChangeLoader").hide();
+            $(thisTabContent).fadeIn(200);
+        }, 600);
+
+    });
+    $("button.variantBtn").click(function () {
+        $(this).parent(".variantBtnsContainer").children("button.variantBtn").removeClass("active");
+        $(this).addClass("active");
+        $(this).parent(".variantBtnsContainer").next(".variantsInfoBoxes").children(".varianInfoTabContent").hide();
+        $(this).parent(".variantBtnsContainer").next(".variantsInfoBoxes").children(".variantChangeLoader").show();
+        var thisVariantTabContent = $(this).attr("data-tabId");
+        setTimeout(function () {
+            $(".variantChangeLoader, .prodChangeLoader").hide();
+            $(thisVariantTabContent).fadeIn(200);
+        }, 600);
+
+    });
+
+
+
+    // Select Prod Box Tab Buttons, Variant Tab Buttons and  Function Code End
+
     /* =========== PURCHASE FLOW  CODE END =========== */
 
 });
