@@ -273,6 +273,7 @@ $(document).ready(function () {
             "selectedVariantId": selectedVariantId,
             "availabelSelection": availabelSelection
         };
+        boxProdInfo = [];
         boxProdInfo.push(freshValues);
         localStorage.setItem("boxProdInfo", JSON.stringify(boxProdInfo));
     }
