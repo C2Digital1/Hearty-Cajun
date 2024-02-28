@@ -97,12 +97,27 @@
             "iconImg": "shopify:\/\/shop_images\/40404040AN.svg",
             "heading": "Low Salt"
           }
+        },
+        "prefrences_col_4QH8dE": {
+          "type": "prefrencesCol",
+          "settings": {
+            "iconImg": "shopify:\/\/shop_images\/41414141AO.svg",
+            "heading": "Extra Protein"
+          }
+        },
+        "prefrences_col_nqePHk": {
+          "type": "prefrencesCol",
+          "settings": {
+            "heading": "Gluten Free"
+          }
         }
       },
       "block_order": [
         "prefrences_col_yUNRPn",
         "prefrences_col_VUW6b4",
-        "prefrences_col_EheKai"
+        "prefrences_col_EheKai",
+        "prefrences_col_4QH8dE",
+        "prefrences_col_nqePHk"
       ],
       "settings": {
         "heading": "Craft Your First Box",
