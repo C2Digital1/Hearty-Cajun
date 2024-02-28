@@ -195,8 +195,13 @@ $(document).ready(function () {
         setTimeout(function () {
             input.removeClass('error').attr('placeholder', 'Zip Code');
         }, 10);
-    }); 
+    });
     // zip code checker code end
 
+    $(".flowBtn").click(function () {
+        $(".flowBtn").removeClass("active prevActive"); 
+        $(this).prevAll(".flowBtn").addClass("prevActive"); 
+        $(this).addClass("active");
+    });
 
 });

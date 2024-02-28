@@ -3465,6 +3465,13 @@ h2.secHeading {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+}
+
+.hasPurchaseFlowNav a.headerLogoLink {
+    position: absolute;
+    left: 0;
+    z-index: 2;
 }
 
 a.headerLogoLink {
@@ -3571,6 +3578,9 @@ textarea#zipForSubmission {
     justify-content: center;
     width: 100%;
     column-gap: 0;
+    position: relative;
+    top: 8px;
+    min-height: 46px;
 }
 
 .flowBtn {
@@ -3590,75 +3600,87 @@ textarea#zipForSubmission {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 10px;
+    transition: all linear .3s;
+    min-width: 90px;
 }
 
 .flowBtn span.checkSign {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 18.33px;
-    width: 18.33px;
-    background-color: #DAD9D8;
+    height: 22px;
+    width: 22px;
+    color: #DAD9D8;
+    background: transparent;
+    overflow: hidden;
     border-radius: 100%;
     position: absolute;
     top: -23px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    transition: all linear .3s;
+}
+
+.flowBtn span.checkSign svg {
+    height: 22px;
+    width: 22px;
+    position: relative;
+    z-index: 5;
+}
+
+.flowBtn span.checkSign::before {
+    content: "";
+    background: #DAD9D8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    transition: all linear .3s;
 }
 
 .purchaseFlowNav .flowBtn:not(:first-child)::before {
     content: "";
     height: 2px;
-    width: 87px;
-    background-color: #DAD9D8;
+    width: 90px;
+    background: #DAD9D8;
     display: flex;
     position: relative;
     margin-left: 0;
-    top: -14px;
-    right: 44px;
+    top: -23px;
+    right: 36px;
     z-index: 1;
+    transition: all linear .3s;
 }
 
-span.checkSign::before {
-    content: "";
-    background: #fff;
-    left: 10px;
-    top: 6px;
-    width: 2px;
-    height: 9px;
-    -webkit-transform: rotate(39deg);
-    -ms-transform: rotate(39deg);
-    transform: rotate(39deg);
-    position: absolute;
-    opacity: 0;
-}
-
-span.checkSign::after {
-    content: "";
-    background: #fff;
-    left: 5px;
-    top: 9px;
-    width: 2px;
-    height: 5px;
-    -webkit-transform: rotate(308deg);
-    -ms-transform: rotate(308deg);
-    transform: rotate(308deg);
-    position: absolute;
-    opacity: 0;
-}
-
+.flowBtn.prevActive,
 .flowBtn.active {
     color: #F15D5E;
 }
 
-.flowBtn.active span.checkSign {
-    background: #F15D5E;
+.flowBtn.prevActive::before,
+.purchaseFlowNav .flowBtn.active::before {
+    background: #F15D5E !important;
 }
 
-.flowBtn.active span.checkSign::before,
-.flowBtn.active span.checkSign::after {
+.flowBtn.prevActive span.checkSign,
+.flowBtn.active span.checkSign {
+    color: #F15D5E;
+    background: transparent;
+}
+
+.flowBtn.prevActive span.checkSign svg,
+.flowBtn.active span.checkSign svg {
     opacity: 1;
+}
+
+.flowBtn.active span.checkSign::before {
+    background: #fff;
 }
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */

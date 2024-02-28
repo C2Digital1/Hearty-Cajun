@@ -79,7 +79,7 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
-  <div class="pageHeaderContainer">
+  <div class="pageHeaderContainer {%  if showPurchaseFlowNav %}hasPurchaseFlowNav{% endif %}"> 
     {% if logoImg != blank %}
       <a href="/" class="headerLogoLink">
         <img
@@ -95,23 +95,23 @@
     {% if showPurchaseFlowNav %}
       <div class="purchaseFlowNav">
         <button class="flowBtn active">
-          <span class="checkSign"> </span>
+          <span class="checkSign"> {% render 'roundCheckIcon' %} </span>
           Select Plan
         </button>
         <button class="flowBtn">
-          <span class="checkSign"> </span>
+          <span class="checkSign"> {% render 'roundCheckIcon' %} </span>
           Register
         </button>
         <button class="flowBtn">
-          <span class="checkSign"> </span>
+          <span class="checkSign"> {% render 'roundCheckIcon' %} </span>
           Select Meals
         </button>
         <button class="flowBtn">
-          <span class="checkSign"> </span>
+          <span class="checkSign"> {% render 'roundCheckIcon' %} </span>
           Add-Ons
         </button>
         <button class="flowBtn">
-          <span class="checkSign"> </span>
+          <span class="checkSign"> {% render 'roundCheckIcon' %} </span>
           Checkout
         </button>
       </div>
