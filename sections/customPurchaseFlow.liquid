@@ -16,7 +16,18 @@
 
   assign boxBtnActiveTxt = section.settings.boxBtnActiveTxt
   assign boxBtnActiveBg = section.settings.boxBtnActiveBg
+
+  
+  assign heading_color = section.settings.color_scheme.settings.scheme_heading
+  assign subheading_color = section.settings.color_scheme.settings.scheme_text
 -%}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{%  endif %}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
   assign padding_top = section.settings.padding_top
@@ -35,7 +46,10 @@
 {% comment %}Layout{% endcomment %}
 {%- liquid
   assign width = section.settings.width
-  assign section_bg = section.settings.section_bg
+  assign section_bg = section.settings.color_scheme.settings.scheme_background
+  if section.settings.color_scheme.settings.scheme_background_gradient != empty
+    assign section_bg = section.settings.color_scheme.settings.scheme_background_gradient
+  endif
   assign animation = section.settings.animation | default: 'none'
 -%}
 {% comment %}Advanced{% endcomment %}
@@ -57,6 +71,50 @@ button.prefrenceBtn:hover{
   background: {{ boxBtnActiveBg }};
   color: {{ boxBtnActiveTxt }};
 }
+.button--primary{
+  background: {{ primaryBtnBg }};
+  color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+  border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--primary:hover{
+   background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--secondary{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+  border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+}
+
+.button--secondary:hover{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+}
+
+.button--link-style{
+  color: {{ section.settings.color_scheme.settings.scheme_link }};
+}
+
+.button--link-style:hover{
+  color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+}
+
+ .secHeading &&
+.boxHeading{
+  color: {{ heading_color }};
+}
+.boxSubTxt &&
+.boxSubTxt{
+  color: {{ subheading_color }};
+}
+.colbtmTxt{
+  color: {{ subheading_color }};
+}
+    
 {%- endcapture -%}
 {% style %}
   #shopify-section-{{ id }}{
@@ -94,7 +152,7 @@ button.prefrenceBtn:hover{
   class="
     section
     customPurchaseFlowSec
-    {{ css_class }}
+    {{ css_class }} scheme_color-{{section.settings.color_scheme}}
     is-width-{{ width }}
   "
   {% if animation != 'none' %}
@@ -181,6 +239,12 @@ button.prefrenceBtn:hover{
   "name": "Custom Purchase Flow",
   "class": "purchaseFlow",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "default"
+    },
     {
       "type": "header",
       "content": "Heading"
