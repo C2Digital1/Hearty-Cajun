@@ -118,6 +118,18 @@
             "iconImg": "shopify:\/\/shop_images\/42424242AP.svg",
             "heading": "Low Calories"
           }
+        },
+        "plan_products_nhpgcM": {
+          "type": "planProducts",
+          "settings": {
+            "product": ""
+          }
+        },
+        "plan_products_iXAtEV": {
+          "type": "planProducts",
+          "settings": {
+            "product": ""
+          }
         }
       },
       "block_order": [
@@ -126,7 +138,9 @@
         "prefrences_col_EheKai",
         "prefrences_col_4QH8dE",
         "prefrences_col_nqePHk",
-        "prefrences_col_8QyaVq"
+        "prefrences_col_8QyaVq",
+        "plan_products_nhpgcM",
+        "plan_products_iXAtEV"
       ],
       "settings": {
         "color_scheme": "",
