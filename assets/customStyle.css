@@ -4043,7 +4043,14 @@ span.priceArea.hasDiscount span.finalPriceElement span.compareAtPrice {
     color: #B5B2B0;
     margin-right: 8px;
 }
-
+button.selectThisPlanBtn.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    margin-top: 40px;
+}
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
