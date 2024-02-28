@@ -17,17 +17,16 @@
   assign boxBtnActiveTxt = section.settings.boxBtnActiveTxt
   assign boxBtnActiveBg = section.settings.boxBtnActiveBg
 
-  
   assign heading_color = section.settings.color_scheme.settings.scheme_heading
   assign subheading_color = section.settings.color_scheme.settings.scheme_text
 -%}
 {% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
   {% assign borderWidth = 0 %}
-  {%  else %}      
+{% else %}
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
   {% assign borderWidth = 1 %}
-{%  endif %}
+{% endif %}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
   assign padding_top = section.settings.padding_top
@@ -227,6 +226,15 @@ button.prefrenceBtn:hover{
               {{ rightColHeading }}
             </h2>
           {% endif %}
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'planProducts' %}
+                {%- liquid
+                  assign product = block.settings.product
+                -%}
+                {% render 'boxProdSelection', product: product, block: block, id: id %}
+            {% endcase %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -558,6 +566,18 @@ button.prefrenceBtn:hover{
           "type": "text",
           "id": "heading",
           "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "planProducts",
+      "name": "Plan Product Box",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Choose Product"
         }
       ]
     }
