@@ -329,8 +329,8 @@ $(document).ready(function () {
                         console.log("Meal Box Collection: " + addOnsCollectionURL);
                         console.log("Meal Box Add-Ons Collection: " + addOnsCollectionURL);
 
-                        if ($(".continueToMeals").length > 0) {
-                            $(".continueToMeals").attr('href', mealBoxCollectionUrl);
+                        if ($("#continueToMeals").length > 0) {
+                            $("#continueToMeals").attr('href', mealBoxCollectionUrl);
                         }
                         if ($(".submissionRedirectInput").length > 0) {
                             $(".submissionRedirectInput").val(mealBoxCollectionUrl);
