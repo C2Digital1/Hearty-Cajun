@@ -25,6 +25,7 @@
   assign hidePrice = section.settings.hidePrice
   
   assign dotsBg = section.settings.dotsBg  
+  assign enableCenterMode = section.settings.enableCenterMode
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -187,7 +188,8 @@
     "collection_style": {{ layout | json }},
     "products_per": {{ items_per_row | json}},
     "products_available": {{ collection.all_products_count | json }},
-    "products_limit": {{ products_limit | json }}
+    "products_limit": {{ products_limit | json }},
+    "enableCenterMode": {{ enableCenterMode | json }}
   }
 </script>
 <script data-theme-editor-load-script src="{{ 'z__jsFeaturedCollection.js' | asset_url }}"></script>
@@ -434,7 +436,12 @@
         }
       ]
     },
-    
+    {
+      "type": "checkbox",
+      "id": "enableCenterMode",
+      "label": "Enable Center Mode",
+      "default": false
+    },    
     {
       "type": "color",
       "id": "dotsBg",

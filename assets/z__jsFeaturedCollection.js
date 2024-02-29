@@ -18,14 +18,18 @@
         products_per_slide: this.products_per,
         products_available: this.products_available,
         products_limit: this.products_limit,
+        enableCenterMode: this.enableCenterMode,
       }
-
+      var alignmode = "left";
+      if(slideData.enableCenterMode){
+        alignmode = "center";
+      }
       const slider = $sliderEl.flickity({
         lazyLoad: 2,
         freeScroll: false,
         imagesLoaded: true,
         draggable: true,
-        cellAlign: 'left',
+        cellAlign: alignmode,
         wrapAround: false,
         pageDots: true,
         contain: false,
