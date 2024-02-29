@@ -298,6 +298,20 @@
     },
     "custom_testimonial_xjRr94": {
       "type": "customTestimonial",
+      "blocks": {
+        "testimonial_Tggd3k": {
+          "type": "testimonial",
+          "settings": {
+            "clientImg": "shopify:\/\/shop_images\/user.jpg",
+            "heading": "Amazing Service!",
+            "subHeading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae.<\/p>",
+            "clientName": "- Stella Rich"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Tggd3k"
+      ],
       "settings": {
         "color_scheme": "",
         "heading": "We didn’t say it, they did!",
