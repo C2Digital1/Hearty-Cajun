@@ -245,7 +245,7 @@
         "border_color": "#FFFFFF",
         "border_width": 0,
         "text_width": 40,
-        "button_1": "<span class=\"copyIcon\"><\/span>Copy Code",
+        "button_1": "Copy Code",
         "button_1_link": "#",
         "button_1_style": "button--primary",
         "button_2": "",
