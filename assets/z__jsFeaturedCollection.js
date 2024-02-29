@@ -21,8 +21,12 @@
         enableCenterMode: this.enableCenterMode,
       }
       var alignmode = "left";
-      if(slideData.enableCenterMode){
-        alignmode = "center";
+      var wrapAround = false;
+      if ($(window).width() > 991) {
+        if (slideData.enableCenterMode) {
+          alignmode = "center";
+          wrapAround = true;
+        }
       }
       const slider = $sliderEl.flickity({
         lazyLoad: 2,
@@ -30,7 +34,7 @@
         imagesLoaded: true,
         draggable: true,
         cellAlign: alignmode,
-        wrapAround: false,
+        wrapAround: wrapAround,
         pageDots: true,
         contain: false,
         prevNextButtons: slideData.products_limit > slideData.products_per_slide ? true : false,

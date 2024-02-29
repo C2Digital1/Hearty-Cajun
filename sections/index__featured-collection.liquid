@@ -118,6 +118,7 @@
     {% if layout == 'slider' %}
       hasSlider
     {% endif %}
+    {% if enableCenterMode %}enabledCenterMode{% endif %}
   "
   {% if animation != 'none' %}
     data-scroll-class="{{ animation }}"

@@ -364,6 +364,9 @@ h3.secSubHeading {
 .featuredCollecionSec.is-width-wide.hasSlider {
     padding-left: 48px;
 }
+.is-width-wide.featuredCollecionSec.hasSlider.enabledCenterMode {
+    padding-left: 0 !important;
+}
 
 .container.featuredCollectionHeading.align-center {
     max-width: 600px;
@@ -4239,6 +4242,9 @@ button.prefrenceBtn.showError {
     }
 
     .featuredCollecionSec.is-width-wide.hasSlider {
+        padding-left: 16px !important;
+    }
+    .is-width-wide.featuredCollecionSec.hasSlider.enabledCenterMode{
         padding-left: 16px !important;
     }
 
