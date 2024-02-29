@@ -242,7 +242,7 @@
         "text_horizontal_position": "center",
         "text_vertical_position": "center",
         "background_color": "",
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "Copy Code",
@@ -345,12 +345,12 @@
         "textPreset": "is-text",
         "cardBorderBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
         "cardMainBg": "#fff",
-        "cardTitleColor": "#F15D5E",
-        "cardTextColor": "#463F3A",
-        "cardBtmTxtColor": "#463F3A",
-        "arrowIconBg": "#fff",
-        "arrowIconColor": "#28303F",
-        "dotsBg": "#463F3A",
+        "cardTitleColor": "#f15d5e",
+        "cardTextColor": "#463f3a",
+        "cardBtmTxtColor": "#463f3a",
+        "arrowIconBg": "#ffffff",
+        "arrowIconColor": "#28303f",
+        "dotsBg": "#463f3a",
         "width": "standard",
         "padding_top": 0,
         "padding_bottom": 64,
@@ -369,6 +369,31 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "index_faq_iFKApV": {
+      "type": "index__faq",
+      "settings": {
+        "color_scheme": "",
+        "enable_tags": false,
+        "question_preset": "is-h4",
+        "answer_preset": "is-text",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 117,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 80,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -379,6 +404,7 @@
     "index_featured_collection_dUje4G",
     "index_image_with_text_overlay_ygxhEp",
     "customPageFooter",
-    "custom_testimonial_xjRr94"
+    "custom_testimonial_xjRr94",
+    "index_faq_iFKApV"
   ]
 }
