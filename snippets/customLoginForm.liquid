@@ -19,8 +19,8 @@
   </div>
   <div class="boxShadowContainer">
     <div class="loginSIgnupTabBtns">
-      <button data-tab="#loginForm" class="lginSingUpTabBtn">Sign In</button>
-      <button data-tab="#signUpForm" class="lginSingUpTabBtn active">Register</button>
+      <button data-tab="#loginForm" class="loginSingUpTabBtn">Sign In</button>
+      <button data-tab="#signUpForm" class="loginSingUpTabBtn active">Register</button>
     </div>
 
     <div class="tabContents">
@@ -80,6 +80,7 @@
             >
           </div>
         {% endform %}
+        <input type="hidden" name="return_to" value="/pages/customize-plans#loginForm">
         {% if shop.checkout.guest_login %}
           <span class="has-padding-top"> {{ 'customer.login.or' | t }} </span>
           {% form 'guest_login' %}
@@ -156,10 +157,10 @@
           </div>
 
           <div class="prefrences" style="display:none;">
-            <label for="prefrencesField">Birthday</label>
+            <label for="prefrencesField">Prefrences</label>
             <input id="prefrencesField" type="text" name="customer[note][Prefrences]" />
           </div>
-
+          <input type="hidden"  name="return_to" value="/pages/customize-plans#loginForm">
           <div class="buttons has-margin-top is-center">
             <input
               class="button {{ settings.form_button_style }} is-within-form"

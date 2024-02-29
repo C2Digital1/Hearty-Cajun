@@ -226,7 +226,7 @@ $(document).ready(function () {
         $(".prefrenceBtn.active .btnTxt").each(function () {
             preferences.push($(this).text().trim());
         });
-        localStorage.setItem("preferences", JSON.stringify(preferences));
+        localStorage.setItem("preferences", JSON.stringify(preferences));    
     }
 
     $("button.prefrenceBtn").click(function () {
@@ -241,9 +241,25 @@ $(document).ready(function () {
             preferences.forEach(function (preference) {
                 $(".prefrenceBtn .btnTxt:contains('" + preference + "')").closest("button").addClass("active");
             });
-        }
+        }          
+    }
+    function updatePrefrencesField(){
+        var storedPreferences = localStorage.getItem("preferences");
+        var formattedPreferences = "";    
+        if (storedPreferences && storedPreferences.trim() !== "" && storedPreferences.trim() !== "[]") {
+            var preferences = JSON.parse(storedPreferences);
+            if (preferences.length > 1) {
+                formattedPreferences = preferences.join(", ");
+            } else if (preferences.length === 1) {
+                formattedPreferences = preferences[0];
+            }
+        }        
+        if ($("#prefrencesField").length > 0) {
+            $("#prefrencesField").val(formattedPreferences);
+        }  
     }
     loadPreferences();
+    updatePrefrencesField();    
     // Prefrences Button and Prefrences Function Code End
 
 
@@ -314,14 +330,21 @@ $(document).ready(function () {
             var availabelSelection = $(activeProdActiveVariant).text().trim();
 
             updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection);
+            $(".loadingIcon").show();            
             $("body").addClass("showSecondStep");
-            $(".purchaseFlowNav button:nth-child(2)").addClass("active");
+            $(".purchaseFlowStep1").hide();
+            updatePrefrencesField();
+            setTimeout(function () {                
+                $(".loadingIcon").hide();
+                $(".purchaseFlowNav button:nth-child(2)").addClass("active");
+                $(".purchaseFlowStep2").fadeIn(200);
+            }.bind(this), 600);
         }
         else {
             $(this).addClass("animated bounceIn")
             $("button.prefrenceBtn").addClass("showError animated bounceIn");
             $("body").removeClass("showSecondStep");
-
+            $(".purchaseFlowStep1").show();
             setTimeout(function () {
                 $(this).removeClass("animated bounceIn");
                 $("button.prefrenceBtn").removeClass("showError animated bounceIn");

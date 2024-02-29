@@ -4111,9 +4111,146 @@ button.button.copyTxtBtn span.copyIcon svg {
     width: 100%;
     height: 100%;
 }
-.flowContainer{
+
+.flowContainer {
     width: 100%;
 }
+
+
+
+/* ===Purchase step 2 === */
+body.showSecondStep .shopify-section.customAnnouncementBar,
+body.showSecondStep .shopify-section.custPageHeader,
+body.showSecondStep .shopify-section.purchaseFlow,
+body.showSecondStep .shopify-section.custFooterBar {
+    display: block !important;
+}
+
+body.showSecondStep .shopify-section {
+    display: none;
+}
+
+
+.loginSIgnupTabBtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px auto 40px auto;
+}
+
+
+button.loginSingUpTabBtn {
+    color: #463F3A;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 34px;
+    text-align: center;
+    background: transparent !important;
+    padding: 0;
+    border: 0px solid !important;
+    cursor: pointer;
+    outline: none !important;
+    transition: all linear .3s;
+    margin: 0 12px;
+}
+
+button.loginSingUpTabBtn.active {
+    color: #F15D5E;
+    border-bottom: 2px solid #F15D5E !important;
+}
+
+
+.customFormFieldsContainer .field label.label {
+    display: none;
+}
+
+.tabContents {
+    width: 100%;
+}
+
+
+.customFormFieldsContainer {
+    width: 100%;
+    max-width: 338px;
+    margin: 0px auto;
+}
+
+.customFormFieldsContainer input.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    min-height: 54px;
+    border: 1px solid #463F3A;
+    border-radius: 15px;
+    color: #463F3A;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.customFormFieldsContainer input.input::placeholder {
+    opacity: .4;
+}
+
+.customFormFieldsContainer .field:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
+.customFormFieldsContainer .buttons.has-margin-top.is-center {
+    width: 100%;
+    margin: 0px auto !important;
+}
+
+.customFormFieldsContainer .buttons input.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    min-height: 54px;
+    max-width: 100% !important;
+    margin: 0px auto !important;
+}
+
+.iconsAndTextInfoRow {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    row-gap: 20px;
+}
+
+.iconTxtCol {
+    width: 50%;
+    max-width: 358px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.iconTxtCol img.boxImg {
+    height: 48px;
+    margin: 0px auto 16px auto;
+    width: 72px;
+    object-fit: contain;
+}
+
+.iconTxtCol h3.iconHeading.is-h5 {
+    font-size: 16px !important;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.iconTxtCol p.iconSubHeading {
+    font-size: 14px !important;
+    line-height: 22px;
+    text-align: center;
+    opacity: .6;
+}
+
+/* ===Purchase step 2 === */
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
