@@ -223,7 +223,7 @@
     "index_image_with_text_overlay_ygxhEp": {
       "type": "index__image-with-text-overlay",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "roundedCorner": true,
         "useCustomStyling": true,
         "link": "",
@@ -249,7 +249,7 @@
         "button_2": "Button 2",
         "button_2_link": "",
         "button_2_style": "button--secondary",
-        "color_scheme_mobile": "",
+        "color_scheme_mobile": "scheme-27f0274f-ec98-4921-9bec-179906da6ceb",
         "mobile_image_crop": "none",
         "mobile_text_below_image": false,
         "width": "standard",
