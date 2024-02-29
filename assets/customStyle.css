@@ -364,6 +364,7 @@ h3.secSubHeading {
 .featuredCollecionSec.is-width-wide.hasSlider {
     padding-left: 48px;
 }
+
 .is-width-wide.featuredCollecionSec.hasSlider.enabledCenterMode {
     padding-left: 0 !important;
 }
@@ -4072,6 +4073,15 @@ button.prefrenceBtn.showError {
     border: 1px solid #F15D5E !important;
 }
 
+
+.halfHeading .container.featuredCollectionHeading.align-center {
+    max-width: 500px;
+}
+
+.halfHeading .container.featuredCollectionHeading.align-center h3.secSubHeading {
+    max-width: 388px;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 
@@ -4244,7 +4254,8 @@ button.prefrenceBtn.showError {
     .featuredCollecionSec.is-width-wide.hasSlider {
         padding-left: 16px !important;
     }
-    .is-width-wide.featuredCollecionSec.hasSlider.enabledCenterMode{
+
+    .is-width-wide.featuredCollecionSec.hasSlider.enabledCenterMode {
         padding-left: 16px !important;
     }
 
