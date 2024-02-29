@@ -159,83 +159,90 @@ button.prefrenceBtn.active{
   {% endif %}
 >
   <div class="sectionBoxContainer">
-    <div class="purchaseFlowHeadingArea">
-      {% if heading != blank %}
-        <h1 class="secHeading {{ heading_preset }}">
-          {{ heading }}
-        </h1>
-      {% endif %}
-      {% if subHeading != blank %}
-        <div class="secSubHeading {{ subHeadingPreset }}">
-          {{ subHeading }}
-        </div>
-      {% endif %}
-    </div>
-    <div class="boxShadowContainer">
-      <div class="inneBoxRow">
-        <div class="boxCol planPrefrencesChoosingContainer">
-          {% if leftColHeading %}
-            <h2 class="boxHeading is-h5">
-              {{ leftColHeading }}
-            </h2>
-          {% endif %}
-          {% if leftColSubText %}
-            <div class="boxSubTxt is-text-small">
-              {{ leftColSubText }}
-            </div>
-          {% endif %}
-          <div class="prefrencesMultipleOpt">
-            {% for block in section.blocks %}
-              {% case block.type %}
-                {% when 'prefrencesCol' %}
-                  {%- liquid
-                    assign iconImg = block.settings.iconImg
-                    assign btnHeading = block.settings.heading
-                  -%}
-                  {% if btnHeading != blank %}
-                    <button id="prefrence-{{id}}-{{block.id}}" class="prefrenceBtn">
-                      {% if iconImg != blank %}
-                        <span class="boxBtnIcon">
-                          <img
-                            class="boxImg lazyload"
-                            src="{{ iconImg | img_url:'master' }}"
-                            alt="img"
-                            width="40"
-                            height="40"
-                            loading="lazy"
-                          >
-                        </span>
-                      {% endif %}
-                      <span class="btnTxt">
-                        {{ btnHeading }}
-                      </span>
-                    </button>
-                  {% endif %}
-              {% endcase %}
-            {% endfor %}
+    <div class="flowContainer purchaseFlowStep1">
+      <div class="purchaseFlowHeadingArea">
+        {% if heading != blank %}
+          <h1 class="secHeading {{ heading_preset }}">
+            {{ heading }}
+          </h1>
+        {% endif %}
+        {% if subHeading != blank %}
+          <div class="secSubHeading {{ subHeadingPreset }}">
+            {{ subHeading }}
           </div>
-          {% if leftColBtmTxt %}
-            <p class="colbtmTxt is-text-small">
-              {{ leftColBtmTxt }}
-            </p>
-          {% endif %}
-        </div>
-        <div class="boxCol planProdChoosingContainer">
-          {% if rightColHeading %}
-            <h2 class="boxHeading is-h5">
-              {{ rightColHeading }}
-            </h2>
-          {% endif %}
-          {%- liquid
-            assign prodLabel = section.settings.prodLabel
-            assign variantsLabel = section.settings.variantsLabel
-          -%}
-          {% render 'boxProdSelection', prodLabel: prodLabel, variantsLabel: variantsLabel, section: section, id: id %}
-        </div>
+        {% endif %}
       </div>
-      <button class="selectThisPlanBtn button button--primary">Select This Plan</button>
+      <div class="boxShadowContainer">
+        <div class="inneBoxRow">
+          <div class="boxCol planPrefrencesChoosingContainer">
+            {% if leftColHeading %}
+              <h2 class="boxHeading is-h5">
+                {{ leftColHeading }}
+              </h2>
+            {% endif %}
+            {% if leftColSubText %}
+              <div class="boxSubTxt is-text-small">
+                {{ leftColSubText }}
+              </div>
+            {% endif %}
+            <div class="prefrencesMultipleOpt">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'prefrencesCol' %}
+                    {%- liquid
+                      assign iconImg = block.settings.iconImg
+                      assign btnHeading = block.settings.heading
+                    -%}
+                    {% if btnHeading != blank %}
+                      <button id="prefrence-{{id}}-{{block.id}}" class="prefrenceBtn">
+                        {% if iconImg != blank %}
+                          <span class="boxBtnIcon">
+                            <img
+                              class="boxImg lazyload"
+                              src="{{ iconImg | img_url:'master' }}"
+                              alt="img"
+                              width="40"
+                              height="40"
+                              loading="lazy"
+                            >
+                          </span>
+                        {% endif %}
+                        <span class="btnTxt">
+                          {{ btnHeading }}
+                        </span>
+                      </button>
+                    {% endif %}
+                {% endcase %}
+              {% endfor %}
+            </div>
+            {% if leftColBtmTxt %}
+              <p class="colbtmTxt is-text-small">
+                {{ leftColBtmTxt }}
+              </p>
+            {% endif %}
+          </div>
+          <div class="boxCol planProdChoosingContainer">
+            {% if rightColHeading %}
+              <h2 class="boxHeading is-h5">
+                {{ rightColHeading }}
+              </h2>
+            {% endif %}
+            {%- liquid
+              assign prodLabel = section.settings.prodLabel
+              assign variantsLabel = section.settings.variantsLabel
+            -%}
+            {% render 'boxProdSelection',
+              prodLabel: prodLabel,
+              variantsLabel: variantsLabel,
+              section: section,
+              id: id
+            %}
+          </div>
+        </div>
+        <button class="selectThisPlanBtn button button--primary">Select This Plan</button>
+      </div>
     </div>
-    {% render 'customLoginForm' %}
+    {% render 'customLoginForm', section: section %}
   </div>
 </section>
 {% schema %}
@@ -394,6 +401,50 @@ button.prefrenceBtn.active{
       "id": "variantsLabel",
       "label": "Right Column Variants Label",
       "default": "How many meals would you like?"
+    },
+    {
+      "type": "header",
+      "content": "Login Signup Form"
+    },
+    {
+      "type": "text",
+      "id": "loginHeading",
+      "label": "Heading",
+      "default": "Get started"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottomIcon1",
+      "label": "Bottom Icon 1"
+    },
+    {
+      "type": "text",
+      "id": "bottomIconHeadindg1",
+      "label": "Icon Heading 1",
+      "default": "99% Less Food Waste"
+    },
+    {
+      "type": "text",
+      "id": "bottomIconSubHeadindg1",
+      "label": "Icon Sub Heading 1",
+      "default": "Better for the earth and budget."
+    },
+    {
+      "type": "image_picker",
+      "id": "bottomIcon2",
+      "label": "Bottom Icon 2"
+    },
+    {
+      "type": "text",
+      "id": "bottomIconHeadindg2",
+      "label": "Icon Heading 2",
+      "default": "Hearty Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "bottomIconSubHeadindg2",
+      "label": "Icon Sub Heading 2",
+      "default": "Keep you strong and energized."
     },
     {
       "type": "header",

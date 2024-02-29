@@ -1,75 +1,212 @@
-<div class="customLoginForm" style="display:none;">
-  <div id="customer" class="account__form register_form one-whole column">
-    {% form 'create_customer' %}
-      {{ form.errors | default_errors }}
+{% liquid
+  assign loginHeading = section.settings.loginHeading
 
-      <div id="first_name" class="field">
-        <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
-        <div class="control">
-          <input
-            type="text"
-            value=""
-            name="customer[first_name]"
-            id="first_name"
-            class="input"
-            size="30"
-            placeholder="{{ 'customer.register.first_name' | t }}"
+  assign bottomIcon1 = section.settings.bottomIcon1
+  assign bottomIconHeadindg1 = section.settings.bottomIconHeadindg1
+  assign bottomIconSubHeadindg1 = section.settings.bottomIconSubHeadindg1
+
+  assign bottomIcon2 = section.settings.bottomIcon2
+  assign bottomIconHeadindg2 = section.settings.bottomIconHeadindg2
+  assign bottomIconSubHeadindg2 = section.settings.bottomIconSubHeadindg2
+%}
+<div class="flowContainer purchaseFlowStep2" style="display:none;">
+  <div class="purchaseFlowHeadingArea">
+    {% if loginHeading != blank %}
+      <h1 class="secHeading {{ section.settings.heading_preset }}">
+        {{ loginHeading }}
+      </h1>
+    {% endif %}
+  </div>
+  <div class="boxShadowContainer">
+    <div class="loginSIgnupTabBtns">
+      <button data-tab="#loginForm" class="lginSingUpTabBtn">Sign In</button>
+      <button data-tab="#signUpForm" class="lginSingUpTabBtn active">Register</button>
+    </div>
+
+    <div class="tabContents">
+      <div class="customFormFieldsContainer" style="display:none;" id="loginForm">
+        {% form 'customer_login' %}
+          {{ form.errors | default_errors }}
+
+          <div class="field">
+            <label class="label" for="{{ label | replace: ' ', '_' }}">{{ 'customer.login.email' | t }}*</label>
+            <div class="control">
+              <input
+                type="email"
+                value=""
+                name="customer[email]"
+                id="customer_email"
+                class="input"
+                size="30"
+                autocorrect="off"
+                autocapitalize="off"
+                tabindex="1"
+                placeholder="{{ 'customer.login.email' | t }}"
+              >
+            </div>
+          </div>
+
+          {% if form.password_needed %}
+            {% comment %}
+              Customer Account Login
+            {% endcomment %}
+          {% endif %}
+          <div class="field">
+            <label class="label" for="{{ label | replace: ' ', '_' }}">{{ 'customer.login.password' | t }}*</label>
+            <div class="control">
+              <input
+                type="password"
+                value=""
+                name="customer[password]"
+                id="customer_password"
+                class="input"
+                size="16"
+                tabindex="2"
+                placeholder="{{ 'customer.login.password' | t }}"
+              >
+            </div>
+            <a class="js-recover-password footer-text button button--link-style" href="#">
+              {{- 'customer.login.forgot_password' | t -}}
+            </a>
+          </div>
+
+          <div class="buttons is-center has-margin-top">
+            <input
+              class="button {{ settings.form_button_style }} is-within-form"
+              type="submit"
+              value="{{ 'customer.login.sign_in' | t }}"
+              style="margin-bottom: 5px !important"
+              tabindex="3"
+            >
+          </div>
+        {% endform %}
+        {% if shop.checkout.guest_login %}
+          <span class="has-padding-top"> {{ 'customer.login.or' | t }} </span>
+          {% form 'guest_login' %}
+            <input
+              class="button {{ settings.form_button_style }} is-within-form"
+              type="submit"
+              value="{{ 'customer.login.guest_title_html' | t }}"
+            >
+          {% endform %}
+        {% endif %}
+      </div>
+      <div id="signUpForm" class="customFormFieldsContainer">
+        {% form 'create_customer' %}
+          {{ form.errors | default_errors }}
+
+          <div id="first_name" class="field">
+            <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
+            <div class="control">
+              <input
+                type="text"
+                value=""
+                name="customer[first_name]"
+                id="first_name"
+                class="input"
+                size="30"
+                placeholder="{{ 'customer.register.first_name' | t }}"
+              >
+            </div>
+          </div>
+
+          <div id="last_name" class="field">
+            <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
+            <div class="control">
+              <input
+                type="text"
+                value=""
+                name="customer[last_name]"
+                id="last_name"
+                class="input"
+                size="30"
+                placeholder="{{ 'customer.register.last_name' | t }}"
+              >
+            </div>
+          </div>
+
+          <div id="email" class="field">
+            <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
+            <div class="control">
+              <input
+                type="email"
+                value=""
+                name="customer[email]"
+                id="email"
+                class="input"
+                size="30"
+                placeholder="{{ 'customer.register.email' | t }}*"
+              >
+            </div>
+          </div>
+
+          <div id="password" class="field">
+            <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
+            <div class="control">
+              <input
+                type="password"
+                value=""
+                name="customer[password]"
+                id="password"
+                class="input"
+                size="30"
+                placeholder="{{ 'customer.register.password' | t }}"
+              >
+            </div>
+          </div>
+
+          <div class="prefrences" style="display:none;">
+            <label for="prefrencesField">Birthday</label>
+            <input id="prefrencesField" type="text" name="customer[note][Prefrences]" />
+          </div>
+
+          <div class="buttons has-margin-top is-center">
+            <input
+              class="button {{ settings.form_button_style }} is-within-form"
+              type="submit"
+              value="{{ 'customer.register.sign_up' | t }}"
+            >
+          </div>
+        {% endform %}
+      </div>
+    </div>
+    <div class="iconsAndTextInfoRow">
+      <div class="iconTxtCol">
+        {% if bottomIcon1 != blank %}
+          <img
+            class="boxImg lazyload"
+            src="{{ bottomIcon1 | img_url:'master' }}"
+            alt="img"
+            width="200"
+            height="200"
+            loading="lazy"
           >
-        </div>
+        {% endif %}
+        <h3 class="iconHeading is-h5">
+          {{ bottomIconHeadindg1 }}
+        </h3>
+        <p class="iconSubHeading">
+          {{ bottomIconSubHeadindg1 }}
+        </p>
       </div>
-
-      <div id="last_name" class="field">
-        <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
-        <div class="control">
-          <input
-            type="text"
-            value=""
-            name="customer[last_name]"
-            id="last_name"
-            class="input"
-            size="30"
-            placeholder="{{ 'customer.register.last_name' | t }}"
+      <div class="iconTxtCol">
+        {% if bottomIcon2 != blank %}
+          <img
+            class="boxImg lazyload"
+            src="{{ bottomIcon2 | img_url:'master' }}"
+            alt="img"
+            width="200"
+            height="200"
+            loading="lazy"
           >
-        </div>
+        {% endif %}
+        <h3 class="iconHeading is-h5">
+          {{ bottomIconHeadindg2 }}
+        </h3>
+        <p class="iconSubHeading">
+          {{ bottomIconSubHeadindg2 }}
+        </p>
       </div>
-
-      <div id="email" class="field">
-        <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
-        <div class="control">
-          <input
-            type="email"
-            value=""
-            name="customer[email]"
-            id="email"
-            class="input"
-            size="30"
-            placeholder="{{ 'customer.register.email' | t }}*"
-          >
-        </div>
-      </div>
-
-      <div id="password" class="field">
-        <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
-        <div class="control">
-          <input
-            type="password"
-            value=""
-            name="customer[password]"
-            id="password"
-            class="input"
-            size="30"
-            placeholder="{{ 'customer.register.password' | t }}"
-          >
-        </div>
-      </div>
-
-      <div class="buttons has-margin-top is-center">
-        <input
-          class="button {{ settings.form_button_style }} is-within-form"
-          type="submit"
-          value="{{ 'customer.register.sign_up' | t }}"
-        >
-      </div>
-    {% endform %}
+    </div>
   </div>
 </div>

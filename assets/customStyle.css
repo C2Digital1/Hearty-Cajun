@@ -4111,6 +4111,9 @@ button.button.copyTxtBtn span.copyIcon svg {
     width: 100%;
     height: 100%;
 }
+.flowContainer{
+    width: 100%;
+}
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
