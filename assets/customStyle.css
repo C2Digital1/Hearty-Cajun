@@ -2944,6 +2944,7 @@ button.filterDrawerOpener svg {
 p.filterBtnTxt {
     width: 80%;
 }
+
 .collectionMainContainer .sidebar__block.block__faceted-filtering {
     border-radius: 15px;
     background-color: #FFFFFF;
@@ -3130,6 +3131,17 @@ button.customDropDownBtn svg {
 .dropDownItems button.sortBtn.active,
 .dropDownItems button.sortBtn:hover {
     font-weight: 600;
+}
+
+h2.mealBoxHeading {
+    margin-bottom: 14px;
+}
+
+h2.mealBoxHeading.is-h5 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 34px;
 }
 
 /* =========== COLLECCTION PAGE CSS CODE END =========== */

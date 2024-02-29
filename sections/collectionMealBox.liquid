@@ -137,6 +137,7 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
+  <h2 class="mealBoxHeading is-h5">Select Meals</h2>
   {% if section.blocks.size > 0 and show_sidebar %}
     {% assign showMobileFilterBtn = true %}
   {% endif %}
@@ -144,9 +145,7 @@
     <div class="collectionSortingFilters">
       {% if showMobileFilterBtn %}
         <div class="mobileFilterOpenerContainer">
-            <p class="filterBtnTxt">
-                You can choose another dish next week or come back to your favorite
-            </p>
+          <p class="filterBtnTxt">You can choose another dish next week or come back to your favorite</p>
           <button type="button" class="filterDrawerOpener"><span>Filter by</span>{% render 'arrowDown' %}</button>
         </div>
       {% endif %}
