@@ -5263,6 +5263,17 @@ button.button.copyTxtBtn span.copyIcon svg {
         border-left: 0px solid !important;
     }
 
+    .variantBtnsContainer button.variantBtn {
+        padding: 0;
+    }
+
+    button.prodBoxMainSelector {
+        padding: 0;
+    }
+
+    .faqSideImgCol {
+        margin: 0px auto 24px auto;
+    }
 }
 
 @media only screen and (max-width: 798px) {
