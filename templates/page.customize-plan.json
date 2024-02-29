@@ -179,6 +179,46 @@
         "custom_css": ""
       }
     },
+    "index_featured_collection_dUje4G": {
+      "type": "index__featured-collection",
+      "settings": {
+        "heading": "Ready-to-Eat ItalianCajun Dishes",
+        "subHeading": "Delivering Unbelievable Flavors with Nutritional Goodness – Right to Your Doorstep.",
+        "heading_preset": "is-h2",
+        "subHeadingPreset": "is-text",
+        "heading_alignment": "center",
+        "collection": "frontpage",
+        "items_per_row": 4,
+        "mobile_items_per_row": "2",
+        "products_limit": 16,
+        "button_label_view": "",
+        "button_link_view": "",
+        "button_alignment_view": "center",
+        "button_style_view": "button--primary",
+        "hidePrice": true,
+        "collection_style": "slider",
+        "dotsBg": "#463F3A",
+        "arrowIconBg": "#fff",
+        "arrowIconColor": "#28303F",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "customPageFooter": {
       "type": "customPageFooter",
       "settings": {
@@ -209,6 +249,7 @@
     "customPageHeader",
     "main",
     "customPurchaseFlow",
+    "index_featured_collection_dUje4G",
     "customPageFooter"
   ]
 }
