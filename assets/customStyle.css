@@ -4393,7 +4393,7 @@ a.customForgotLink.footer-text.button.button--link-style {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -25;
+    z-index: 6666;
     height: 100vh;
     width: 100%;
     cursor: pointer;
@@ -4406,7 +4406,6 @@ a.customForgotLink.footer-text.button.button--link-style {
 .mainCollectionSec.mealBoxCollection.showFilters .filterOverlay {
     opacity: .8;
     visibility: visible;
-    z-index: 6666;
 }
 
 .mainCollectionSec.mealBoxCollection.showFilters aside.sidebar-section {
