@@ -247,6 +247,8 @@
         "text_width": 40,
         "button_1": "Copy Code",
         "button_1_link": "#",
+        "useCopyBtn": true,
+        "copyText": "69078$#Food",
         "button_1_style": "button--primary",
         "button_2": "",
         "button_2_link": "",
