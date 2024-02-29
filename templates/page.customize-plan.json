@@ -295,6 +295,46 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "custom_testimonial_xjRr94": {
+      "type": "customTestimonial",
+      "settings": {
+        "color_scheme": "",
+        "heading": "",
+        "headingPreset": "is-h2",
+        "subHeading": "",
+        "subHeadingPreset": "is-text",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "titlePreset": "is-h5",
+        "textPreset": "is-text",
+        "cardBorderBg": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
+        "cardMainBg": "#fff",
+        "cardTitleColor": "#F15D5E",
+        "cardTextColor": "#463F3A",
+        "cardBtmTxtColor": "#463F3A",
+        "arrowIconBg": "#fff",
+        "arrowIconColor": "#28303F",
+        "dotsBg": "#463F3A",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 64,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 48,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -304,6 +344,7 @@
     "customPurchaseFlow",
     "index_featured_collection_dUje4G",
     "index_image_with_text_overlay_ygxhEp",
-    "customPageFooter"
+    "customPageFooter",
+    "custom_testimonial_xjRr94"
   ]
 }
