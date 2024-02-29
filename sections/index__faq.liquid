@@ -219,7 +219,7 @@
         {% elsif block.type == 'faq' %}
           <div
             class="faq__block-faq faqItems column one-whole {{ current_heading | handleize }}"
-            style="{% if showFaqItems %}display:block; {% else %}display:none;{% endif %}"
+            style="{% if showFaqItems or sideImg != blank %}display:block; {% else %}display:none;{% endif %}"
             data-heading="{{ current_heading | handleize }}"           
           >
             <div class="faq__item">

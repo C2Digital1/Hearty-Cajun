@@ -4082,6 +4082,14 @@ button.prefrenceBtn.showError {
     max-width: 388px;
 }
 
+.faqSideImgCol {
+    width: 100%;
+    max-width: 438px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 
