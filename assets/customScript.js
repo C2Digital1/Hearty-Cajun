@@ -390,8 +390,16 @@ $(document).ready(function () {
 
         }
     });
-    
+
     // Select Plan Final Button Function Code end
+
+    $("button.loginSingUpTabBtn").click(function () {
+        $("button.loginSingUpTabBtn").removeClass("active");
+        $(this).addClass("active");
+        $(".customFormFieldsContainer").hide();
+        var activeFormTab = $(this).attr("data-tab"); 
+        $(activeFormTab).show();
+    });
 
     /* =========== PURCHASE FLOW  CODE END =========== */
 

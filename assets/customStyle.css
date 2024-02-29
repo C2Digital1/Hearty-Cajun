@@ -4218,6 +4218,7 @@ button.loginSingUpTabBtn.active {
     line-height: 22px;
 
 }
+
 a#continueToMeals {
     display: flex;
     align-items: center;
@@ -4231,6 +4232,7 @@ a#continueToMeals {
     letter-spacing: 0;
     line-height: 22px;
 }
+
 .iconsAndTextInfoRow {
     margin-top: 48px;
     display: flex;
@@ -4265,6 +4267,16 @@ a#continueToMeals {
     line-height: 22px;
     text-align: center;
     opacity: .6;
+}
+
+a.customForgotLink.footer-text.button.button--link-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    margin: 15px auto 0 auto;
+    font-size: 14px !important;
 }
 
 /* ===Purchase step 2 === */

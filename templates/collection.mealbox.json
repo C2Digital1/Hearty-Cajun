@@ -34,7 +34,7 @@
       }
     },
     "main": {
-      "type": "collection__main",
+      "type": "collectionMealBox",
       "blocks": {
         "faceted_filtering_hV8J6k": {
           "type": "faceted_filtering",
