@@ -380,6 +380,18 @@
     },
     "index_faq_iFKApV": {
       "type": "index__faq",
+      "blocks": {
+        "faq_KwzJ7H": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I know if your menu delivers energy and strength?",
+            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_KwzJ7H"
+      ],
       "settings": {
         "color_scheme": "",
         "sideImg": "shopify:\/\/shop_images\/Copy_of_Portrait-080.jpg",
