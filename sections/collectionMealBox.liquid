@@ -137,201 +137,217 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
-  <h2 class="mealBoxHeading is-h5">Select Meals</h2>
-  {% if section.blocks.size > 0 and show_sidebar %}
-    {% assign showMobileFilterBtn = true %}
-  {% endif %}
-  {% if has_dropdowns or showMobileFilterBtn %}
-    <div class="collectionSortingFilters">
-      {% if showMobileFilterBtn %}
-        <div class="mobileFilterOpenerContainer">
-          <p class="filterBtnTxt">You can choose another dish next week or come back to your favorite</p>
-          <button type="button" class="filterDrawerOpener"><span>Filter by</span>{% render 'arrowDown' %}</button>
-        </div>
+  <div class="mealBoxCollectionContainer">
+    <div class="collectionTemplateItems">
+      <h2 class="mealBoxHeading is-h5">Select Meals</h2>
+      {% if section.blocks.size > 0 and show_sidebar %}
+        {% assign showMobileFilterBtn = true %}
       {% endif %}
-      {% comment %}
-        {% if has_dropdowns %}
-          {% render 'collection__filters' %}
-        {% endif %}
-      {% endcomment %}
-    </div>
-  {% endif %}
-  {% comment %} Collection description {% endcomment %}
-  <div class="filterOverlay"></div>
-  {% comment %} Collection sidebar and main content area {% endcomment %}
-  <div class="container collectionMainContainer {% if showSquareImages %} showSquareImages {% endif %}">
-    {% if section.blocks.size > 0 and show_sidebar %}
-      <aside
-        class="
-          sidebar-section
-          one-fourth
-          medium-down--one-whole
-          column
-        "
-      >
-        {% liquid
-          assign has_faceted_filtering_block = false
-          assign faceted_filtering_blocks_count = section.blocks | where: 'type', 'faceted_filtering' | size
-          if faceted_filtering_blocks_count > 0
-            assign has_faceted_filtering_block = true
-          endif
-          assign legacy_filter_block_types = 'tag_list,tag_filter,type_list,vendor_list' | split: ','
-        %}
-
-        {% for block in section.blocks %}
-          {% if block.type == 'faceted_filtering' %}
-            {% render 'sidebar__faceted-filter', block: block, collection: collection %}
-          {% else %}
-            {%- comment -%} Non-faceted filter blocks {%- endcomment -%}
-            <div
-              id="shopify-section-{{ block.id }}"
-              class="
-                sidebar__block
-                block__{{ block.type | downcase | replace: '_', '-' }}
-                has-padding-top
-                has-padding-bottom
-                {% if settings.toggle_sidebar %}sidebar-toggle-active{% endif %}
-                {% if has_faceted_filtering_block and legacy_filter_block_types contains block.type %}is-hidden{% endif %}
-              "
-              {{ block.shopify_attributes }}
-            >
-              {% if block.type == 'collection_list' %}
-                {% comment %} Tag list {% endcomment %}
-                {% render 'sidebar__collection-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'featured_promo' %}
-                {% comment %} Featured promo {% endcomment %}
-                {% render 'sidebar__featured-promo', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'html' %}
-                {% comment %} Custom HTML {% endcomment %}
-                {% render 'sidebar__html', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'menu' %}
-                {% comment %} Menu {% endcomment %}
-                {% render 'sidebar__menu', sidebar_heading_preset: sidebar_heading_preset, menu: block.settings.menu %}
-              {% elsif block.type == 'newsletter' %}
-                {% comment %} Newsletter {% endcomment %}
-                {% render 'sidebar__newsletter', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'page' %}
-                {% comment %} Page {% endcomment %}
-                {% render 'sidebar__page', sidebar_heading_preset: sidebar_heading_preset, page: block.settings.page %}
-              {% elsif block.type == 'search' %}
-                {% comment %} Search {% endcomment %}
-                {% render 'sidebar__search',
-                  sidebar_heading_preset: sidebar_heading_preset,
-                  block: block,
-                  context: 'sidebar'
-                %}
-              {% elsif block.type == 'tag_filter' and has_faceted_filtering_block == false %}
-                {% comment %} Tag filter {% endcomment %}
-                {% render 'sidebar__tag-filter', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'tag_list' and has_faceted_filtering_block == false %}
-                {% comment %} Tag list {% endcomment %}
-                {% render 'sidebar__tag-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'text' %}
-                {% comment %} Text {% endcomment %}
-                {% render 'sidebar__text', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'type_list' and has_faceted_filtering_block == false %}
-                {% comment %} Type list {% endcomment %}
-                {% render 'sidebar__type-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% elsif block.type == 'vendor_list' and has_faceted_filtering_block == false %}
-                {% comment %} Vendor list {% endcomment %}
-                {% render 'sidebar__vendor-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
-              {% endif %}
+      {% if has_dropdowns or showMobileFilterBtn %}
+        <div class="collectionSortingFilters">
+          {% if showMobileFilterBtn %}
+            <div class="mobileFilterOpenerContainer">
+              <p class="filterBtnTxt">You can choose another dish next week or come back to your favorite</p>
+              <button type="button" class="filterDrawerOpener"><span>Filter by</span>{% render 'arrowDown' %}</button>
             </div>
           {% endif %}
-        {% endfor %}
-      </aside>
-    {% endif %}
+          {% comment %}
+            {% if has_dropdowns %}
+              {% render 'collection__filters' %}
+            {% endif %}
+          {% endcomment %}
+        </div>
+      {% endif %}
+      {% comment %} Collection description {% endcomment %}
+      <div class="filterOverlay"></div>
+      {% comment %} Collection sidebar and main content area {% endcomment %}
+      <div class="container collectionMainContainer {% if showSquareImages %} showSquareImages {% endif %}">
+        {% if section.blocks.size > 0 and show_sidebar %}
+          <aside
+            class="
+              sidebar-section
+              one-fourth
+              medium-down--one-whole
+              column
+            "
+          >
+            {% liquid
+              assign has_faceted_filtering_block = false
+              assign faceted_filtering_blocks_count = section.blocks | where: 'type', 'faceted_filtering' | size
+              if faceted_filtering_blocks_count > 0
+                assign has_faceted_filtering_block = true
+              endif
+              assign legacy_filter_block_types = 'tag_list,tag_filter,type_list,vendor_list' | split: ','
+            %}
 
-    {% paginate collection.products by pagination_limit %}
-      <div
-        class="collection__main {% if section.blocks.size > 0 and show_sidebar %}three-fourths has-sidebar medium-down--one-whole equal-columns--outside-trim{% endif %}"
-        data-collection-main
-      >
-        {% if show_promo_banner %}
-          <div class="container">
-            <div
-              class="
-                banner__wrapper
-                one-whole
-                column
-                dark-overlay-{{ image_darken }}
-                is-{{ banner_height }}
-                has-margin-bottom
-              "
-            >
-              {% if promo_image != blank %}
-                {% render 'image-element', image: promo_image, alt: promo_image.alt, stretch_width: true %}
+            {% for block in section.blocks %}
+              {% if block.type == 'faceted_filtering' %}
+                {% render 'sidebar__faceted-filter', block: block, collection: collection %}
               {% else %}
-                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              {% endif %}
-              <div class="banner__content card-content">
-                <div class="banner__text text-align-center">
-                  <h1 class="banner__heading title is-h4">{{ promo_title }}</h1>
-                  {% if promo_text != blank %}
-                    <div class="banner__subheading subtitle is-text">{{ promo_text }}</div>
+                {%- comment -%} Non-faceted filter blocks {%- endcomment -%}
+                <div
+                  id="shopify-section-{{ block.id }}"
+                  class="
+                    sidebar__block
+                    block__{{ block.type | downcase | replace: '_', '-' }}
+                    has-padding-top
+                    has-padding-bottom
+                    {% if settings.toggle_sidebar %}sidebar-toggle-active{% endif %}
+                    {% if has_faceted_filtering_block and legacy_filter_block_types contains block.type %}is-hidden{% endif %}
+                  "
+                  {{ block.shopify_attributes }}
+                >
+                  {% if block.type == 'collection_list' %}
+                    {% comment %} Tag list {% endcomment %}
+                    {% render 'sidebar__collection-list',
+                      sidebar_heading_preset: sidebar_heading_preset,
+                      block: block
+                    %}
+                  {% elsif block.type == 'featured_promo' %}
+                    {% comment %} Featured promo {% endcomment %}
+                    {% render 'sidebar__featured-promo', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'html' %}
+                    {% comment %} Custom HTML {% endcomment %}
+                    {% render 'sidebar__html', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'menu' %}
+                    {% comment %} Menu {% endcomment %}
+                    {% render 'sidebar__menu',
+                      sidebar_heading_preset: sidebar_heading_preset,
+                      menu: block.settings.menu
+                    %}
+                  {% elsif block.type == 'newsletter' %}
+                    {% comment %} Newsletter {% endcomment %}
+                    {% render 'sidebar__newsletter', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'page' %}
+                    {% comment %} Page {% endcomment %}
+                    {% render 'sidebar__page',
+                      sidebar_heading_preset: sidebar_heading_preset,
+                      page: block.settings.page
+                    %}
+                  {% elsif block.type == 'search' %}
+                    {% comment %} Search {% endcomment %}
+                    {% render 'sidebar__search',
+                      sidebar_heading_preset: sidebar_heading_preset,
+                      block: block,
+                      context: 'sidebar'
+                    %}
+                  {% elsif block.type == 'tag_filter' and has_faceted_filtering_block == false %}
+                    {% comment %} Tag filter {% endcomment %}
+                    {% render 'sidebar__tag-filter', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'tag_list' and has_faceted_filtering_block == false %}
+                    {% comment %} Tag list {% endcomment %}
+                    {% render 'sidebar__tag-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'text' %}
+                    {% comment %} Text {% endcomment %}
+                    {% render 'sidebar__text', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'type_list' and has_faceted_filtering_block == false %}
+                    {% comment %} Type list {% endcomment %}
+                    {% render 'sidebar__type-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
+                  {% elsif block.type == 'vendor_list' and has_faceted_filtering_block == false %}
+                    {% comment %} Vendor list {% endcomment %}
+                    {% render 'sidebar__vendor-list', sidebar_heading_preset: sidebar_heading_preset, block: block %}
                   {% endif %}
                 </div>
+              {% endif %}
+            {% endfor %}
+          </aside>
+        {% endif %}
+
+        {% paginate collection.products by pagination_limit %}
+          <div
+            class="collection__main {% if section.blocks.size > 0 and show_sidebar %}three-fourths has-sidebar medium-down--one-whole equal-columns--outside-trim{% endif %}"
+            data-collection-main
+          >
+            {% if show_promo_banner %}
+              <div class="container">
+                <div
+                  class="
+                    banner__wrapper
+                    one-whole
+                    column
+                    dark-overlay-{{ image_darken }}
+                    is-{{ banner_height }}
+                    has-margin-bottom
+                  "
+                >
+                  {% if promo_image != blank %}
+                    {% render 'image-element', image: promo_image, alt: promo_image.alt, stretch_width: true %}
+                  {% else %}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {% endif %}
+                  <div class="banner__content card-content">
+                    <div class="banner__text text-align-center">
+                      <h1 class="banner__heading title is-h4">{{ promo_title }}</h1>
+                      {% if promo_text != blank %}
+                        <div class="banner__subheading subtitle is-text">{{ promo_text }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if collection.products.size == 0 %}
+              <div class="container container--no-products-in-collection text-align-center has-padding-bottom has-padding-top">
+                <div class="one-whole column is-text">
+                  <p>{{ 'collections.general.no_matches' | t }}</p>
+                </div>
+              </div>
+            {% else %}
+              <div class="collection-matrix__wrapper">
+                <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
+                <div
+                  class="container collection-matrix"
+                  {% if pagination_type != 'basic_pagination' %}
+                    data-load-more--grid
+                  {% endif %}
+                >
+                  {%- assign items_per_row = items_per_row -%}
+                  {%- assign mobile_items_per_row = mobile_items_per_row -%}
+                  {% render 'product-loop',
+                    products: collection.products,
+                    items_per_row: items_per_row,
+                    mobile_items_per_row: mobile_items_per_row,
+                    limit: pagination_limit,
+                    pagination_type: pagination_type,
+                    showStyle: true
+                  %}
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="container container--pagination has-padding-top">
+              <div class="one-whole column text-align-center">
+                {%- assign load_more_text = 'collections.general.pagination_button' | t -%}
+                {% render 'pagination',
+                  paginate: paginate,
+                  pagination_type: pagination_type,
+                  load_more_text: load_more_text
+                %}
               </div>
             </div>
           </div>
-        {% endif %}
 
-        {% if collection.products.size == 0 %}
-          <div class="container container--no-products-in-collection text-align-center has-padding-bottom has-padding-top">
-            <div class="one-whole column is-text">
-              <p>{{ 'collections.general.no_matches' | t }}</p>
-            </div>
-          </div>
-        {% else %}
-          <div class="collection-matrix__wrapper">
-            <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
-            <div
-              class="container collection-matrix"
-              {% if pagination_type != 'basic_pagination' %}
-                data-load-more--grid
-              {% endif %}
-            >
-              {%- assign items_per_row = items_per_row -%}
-              {%- assign mobile_items_per_row = mobile_items_per_row -%}
-              {% render 'product-loop',
-                products: collection.products,
-                items_per_row: items_per_row,
-                mobile_items_per_row: mobile_items_per_row,
-                limit: pagination_limit,
-                pagination_type: pagination_type,
-                showStyle: true
-              %}
-            </div>
-          </div>
-        {% endif %}
-
-        <div class="container container--pagination has-padding-top">
-          <div class="one-whole column text-align-center">
-            {%- assign load_more_text = 'collections.general.pagination_button' | t -%}
-            {% render 'pagination',
-              paginate: paginate,
-              pagination_type: pagination_type,
-              load_more_text: load_more_text
-            %}
-          </div>
-        </div>
+          {% comment %} JavaScript {% endcomment %}
+          <script
+            type="application/json"
+            data-section-id="{{ section.id }}"
+            data-section-data
+          >
+            {
+              "enable_filter": {{ collection_tags | json }},
+              "enable_sorting": {{ collection_sort | json }},
+              "enable_breadcrumb": {{ collection_breadcrumb | json}},
+              "pagination_type": {{ pagination_type | json }},
+              "number_of_pages": {{ paginate.pages | json }}
+            }
+          </script>
+        {% endpaginate %}
       </div>
-
-      {% comment %} JavaScript {% endcomment %}
-      <script
-        type="application/json"
-        data-section-id="{{ section.id }}"
-        data-section-data
-      >
-        {
-          "enable_filter": {{ collection_tags | json }},
-          "enable_sorting": {{ collection_sort | json }},
-          "enable_breadcrumb": {{ collection_breadcrumb | json}},
-          "pagination_type": {{ pagination_type | json }},
-          "number_of_pages": {{ paginate.pages | json }}
-        }
-      </script>
-    {% endpaginate %}
+    </div>
+    <div class="collectionCart">
+        {% render 'collectionBoxCart' %}
+    </div>
   </div>
 </section>
 

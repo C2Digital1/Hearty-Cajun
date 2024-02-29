@@ -3144,6 +3144,46 @@ h2.mealBoxHeading.is-h5 {
     line-height: 34px;
 }
 
+.mealBoxCollectionContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+}
+
+.collectionCart {
+    position: fixed;
+    z-index: 25;
+    border-radius: 24px 0 0 24px;
+    background-color: rgba(216, 216, 216, 0.15);
+    width: 340px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: #f9f9f9;
+}
+
+.shopify-section.customAnnouncementBar {
+    position: relative;
+    z-index: 55;
+}
+
+section.section.mainCollectionSec.mealBoxCollection.is-width-standard {
+    padding-right: 0 !important;
+}
+
+.collectionTemplateItems {
+    width: 100%;
+    max-width: calc(100% - 340px);
+    padding-right: 48px;
+}
+
+.shopify-section.customAnnouncementBar {
+    position: relative;
+    z-index: 55;
+}
+
 /* =========== COLLECCTION PAGE CSS CODE END =========== */
 
 /* =========== PRODUCT PAGE CSS CODE START =========== */
@@ -3588,7 +3628,7 @@ p.footerBtmTxt {
     width: 100% !important;
     bottom: 0;
     left: 0;
-    z-index: 22;
+    z-index: 35;
 }
 
 input.input.is-primary-btn-style.error {
