@@ -129,6 +129,7 @@
     class="
       section
       mainCollectionSec
+      mealBoxCollection
       {{ css_class }}
       is-width-{{ width }}
     "
@@ -136,33 +137,6 @@
       data-scroll-class="{{ animation }}"
     {% endif %}
   >
-    <div class="container collectionMainInfo">
-      {% comment %} Breadcrumb {% endcomment %}
-      {% if collection_breadcrumb %}
-        <div class="one-whole column has-padding-bottom">
-          {% render 'breadcrumb', context: 'collection' %}
-        </div>
-      {% endif %}
-      {%- if show_heading != blank -%}
-        <div class="fullWidthCol">
-          {% comment %} Collection title {% endcomment %}
-          {% render 'heading',
-            title: collection.title,
-            heading_tag: 'h1',
-            context: 'collection',
-            text_alignment: heading_alignment,
-            preset: heading_preset
-          %}
-        </div>
-      {% endif %}
-      {% if collection.description != blank and showDescription %}
-        <div class="fullWidthCol">
-          <div class="collection__description content is-text has-padding-bottom">
-            {{ collection.description }}
-          </div>
-        </div>
-      {% endif %}
-    </div>
     {% if section.blocks.size > 0 and show_sidebar %}
       {% assign showMobileFilterBtn = true %}
     {% endif %}
@@ -170,14 +144,14 @@
       <div class="collectionSortingFilters">
         {% if showMobileFilterBtn %}
          <div class="mobileFilterOpenerContainer">
-          <button type="button" class="mobileFilterOpener">
+          <button type="button" class="filterDrawerOpener">
             <span>Filter by</span>{% render 'arrowDown' %}
           </button>
          </div>
         {% endif %}
-        {% if has_dropdowns %}
+        {% comment %} {% if has_dropdowns %}
           {% render 'collection__filters' %}
-        {% endif %}
+        {% endif %} {% endcomment %}
       </div>
     {% endif %}
     {% comment %} Collection description {% endcomment %}
