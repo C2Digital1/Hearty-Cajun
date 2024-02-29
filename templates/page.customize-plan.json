@@ -307,10 +307,20 @@
             "subHeading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae.<\/p>",
             "clientName": "- Stella Rich"
           }
+        },
+        "testimonial_fEbK6a": {
+          "type": "testimonial",
+          "settings": {
+            "clientImg": "shopify:\/\/shop_images\/4.png",
+            "heading": "Amazing Service!",
+            "subHeading": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae.<\/p>",
+            "clientName": "- Stella Rich"
+          }
         }
       },
       "block_order": [
-        "testimonial_Tggd3k"
+        "testimonial_Tggd3k",
+        "testimonial_fEbK6a"
       ],
       "settings": {
         "color_scheme": "",
