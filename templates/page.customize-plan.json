@@ -272,30 +272,6 @@
         "custom_css": ""
       }
     },
-    "customPageFooter": {
-      "type": "customPageFooter",
-      "settings": {
-        "mainText": "Made with ❤️ for pasta, delicious taste, and health.",
-        "textColor": "#463f3a",
-        "width": "standard",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top_m": 0,
-        "padding_bottom_m": 0,
-        "padding_left_m": 0,
-        "padding_right_m": 0,
-        "margin_top_m": 0,
-        "margin_bottom_m": 0,
-        "section_bg": "#FFFFFF",
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
     "custom_testimonial_xjRr94": {
       "type": "customTestimonial",
       "blocks": {
@@ -370,10 +346,43 @@
         "custom_css": ""
       }
     },
+    "index_heading_iW9Hqj": {
+      "type": "index__heading",
+      "settings": {
+        "color_scheme": "",
+        "preheading": "",
+        "heading": "FAQs",
+        "subheading": "",
+        "btnTxt": "",
+        "btnUrl": "",
+        "btnStyle": "button--secondary",
+        "preheading_preset": "is-h6",
+        "heading_preset": "is-h2",
+        "subheading_preset": "is-text",
+        "heading_alignment": "center",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 32,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "index_faq_iFKApV": {
       "type": "index__faq",
       "settings": {
         "color_scheme": "",
+        "sideImg": "shopify:\/\/shop_images\/Copy_of_Portrait-080.jpg",
         "enable_tags": false,
         "question_preset": "is-h4",
         "answer_preset": "is-text",
@@ -394,6 +403,30 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "customPageFooter": {
+      "type": "customPageFooter",
+      "settings": {
+        "mainText": "Made with ❤️ for pasta, delicious taste, and health.",
+        "textColor": "#463f3a",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "#FFFFFF",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -403,8 +436,9 @@
     "customPurchaseFlow",
     "index_featured_collection_dUje4G",
     "index_image_with_text_overlay_ygxhEp",
-    "customPageFooter",
     "custom_testimonial_xjRr94",
-    "index_faq_iFKApV"
+    "index_heading_iW9Hqj",
+    "index_faq_iFKApV",
+    "customPageFooter"
   ]
 }
