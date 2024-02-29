@@ -10,6 +10,14 @@ $(document).ready(function () {
             $(".image-with-text__text strong").closest(".image-with-text__text").addClass("hasStrong");
         }
     }
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 40) {
+            $('body').addClass('contentIsScrolled');
+        } else {
+            $('body').removeClass('contentIsScrolled');
+        }
+    });
+
 
     $(".mobileMenuOpener").click(function () {
         $(".mobile-header").toggleClass("isOpen");
@@ -58,7 +66,7 @@ $(document).ready(function () {
         $(".mainCollectionSec").addClass("showFilters");
         $("body, html").addClass("hideScroll");
     });
-    
+
     $(".prodIngPopupOpener").click(function () {
         var popupId = $(this).attr("data-id");
         if ($(".popupBodyContainer").length > 0) {
@@ -312,7 +320,7 @@ $(document).ready(function () {
 
     // Select Plan Final Button Function Code Sart
 
-    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, mealBoxCollection, mealBoxAddOnsCollection) {
+    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection) {
         var boxProdInfo = JSON.parse(localStorage.getItem("boxProdInfo")) || [];
         var freshValues = {
             "activeProdId": activeProdId,
@@ -320,6 +328,7 @@ $(document).ready(function () {
             "availabelSelection": availabelSelection,
             "mealBoxCollection": mealBoxCollection,
             "mealBoxAddOnsCollection": mealBoxAddOnsCollection,
+            "pricePerMeal": pricePerMeal,
         };
         boxProdInfo = [];
         boxProdInfo.push(freshValues);
@@ -337,13 +346,15 @@ $(document).ready(function () {
                     var availabelSelection = item.availabelSelection;
                     var mealBoxCollectionUrl = item.mealBoxCollection;
                     var addOnsCollectionURL = item.mealBoxAddOnsCollection;
-                    if (activeProdId || selectedVariantId || availabelSelection || mealBoxCollectionUrl || addOnsCollectionURL) {
+                    var pricePerMeal = item.pricePerMeal;
+                    if (activeProdId || selectedVariantId || availabelSelection || pricePerMeal || mealBoxCollectionUrl || addOnsCollectionURL) {
 
                         console.log("Active Product ID: " + activeProdId);
                         console.log("Selected Variant ID: " + selectedVariantId);
                         console.log("Available Selection: " + availabelSelection);
                         console.log("Meal Box Collection: " + addOnsCollectionURL);
                         console.log("Meal Box Add-Ons Collection: " + addOnsCollectionURL);
+                        console.log("Meal Box Add-Ons Price Per Meal: " + pricePerMeal);
 
                         if ($("#continueToMeals").length > 0) {
                             $("#continueToMeals").attr('href', mealBoxCollectionUrl);
@@ -370,8 +381,9 @@ $(document).ready(function () {
             var activeProdActiveVariant = $(activeProdTabContent).find(".variantBtn.active");
             var selectedVariantId = $(activeProdActiveVariant).attr("data-variant").trim();
             var availabelSelection = $(activeProdActiveVariant).text().trim();
+            var pricePerMeal = $(activeProdActiveVariant).attr("data-pricepermeal").trim();
 
-            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, mealBoxCollection, mealBoxAddOnsCollection);
+            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection);
             $(".loadingIcon").show();
             $("body").addClass("showSecondStep");
             $(".purchaseFlowStep1").hide();
@@ -402,10 +414,156 @@ $(document).ready(function () {
         $("button.loginSingUpTabBtn").removeClass("active");
         $(this).addClass("active");
         $(".customFormFieldsContainer").hide();
-        var activeFormTab = $(this).attr("data-tab"); 
+        var activeFormTab = $(this).attr("data-tab");
         $(activeFormTab).show();
     });
 
+
+    /* =========== MEAL BOX AND CART  CODE START =========== */
+
+    $(document).on('click', 'button.quickMealAddBtn', function () {
+
+        $(this).addClass("adding");
+        var cartItemId = $(this).attr("data-cartItemId");
+        var cartItemName = $(this).attr("data-productName");
+        var cartItemImg = $(this).attr("data-productImg");
+        var cartItemQty = 1;
+        var existingCartItem = $(".cartItemsList").find(`#${cartItemId}`);
+
+        var pricePerMeal = getPricePerMeal(); // Retrieve price per meal from local storage
+        setTimeout(function () {
+            $(this).addClass("added");
+
+            if (existingCartItem.length > 0) {
+                incrementCartItem(existingCartItem);
+            } else {
+                appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal);
+            }
+
+
+            attachedQtyBtnsEventListeners();
+            updateCartAndSave();
+
+            // remove classes from Add To Cart Button
+            setTimeout(function () {
+                $(this).removeClass("adding added");
+            }.bind(this), 1500);
+
+        }.bind(this), 900);
+    });
+
+    function getPricePerMeal() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        var pricePerMeal = "";
+        if (storedBoxProdInfo) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            boxProdInfoArray.forEach(function (item, index) {
+                pricePerMeal = item.pricePerMeal;
+            });
+        }
+        return pricePerMeal;
+    }
+
+    function incrementCartItem(existingCartItem) {
+        var currentQty = parseInt(existingCartItem.find("input.qtyField").val());
+        existingCartItem.find("input.qtyField").val(currentQty + 1);
+        updateTotalCartItems();
+    }
+
+    function appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal) {
+        console.log(cartItemId);
+        console.log(cartItemImg);
+        console.log(cartItemName);
+        console.log(cartItemQty);
+        console.log(pricePerMeal);
+
+        var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
+        itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
+            .replace('%cartItemImg%', cartItemImg)
+            .replace('%cartItemName%', cartItemName)
+            .replace('%cartItemQty%', cartItemQty)
+            .replace('%cartItemPrice%', pricePerMeal);
+        $(".cartItemsList").append(itemHtml);
+        updateTotalCartItems();
+    }
+
+    function attachedQtyBtnsEventListeners() {
+        $(".qtyPlus").off("click").on("click", function () {
+            var inputField = $(this).siblings("input.qtyField");
+            var currentQty = parseInt(inputField.val());
+            inputField.val(currentQty + 1);
+            updateTotalCartItems();
+            updateCartAndSave(); // Update cart data in local storage
+        });
+
+        $(".qtyMinus").off("click").on("click", function () {
+            var inputField = $(this).siblings("input.qtyField");
+            var currentQty = parseInt(inputField.val());
+            if (currentQty > 1) {
+                inputField.val(currentQty - 1);
+            } else {
+                $(this).closest(".customCartItem").remove();
+            }
+            updateTotalCartItems();
+            updateCartAndSave(); 
+        });
+    }
+
+    function updateTotalCartItems() {
+        var totalItems = 0;
+        $(".cartItemsList .customCartItem").each(function () {
+            var quantity = parseInt($(this).find("input.qtyField").val());
+            totalItems += quantity;
+        });
+        $(".totalCartItems").text(totalItems);
+    }
+
+
+    // save cart in local storage and load cart data from local storage code start
+    function updateCartAndSave() {
+        var cartData = [];
+        $(".cartItemsList .customCartItem").each(function () {
+            var cartItemId = $(this).attr("data-cartItemId");
+            var cartItemImg = $(this).find("img").attr("src");
+            var cartItemName = $(this).find(".itemName").text();
+            var cartItemQty = parseInt($(this).find("input.qtyField").val());
+            var cartItemPrice = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
+            cartData.push({
+                cartItemId: cartItemId,
+                cartItemImg: cartItemImg,
+                cartItemName: cartItemName,
+                cartItemQty: cartItemQty,
+                cartItemPrice: cartItemPrice
+            });
+        });
+
+        // Save the cart data to local storage
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+    }
+
+    function loadCartData() {
+        var cartData = localStorage.getItem('cartData');
+        if (cartData) {
+            cartData = JSON.parse(cartData);
+            cartData.forEach(function (item) {
+                appendCartItem(item.cartItemId, item.cartItemImg, item.cartItemName, item.cartItemQty, item.cartItemPrice);
+            });
+            updateTotalCartItems();
+            attachedQtyBtnsEventListeners();
+        }
+    }
+
+    if ($("#cartItemTemplate").length > 0) {
+        loadCartData();
+    };
+    // save cart in local storage and load cart data from local storage code end
+
+
+    /* =========== MEAL BOX AND CART  CODE END =========== */
+
+
     /* =========== PURCHASE FLOW  CODE END =========== */
+
+
 
 });

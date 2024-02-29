@@ -4367,6 +4367,11 @@ a.customForgotLink.footer-text.button.button--link-style {
     font-size: 14px !important;
 }
 
+
+/* ===Purchase step 2 === */
+
+/* === Purchase Step 3  Start */
+
 .mainCollectionSec.mealBoxCollection aside.sidebar-section {
     display: flex !important;
     flex-direction: column !important;
@@ -4481,7 +4486,240 @@ a.button.button--primary.pagination-button__load-more {
     min-width: 243px;
 }
 
-/* ===Purchase step 2 === */
+.customCartContainer {
+    width: 100%;
+    padding: 172px 16px 58px 16px;
+    transition: all linear .3s;
+}
+
+.contentIsScrolled .customCartContainer {
+    padding: 130px 16px 58px 16px;
+}
+
+h2.totalMeals.is-h5 {
+    line-height: 33px;
+}
+
+.customCartHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button.removeAllCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent;
+    border: 0px solid !important;
+    opacity: 0.4;
+    color: #463F3A;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-decoration: underline;
+}
+
+button.quickMealAddBtn.button {
+    height: 48px;
+    width: 48px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    border: 0px solid !important;
+    outline: none !important;
+    cursor: pointer;
+    color: #463F3A;
+    padding: 0;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+button.quickMealAddBtn.button svg {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.quickMealAddBtn.button.adding.added span.tickIcon svg {
+    width: 18px;
+    height: 18px;
+}
+
+button.quickMealAddBtn.button:hover {
+    background: #463F3A;
+    color: #fff;
+}
+
+button.quickMealAddBtn.button span.bagIcon {
+    transition: all linear .3s;
+    position: relative;
+    transform: translateY(0%);
+}
+
+button.quickMealAddBtn.button span.tickIcon {
+    transition: transform linear .3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    opacity: 0;
+}
+
+button.quickMealAddBtn.button.adding {
+    pointer-events: none !important;
+    opacity: .8;
+    background: #463F3A;
+    color: #fff;
+}
+
+
+button.quickMealAddBtn.button.adding.added span.bagIcon {
+    transform: translateY(200%);
+}
+
+button.quickMealAddBtn.button.adding.added span.tickIcon {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.cartItemsList {
+    width: 100%;
+    margin: 24px auto;
+}
+
+.customCartItem {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #DAD9D8;
+    margin-bottom: 16px;
+}
+
+.customCartItem .customCartItemImg {
+    height: 96px;
+    width: 96px;
+    border-radius: 6px;
+    overflow: hidden;
+    min-width: 96px;
+    margin-right: 16px;
+}
+
+.customCartItem .customCartItemImg img.boxImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.customCartItemInfo {
+    width: calc(100% - 112px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.customCartItemInfo p.itemName.is-h5 {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+p.cartItemsInfo.is-text-small {
+    opacity: 0.4;
+    color: #463F3A;
+    font-size: 8px;
+    letter-spacing: 0;
+    line-height: 13px;
+}
+
+.cartQtyAndPrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.qtyBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 32px;
+    overflow: hidden;
+    border: 1px solid #463F3A;
+    border-radius: 8.89px;
+    background-color: #FFFFFF;
+    padding: 0 14px;
+}
+
+.qtyBox input {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 0px solid !important;
+    outline: none !important;
+    width: 20px;
+    padding: 0;
+    height: 100%;
+    text-align: center !important;
+    color: #463F3A;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 13px;
+    text-align: center;
+}
+
+.qtyBox button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    min-width: 15px;
+    min-height: 15px;
+    color: #463F3A;
+    background: transparent !important;
+    cursor: pointer;
+    border: 0px solid !important;
+}
+
+.qtyBox input:-webkit-outer-spin-button,
+.qtyBox input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.qtyBox button span.icon {
+    width: 100%;
+    height: 100%;
+}
+
+.qtyBox button span.icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* === Purchase Step 3  End */
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 

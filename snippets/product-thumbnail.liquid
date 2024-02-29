@@ -64,7 +64,7 @@
   <div class="product-wrap">
     <div class="product-image__wrapper">
       <div class="image__container product__imageContainer">
-        <a href="{{ product.url | within: collection }}">     
+        <a href="{% if showMealQuickAdd %}javascript:void(0){% else %}{{ product.url | within: collection }}{% endif %} ">     
           {% if settings.stickers_enabled %}
             {%
               render 'product-thumbnail__sticker',
@@ -189,7 +189,10 @@
         </span>
       {% endif %}
 
-      {% if settings.showQuickAddBtn %}
+      {% if showMealQuickAdd  %}
+        {% render 'quickMealAdd', product: product %}
+      {% endif %}
+      {% if settings.showQuickAddBtn and showMealQuickAdd != true %}
         {% liquid
           assign selected_variant = product.selected_variant
           if product.variants.size == 1 or settings.select_first_available_variant

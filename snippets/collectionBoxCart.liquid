@@ -1,0 +1,35 @@
+{%- liquid
+  assign icon-plus = 'plus'
+  assign icon-minus = 'minus'
+-%}
+<div id="cartItemTemplate" style="display: none;">
+  <div id="%cartItemId%" class="customCartItem">
+    <div class="customCartItemImg">
+      <img src="%cartItemImg%" alt="img" loading="lazy" height="96" width="96" class="boxImg lazyload">
+    </div>
+    <div class="customCartItemInfo">
+      <p class="itemName is-h5">%cartItemName%</p>
+      <p class="cartItemsInfo is-text-small"></p>
+      <div class="cartQtyAndPrice">
+        <div class="qtyBox" data-currentQty="%cartItemName%">
+          <button class="qtyMinus">
+            {% render 'icon', name: icon-minus %}
+          </button>
+          <input class="qtyField" type="text" readonly value="%cartItemQty%">
+          <button class="qtyPlus">
+            {% render 'icon', name: icon-plus %}
+          </button>
+        </div>
+        <span class="cartItemPrice is-text-small">$%cartItemPrice%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="customCartContainer">
+  <div class="customCartHeader">
+    <h2 class="totalMeals is-h5">Your Meals (<span class="totalCartItems">0</span>)</h2>
+    <button class="removeAllCart">Remove All</button>
+  </div>
+  <div class="cartItemsList"></div>
+</div>
