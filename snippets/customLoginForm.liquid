@@ -18,159 +18,176 @@
     {% endif %}
   </div>
   <div class="boxShadowContainer">
-    <div class="loginSIgnupTabBtns">
-      <button data-tab="#loginForm" class="loginSingUpTabBtn">Sign In</button>
-      <button data-tab="#signUpForm" class="loginSingUpTabBtn active">Register</button>
-    </div>
+    {% if customer %}
+      <div class="loginSIgnupTabBtns">
+        <p class="welcomeUser">Hello, {{ customer.name }}</p>
+      </div>
+      <div class="tabContents">
+        <div class="customFormFieldsContainer">
+          <a
+            id="continueToMeals"
+            href=""
+            class="button {{ settings.form_button_style }} is-within-form"
+            type="submit"
+            >Continue</a
+          >
+        </div>
+      </div>
+    {% else %}
+      <div class="loginSIgnupTabBtns">
+        <button data-tab="#loginForm" class="loginSingUpTabBtn">Sign In</button>
+        <button data-tab="#signUpForm" class="loginSingUpTabBtn active">Register</button>
+      </div>
 
-    <div class="tabContents">
-      <div class="customFormFieldsContainer" style="display:none;" id="loginForm">
-        {% form 'customer_login' %}
-          {{ form.errors | default_errors }}
+      <div class="tabContents">
+        <div class="customFormFieldsContainer" style="display:none;" id="loginForm">
+          {% form 'customer_login' %}
+            {{ form.errors | default_errors }}
 
-          <div class="field">
-            <label class="label" for="{{ label | replace: ' ', '_' }}">{{ 'customer.login.email' | t }}*</label>
-            <div class="control">
+            <div class="field">
+              <label class="label" for="{{ label | replace: ' ', '_' }}">{{ 'customer.login.email' | t }}*</label>
+              <div class="control">
+                <input
+                  type="email"
+                  value=""
+                  name="customer[email]"
+                  id="customer_email"
+                  class="input"
+                  size="30"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  tabindex="1"
+                  placeholder="{{ 'customer.login.email' | t }}"
+                >
+              </div>
+            </div>
+
+            {% if form.password_needed %}
+              {% comment %}
+                Customer Account Login
+              {% endcomment %}
+            {% endif %}
+            <div class="field">
+              <label class="label" for="{{ label | replace: ' ', '_' }}">{{ 'customer.login.password' | t }}*</label>
+              <div class="control">
+                <input
+                  type="password"
+                  value=""
+                  name="customer[password]"
+                  id="customer_password"
+                  class="input"
+                  size="16"
+                  tabindex="2"
+                  placeholder="{{ 'customer.login.password' | t }}"
+                >
+              </div>
+              <a class="js-recover-password footer-text button button--link-style" href="#">
+                {{- 'customer.login.forgot_password' | t -}}
+              </a>
+            </div>
+
+            <div class="buttons is-center has-margin-top">
               <input
-                type="email"
-                value=""
-                name="customer[email]"
-                id="customer_email"
-                class="input"
-                size="30"
-                autocorrect="off"
-                autocapitalize="off"
-                tabindex="1"
-                placeholder="{{ 'customer.login.email' | t }}"
+                class="button {{ settings.form_button_style }} is-within-form"
+                type="submit"
+                value="{{ 'customer.login.sign_in' | t }}"
+                style="margin-bottom: 5px !important"
+                tabindex="3"
               >
             </div>
-          </div>
-
-          {% if form.password_needed %}
-            {% comment %}
-              Customer Account Login
-            {% endcomment %}
-          {% endif %}
-          <div class="field">
-            <label class="label" for="{{ label | replace: ' ', '_' }}">{{ 'customer.login.password' | t }}*</label>
-            <div class="control">
-              <input
-                type="password"
-                value=""
-                name="customer[password]"
-                id="customer_password"
-                class="input"
-                size="16"
-                tabindex="2"
-                placeholder="{{ 'customer.login.password' | t }}"
-              >
-            </div>
-            <a class="js-recover-password footer-text button button--link-style" href="#">
-              {{- 'customer.login.forgot_password' | t -}}
-            </a>
-          </div>
-
-          <div class="buttons is-center has-margin-top">
-            <input
-              class="button {{ settings.form_button_style }} is-within-form"
-              type="submit"
-              value="{{ 'customer.login.sign_in' | t }}"
-              style="margin-bottom: 5px !important"
-              tabindex="3"
-            >
-          </div>
-        {% endform %}
-        <input type="hidden" name="return_to" value="/pages/customize-plans#loginForm">
-        {% if shop.checkout.guest_login %}
-          <span class="has-padding-top"> {{ 'customer.login.or' | t }} </span>
-          {% form 'guest_login' %}
-            <input
-              class="button {{ settings.form_button_style }} is-within-form"
-              type="submit"
-              value="{{ 'customer.login.guest_title_html' | t }}"
-            >
           {% endform %}
-        {% endif %}
+          <input type="hidden" name="return_to" value="/pages/customize-plans#loginForm">
+          {% if shop.checkout.guest_login %}
+            <span class="has-padding-top"> {{ 'customer.login.or' | t }} </span>
+            {% form 'guest_login' %}
+              <input
+                class="button {{ settings.form_button_style }} is-within-form"
+                type="submit"
+                value="{{ 'customer.login.guest_title_html' | t }}"
+              >
+            {% endform %}
+          {% endif %}
+        </div>
+        <div id="signUpForm" class="customFormFieldsContainer">
+          {% form 'create_customer' %}
+            {{ form.errors | default_errors }}
+
+            <div id="first_name" class="field">
+              <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
+              <div class="control">
+                <input
+                  type="text"
+                  value=""
+                  name="customer[first_name]"
+                  id="first_name"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.first_name' | t }}"
+                >
+              </div>
+            </div>
+
+            <div id="last_name" class="field">
+              <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
+              <div class="control">
+                <input
+                  type="text"
+                  value=""
+                  name="customer[last_name]"
+                  id="last_name"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.last_name' | t }}"
+                >
+              </div>
+            </div>
+
+            <div id="email" class="field">
+              <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
+              <div class="control">
+                <input
+                  type="email"
+                  value=""
+                  name="customer[email]"
+                  id="email"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.email' | t }}*"
+                >
+              </div>
+            </div>
+
+            <div id="password" class="field">
+              <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
+              <div class="control">
+                <input
+                  type="password"
+                  value=""
+                  name="customer[password]"
+                  id="password"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.password' | t }}"
+                >
+              </div>
+            </div>
+
+            <div class="prefrences" style="display:none;">
+              <label for="prefrencesField">Prefrences</label>
+              <input id="prefrencesField" type="text" name="customer[note][Prefrences]">
+            </div>
+            <input type="hidden" name="return_to" value="/pages/customize-plans#loginForm">
+            <div class="buttons has-margin-top is-center">
+              <input
+                class="button {{ settings.form_button_style }} is-within-form"
+                type="submit"
+                value="{{ 'customer.register.sign_up' | t }}"
+              >
+            </div>
+          {% endform %}
+        </div>
       </div>
-      <div id="signUpForm" class="customFormFieldsContainer">
-        {% form 'create_customer' %}
-          {{ form.errors | default_errors }}
-
-          <div id="first_name" class="field">
-            <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
-            <div class="control">
-              <input
-                type="text"
-                value=""
-                name="customer[first_name]"
-                id="first_name"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.first_name' | t }}"
-              >
-            </div>
-          </div>
-
-          <div id="last_name" class="field">
-            <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
-            <div class="control">
-              <input
-                type="text"
-                value=""
-                name="customer[last_name]"
-                id="last_name"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.last_name' | t }}"
-              >
-            </div>
-          </div>
-
-          <div id="email" class="field">
-            <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
-            <div class="control">
-              <input
-                type="email"
-                value=""
-                name="customer[email]"
-                id="email"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.email' | t }}*"
-              >
-            </div>
-          </div>
-
-          <div id="password" class="field">
-            <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
-            <div class="control">
-              <input
-                type="password"
-                value=""
-                name="customer[password]"
-                id="password"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.password' | t }}"
-              >
-            </div>
-          </div>
-
-          <div class="prefrences" style="display:none;">
-            <label for="prefrencesField">Prefrences</label>
-            <input id="prefrencesField" type="text" name="customer[note][Prefrences]" />
-          </div>
-          <input type="hidden"  name="return_to" value="/pages/customize-plans#loginForm">
-          <div class="buttons has-margin-top is-center">
-            <input
-              class="button {{ settings.form_button_style }} is-within-form"
-              type="submit"
-              value="{{ 'customer.register.sign_up' | t }}"
-            >
-          </div>
-        {% endform %}
-      </div>
-    </div>
+    {% endif %}
     <div class="iconsAndTextInfoRow">
       <div class="iconTxtCol">
         {% if bottomIcon1 != blank %}
