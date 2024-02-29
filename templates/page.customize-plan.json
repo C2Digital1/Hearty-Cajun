@@ -182,7 +182,7 @@
     "index_featured_collection_dUje4G": {
       "type": "index__featured-collection",
       "settings": {
-        "heading": "Ready-to-Eat ItalianCajun Dishes",
+        "heading": "Ready-to-Eat Italian Cajun Dishes",
         "subHeading": "Delivering Unbelievable Flavors with Nutritional Goodness – Right to Your Doorstep.",
         "heading_preset": "is-h2",
         "subHeadingPreset": "is-text",
@@ -216,7 +216,7 @@
         "margin_bottom_m": 0,
         "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "animation": "none",
-        "css_class": "",
+        "css_class": "halfHeading",
         "custom_css": ""
       }
     },
