@@ -4090,6 +4090,28 @@ button.prefrenceBtn.showError {
     margin-right: 15px;
 }
 
+button.button.copyTxtBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    min-width: 212px;
+}
+
+button.button.copyTxtBtn span.copyIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+button.button.copyTxtBtn span.copyIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 

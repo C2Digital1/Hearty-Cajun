@@ -209,6 +209,16 @@ $(document).ready(function () {
     //     $(this).prevAll(".flowBtn").addClass("prevActive");
     //     $(this).addClass("active");
     // });
+    $('.copyTxtBtn').click(function() {
+        var copyText = $(this).attr('data-copy');
+        var $tempInput = $('<input>');
+        $tempInput.val(copyText);
+        $('body').append($tempInput);
+        $tempInput.select();
+        document.execCommand('copy');
+        $tempInput.remove();
+        alert('Text copied to clipboard: ' + copyText);
+    });
 
     // Prefrences Button and Prefrences Function Code Start
     function updatePreferences() {
