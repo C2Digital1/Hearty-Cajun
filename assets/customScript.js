@@ -204,11 +204,11 @@ $(document).ready(function () {
     });
     // zip code checker code end
 
-    $(".flowBtn").click(function () {
-        $(".flowBtn").removeClass("active prevActive");
-        $(this).prevAll(".flowBtn").addClass("prevActive");
-        $(this).addClass("active");
-    });
+    // $(".flowBtn").click(function () {
+    //     $(".flowBtn").removeClass("active prevActive");
+    //     $(this).prevAll(".flowBtn").addClass("prevActive");
+    //     $(this).addClass("active");
+    // });
 
     // Prefrences Button and Prefrences Function Code Start
     function updatePreferences() {
@@ -244,9 +244,11 @@ $(document).ready(function () {
         $(".prodBoxVariantSelectionBox").hide();
         $(".prodChangeLoader").show();
         var thisTabContent = $(this).attr("data-tabId");
+        $("button.prodBoxMainSelector").addClass("disabledBtn");
         setTimeout(function () {
             $(".variantChangeLoader, .prodChangeLoader").hide();
             $(thisTabContent).fadeIn(200);
+            $("button.prodBoxMainSelector").removeClass("disabledBtn");
         }, 600);
 
     });
@@ -256,9 +258,11 @@ $(document).ready(function () {
         $(this).parent(".variantBtnsContainer").next(".variantsInfoBoxes").children(".varianInfoTabContent").hide();
         $(this).parent(".variantBtnsContainer").next(".variantsInfoBoxes").children(".variantChangeLoader").show();
         var thisVariantTabContent = $(this).attr("data-tabId");
+        $("button.variantBtn").addClass("disabledBtn");
         setTimeout(function () {
             $(".variantChangeLoader, .prodChangeLoader").hide();
             $(thisVariantTabContent).fadeIn(200);
+            $("button.variantBtn").removeClass("disabledBtn");
         }, 600);
 
     });
@@ -278,6 +282,16 @@ $(document).ready(function () {
         localStorage.setItem("boxProdInfo", JSON.stringify(boxProdInfo));
     }
 
+    function loadBoxProdInfo() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        if (storedBoxProdInfo && storedBoxProdInfo.trim() !== "" && storedBoxProdInfo.trim() !== "[]" && $(".customLoginForm").length > 0) {
+           
+        }
+        else{
+            $(".purchaseFlowNav button:nth-child(2)").removeClass("active");
+        }
+    }
+    loadBoxProdInfo();
 
     $("button.selectThisPlanBtn").click(function () {
         var storedPreferences = localStorage.getItem("preferences");
@@ -291,6 +305,7 @@ $(document).ready(function () {
 
             updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection);
             $("body").addClass("showSecondStep");
+            $(".purchaseFlowNav button:nth-child(2)").addClass("active");
         }
         else {
             $(this).addClass("animated bounceIn")

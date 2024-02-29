@@ -3603,6 +3603,7 @@ textarea#zipForSubmission {
     padding-top: 10px;
     transition: all linear .3s;
     min-width: 90px;
+    pointer-events: none !important;
 }
 
 .flowBtn span.checkSign {
@@ -3658,9 +3659,11 @@ textarea#zipForSubmission {
     transition: all linear .3s;
 }
 
+
 .flowBtn.prevActive,
 .flowBtn.active {
     color: #F15D5E;
+    pointer-events: all !important;
 }
 
 .flowBtn.prevActive::before,
@@ -3870,6 +3873,10 @@ p.is-text-small.prodSmallInfo {
     outline: none !important;
 }
 
+button.disabledBtn {
+    pointer-events: none !important;
+}
+
 .varianInfoTabContent {
     margin-top: 12px;
 }
@@ -4057,9 +4064,11 @@ button.selectThisPlanBtn.button {
 .collection__loading-icon.prodChangeLoader {
     margin-top: 40px;
 }
+
 button.prefrenceBtn.showError {
     border: 1px solid #F15D5E !important;
 }
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 

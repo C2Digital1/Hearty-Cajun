@@ -1,4 +1,5 @@
-<div id="customer" class="account__form register_form one-whole column">
+<div class="customLoginForm" style="display:none;">
+  <div id="customer" class="account__form register_form one-whole column">
     {% form 'create_customer' %}
       {{ form.errors | default_errors }}
 
@@ -71,3 +72,4 @@
       </div>
     {% endform %}
   </div>
+</div>
