@@ -9,6 +9,7 @@
   assign answer_preset = section.settings.answer_preset
   assign question_color = section.settings.color_scheme.settings.scheme_heading
   assign answer_color = section.settings.color_scheme.settings.scheme_text
+  assign sideImg = section.settings.sideImg
 -%}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
@@ -167,12 +168,24 @@
   {% endif %}
 
   <div class="faqItemsMainRow">
+    {% if sideImg != blank %}
+      <div class="faqSideImgCol">
+        <img
+          class="boxImg lazyload"
+          src="{{ sideImg | img_url:'master' }}"
+          alt="img"
+          width="200"
+          height="200"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
     {% for block in section.blocks %}
       {% if block.type == 'heading' %}
         {% assign hasSideHeadings = true %}
       {% endif %}
     {% endfor %}
-    {% if hasSideHeadings %}
+    {% if hasSideHeadings and sideImg == blank %}
       <div class="sideHeadingsBtnsCol">
         {% for block in section.blocks %}
           {% if block.type == 'heading' %}
@@ -184,7 +197,7 @@
         {% endfor %}
       </div>
     {% endif %}
-    <div class="mainFaqContent {% if hasSideHeadings %}hasHeadingBtns{% endif %} container has-limit has-no-side-gutter">
+    <div class="mainFaqContent {% if hasSideHeadings or sideImg != blank %}hasHeadingBtns{% endif %} container has-limit has-no-side-gutter">
       <p class="activeFaqHeading is-h5">
         {% for block in section.blocks %}
           {% if block.type == 'heading' %}
@@ -256,6 +269,11 @@
       "id": "color_scheme",
       "label": "Color Scheme",
       "default": "default"
+    },
+    {
+      "type": "image_picker",
+      "id": "sideImg",
+      "label": "Side Image"
     },
     {
       "type": "checkbox",
