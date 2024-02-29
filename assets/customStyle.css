@@ -4218,7 +4218,19 @@ button.loginSingUpTabBtn.active {
     line-height: 22px;
 
 }
-
+a#continueToMeals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0px auto !important;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+}
 .iconsAndTextInfoRow {
     margin-top: 48px;
     display: flex;
