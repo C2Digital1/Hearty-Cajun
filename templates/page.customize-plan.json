@@ -401,12 +401,20 @@
             "question": "Is there any cooking involved?",
             "answer": "<p>Yes! You choose what you want to eat from our menu with the option to change them every week.<\/p>"
           }
+        },
+        "faq_YJrNXn": {
+          "type": "faq",
+          "settings": {
+            "question": "What kind of meals do you offer?",
+            "answer": "<p>Yes! You choose what you want to eat from our menu with the option to change them every week.<\/p>"
+          }
         }
       },
       "block_order": [
         "faq_KwzJ7H",
         "faq_KwDaTh",
-        "faq_Vafk8i"
+        "faq_Vafk8i",
+        "faq_YJrNXn"
       ],
       "settings": {
         "color_scheme": "",
