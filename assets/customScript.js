@@ -48,6 +48,7 @@ $(document).ready(function () {
         $(".mainCollectionSec").addClass("showFilters");
         $("body, html").addClass("hideScroll");
     });
+
     $(".mobileFilterCloseBtn").click(function () {
         $(".mainCollectionSec").removeClass("showFilters");
         $("body, html").removeClass("hideScroll");
@@ -89,6 +90,7 @@ $(document).ready(function () {
     $(".customDropDownBtn").click(function () {
         $(this).parent(".customSortBtnsContainer").toggleClass("activeDropDown");
     });
+
     $(".sortBtn").click(function () {
         var activeSortTxt = $(this).text();
         var activeSortVal = $(this).attr("data-val");
@@ -127,13 +129,12 @@ $(document).ready(function () {
         }
         $('#cartNote').val(note);
     }
+
     $('.checkboxItem input').change(updateCartNote);
     $('input[name="accessCode"]').on('input', updateCartNote);
     $('.dummyTextArea').on('input', updateCartNote);
 
     // Cart Page Note Text Area code end
-
-
 
 
 
@@ -149,6 +150,7 @@ $(document).ready(function () {
             window.location.href = url;
         }
     });
+
     if ($('#headerZipCode input[name="zipCode"]').length > 0) {
         var savedZipCode = localStorage.getItem('correctZipcode');
         if (savedZipCode) {
@@ -189,6 +191,7 @@ $(document).ready(function () {
             }
         }
     });
+
     $('input#zipCodeCollector').on('focus', function () {
         $(this).removeClass('error').attr('placeholder', 'Zip Code');
     });
@@ -196,12 +199,14 @@ $(document).ready(function () {
     $('input#zipCodeCollector').on('input', function () {
         $(this).removeClass('error').attr('placeholder', 'Zip Code');
     });
+
     $('input#zipCodeCollector').on('paste', function () {
         var input = $(this);
         setTimeout(function () {
             input.removeClass('error').attr('placeholder', 'Zip Code');
         }, 10);
     });
+
     // zip code checker code end
 
     // $(".flowBtn").click(function () {
@@ -209,6 +214,7 @@ $(document).ready(function () {
     //     $(this).prevAll(".flowBtn").addClass("prevActive");
     //     $(this).addClass("active");
     // });
+
     $('.copyTxtBtn').click(function () {
         var copyText = $(this).attr('data-copy');
         var $tempInput = $('<input>');
@@ -234,6 +240,7 @@ $(document).ready(function () {
         $(this).toggleClass("active");
         updatePreferences();
     });
+
     function loadPreferences() {
         var storedPreferences = localStorage.getItem("preferences");
         if (storedPreferences && storedPreferences.trim() !== "" && storedPreferences.trim() !== "[]" && $(".prefrenceBtn").length > 0) {
@@ -243,6 +250,7 @@ $(document).ready(function () {
             });
         }
     }
+
     function updatePrefrencesField() {
         var storedPreferences = localStorage.getItem("preferences");
         var formattedPreferences = "";
@@ -258,6 +266,7 @@ $(document).ready(function () {
             $("#prefrencesField").val(formattedPreferences);
         }
     }
+
     loadPreferences();
     updatePrefrencesField();
     // Prefrences Button and Prefrences Function Code End
@@ -278,6 +287,7 @@ $(document).ready(function () {
         }, 600);
 
     });
+
     $("button.variantBtn").click(function () {
         $(this).parent(".variantBtnsContainer").children("button.variantBtn").removeClass("active");
         $(this).addClass("active");
@@ -292,6 +302,7 @@ $(document).ready(function () {
         }, 600);
 
     });
+
     // Select Prod Box Tab Buttons, Variant Tab Buttons and  Function Code End
 
     // Select Plan Final Button Function Code Sart
@@ -340,6 +351,7 @@ $(document).ready(function () {
             }
         }
     }
+
     loadBoxProdInfoAndUpdateLinks();
 
     $("button.selectThisPlanBtn").click(function () {
@@ -378,6 +390,7 @@ $(document).ready(function () {
 
         }
     });
+    
     // Select Plan Final Button Function Code end
 
     /* =========== PURCHASE FLOW  CODE END =========== */

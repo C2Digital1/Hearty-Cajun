@@ -277,7 +277,7 @@
 
    
     
-    {% if page.metafields.custom.hide_header_and_footer %}
+    {% if page.metafields.custom.hide_header_and_footer or collection.metafields.custom.hide_header_and_footer %}
      {% assign hideHeaderAndFooter = true %}
     {% endif %}
 
