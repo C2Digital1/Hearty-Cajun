@@ -189,7 +189,7 @@
         "heading_alignment": "center",
         "collection": "frontpage",
         "items_per_row": 4,
-        "mobile_items_per_row": "2",
+        "mobile_items_per_row": "1",
         "products_limit": 16,
         "button_label_view": "",
         "button_link_view": "",
