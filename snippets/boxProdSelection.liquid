@@ -18,6 +18,8 @@
           <button
             data-tabId="#prod-{{ product.id }}"
             data-product="{{ product.id }}"
+            data-mealCollection="{{ product.metafields.custom.meal_box_collection.value.url }}"
+            data-addOnsCollection="{{ product.metafields.custom.meal_box_add_ons.value.url }}"
             class="prodBoxMainSelector button selectionBtn {% if blockProdIndex == 1 %}active{% endif %}"
           >
             {% if productCustomTitle != blank %}

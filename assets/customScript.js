@@ -209,7 +209,7 @@ $(document).ready(function () {
     //     $(this).prevAll(".flowBtn").addClass("prevActive");
     //     $(this).addClass("active");
     // });
-    $('.copyTxtBtn').click(function() {
+    $('.copyTxtBtn').click(function () {
         var copyText = $(this).attr('data-copy');
         var $tempInput = $('<input>');
         $tempInput.val(copyText);
@@ -226,7 +226,7 @@ $(document).ready(function () {
         $(".prefrenceBtn.active .btnTxt").each(function () {
             preferences.push($(this).text().trim());
         });
-        localStorage.setItem("preferences", JSON.stringify(preferences));    
+        localStorage.setItem("preferences", JSON.stringify(preferences));
     }
 
     $("button.prefrenceBtn").click(function () {
@@ -241,11 +241,11 @@ $(document).ready(function () {
             preferences.forEach(function (preference) {
                 $(".prefrenceBtn .btnTxt:contains('" + preference + "')").closest("button").addClass("active");
             });
-        }          
+        }
     }
-    function updatePrefrencesField(){
+    function updatePrefrencesField() {
         var storedPreferences = localStorage.getItem("preferences");
-        var formattedPreferences = "";    
+        var formattedPreferences = "";
         if (storedPreferences && storedPreferences.trim() !== "" && storedPreferences.trim() !== "[]") {
             var preferences = JSON.parse(storedPreferences);
             if (preferences.length > 1) {
@@ -253,13 +253,13 @@ $(document).ready(function () {
             } else if (preferences.length === 1) {
                 formattedPreferences = preferences[0];
             }
-        }        
+        }
         if ($("#prefrencesField").length > 0) {
             $("#prefrencesField").val(formattedPreferences);
-        }  
+        }
     }
     loadPreferences();
-    updatePrefrencesField();    
+    updatePrefrencesField();
     // Prefrences Button and Prefrences Function Code End
 
 
@@ -295,29 +295,52 @@ $(document).ready(function () {
     // Select Prod Box Tab Buttons, Variant Tab Buttons and  Function Code End
 
     // Select Plan Final Button Function Code Sart
- 
-    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection) {
+
+    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, mealBoxCollection, mealBoxAddOnsCollection) {
         var boxProdInfo = JSON.parse(localStorage.getItem("boxProdInfo")) || [];
         var freshValues = {
             "activeProdId": activeProdId,
             "selectedVariantId": selectedVariantId,
-            "availabelSelection": availabelSelection
+            "availabelSelection": availabelSelection,
+            "mealBoxCollection": mealBoxCollection,
+            "mealBoxAddOnsCollection": mealBoxAddOnsCollection,
         };
         boxProdInfo = [];
         boxProdInfo.push(freshValues);
         localStorage.setItem("boxProdInfo", JSON.stringify(boxProdInfo));
     }
 
-    function loadBoxProdInfo() {
+    function loadBoxProdInfoAndUpdateLinks() {
         var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
-        if (storedBoxProdInfo && storedBoxProdInfo.trim() !== "" && storedBoxProdInfo.trim() !== "[]" && $(".customLoginForm").length > 0) {
-           
-        }
-        else{
-            $(".purchaseFlowNav button:nth-child(2)").removeClass("active");
+        if (storedBoxProdInfo && storedBoxProdInfo.trim() !== "" && storedBoxProdInfo.trim() !== "[]" && $(".customPurchaseFlowSec").length > 0) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            if (boxProdInfoArray && boxProdInfoArray.length > 0) {
+                boxProdInfoArray.forEach(function (item, index) {
+                    var activeProdId = item.activeProdId;
+                    var selectedVariantId = item.selectedVariantId;
+                    var availabelSelection = item.availabelSelection;
+                    var mealBoxCollectionUrl = item.mealBoxCollection;
+                    var addOnsCollectionURL = item.mealBoxAddOnsCollection;
+                    if (activeProdId || selectedVariantId || availabelSelection || mealBoxCollectionUrl || addOnsCollectionURL) {
+
+                        console.log("Active Product ID: " + activeProdId);
+                        console.log("Selected Variant ID: " + selectedVariantId);
+                        console.log("Available Selection: " + availabelSelection);
+                        console.log("Meal Box Collection: " + addOnsCollectionURL);
+                        console.log("Meal Box Add-Ons Collection: " + addOnsCollectionURL);
+
+                        if ($(".continueToMeals").length > 0) {
+                            $(".continueToMeals").attr('href', mealBoxCollectionUrl);
+                        }
+                        if ($(".submissionRedirectInput").length > 0) {
+                            $(".submissionRedirectInput").val(mealBoxCollectionUrl);
+                        }
+                    }
+                });
+            }
         }
     }
-    loadBoxProdInfo();
+    loadBoxProdInfoAndUpdateLinks();
 
     $("button.selectThisPlanBtn").click(function () {
         var storedPreferences = localStorage.getItem("preferences");
@@ -325,19 +348,22 @@ $(document).ready(function () {
             var activeProdBoxButton = $(".prodBoxMainSelector.active");
             var activeProdTabContent = $(activeProdBoxButton).attr("data-tabId");
             var activeProdId = $(activeProdBoxButton).attr("data-product").trim();
+            var mealBoxCollection = $(activeProdBoxButton).attr("data-mealCollection").trim();
+            var mealBoxAddOnsCollection = $(activeProdBoxButton).attr("data-addOnsCollection").trim();
             var activeProdActiveVariant = $(activeProdTabContent).find(".variantBtn.active");
             var selectedVariantId = $(activeProdActiveVariant).attr("data-variant").trim();
             var availabelSelection = $(activeProdActiveVariant).text().trim();
 
-            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection);
-            $(".loadingIcon").show();            
+            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, mealBoxCollection, mealBoxAddOnsCollection);
+            $(".loadingIcon").show();
             $("body").addClass("showSecondStep");
             $(".purchaseFlowStep1").hide();
             updatePrefrencesField();
-            setTimeout(function () {                
+            setTimeout(function () {
                 $(".loadingIcon").hide();
                 $(".purchaseFlowNav button:nth-child(2)").addClass("active");
                 $(".purchaseFlowStep2").fadeIn(200);
+                loadBoxProdInfoAndUpdateLinks();
             }.bind(this), 600);
         }
         else {

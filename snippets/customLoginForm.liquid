@@ -26,7 +26,7 @@
         <div class="customFormFieldsContainer">
           <a
             id="continueToMeals"
-            href=""
+            href="/pages/customize-plans"
             class="button {{ settings.form_button_style }} is-within-form"
             type="submit"
             >Continue</a
@@ -96,7 +96,7 @@
               >
             </div>
           {% endform %}
-          <input type="hidden" name="return_to" value="/pages/customize-plans#loginForm">
+          <input type="hidden" name="return_to" class="submissionRedirectInput" value="/pages/customize-plans#loginForm">
           {% if shop.checkout.guest_login %}
             <span class="has-padding-top"> {{ 'customer.login.or' | t }} </span>
             {% form 'guest_login' %}
@@ -176,7 +176,7 @@
               <label for="prefrencesField">Prefrences</label>
               <input id="prefrencesField" type="text" name="customer[note][Prefrences]">
             </div>
-            <input type="hidden" name="return_to" value="/pages/customize-plans#loginForm">
+            <input type="hidden" name="return_to" class="submissionRedirectInput" value="/pages/customize-plans#loginForm">
             <div class="buttons has-margin-top is-center">
               <input
                 class="button {{ settings.form_button_style }} is-within-form"
