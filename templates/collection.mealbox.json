@@ -27,7 +27,7 @@
     "customPageHeader": {
       "type": "customPageHeader",
       "settings": {
-        "logoImg": "shopify://shop_images/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
+        "logoImg": "shopify:\/\/shop_images\/logo1_3d93908f-4e1a-42a6-a8f6-2433de39ccb2.png",
         "showPurchaseFlowNav": true,
         "width": "standard",
         "padding_top": 24,
@@ -86,10 +86,13 @@
       "blocks": {
         "faceted_filtering_hV8J6k": {
           "type": "faceted_filtering",
-          "settings": {}
+          "settings": {
+          }
         }
       },
-      "block_order": ["faceted_filtering_hV8J6k"],
+      "block_order": [
+        "faceted_filtering_hV8J6k"
+      ],
       "settings": {
         "show_heading": false,
         "showDescription": false,
@@ -102,7 +105,7 @@
         "items_per_row": 3,
         "mobile_items_per_row": "2",
         "pagination_limit": 16,
-        "pagination_type": "basic_pagination",
+        "pagination_type": "load_more",
         "show_sidebar": true,
         "sidebar_heading_preset": "is-h6",
         "sidebar_position": "left",
