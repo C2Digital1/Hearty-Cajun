@@ -38,6 +38,9 @@
   assign button_2_link = object.settings.button_2_link
   assign button_2_style = object.settings.button_2_style
 
+  assign useCopyBtn = object.settings.useCopyBtn
+  assign copyText = object.settings.copyText
+
   assign mobile_image = object.settings.mobile_image
   assign mobile_image_crop = object.settings.mobile_image_crop
   assign preheading_color_mobile = object.settings.color_scheme_mobile.settings.scheme_pre_text
@@ -59,7 +62,6 @@
   endif
 -%}
 
-
 <div
   {% if type == 'block' %}
     id="shopify-section-{{ id }}"
@@ -71,15 +73,13 @@
     {% if mobile_image_crop != 'none'%} has-image-crop image-crop-{{ mobile_image_crop }}{% endif %}
   "
 >
-
   {% if object.settings.color_scheme.settings.scheme_button_gradient != blank %}
     {% assign primaryBtnBg = object.settings.color_scheme.settings.scheme_button_gradient %}
     {% assign borderWidth = 0 %}
-    {%  else %}      
+  {% else %}
     {% assign primaryBtnBg = object.settings.color_scheme.settings.scheme_button %}
     {% assign borderWidth = 1 %}
-  {%  endif %}
-
+  {% endif %}
 
   {% style -%}
     #shopify-section-{{ id }} .caption-content {
@@ -221,7 +221,11 @@
         {% if buttons %}
           <div class="{{ context }}__buttons buttons is-{{ text_alignment }}">
             {% if button_1 != blank %}
-              {% render 'button', label: button_1, href: button_1_link, type: 'link', style: button_1_style %}
+              {% if useCopyBtn %}                                
+                <button type="button" data-copy="{{copyText}}" class="button copyTxtBtn {{ button_1_style }} "><span class="copyIcon">{% render 'copyIcon' %}</span>{{ button_1 }}</button>
+              {% else %}
+                {% render 'button', label: button_1, href: button_1_link, type: 'link', style: button_1_style %}
+              {% endif %}
             {% endif %}
             {% if button_2 != blank %}
               {% render 'button', label: button_2, href: button_2_link, type: 'link', style: button_2_style %}
