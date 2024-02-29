@@ -5665,12 +5665,36 @@ button.button.copyTxtBtn span.copyIcon svg {
         width: 18px !important;
         height: 18px !important;
     }
+
+    .flowBtn {
+        min-width: 80px;
+        font-size: 12px !important;
+        height: 28px;
+    }
+
+
+    .pageHeaderContainer.hasPurchaseFlowNav {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .flowBtn {
+        min-width: 70px;
+        font-size: 10px !important;
+    }
+
+    .purchaseFlowNav .flowBtn:not(:first-child)::before {
+        right: 33px;
+        width: 70px;
+    }
 }
 
 @media only screen and (max-width: 414px) {
     .faq__block-faq .faq__item .faq__item-answer {
         padding: 0 16px 32px 16px !important;
     }
+
 }
 
 @media only screen and (max-width: 380px) {
