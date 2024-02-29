@@ -49,11 +49,16 @@ $(document).ready(function () {
         $("body, html").addClass("hideScroll");
     });
 
-    $(".mobileFilterCloseBtn").click(function () {
+    $(".mobileFilterCloseBtn, .filterOverlay").click(function () {
         $(".mainCollectionSec").removeClass("showFilters");
         $("body, html").removeClass("hideScroll");
     });
 
+    $(".filterDrawerOpener").click(function () {
+        $(".mainCollectionSec").addClass("showFilters");
+        $("body, html").addClass("hideScroll");
+    });
+    
     $(".prodIngPopupOpener").click(function () {
         var popupId = $(this).attr("data-id");
         if ($(".popupBodyContainer").length > 0) {

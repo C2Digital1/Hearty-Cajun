@@ -4321,7 +4321,7 @@ a.customForgotLink.footer-text.button.button--link-style {
     justify-content: space-between !important;
     align-items: stretch !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 400px !important;
     background: #fff;
     flex: 100% !important;
     position: fixed;
@@ -4337,7 +4337,26 @@ a.customForgotLink.footer-text.button.button--link-style {
     transform: translateX(-200%);
 }
 
-.mainCollectionSec.mealBoxCollection .showFilters aside.sidebar-section {
+.filterOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -25;
+    height: 100vh;
+    width: 100%;
+    cursor: pointer;
+    background: #463F3A;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mainCollectionSec.mealBoxCollection.showFilter .filterOverlay {
+    opacity: 1;
+    visibility: visible;
+    z-index: 25;
+}
+
+.mainCollectionSec.mealBoxCollection.showFilters aside.sidebar-section {
     transform: translateX(0%);
 }
 
