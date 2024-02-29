@@ -4466,6 +4466,21 @@ a.customForgotLink.footer-text.button.button--link-style {
     flex: 100%;
 }
 
+a.button.button--primary.pagination-button__load-more {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #463f3a;
+    min-height: 54px;
+    min-width: 243px;
+}
+
 /* ===Purchase step 2 === */
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
