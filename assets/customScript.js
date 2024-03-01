@@ -406,6 +406,8 @@ $(document).ready(function () {
             }.bind(this), 500);
 
         }
+        localStorage.removeItem('cartData');
+        localStorage.removeItem('cartAddOns');
     });
 
     // Select Plan Final Button Function Code end
