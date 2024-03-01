@@ -428,7 +428,7 @@ $(document).ready(function () {
         var cartItemQty = 1;
         var existingCartItem = $(".cartItemsList").find(`#${cartItemId}`);
 
-        if (checkLimitOfItems()) {
+        if (checkLimitOfItems("normal")) {
             $(this).addClass("adding");
             var pricePerMeal = getPricePerMeal(); // Retrieve price per meal from local storage
             setTimeout(function () {
@@ -453,6 +453,26 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on('click', 'button.removeAllCart', function () {
+        $(".cartItemsList").empty();
+        localStorage.removeItem('cartData');
+        $(".totalCartItems").text("0");
+        $(".cartSubtotal, .orderTotalPrice").text("$0.00");
+    });
+
+    $(document).on('click', 'button.addonStep', function () {
+       if(checkLimitOfItems("moveToAddOn")){
+
+       }
+       else{
+        window.location.href = "/collections/add-ons";
+       }
+    });
+
+
+    
+    
+
     function getPricePerMeal() {
         var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
         var pricePerMeal = "";
@@ -464,6 +484,7 @@ $(document).ready(function () {
         }
         return pricePerMeal;
     }
+
     function getTotalItemLimits() {
         var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
         var availabelSelection = "";
@@ -502,7 +523,7 @@ $(document).ready(function () {
 
     function attachedQtyBtnsEventListeners() {
         $(".qtyPlus").off("click").on("click", function () {
-            if (checkLimitOfItems()) {
+            if (checkLimitOfItems("normal")) {
                 var inputField = $(this).siblings("input.qtyField");
                 var currentQty = parseInt(inputField.val());
                 inputField.val(currentQty + 1);
@@ -554,17 +575,21 @@ $(document).ready(function () {
         $(".orderTotalPrice").text("$" + finalOrdatTotal.toFixed(2));
 
     }
-
-    function checkLimitOfItems() {
+    function checkLimitOfItems(warningType) {
         var limitOfSelection = getTotalItemLimits();
         var maxLimitForCartItems = parseInt(limitOfSelection);
         var totalCartItemsAdded = parseInt($(".totalCartItems").text());
         if (maxLimitForCartItems > totalCartItemsAdded) {
-            return true;
+            if(warningType == "moveToAddOn"){    
+                alert(`Please Add more ${maxLimitForCartItems-totalCartItemsAdded} items to continue`);         
+            }
+            return true;           
         }
-        else {
-            alert(`You can't add more thenn ${maxLimitForCartItems} items in this box`);
-            return false;
+        else {  
+            if(warningType != "moveToAddOn"){    
+                alert(`You can't add more thenn ${maxLimitForCartItems} items in this box`);         
+            }         
+            return false;            
         }
 
     }
