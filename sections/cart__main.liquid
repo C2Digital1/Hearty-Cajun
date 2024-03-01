@@ -209,14 +209,26 @@ p.cart__subtotal__price{
               data-cart-item="{{ item.key }}"
               data-variant-id="{{ item.id }}"
               data-line-item="{{ forloop.index }}"
-            >
-              <a href="{{ item.url }}" title="{{ item.title | escape }}" class="cart__image">
+            >   
+            {%  assign hideLink = false %}
+              {% if item.properties %}
+                <div class="item__properties is-text-small">
+                  {% for p in item.properties %}
+                    {% assign property_starts = p.first | slice: 0 %}
+                    {% if property_starts == "B" %}
+                      {%  assign hideLink = true %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <a href="{% if hideLink %}javascript:void(0){% else %}{{ item.url }}{% endif %}" title="{{ item.title | escape }}" class="cart__image">
                 {% render 'image-element', image: item.image, alt: item.title, object_fit: true, max_height: 150 %}
               </a>
               <div class="cart__info">
                 <div class="cart__description">
                   <div class="cart__text">
-                    <a class="item__title is-h5" href="{{ item.url }}">{{ item.product.title }}</a>
+                    <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{{ item.url }}{% endif %}">{{ item.product.title }}</a>
 
                     {% unless item.variant.title contains 'Title' %}
                       <p class="item__properties is-text-small">
