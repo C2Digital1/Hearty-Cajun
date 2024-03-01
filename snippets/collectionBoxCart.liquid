@@ -33,3 +33,26 @@
   </div>
   <div class="cartItemsList"></div>
 </div>
+
+<div class="cartDrawerFooter">
+  <p class="footerTxtRow cartSubTotalRow">Subtotal <span class="cartSubtotal">$0.0</span></p>
+  <p class="footerTxtRow shippingTxtRow">
+    Shipping
+    {% if settings.ShippingCharges == '0' or settings.ShippingCharges == '0.0' -%}
+      <span class="shippingCharges">FREE</span>
+    {% else %}
+      <span class="shippingCharges">${{ settings.ShippingCharges }}</span>
+    {% endif %}
+  </p>
+  <p class="footerTxtRow estimatesSaleTaxRow">
+    Estimated Sales Tax
+    <span class="estimatedTax">${{ settings.estimatedSaleTax }}</span>
+  </p>
+  <p class="footerTxtRow orderTotalRow">
+    Order Total
+    <span class="estimatedTax">$0.0</span>
+  </p>
+  <div class="nextMoveBtn">
+    <button class="addonStep button">Add-Ons</button>
+  </div>
+</div>

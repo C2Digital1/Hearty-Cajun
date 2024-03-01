@@ -4490,6 +4490,29 @@ a.button.button--primary.pagination-button__load-more {
     width: 100%;
     padding: 172px 16px 58px 16px;
     transition: all linear .3s;
+    height: max-content;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+/* width */
+.customCartContainer::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+.customCartContainer::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+.customCartContainer::-webkit-scrollbar-thumb {
+    background: #463f3a;
+}
+
+/* Handle on hover */
+.customCartContainer::-webkit-scrollbar-thumb:hover {
+    background: #463f3a;
 }
 
 .contentIsScrolled .customCartContainer {
@@ -4717,6 +4740,65 @@ p.cartItemsInfo.is-text-small {
 .qtyBox button span.icon svg {
     width: 100%;
     height: 100%;
+}
+
+.cartDrawerFooter {
+    border-radius: 16px 16px 0 0;
+    background-color: #463F3A;
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+    color: #fff;
+    padding: 16px 16px 77px 16px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    left: 0;
+}
+
+p.footerTxtRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+p.footerTxtRow.orderTotalRow {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 17px;
+}
+
+.nextMoveBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #fff;
+    padding-top: 16px;
+}
+
+button.addonStep.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    width: 100%;
+    border: 1px solid #463F3A;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    color: #463F3A;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
 }
 
 /* === Purchase Step 3  End */
