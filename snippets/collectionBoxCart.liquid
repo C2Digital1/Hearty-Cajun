@@ -11,7 +11,7 @@
       <p class="itemName is-h5">%cartItemName%</p>
       <p class="cartItemsInfo is-text-small"></p>
       <div class="cartQtyAndPrice">
-        <div class="qtyBox" data-currentQty="%cartItemName%">
+        <div class="qtyBox" data-currentQty="%cartItemQtyData%">
           <button class="qtyMinus">
             {% render 'icon', name: icon-minus %}
           </button>
@@ -50,7 +50,7 @@
   </p>
   <p class="footerTxtRow orderTotalRow">
     Order Total
-    <span class="estimatedTax">$0.0</span>
+    <span class="orderTotalPrice">$0.0</span>
   </p>
   <div class="nextMoveBtn">
     <button class="addonStep button">Add-Ons</button>

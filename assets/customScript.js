@@ -422,34 +422,35 @@ $(document).ready(function () {
     /* =========== MEAL BOX AND CART  CODE START =========== */
 
     $(document).on('click', 'button.quickMealAddBtn', function () {
-
-        $(this).addClass("adding");
         var cartItemId = $(this).attr("data-cartItemId");
         var cartItemName = $(this).attr("data-productName");
         var cartItemImg = $(this).attr("data-productImg");
         var cartItemQty = 1;
         var existingCartItem = $(".cartItemsList").find(`#${cartItemId}`);
 
-        var pricePerMeal = getPricePerMeal(); // Retrieve price per meal from local storage
-        setTimeout(function () {
-            $(this).addClass("added");
-
-            if (existingCartItem.length > 0) {
-                incrementCartItem(existingCartItem);
-            } else {
-                appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal);
-            }
-
-
-            attachedQtyBtnsEventListeners();
-            updateCartAndSave();
-
-            // remove classes from Add To Cart Button
+        if (checkLimitOfItems()) {
+            $(this).addClass("adding");
+            var pricePerMeal = getPricePerMeal(); // Retrieve price per meal from local storage
             setTimeout(function () {
-                $(this).removeClass("adding added");
-            }.bind(this), 1500);
+                $(this).addClass("added");
 
-        }.bind(this), 900);
+                if (existingCartItem.length > 0) {
+                    incrementCartItem(existingCartItem);
+                } else {
+                    appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal);
+                }
+
+
+                attachedQtyBtnsEventListeners();
+                updateCartAndSave();
+
+                // remove classes from Add To Cart Button
+                setTimeout(function () {
+                    $(this).removeClass("adding added");
+                }.bind(this), 1500);
+
+            }.bind(this), 900);
+        }
     });
 
     function getPricePerMeal() {
@@ -462,6 +463,17 @@ $(document).ready(function () {
             });
         }
         return pricePerMeal;
+    }
+    function getTotalItemLimits() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        var availabelSelection = "";
+        if (storedBoxProdInfo) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            boxProdInfoArray.forEach(function (item, index) {
+                availabelSelection = item.availabelSelection;
+            });
+        }
+        return availabelSelection;
     }
 
     function incrementCartItem(existingCartItem) {
@@ -481,6 +493,7 @@ $(document).ready(function () {
         itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
             .replace('%cartItemImg%', cartItemImg)
             .replace('%cartItemName%', cartItemName)
+            .replace('%cartItemQtyData%', cartItemQty)
             .replace('%cartItemQty%', cartItemQty)
             .replace('%cartItemPrice%', pricePerMeal);
         $(".cartItemsList").append(itemHtml);
@@ -489,11 +502,13 @@ $(document).ready(function () {
 
     function attachedQtyBtnsEventListeners() {
         $(".qtyPlus").off("click").on("click", function () {
-            var inputField = $(this).siblings("input.qtyField");
-            var currentQty = parseInt(inputField.val());
-            inputField.val(currentQty + 1);
-            updateTotalCartItems();
-            updateCartAndSave(); // Update cart data in local storage
+            if (checkLimitOfItems()) {
+                var inputField = $(this).siblings("input.qtyField");
+                var currentQty = parseInt(inputField.val());
+                inputField.val(currentQty + 1);
+                updateTotalCartItems();
+                updateCartAndSave(); // Update cart data in local storage
+            }
         });
 
         $(".qtyMinus").off("click").on("click", function () {
@@ -505,7 +520,7 @@ $(document).ready(function () {
                 $(this).closest(".customCartItem").remove();
             }
             updateTotalCartItems();
-            updateCartAndSave(); 
+            updateCartAndSave();
         });
     }
 
@@ -516,14 +531,49 @@ $(document).ready(function () {
             totalItems += quantity;
         });
         $(".totalCartItems").text(totalItems);
+        updatCartFooterTotal();
     }
 
+    function updatCartFooterTotal() {
+        var totalPrice = 0;
+        $(".cartItemsList .customCartItem").each(function () {
+            var quantity = parseInt($(this).find("input.qtyField").val());
+            var price = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
+            totalPrice += quantity * price; // Multiply price by quantity
+        });
+        // Update the subt total price in the footer
+        $(".cartSubtotal").text("$" + totalPrice.toFixed(2));
+        // update cart Ordar total prcie in footer 
+        var cartSubtotal = parseFloat($(".cartSubtotal").text().replace("$", ""));
+        var estimatedTax = parseFloat($(".estimatedTax").text().replace("$", ""));
+        var cartShippingCharges = 0;
+        if ($(".shippingCharges").text() != "FREE") {
+            cartShippingCharges = parseFloat($(".shippingCharges").text.replace("$", ""));
+        }
+        var finalOrdatTotal = cartSubtotal + estimatedTax + cartShippingCharges;
+        $(".orderTotalPrice").text("$" + finalOrdatTotal.toFixed(2));
+
+    }
+
+    function checkLimitOfItems() {
+        var limitOfSelection = getTotalItemLimits();
+        var maxLimitForCartItems = parseInt(limitOfSelection);
+        var totalCartItemsAdded = parseInt($(".totalCartItems").text());
+        if (maxLimitForCartItems > totalCartItemsAdded) {
+            return true;
+        }
+        else {
+            alert(`You can't add more thenn ${maxLimitForCartItems} items in this box`);
+            return false;
+        }
+
+    }
 
     // save cart in local storage and load cart data from local storage code start
     function updateCartAndSave() {
         var cartData = [];
         $(".cartItemsList .customCartItem").each(function () {
-            var cartItemId = $(this).attr("data-cartItemId");
+            var cartItemId = $(this).attr("data-cartitemid");
             var cartItemImg = $(this).find("img").attr("src");
             var cartItemName = $(this).find(".itemName").text();
             var cartItemQty = parseInt($(this).find("input.qtyField").val());
