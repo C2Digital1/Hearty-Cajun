@@ -2,11 +2,11 @@
   <button
     class="quickAddOnsBtn customQuickAdd button"
     data-cartItemId="cartItem-{{ product.id }}"
-    data-addOnVariantId= "{{ product.selected_or_first_available_variant.id }}"
-    data-addOnProdId= "{{ product.id }}"
+    data-addOnVariantId="{{ product.selected_or_first_available_variant.id }}"
+    data-addOnProdId="{{ product.id }}"
     data-productName="{{ product.title }}"
     data-productImg="{{ product.featured_image | img_url:'master' }}"
-    data-AddOnPrice = {{ product.selected_or_first_available_variant.price | money_without_currency }}
+    data-AddOnPrice="{{ product.selected_or_first_available_variant.price | money_without_currency }}"
   >
     <span class="bagIcon">
       {% render 'addToCartIcon' %}
@@ -15,19 +15,34 @@
       {% render 'tickIcon' %}
     </span>
   </button>
-  {% else %}
-  <button
-    class="quickMealAddBtn customQuickAdd button"
-    data-cartItemId="cartItem-{{ product.id }}"
-    data-productName="{{ product.title }}"
-    data-productImg="{{ product.featured_image | img_url:'master' }}"
-  >
-    <span class="bagIcon">
-      {% render 'addToCartIcon' %}
-    </span>
-    <span class="tickIcon">
-      {% render 'tickIcon' %}
-    </span>
-  </button>
-{% endif %}
+{% else %}
+  {% if product.metafields.custom.box_items_variants != blank %}
+    <button
+      class="customQuickAdd optionsOverlayOpener button"
+      data-showOptions="#options-{{ product.id }}"
+    >
+      <span class="bagIcon">
+        {% render 'addToCartIcon' %}
+      </span>
+      <span class="tickIcon">
+        {% render 'tickIcon' %}
+      </span>
+    </button>
 
+  {% else %}
+    <button
+      class="quickMealAddBtn customQuickAdd button"
+      data-cartItemId="cartItem-{{ product.id }}"
+      data-productName="{{ product.title }}"
+      data-productImg="{{ product.featured_image | img_url:'master' }}"
+      data-variantOptions=""
+    >
+      <span class="bagIcon">
+        {% render 'addToCartIcon' %}
+      </span>
+      <span class="tickIcon">
+        {% render 'tickIcon' %}
+      </span>
+    </button>
+  {% endif %}
+{% endif %}

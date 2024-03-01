@@ -1,0 +1,38 @@
+{% if product.metafields.custom.box_items_variants != blank %}
+  <div id="options-{{ product.id }}" class="extraOptionOverlay">
+    <button class="closeOptionOverlay">{% render 'downArrowIcon' %}</button>
+    {% assign extraProdList = product.metafields.custom.box_items_variants.value %}
+    {% for extraProd in extraProdList %}
+      <div class="extrProdInfoContainer">
+        <p class="prodTit">{{ extraProd.title }}</p>
+        <div class="extraProdVariantContainer">
+          {% for variant in extraProd.variants %}
+            <label for="{{ variant.id }}-variantBtn-{{ forloop.index }}" class="checkboxItem">
+              <input
+                id="{{ variant.id }}-variantBtn-{{ forloop.index }}"
+                type="radio"
+                class="optionChooser"
+                name="{{ extraProd.id }}"
+                value="{{extraProd.title}}:{{ variant.title }}"
+              >
+              <span class="checkmarkIcon"></span>
+              {{ variant.title }} ({{ variant.price | money }})
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+    <button
+      class="quickMealAddBtn customQuickAdd button"
+      data-variantOptions=""
+      data-cartItemId="cartItem-{{ product.id }}"
+      data-productName="{{ product.title }}"
+      data-productImg="{{ product.featured_image | img_url:'master' }}"
+    >
+      <span class="bagIcon"> Apply </span>
+      <span class="tickIcon">
+        {% render 'tickIcon' %}
+      </span>
+    </button>
+  </div>
+{% endif %}

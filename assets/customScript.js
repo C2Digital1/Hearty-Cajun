@@ -129,7 +129,7 @@ $(document).ready(function () {
 
     function updateCartNote() {
         var note = '';
-        $('.checkboxItem input:checked').each(function () {
+        $('.deliverySmallNotes .checkboxItem input:checked').each(function () {
             note += $(this).parent().text().trim() + '\n';
         });
         var accessCode = $('input[name="accessCode"]').val().trim();
@@ -143,7 +143,7 @@ $(document).ready(function () {
         $('#cartNote').val(note);
     }
 
-    $('.checkboxItem input').change(updateCartNote);
+    $('.deliverySmallNotes .checkboxItem input').change(updateCartNote);
     $('input[name="accessCode"]').on('input', updateCartNote);
     $('.dummyTextArea').on('input', updateCartNote);
 
@@ -427,8 +427,14 @@ $(document).ready(function () {
         var cartItemId = $(this).attr("data-cartItemId");
         var cartItemName = $(this).attr("data-productName");
         var cartItemImg = $(this).attr("data-productImg");
+        var cartItemsVariants = $(this).attr("data-variantOptions");
         var cartItemQty = 1;
         var existingCartItem = $(".mainCartItemsList").find(`#${cartItemId}`);
+        if(cartItemsVariants != undefined || cartItemsVariants !=""){            
+        }
+        else{
+            var cartItemsVariants = " ";
+        }
 
         if (checkLimitOfItems("normal")) {
             $(this).addClass("adding");
@@ -439,7 +445,7 @@ $(document).ready(function () {
                 if (existingCartItem.length > 0) {
                     incrementCartItem(existingCartItem);
                 } else {
-                    appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal);
+                    appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
                 }
 
 
@@ -537,12 +543,12 @@ $(document).ready(function () {
         updateTotalCartItems("normal");
     }
 
-    function appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal) {
-
+    function appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal) {
         var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
         itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
             .replace('%cartItemImg%', cartItemImg)
             .replace('%cartItemName%', cartItemName)
+            .replace('%cartItemsVariants%', cartItemsVariants)
             .replace('%cartItemQtyData%', cartItemQty)
             .replace('%cartItemQty%', cartItemQty)
             .replace('%cartItemPrice%', pricePerMeal);
@@ -643,12 +649,19 @@ $(document).ready(function () {
             var cartItemId = $(this).attr("id");
             var cartItemImg = $(this).find("img").attr("src");
             var cartItemName = $(this).find(".itemName").text();
+            if($(this).find(".cartItemsInfo").text() != undefined || (this).find(".cartItemsInfo").text() !=""){                
+                var cartItemsVariants =$(this).find(".cartItemsInfo").text();                
+            }
+            else{
+                var cartItemsVariants = " ";
+            }
             var cartItemQty = parseInt($(this).find("input.qtyField").val());
             var cartItemPrice = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
             cartData.push({
                 cartItemId: cartItemId,
                 cartItemImg: cartItemImg,
                 cartItemName: cartItemName,
+                cartItemsVariants: cartItemsVariants,
                 cartItemQty: cartItemQty,
                 cartItemPrice: cartItemPrice
             });
@@ -663,7 +676,7 @@ $(document).ready(function () {
         if (cartData) {
             cartData = JSON.parse(cartData);
             cartData.forEach(function (item) {
-                appendCartItem(item.cartItemId, item.cartItemImg, item.cartItemName, item.cartItemQty, item.cartItemPrice);
+                appendCartItem(item.cartItemId, item.cartItemImg, item.cartItemName, item.cartItemsVariants, item.cartItemQty, item.cartItemPrice);
             });
             updateTotalCartItems("normal");
             attachedQtyBtnsEventListeners();
@@ -785,6 +798,24 @@ $(document).ready(function () {
     }
 
     //  ========  ADD ONS ADD TO CART CODE END ======== 
+
+    $(document).on('click', 'button.optionsOverlayOpener', function () {
+        $(".extraOptionOverlay").removeClass("active");
+        var optionOverlay = $(this).attr("data-showOptions");
+        $(optionOverlay).addClass("active");
+    });
+    $(document).on('click', 'button.closeOptionOverlay', function () {
+        $(".extraOptionOverlay").removeClass("active");
+    });
+    $(".extraProdVariantContainer .optionChooser").change(function() {
+        var allOptions = [];
+        $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function() {
+            allOptions.push($(this).val());
+        });
+        $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
+    });
+    
+    
     /* =========== MEAL BOX AND CART  CODE END =========== */
 
 
@@ -805,18 +836,47 @@ $(document).ready(function () {
             var mainBoxProdInfoArray = JSON.parse(storedMainProdBox);
 
             var storedCartAddOns = localStorage.getItem("cartAddOns");
-            var storedCartAddOnsInfoArray = JSON.parse(storedCartAddOns);
+            if (storedCartAddOns) {
+                var storedCartAddOnsInfoArray = JSON.parse(storedCartAddOns);
+            }
 
+            // lineItems properties 
+            // Get cartData from localStorage
+
+            var cartData = localStorage.getItem("cartData");
+            var cartItemsArray = JSON.parse(cartData);
+
+            var formattedCartBoxItems = cartItemsArray.map(function (item) {
+                return {
+                    cartItemName: item.cartItemName,
+                    cartItemQty: item.cartItemQty,
+                };
+            });
+
+            var finalBoxItemsProd = formattedCartBoxItems.map(function (item) {
+                return `(${item.cartItemName}: x ${item.cartItemQty})\n`; // Use '\n' for line breaks
+            }).join('');
 
             // pushing mainBox Prod Info for Add To Cart
             mainBoxProdInfoArray.forEach(function (item, index) {
-                finalProdForCart.push({ id: item.selectedVariantId, quantity: 1 });
+                finalProdForCart.push({
+                    id: item.selectedVariantId,
+                    quantity: 1,
+                    properties: {
+                        "Box Items": finalBoxItemsProd, // Example property from mainBoxProdInfoArray
+                        // Include more properties as needed
+                    }
+                });
             });
 
             // pushing Cart Addon Info for Add To Cart
-            storedCartAddOnsInfoArray.forEach(function (item, index) {
-                finalProdForCart.push({ id: item.addOnVariantId, quantity: item.cartItemQty });
-            });
+            if (storedCartAddOnsInfoArray && storedCartAddOnsInfoArray.length > 0) {
+                storedCartAddOnsInfoArray.forEach(function (item, index) {
+                    finalProdForCart.push({
+                        id: item.addOnVariantId, quantity: item.cartItemQty
+                    });
+                });
+            }
 
             console.log(finalProdForCart);
             if (finalProdForCart.length > 0) {
