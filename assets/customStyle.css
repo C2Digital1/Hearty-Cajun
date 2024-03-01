@@ -4672,9 +4672,11 @@ p.cartItemsInfo.is-text-small {
     line-height: 13px;
     margin: 6px 0;
 }
-p.cartItemsInfo:empty{
+
+p.cartItemsInfo:empty {
     display: none !important;
 }
+
 .cartQtyAndPrice {
     display: flex;
     align-items: center;
@@ -4895,7 +4897,7 @@ p.prodTit {
     width: 100%;
 }
 
-.extraOptionOverlay button.quickMealAddBtn.customQuickAdd.button {
+.extraOptionOverlay button.customQuickAdd.button {
     position: relative;
     width: 100%;
     background: #463F3A !important;
@@ -4903,7 +4905,7 @@ p.prodTit {
     min-height: 54px;
 }
 
-.extraOptionOverlay button.quickMealAddBtn.customQuickAdd.button span.bagIcon {
+.extraOptionOverlay button.customQuickAdd.button span.bagIcon {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0;

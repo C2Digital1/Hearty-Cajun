@@ -429,10 +429,12 @@ $(document).ready(function () {
         var cartItemImg = $(this).attr("data-productImg");
         var cartItemsVariants = $(this).attr("data-variantOptions");
         var cartItemQty = 1;
+        var repeateIt = false;
         var existingCartItem = $(".mainCartItemsList").find(`#${cartItemId}`);
-        if(cartItemsVariants != undefined || cartItemsVariants !=""){            
+        if (cartItemsVariants != undefined || cartItemsVariants != "") {
+            repeateIt = true;
         }
-        else{
+        else {
             var cartItemsVariants = " ";
         }
 
@@ -442,7 +444,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(this).addClass("added");
 
-                if (existingCartItem.length > 0) {
+                if (existingCartItem.length > 0 && repeateIt != true) {
                     incrementCartItem(existingCartItem);
                 } else {
                     appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
@@ -649,10 +651,10 @@ $(document).ready(function () {
             var cartItemId = $(this).attr("id");
             var cartItemImg = $(this).find("img").attr("src");
             var cartItemName = $(this).find(".itemName").text();
-            if($(this).find(".cartItemsInfo").text() != undefined || (this).find(".cartItemsInfo").text() !=""){                
-                var cartItemsVariants =$(this).find(".cartItemsInfo").text();                
+            if ($(this).find(".cartItemsInfo").text() != undefined || (this).find(".cartItemsInfo").text() != "") {
+                var cartItemsVariants = $(this).find(".cartItemsInfo").text();
             }
-            else{
+            else {
                 var cartItemsVariants = " ";
             }
             var cartItemQty = parseInt($(this).find("input.qtyField").val());
@@ -807,15 +809,39 @@ $(document).ready(function () {
     $(document).on('click', 'button.closeOptionOverlay', function () {
         $(".extraOptionOverlay").removeClass("active");
     });
-    $(".extraProdVariantContainer .optionChooser").change(function() {
+    $(".extraProdVariantContainer .optionChooser").change(function () {
+
+        var allGroupsChecked = true;
+
+        $(".extraProdVariantContainer").each(function () {
+            if (!$(this).find('.optionChooser:checked').length) {
+                allGroupsChecked = false;
+                return false; // Exit the loop early
+            }
+        });
+        if (allGroupsChecked) {
+            $(this).closest('.extraOptionOverlay').find(".customQuickAdd").addClass("quickMealAddBtn").removeClass("disabled");
+        }
+        else {
+            $(this).closest('.extraOptionOverlay').find(".customQuickAdd").removeClass("quickMealAddBtn").addClass("disabled");
+        }
+
+
         var allOptions = [];
-        $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function() {
+        $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
             allOptions.push($(this).val());
         });
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
     });
-    
-    
+    $(document).on('click', 'button.customQuickAdd.button.disabled', function () {
+        $(this).addClass("animated bounceIn");
+        $(".extrProdInfoContainer").addClass("animated bounceIn");
+        setTimeout(function () {
+            $(this).removeClass("animated bounceIn");
+            $(".extrProdInfoContainer").removeClass("animated bounceIn");
+        }.bind(this), 500);
+    });
+
     /* =========== MEAL BOX AND CART  CODE END =========== */
 
 
@@ -899,8 +925,6 @@ $(document).ready(function () {
                 });
             }
         }
-
-
 
     });
 
