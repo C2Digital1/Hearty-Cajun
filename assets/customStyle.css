@@ -4370,7 +4370,7 @@ a.customForgotLink.footer-text.button.button--link-style {
 
 /* ===Purchase step 2 === */
 
-/* === Purchase Step 3  Start */
+/* === Purchase Step 3  and 4 Start */
 
 .mainCollectionSec.mealBoxCollection aside.sidebar-section {
     display: flex !important;
@@ -4802,7 +4802,23 @@ button.addonStep.button {
     text-align: center;
 }
 
-/* === Purchase Step 3  End */
+button.finalAddToCartBtn.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    padding: 5px;
+}
+
+.cartSection .container.cart__empty-cart-message a.continue-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+}
+
+/* === Purchase Step 3  and 4 End */
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 

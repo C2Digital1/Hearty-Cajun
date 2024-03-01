@@ -3,7 +3,7 @@
   assign icon-minus = 'minus'
 -%}
 <div id="cartItemTemplate" style="display: none;">
-  <div id="%cartItemId%" class="customCartItem">
+  <div id="%cartItemId%" data-VariantId="%cartItemVariantId%" class="customCartItem">
     <div class="customCartItemImg">
       <img src="%cartItemImg%" alt="img" loading="lazy" height="96" width="96" class="boxImg lazyload">
     </div>
@@ -35,8 +35,7 @@
   <div class="customCartHeader addOnHeader" style="display:none;">
     <h2 class="totalMeals is-h5">Add-ons (<span class="totalAddOnItems">0</span>)</h2>
   </div>
-  <div class="cartItemsList addOnsList">
-  </div>
+  <div class="cartItemsList addOnsList"></div>
 </div>
 
 <div class="cartDrawerFooter">
@@ -58,6 +57,10 @@
     <span class="orderTotalPrice">$0.0</span>
   </p>
   <div class="nextMoveBtn">
-    <button class="addonStep button">Add-Ons</button>
+    {% if showCheckout %}
+      <button type="button" class="finalAddToCartBtn button button--primary">Checkout</button>
+    {% else %}
+      <button type="button"  class="addonStep button">Add-Ons</button>
+    {% endif %}
   </div>
 </div>

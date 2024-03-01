@@ -9,6 +9,11 @@
   assign heading_preset = section.settings.heading_preset
   assign heading_alignment = section.settings.heading_alignment
 
+  assign preheading_color = section.settings.color_scheme.settings.scheme_pre_text
+  assign heading_color = section.settings.color_scheme.settings.scheme_heading
+  assign subheading_color = section.settings.color_scheme.settings.scheme_text
+
+
   assign sidebar_position = section.settings.sidebar_position
   assign show_sidebar = section.settings.show_sidebar
   assign sidebar_heading_preset = section.settings.sidebar_heading_preset
@@ -63,9 +68,51 @@
     assign has_dropdowns = true
   endif
 -%}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+  {%  else %}      
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{%  endif %}
 
 {% comment %} Section specific CSS {% endcomment %}
-{% capture section_css %}{% endcapture %}
+{% capture section_css %}
+
+.button--primary{
+  background: {{ primaryBtnBg }};
+  color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+  border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--primary:hover{
+   background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--secondary{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+  border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+}
+
+.button--secondary:hover{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+}
+
+.button--link-style{
+  color: {{ section.settings.color_scheme.settings.scheme_link }};
+}
+
+.button--link-style:hover{
+  color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+}
+
+
+{% endcapture %}
 {% style %}
   #shopify-section-{{ id }} {
     padding-top: {{ padding_top }}px;
@@ -130,7 +177,7 @@
     section
     mainCollectionSec
     mealBoxCollection
-    {{ css_class }}
+    {{ css_class }} scheme_color-{{section.settings.color_scheme}}
     is-width-{{ width }}
   "
   {% if animation != 'none' %}
@@ -349,7 +396,7 @@
       </div>
     </div>
     <div class="collectionCart">
-      {% render 'collectionBoxCart' %}
+      {% render 'collectionBoxCart', showCheckout: true %}
     </div>
   </div>
 </section>
@@ -398,6 +445,12 @@
   "name": "Collection",
   "class": "collection-main jsCollection jsSidebar",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "default"
+    },
     {
       "type": "header",
       "content": "Heading"
