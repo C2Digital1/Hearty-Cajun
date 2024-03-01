@@ -190,7 +190,7 @@
       {% endif %}
 
       {% if showMealQuickAdd  %}
-        {% render 'quickMealAdd', product: product %}
+        {% render 'quickMealAdd', product: product, addOnIsActive: addOnIsActive %}
       {% endif %}
       {% if settings.showQuickAddBtn and showMealQuickAdd != true %}
         {% liquid

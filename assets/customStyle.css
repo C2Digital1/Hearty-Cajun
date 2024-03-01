@@ -4548,7 +4548,7 @@ button.removeAllCart {
     text-decoration: underline;
 }
 
-button.quickMealAddBtn.button {
+button.customQuickAdd.button {
     height: 48px;
     width: 48px;
     border-radius: 16px;
@@ -4568,7 +4568,7 @@ button.quickMealAddBtn.button {
     z-index: 20;
 }
 
-button.quickMealAddBtn.button svg {
+button.customQuickAdd.button svg {
     width: 22px;
     height: 22px;
     display: flex;
@@ -4576,23 +4576,23 @@ button.quickMealAddBtn.button svg {
     justify-content: center;
 }
 
-button.quickMealAddBtn.button.adding.added span.tickIcon svg {
+button.customQuickAdd.button.adding.added span.tickIcon svg {
     width: 18px;
     height: 18px;
 }
 
-button.quickMealAddBtn.button:hover {
+button.customQuickAdd.button:hover {
     background: #463F3A;
     color: #fff;
 }
 
-button.quickMealAddBtn.button span.bagIcon {
+button.customQuickAdd.button span.bagIcon {
     transition: all linear .3s;
     position: relative;
     transform: translateY(0%);
 }
 
-button.quickMealAddBtn.button span.tickIcon {
+button.customQuickAdd.button span.tickIcon {
     transition: transform linear .3s;
     position: absolute;
     top: 50%;
@@ -4601,7 +4601,7 @@ button.quickMealAddBtn.button span.tickIcon {
     opacity: 0;
 }
 
-button.quickMealAddBtn.button.adding {
+button.customQuickAdd.button.adding {
     pointer-events: none !important;
     opacity: .8;
     background: #463F3A;
@@ -4609,11 +4609,11 @@ button.quickMealAddBtn.button.adding {
 }
 
 
-button.quickMealAddBtn.button.adding.added span.bagIcon {
+button.customQuickAdd.button.adding.added span.bagIcon {
     transform: translateY(200%);
 }
 
-button.quickMealAddBtn.button.adding.added span.tickIcon {
+button.customQuickAdd.button.adding.added span.tickIcon {
     opacity: 1;
     transform: translate(-50%, -50%);
 }

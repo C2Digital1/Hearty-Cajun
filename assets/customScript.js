@@ -426,7 +426,7 @@ $(document).ready(function () {
         var cartItemName = $(this).attr("data-productName");
         var cartItemImg = $(this).attr("data-productImg");
         var cartItemQty = 1;
-        var existingCartItem = $(".cartItemsList").find(`#${cartItemId}`);
+        var existingCartItem = $(".mainCartItemsList").find(`#${cartItemId}`);
 
         if (checkLimitOfItems("normal")) {
             $(this).addClass("adding");
@@ -453,25 +453,40 @@ $(document).ready(function () {
         }
     });
 
+
+
+    // adds on buttons code start 
+
+    // adds on buttons code end 
+
+
     $(document).on('click', 'button.removeAllCart', function () {
-        $(".cartItemsList").empty();
+        $(".mainCartItemsList").empty();
+        $(".addOnsList").empty();
         localStorage.removeItem('cartData');
+        localStorage.removeItem('cartAddOns');
         $(".totalCartItems").text("0");
         $(".cartSubtotal, .orderTotalPrice").text("$0.00");
+        $(".addOnHeader").hide();
+        var boxCollectionUrl = getBoxCollectionUrl();
+        var currentUrl = window.location.href;
+        if (currentUrl.includes(boxCollectionUrl)) {
+            return true;
+        } else {
+            window.location.href = boxCollectionUrl;
+        }
     });
 
     $(document).on('click', 'button.addonStep', function () {
-       if(checkLimitOfItems("moveToAddOn")){
-
-       }
-       else{
-        window.location.href = "/collections/add-ons";
-       }
+        $(".addOnHeader").hide();
+        if (checkLimitOfItems("moveToAddOn")) {
+            return true;
+        }
+        else {
+            window.location.href = getAddOnCollectionUrl();
+        }
     });
 
-
-    
-    
 
     function getPricePerMeal() {
         var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
@@ -497,11 +512,36 @@ $(document).ready(function () {
         return availabelSelection;
     }
 
+    function getAddOnCollectionUrl() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        var addOnCollectionUrl = "";
+        if (storedBoxProdInfo) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            boxProdInfoArray.forEach(function (item, index) {
+                addOnCollectionUrl = item.mealBoxAddOnsCollection;
+            });
+        }
+        return addOnCollectionUrl;
+    }
+    function getBoxCollectionUrl() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        var mealBoxCollectionUrl = "";
+        if (storedBoxProdInfo) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            boxProdInfoArray.forEach(function (item, index) {
+                mealBoxCollectionUrl = item.mealBoxCollection;
+            });
+        }
+        return mealBoxCollectionUrl;
+    }
+
+
     function incrementCartItem(existingCartItem) {
         var currentQty = parseInt(existingCartItem.find("input.qtyField").val());
         existingCartItem.find("input.qtyField").val(currentQty + 1);
-        updateTotalCartItems();
+        updateTotalCartItems("normal");
     }
+
 
     function appendCartItem(cartItemId, cartItemImg, cartItemName, cartItemQty, pricePerMeal) {
         console.log(cartItemId);
@@ -517,22 +557,22 @@ $(document).ready(function () {
             .replace('%cartItemQtyData%', cartItemQty)
             .replace('%cartItemQty%', cartItemQty)
             .replace('%cartItemPrice%', pricePerMeal);
-        $(".cartItemsList").append(itemHtml);
-        updateTotalCartItems();
+        $(".mainCartItemsList").append(itemHtml);
+        updateTotalCartItems("normal");
     }
 
     function attachedQtyBtnsEventListeners() {
-        $(".qtyPlus").off("click").on("click", function () {
+        $(".mainCartItemsList .qtyPlus").off("click").on("click", function () {
             if (checkLimitOfItems("normal")) {
                 var inputField = $(this).siblings("input.qtyField");
                 var currentQty = parseInt(inputField.val());
                 inputField.val(currentQty + 1);
-                updateTotalCartItems();
+                updateTotalCartItems("normal");
                 updateCartAndSave(); // Update cart data in local storage
             }
         });
 
-        $(".qtyMinus").off("click").on("click", function () {
+        $(".mainCartItemsList .qtyMinus").off("click").on("click", function () {
             var inputField = $(this).siblings("input.qtyField");
             var currentQty = parseInt(inputField.val());
             if (currentQty > 1) {
@@ -540,28 +580,40 @@ $(document).ready(function () {
             } else {
                 $(this).closest(".customCartItem").remove();
             }
-            updateTotalCartItems();
+            updateTotalCartItems("normal");
             updateCartAndSave();
         });
     }
 
-    function updateTotalCartItems() {
+    function updateTotalCartItems(prodType) {
         var totalItems = 0;
-        $(".cartItemsList .customCartItem").each(function () {
+        $(".mainCartItemsList .customCartItem").each(function () {
             var quantity = parseInt($(this).find("input.qtyField").val());
             totalItems += quantity;
         });
-        $(".totalCartItems").text(totalItems);
+        if (prodType == "isAddOn") {
+            var totalAddOnItems = 0;
+            $(".addOnsList .customCartItem").each(function () {
+                var addOnQuantity = parseInt($(this).find("input.qtyField").val());
+                totalAddOnItems += addOnQuantity;
+            });
+            $(".totalAddOnItems").text(totalAddOnItems);
+            $(".addOnHeader").show();
+        }
+        else {
+            $(".totalCartItems").text(totalItems);
+        }
         updatCartFooterTotal();
     }
 
     function updatCartFooterTotal() {
         var totalPrice = 0;
-        $(".cartItemsList .customCartItem").each(function () {
+        $(".customCartContainer .customCartItem").each(function () {
             var quantity = parseInt($(this).find("input.qtyField").val());
             var price = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
             totalPrice += quantity * price; // Multiply price by quantity
         });
+
         // Update the subt total price in the footer
         $(".cartSubtotal").text("$" + totalPrice.toFixed(2));
         // update cart Ordar total prcie in footer 
@@ -575,21 +627,22 @@ $(document).ready(function () {
         $(".orderTotalPrice").text("$" + finalOrdatTotal.toFixed(2));
 
     }
+
     function checkLimitOfItems(warningType) {
         var limitOfSelection = getTotalItemLimits();
         var maxLimitForCartItems = parseInt(limitOfSelection);
         var totalCartItemsAdded = parseInt($(".totalCartItems").text());
         if (maxLimitForCartItems > totalCartItemsAdded) {
-            if(warningType == "moveToAddOn"){    
-                alert(`Please Add more ${maxLimitForCartItems-totalCartItemsAdded} items to continue`);         
+            if (warningType == "moveToAddOn") {
+                alert(`Please add ${maxLimitForCartItems - totalCartItemsAdded} more meal items to continue.`);
             }
-            return true;           
+            return true;
         }
-        else {  
-            if(warningType != "moveToAddOn"){    
-                alert(`You can't add more thenn ${maxLimitForCartItems} items in this box`);         
-            }         
-            return false;            
+        else {
+            if (warningType != "moveToAddOn") {
+                alert(`"You can't add more than ${maxLimitForCartItems} items to this box.`);
+            }
+            return false;
         }
 
     }
@@ -597,7 +650,7 @@ $(document).ready(function () {
     // save cart in local storage and load cart data from local storage code start
     function updateCartAndSave() {
         var cartData = [];
-        $(".cartItemsList .customCartItem").each(function () {
+        $(".mainCartItemsList .customCartItem").each(function () {
             var cartItemId = $(this).attr("data-cartitemid");
             var cartItemImg = $(this).find("img").attr("src");
             var cartItemName = $(this).find(".itemName").text();
@@ -615,7 +668,6 @@ $(document).ready(function () {
         // Save the cart data to local storage
         localStorage.setItem('cartData', JSON.stringify(cartData));
     }
-
     function loadCartData() {
         var cartData = localStorage.getItem('cartData');
         if (cartData) {
@@ -623,15 +675,127 @@ $(document).ready(function () {
             cartData.forEach(function (item) {
                 appendCartItem(item.cartItemId, item.cartItemImg, item.cartItemName, item.cartItemQty, item.cartItemPrice);
             });
-            updateTotalCartItems();
+            updateTotalCartItems("normal");
             attachedQtyBtnsEventListeners();
         }
     }
 
     if ($("#cartItemTemplate").length > 0) {
         loadCartData();
+        loadAddOnsCartData();
     };
     // save cart in local storage and load cart data from local storage code end
+
+
+    //  ========  ADD ONS ADD TO CART CODE START ======== 
+    $(document).on('click', 'button.quickAddOnsBtn', function () {
+        var cartItemId = $(this).attr("data-cartItemId");
+        var cartItemName = $(this).attr("data-productName");
+        var cartItemImg = $(this).attr("data-productImg");
+        var addOnPrice = $(this).attr("data-AddOnPrice");
+        var cartItemQty = 1;
+        var existingAddOnCartItem = $(".addOnsList").find(`#${cartItemId}`);
+
+        $(this).addClass("adding");
+        setTimeout(function () {
+            $(this).addClass("added");
+            if (existingAddOnCartItem.length > 0) {
+                incrementAddOnCartItem(existingAddOnCartItem);
+            } else {
+                appendCartAddOnItem(cartItemId, cartItemImg, cartItemName, cartItemQty, addOnPrice);
+            }
+
+
+            attachedAddOnQtyBtnsEventListeners();
+            updateCartAddonsAndSave();
+
+            // remove classes from Add To Cart Button
+            setTimeout(function () {
+                $(this).removeClass("adding added");
+            }.bind(this), 1500);
+
+        }.bind(this), 900);
+    });
+
+    function incrementAddOnCartItem(existingAddOnCartItem) {
+        var currentQty = parseInt(existingAddOnCartItem.find("input.qtyField").val());
+        existingAddOnCartItem.find("input.qtyField").val(currentQty + 1);
+        updateTotalCartItems("isAddOn");
+    }
+
+    function appendCartAddOnItem(cartItemId, cartItemImg, cartItemName, cartItemQty, addOnPrice) {
+        var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
+        itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
+            .replace('%cartItemImg%', cartItemImg)
+            .replace('%cartItemName%', cartItemName)
+            .replace('%cartItemQtyData%', cartItemQty)
+            .replace('%cartItemQty%', cartItemQty)
+            .replace('%cartItemPrice%', addOnPrice);
+        $(".addOnsList").append(itemHtml);
+        updateTotalCartItems("isAddOn");
+    }
+
+    function attachedAddOnQtyBtnsEventListeners() {
+        $(".addOnsList .qtyPlus").off("click").on("click", function () {
+            var inputField = $(this).siblings("input.qtyField");
+            var currentQty = parseInt(inputField.val());
+            inputField.val(currentQty + 1);
+            updateTotalCartItems("isAddOn");
+            updateCartAddonsAndSave(); // Update cart data in local storage
+        });
+
+        $(".addOnsList .qtyMinus").off("click").on("click", function () {
+            var inputField = $(this).siblings("input.qtyField");
+            var currentQty = parseInt(inputField.val());
+            if (currentQty > 1) {
+                inputField.val(currentQty - 1);
+            } else {
+                $(this).closest(".customCartItem").remove();
+            }
+            updateTotalCartItems("isAddOn");
+            updateCartAddonsAndSave();
+        });
+    }
+
+    function updateCartAddonsAndSave() {
+        var cartAddOns = [];
+        $(".addOnsList .customCartItem").each(function () {
+            var cartItemId = $(this).attr("data-cartitemid");
+            var cartItemImg = $(this).find("img").attr("src");
+            var cartItemName = $(this).find(".itemName").text();
+            var cartItemQty = parseInt($(this).find("input.qtyField").val());
+            var cartItemPrice = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
+            cartAddOns.push({
+                cartItemId: cartItemId,
+                cartItemImg: cartItemImg,
+                cartItemName: cartItemName,
+                cartItemQty: cartItemQty,
+                cartItemPrice: cartItemPrice
+            });
+        });
+
+        // Save the cart data to local storage
+        localStorage.setItem('cartAddOns', JSON.stringify(cartAddOns));
+    }
+
+    function loadAddOnsCartData() {
+        var cartAddOns = localStorage.getItem('cartAddOns');
+        if (cartAddOns) {
+            cartAddOns = JSON.parse(cartAddOns);
+            cartAddOns.forEach(function (item) {
+                appendCartAddOnItem(item.cartItemId, item.cartItemImg, item.cartItemName, item.cartItemQty, item.cartItemPrice);
+            });
+            updateTotalCartItems("isAddOn");
+            attachedAddOnQtyBtnsEventListeners();
+        }
+    }
+
+
+
+    //  ========  ADD ONS ADD TO CART CODE END ======== 
+
+
+
 
 
     /* =========== MEAL BOX AND CART  CODE END =========== */

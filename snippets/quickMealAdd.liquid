@@ -1,13 +1,33 @@
-<button
-  class="quickMealAddBtn button"
-  data-cartItemId="cartItem-{{ product.id }}"
-  data-productName="{{ product.title }}"
-  data-productImg="{{ product.featured_image | img_url:'master' }}"
->
-  <span class="bagIcon">
-    {% render 'addToCartIcon' %}
-  </span>
-  <span class="tickIcon">
-    {% render 'tickIcon' %}
-  </span>
-</button>
+{% if addOnIsActive %}
+  <button
+    class="quickAddOnsBtn customQuickAdd button"
+    data-cartItemId="cartItem-{{ product.id }}"
+    data-addOnVariantId= "{{ product.selected_or_first_available_variant.id }}"
+    data-addOnProdId= "{{ product.id }}"
+    data-productName="{{ product.title }}"
+    data-productImg="{{ product.featured_image | img_url:'master' }}"
+    data-AddOnPrice = {{ product.selected_or_first_available_variant.price | money_without_currency }}
+  >
+    <span class="bagIcon">
+      {% render 'addToCartIcon' %}
+    </span>
+    <span class="tickIcon">
+      {% render 'tickIcon' %}
+    </span>
+  </button>
+  {% else %}
+  <button
+    class="quickMealAddBtn customQuickAdd button"
+    data-cartItemId="cartItem-{{ product.id }}"
+    data-productName="{{ product.title }}"
+    data-productImg="{{ product.featured_image | img_url:'master' }}"
+  >
+    <span class="bagIcon">
+      {% render 'addToCartIcon' %}
+    </span>
+    <span class="tickIcon">
+      {% render 'tickIcon' %}
+    </span>
+  </button>
+{% endif %}
+
