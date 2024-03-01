@@ -348,7 +348,7 @@
       </div>
     </div>
     <div class="collectionCart">
-        {% render 'collectionBoxCart' %}
+      {% render 'collectionBoxCart' %}
     </div>
   </div>
 </section>
@@ -358,16 +358,6 @@
 {% if showSquareImages %}
   <script>
     $(document).ready(function () {
-      function setHeightBasedOnWidth() {
-        $('.showSquareImages .product__imageContainer .image-element__wrap img').each(function () {
-          var width = $(this).width();
-          $(this).css('height', width);
-        });
-      }
-      setHeightBasedOnWidth();
-      $(window).resize(function () {
-        setHeightBasedOnWidth();
-      });
       if ($('.flowBtn2').length > 0) {
         $('.flowBtn2').addClass('active');
         $('.flowBtn2').click(function () {
@@ -377,6 +367,14 @@
       }
       if ($('.flowBtn3').length > 0) {
         $('.flowBtn3').addClass('active');
+      }
+
+      if ($('.showSquareImages').length > 0) {
+        var firstImageWidth = $('.showSquareImages .product__imageContainer .image-element__wrap img').first().width();
+        var cssRule = '.showSquareImages .product__imageContainer .image-element__wrap img { height: ' + firstImageWidth + 'px; }';
+        if ($('#extraStyle').length < 1) {
+          $('body').append('<style id="extraStyle">' + cssRule + '</style>');
+        }
       }
     });
   </script>
