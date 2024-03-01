@@ -4565,6 +4565,7 @@ button.quickMealAddBtn.button {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: 20;
 }
 
 button.quickMealAddBtn.button svg {
