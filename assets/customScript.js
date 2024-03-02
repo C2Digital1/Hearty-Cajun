@@ -841,11 +841,11 @@ $(document).ready(function () {
     });
     $(document).on('click', 'button.customQuickAdd.button.disabled', function () {
         $(this).addClass("animated bounceIn");
-        $(".extrProdInfoContainer").addClass("animated bounceIn");
+        $(".extrProdInfoContainer").addClass("showError animated bounceIn");
         setTimeout(function () {
             $(this).removeClass("animated bounceIn");
-            $(".extrProdInfoContainer").removeClass("animated bounceIn");
-        }.bind(this), 500);
+            $(".extrProdInfoContainer").removeClass("showError animated bounceIn");
+        }.bind(this), 900);
     });
 
     $(document).on('click', 'label.hiddenAddOnLabel', function () {
