@@ -899,7 +899,8 @@ $(document).ready(function () {
             });
 
             var finalBoxItemsProd = formattedCartBoxItems.map(function (item) {
-                if (item.cartItemsVariants) {
+                var cartItemsVariantsTrimmed = item.cartItemsVariants.trim(); // Remove leading and trailing whitespace
+                if (cartItemsVariantsTrimmed) {
                     return `[${item.cartItemName} (${item.cartItemsVariants}) x ${item.cartItemQty}]`;
                 } else {
                     return `[${item.cartItemName} x ${item.cartItemQty}]`;
