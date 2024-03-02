@@ -4916,8 +4916,14 @@ p.prodTit {
 button.button.hiddenBtn {
     display: none !important;
 }
+
 .cartItemsList.addOnsList p.cartItemsInfo {
     display: none !important;
+}
+
+.extrProdInfoContainer.showError {
+    padding: 5px;
+    background: rgba(241, 93, 94, .4);
 }
 
 /* === Purchase Step 3  and 4 End */
