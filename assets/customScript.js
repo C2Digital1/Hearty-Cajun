@@ -429,13 +429,14 @@ $(document).ready(function () {
         var cartItemImg = $(this).attr("data-productImg");
         var cartItemsVariants = $(this).attr("data-variantOptions");
         var cartItemQty = 1;
-        var repeateIt = false;
+        var repeateIt = true;
         var existingCartItem = $(".mainCartItemsList").find(`#${cartItemId}`);
-        if (cartItemsVariants != undefined || cartItemsVariants != "") {
-            repeateIt = true;
+        if (cartItemsVariants == undefined || cartItemsVariants == "") {
+            repeateIt = false;
+            var cartItemsVariants = " ";
         }
         else {
-            var cartItemsVariants = " ";
+            repeateIt = true;
         }
 
         if (checkLimitOfItems("normal")) {
@@ -892,13 +893,20 @@ $(document).ready(function () {
             var formattedCartBoxItems = cartItemsArray.map(function (item) {
                 return {
                     cartItemName: item.cartItemName,
+                    cartItemsVariants: item.cartItemsVariants,
                     cartItemQty: item.cartItemQty,
                 };
             });
 
             var finalBoxItemsProd = formattedCartBoxItems.map(function (item) {
-                return `(${item.cartItemName}: x ${item.cartItemQty})\n`; // Use '\n' for line breaks
-            }).join('');
+                if (item.cartItemsVariants) {
+                    return `[${item.cartItemName} (${item.cartItemsVariants}) x ${item.cartItemQty}]`;
+                } else {
+                    return `[${item.cartItemName} x ${item.cartItemQty}]`;
+                }
+            }).filter(function (item) {
+                return item.trim() !== ""; // Filter out empty items
+            }).join('\n');
 
             // pushing mainBox Prod Info for Add To Cart
             mainBoxProdInfoArray.forEach(function (item, index) {
