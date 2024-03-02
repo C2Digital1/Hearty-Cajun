@@ -7,7 +7,7 @@
         <p class="prodTit">{{ extraProd.title }}</p>
         <div class="extraProdVariantContainer">
           {% for variant in extraProd.variants %}
-            <label for="{{ variant.id }}-variantBtn-{{ forloop.index }}" class="checkboxItem">
+            <label data-VarianHiddenBtn= "{% if variant.price > 0 %}#hiddenAddOn-{{  variant.id }} {% else %}.dummyItemsss{% endif %}" for="{{ variant.id }}-variantBtn-{{ forloop.index }}" class="checkboxItem hiddenAddOnLabel">
               <input
                 id="{{ variant.id }}-variantBtn-{{ forloop.index }}"
                 type="radio"
@@ -18,6 +18,20 @@
               <span class="checkmarkIcon"></span>
               {{ variant.title }} ({{ variant.price | money }})
             </label>
+            {% if variant.price > 0 %}
+              <button
+                id="hiddenAddOn-{{ variant.id }}"
+                class="quickAddOnsBtn  button hiddenBtn"
+                data-cartItemId="cartItem-{{ extraProd.id }}"
+                data-addOnVariantId="{{ variant.id }}"
+                data-addOnProdId="{{ extraProd.id }}"
+                data-productName="{{ extraProd.title }}"
+                data-productImg="{{ extraProd.featured_image | img_url:'master' }}"
+                data-AddOnPrice="{{ variant.price | money_without_currency }}"
+              >
+               HIDDEN ADD
+              </button>
+            {% endif %}
           {% endfor %}
         </div>
       </div>

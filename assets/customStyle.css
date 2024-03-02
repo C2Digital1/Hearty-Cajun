@@ -4834,14 +4834,14 @@ button.finalAddToCartBtn.button {
     position: absolute;
     left: 0;
     z-index: 50;
-    max-height: calc(100% + 100px);
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    bottom: 0;
-    height: 109%;
+    top: -60px;
+    height: max-content;
+    min-height: calc(100% + 60px);
     padding: 16px;
     transform: translateY(-100%);
     visibility: hidden;
@@ -4911,6 +4911,13 @@ p.prodTit {
     letter-spacing: 0;
     line-height: 22px;
     text-align: center;
+}
+
+button.button.hiddenBtn {
+    display: none !important;
+}
+.cartItemsList.addOnsList p.cartItemsInfo {
+    display: none !important;
 }
 
 /* === Purchase Step 3  and 4 End */

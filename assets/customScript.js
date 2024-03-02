@@ -454,6 +454,10 @@ $(document).ready(function () {
                 attachedQtyBtnsEventListeners();
                 updateCartAndSave();
 
+                if ($(".hiddenBtn.ableToAddHidden").length > 0) {
+                    $(".hiddenBtn.ableToAddHidden").click();
+                }
+
                 // remove classes from Add To Cart Button
                 setTimeout(function () {
                     $(this).removeClass("adding added");
@@ -809,7 +813,7 @@ $(document).ready(function () {
     $(document).on('click', 'button.closeOptionOverlay', function () {
         $(".extraOptionOverlay").removeClass("active");
     });
-    $(".extraProdVariantContainer .optionChooser").change(function () {
+    $(document).on('change', '.extraProdVariantContainer .optionChooser', function () {
 
         var allGroupsChecked = true;
 
@@ -832,6 +836,7 @@ $(document).ready(function () {
             allOptions.push($(this).val());
         });
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
+
     });
     $(document).on('click', 'button.customQuickAdd.button.disabled', function () {
         $(this).addClass("animated bounceIn");
@@ -840,6 +845,18 @@ $(document).ready(function () {
             $(this).removeClass("animated bounceIn");
             $(".extrProdInfoContainer").removeClass("animated bounceIn");
         }.bind(this), 500);
+    });
+
+    $(document).on('click', 'label.hiddenAddOnLabel', function () {
+        $(this).parent(".extraProdVariantContainer").children(".hiddenBtn").removeClass("ableToAddHidden");
+        var radioIsChecked = false;
+        if ($(this).children("input").is(':checked')) {
+            radioIsChecked = true;
+        }
+        var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
+        if (hiddenAddOnBtn.length > 0 && radioIsChecked) {
+            $(hiddenAddOnBtn).addClass("ableToAddHidden");
+        }
     });
 
     /* =========== MEAL BOX AND CART  CODE END =========== */
