@@ -165,8 +165,8 @@
           {% render 'image-element', image: image, alt: image.alt %}
         </div>
       {% endif %}
-      <div class="one-half medium-down--one-whole column customFormFieldsContainer">
-        <div id="customer" class="account__form register_form one-whole column">
+      <div class="one-half medium-down--one-whole column">
+        <div id="customer" class="account__form register_form one-whole column customFormFieldsContainer">
           {% form 'create_customer' %}
             {{ form.errors | default_errors }}
 
