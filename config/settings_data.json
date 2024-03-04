@@ -19,6 +19,7 @@
     "mobile_menu_background_color": "#fff",
     "mobile_menu_link_color": "#463f3a",
     "mobile_menu_link_hover_color": "#f15d5e",
+    "button_default_url": "shopify:\/\/pages\/plans",
     "button_primary_padding": "large",
     "button_primary_bg_color": "#ffffff",
     "button_primary_border_color": "#463f3a",
@@ -1189,6 +1190,14 @@
     "content_for_index": [
 
     ],
+    "blocks": {
+      "10436698916776057164": {
+        "type": "shopify:\/\/apps\/appstle-subscriptions-app\/blocks\/appstle-subscription-helper\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    },
     "color_schemes": {
       "default": {
         "settings": {
