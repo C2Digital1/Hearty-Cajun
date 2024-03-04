@@ -3446,9 +3446,9 @@ form#headerZipCode input[type="text"]::placeholder {
     opacity: 0.4;
 }
 .productMainSection .product-gallery__main img {
-    min-height: 600px !important;
-    width: 100% !important;
-    object-fit: cover !important;
+    min-height: 600px;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* =========== PRODUCT PAGE CSS CODE END =========== */
