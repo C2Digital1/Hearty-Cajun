@@ -103,6 +103,13 @@
             "answer": "<p>Yes! You choose what you want to eat from our menu with the option to change them every week.<\/p>"
           }
         },
+        "faq_AxmNYb": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer family portions?",
+            "answer": "<p>Yes, absolutely! All of our Signature pastas come with a Family Tray option. At the meal selection menu, simply choose the \"Family Tray\" option and we will deliver in a single tray for your family or team to enjoy.<\/p>"
+          }
+        },
         "faq_fRPT3k": {
           "type": "faq",
           "settings": {
@@ -234,6 +241,7 @@
         "heading_JtR9my",
         "faq_QbBwJm",
         "faq_qV763K",
+        "faq_AxmNYb",
         "faq_fRPT3k",
         "faq_6HKnye",
         "faq_wCixrb",
