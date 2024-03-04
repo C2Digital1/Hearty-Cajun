@@ -1,6 +1,3 @@
-{% if product.metafields.custom.popup_content != blank %}
-    {% render 'prodIngredientsPopup', product: product %}
-{% endif %}
 {% if show_payment_button == false or product.selling_plan_groups.size > 0 %}
   {% assign show_payment_button = false %}
 {% else %}
@@ -266,23 +263,7 @@
             {% endif %}
           </p>
         {% endif %}
-  
-        {% if product.metafields.custom.popup_content != blank %}
-          <div class="purchase-details {% if settings.display_product_quantity %}has-quantity-box{% endif %}">
-            <div class="purchase-details__buttons purchase-details__spb--{{ show_payment_button }}">
-              <button
-                type="button"
-                name="button"
-                class="button quickAddBtn prodIngPopupOpener action_button button--add-to-cart"
-                data-id="#{{ product.id }}-popup"
-              >
-                <span class="text btnTxtWithPrice">
-                  {% render 'addToCartIcon' %}
-                </span>
-              </button>
-            </div>
-          </div>          
-          {% else %}
+
           <div class="purchase-details {% if settings.display_product_quantity %}has-quantity-box{% endif %}">
             {% comment %}
               {% if settings.display_product_quantity %}
@@ -327,7 +308,6 @@
             </div>
             <div class="cart-warning"></div>
           </div>
-        {% endif %}
        
       {% endif %}
     {% endform %}

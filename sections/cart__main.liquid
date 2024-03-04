@@ -222,13 +222,14 @@ p.cart__subtotal__price{
                 </div>
               {% endif %}
 
-              <a href="{% if hideLink %}javascript:void(0){% else %}{{ item.url }}{% endif %}" title="{{ item.title | escape }}" class="cart__image">
+{% comment %} {{ item.url }} {% endcomment %}
+              <a href="{% if hideLink %}javascript:void(0){% else %}{% endif %}" title="{{ item.title | escape }}" class="cart__image">
                 {% render 'image-element', image: item.image, alt: item.title, object_fit: true, max_height: 150 %}
               </a>
               <div class="cart__info">
                 <div class="cart__description">
                   <div class="cart__text">
-                    <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{{ item.url }}{% endif %}">{{ item.product.title }}</a>
+                    <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{% endif %}">{{ item.product.title }}</a>
 
                     {% unless item.variant.title contains 'Title' %}
                       <p class="item__properties is-text-small">

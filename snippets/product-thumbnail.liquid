@@ -70,7 +70,7 @@
       {% endif %}
       <div class="product-image__wrapper">
         <div class="image__container product__imageContainer">
-          <a href="{% if showMealQuickAdd %}javascript:void(0){% else %}{{ product.url | within: collection }}{% endif %} ">     
+          <a href="{% if showMealQuickAdd or product.metafields.custom.popup_content %}javascript:void(0){% else %}{{ product.url | within: collection }}{% endif %}">     
             {% if settings.stickers_enabled %}
               {%
                 render 'product-thumbnail__sticker',
@@ -209,6 +209,14 @@
               assign selected_variant = product.selected_or_first_available_variant
             endif
           %}
+          {% if product.metafields.custom.popup_content != blank %}
+            {% render 'prodIngredientsPopup', product: product %}
+            <span class="prodIngPopupOpener" data-id="#{{ product.id }}-popup">
+            </span>
+         {% endif %}
+           
+        {% if product.metafields.custom.popup_content != blank %}
+        {% endif %}
           {%- render 'quickAddToCartForm', product: product, selected_variant: selected_variant -%}
         {% endif %}
       </div>
@@ -220,7 +228,9 @@
         render 'product-thumbnail__product-info',
         product: product,
         collection_handles: collection_handles,
-        hidePrice: hidePrice
+        hidePrice: hidePrice,
+        showMealQuickAdd: showMealQuickAdd,
+        noUrl: product.metafields.custom.popup_content        
       %}
     </div>
   </div>
