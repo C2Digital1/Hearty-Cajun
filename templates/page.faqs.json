@@ -52,6 +52,8 @@
         "text_width": 40,
         "button_1": "",
         "button_1_link": "",
+        "useCopyBtn": false,
+        "copyText": "",
         "button_1_style": "button--secondary",
         "button_2": "",
         "button_2_link": "",
@@ -91,7 +93,7 @@
           "type": "faq",
           "settings": {
             "question": "How do I know if your menu delivers energy and strength?",
-            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+            "answer": "<p>We invite you to unlock the Power Within and embark on a transformative journey with our amazing nutrient-dense meals to discover firsthand the boundless energy and strength they provide. The secret lies in the experience:<br\/><br\/><strong>1. Monitor and Unleash:<br\/><\/strong>Feel the surge of vitality by tracking your energy levels before and after indulging in our carefully crafted meals. Witness the immediate impact as your body absorbs the rich blend of vitamins, minerals, fiber, and protein, leaving you revitalized and ready to conquer the day.<br\/><br\/><strong>2. Fuel Your Fitness:<br\/><\/strong>For fitness enthusiasts, maximize your potential by enjoying our meals 3-4 hours before hitting the gym. Observe the remarkable difference in your energy and performance levels, as our nutrient-packed offerings become your ultimate ally in achieving fitness goals. Elevate your workout experience and surpass your limits with every delicious bite.<br\/><br\/>HeartyCajun is not just a meal—it's a powerhouse of nourishment, designed to unleash the energy and strength you need to thrive. Embrace the difference, savor the journey, and let the vitality within you flourish. Your path to lasting energy and strength begins with every bite of HeartyCajun!<\/p>"
           }
         },
         "faq_qV763K": {
@@ -292,6 +294,7 @@
         "button_style_view": "button--primary",
         "hidePrice": false,
         "collection_style": "grid",
+        "enableCenterMode": false,
         "dotsBg": "#463f3a",
         "arrowIconBg": "#ffffff",
         "arrowIconColor": "#28303f",
