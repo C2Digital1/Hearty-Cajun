@@ -3469,6 +3469,14 @@ form#headerZipCode input[type="text"]::placeholder {
     margin: 10px auto 0 auto;
 }
 
+p.recover-note.is-text-small {
+    text-align: center;
+}
+
+a.button.button--link-style.cancel-recover-password.is-justify-center {
+    margin: 10px auto;
+}
+
 .slideshow-classic__banner .image-element__wrap img {
     min-height: 398px;
     object-fit: cover;
