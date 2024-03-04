@@ -286,62 +286,52 @@
 
           {%- elsif block.type == 'form' -%}
             {% comment %} Purchase form {% endcomment %}
-            {% if product.metafields.custom.popup_content.value != blank %}
-              {%- liquid
-                assign prodMetObj = product.metafields.custom.popup_content.value
-                assign btnTxt = prodMetObj.button_text
-                assign btnUrl = prodMetObj.button_url
-              -%}
-              <div class="product-form-container has-padding-top">
-                <div class="purchase-details">
-                  <div class="purchase-details__buttons purchase-details__spb--false">
-                    <a href="{{ btnUrl }}" class="button action_button button--add-to-cart">
-                      <span class="text animated">
-                        {% if btnTxt != blank %}
-                          {{ btnTxt }}
-                        {% else %}
-                          Get Started
-                        {% endif %}
-                      </span>
-                    </a>
-                  </div>
+            <div class="product-form-container has-padding-top">
+              <div class="purchase-details">
+                <div class="purchase-details__buttons purchase-details__spb--false">
+                  <a href="/pages/plans" class="button action_button button--add-to-cart">
+                    <span class="text animated"> Get Started </span>
+                  </a>
                 </div>
               </div>
-            {% else %}
-              {% if section_onboarding %}
-                <div class="product-form-container has-padding-top">
-                  <div class="purchase-details">
-                    <div class="purchase-details__buttons purchase-details__spb--false">
-                      <button
-                        name="add"
-                        class="action_button button button--add-to-cart add_to_cart"
-                        data-label="{{ add_to_cart_label | json }}"
-                      >
-                        <span class="text">{{ 'products.product.add_to_cart' | t }}</span>
-                      </button>
+            </div>
+
+            {% comment %}
+              ORIGIONAL PRODUCT FORM
+                {% if section_onboarding %}
+                  <div class="product-form-container has-padding-top">
+                    <div class="purchase-details">
+                      <div class="purchase-details__buttons purchase-details__spb--false">
+                        <button
+                          name="add"
+                          class="action_button button button--add-to-cart add_to_cart"
+                          data-label="{{ add_to_cart_label | json }}"
+                        >
+                          <span class="text">{{ 'products.product.add_to_cart' | t }}</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              {% else %}
-                <div class="product-form-container has-padding-top">
-                  {% comment %} Notify form {% endcomment %}
-                  {% render 'product__notify-me-form', product: product %}
+                {% else %}
+                  <div class="product-form-container has-padding-top">
+                    {% comment %} Notify form {% endcomment %}
+                    {% render 'product__notify-me-form', product: product %}
 
-                  {% comment %} Product form {% endcomment %}
-                  {% unless collection_handles contains 'coming-soon' %}
-                    {% render 'product__form',
-                      context: 'product',
-                      product: product,
-                      sold_out_options: sold_out_options,
-                      selected_variant: selected_variant,
-                      show_payment_button: block.settings.show_payment_button,
-                      collection_handles: collection_handles,
-                      gift_card_recipient_feature_active: gift_card_recipient_feature_active
-                    %}
-                  {% endunless %}
-                </div>
+                    {% comment %} Product form {% endcomment %}
+                    {% unless collection_handles contains 'coming-soon' %}
+                      {% render 'product__form',
+                        context: 'product',
+                        product: product,
+                        sold_out_options: sold_out_options,
+                        selected_variant: selected_variant,
+                        show_payment_button: block.settings.show_payment_button,
+                        collection_handles: collection_handles,
+                        gift_card_recipient_feature_active: gift_card_recipient_feature_active
+                      %}
+                    {% endunless %}
+                  </div>
               {% endif %}
-            {% endif %}
+            {% endcomment %}
 
           {%- elsif block.type == 'product-links' -%}
             {% comment %} Collections, type, tags {% endcomment %}
@@ -404,7 +394,7 @@
         </div>
       {%- endfor -%}
       {% if product.metafields.custom.popup_content != blank %}
-       {% render 'prodPageTabs', product: product %}
+        {% render 'prodPageTabs', product: product %}
       {% endif %}
     </div>
   </div>
