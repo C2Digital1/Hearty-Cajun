@@ -402,7 +402,7 @@ button.flickity-button.flickity-prev-next-button[disabled] {
 }
 
 .featuredCollecionSec button.flickity-button.flickity-prev-next-button.next {
-    right: 28px;
+    right: 15px;
 }
 
 .featuredCollecionSec button.flickity-button.flickity-prev-next-button.previous {
@@ -673,6 +673,11 @@ h3.image-with-text__heading.is-h5 {
 
 .image-with-text__text.content strong {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 3px;
 }
 
 .image-with-text__text.content strong span.checkIcon {
