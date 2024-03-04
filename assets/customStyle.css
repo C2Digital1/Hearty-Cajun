@@ -678,6 +678,7 @@ h3.image-with-text__heading.is-h5 {
     justify-content: flex-start;
     width: 100%;
     margin-bottom: 3px;
+    margin-top: 14px;
 }
 
 .image-with-text__text.content strong span.checkIcon {
