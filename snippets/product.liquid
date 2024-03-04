@@ -296,10 +296,10 @@
               </div>
             </div>
 
-            {% comment %}
-              ORIGIONAL PRODUCT FORM
+        
+              {% comment %} ORIGIONAL PRODUCT FORM {% endcomment %}
                 {% if section_onboarding %}
-                  <div class="product-form-container has-padding-top">
+                  <div class="product-form-container has-padding-top" style="display:none;">
                     <div class="purchase-details">
                       <div class="purchase-details__buttons purchase-details__spb--false">
                         <button
@@ -331,7 +331,6 @@
                     {% endunless %}
                   </div>
               {% endif %}
-            {% endcomment %}
 
           {%- elsif block.type == 'product-links' -%}
             {% comment %} Collections, type, tags {% endcomment %}
