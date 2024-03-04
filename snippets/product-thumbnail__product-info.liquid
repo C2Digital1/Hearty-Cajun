@@ -7,7 +7,7 @@
     <span class="product-thumbnail__title {{ settings.thumbnail_title_preset }}">{{ product.title }}</span>
   {% else %}
     <a     
-      href="{% if showMealQuickAdd or  noUrl %}javascript:void(0){% else %}{{ product.url | within: collection }}{% endif %}"
+      href="{% if showMealQuickAdd or  noUrl %}javascript:void(0){% else %}javascript:void(0){% endif %}"
       class="{{ settings.thumbnail_title_preset }} product-thumbnail__title"
     >
       {{- product.title -}}

@@ -66,8 +66,8 @@ $(document).ready(function () {
         $(".mainCollectionSec").addClass("showFilters");
         $("body, html").addClass("hideScroll");
     });
-
-    $(".prodIngPopupOpener").click(function () {
+    
+    $(document).on('click', '.prodIngPopupOpener', function () {
         var popupId = $(this).attr("data-id");
         if ($(".popupBodyContainer").length > 0) {
             $(".popupBodyContainer").html("");

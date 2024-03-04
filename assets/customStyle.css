@@ -5002,6 +5002,10 @@ button.cartCloseBtn,
     display: none;
 }
 
+.mealBoxCollectionContainer .filtersContainer {
+    margin-top: 0;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 .bottomSmallText.headingAndBtnSection .heading-section__subheading.subtitle {

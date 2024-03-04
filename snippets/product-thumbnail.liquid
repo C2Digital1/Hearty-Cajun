@@ -70,7 +70,7 @@
       {% endif %}
       <div class="product-image__wrapper">
         <div class="image__container product__imageContainer">
-          <a href="{% if showMealQuickAdd or product.metafields.custom.popup_content %}javascript:void(0){% else %}{{ product.url | within: collection }}{% endif %}">     
+          <a href="{% if showMealQuickAdd or product.metafields.custom.popup_content %}javascript:void(0){% else %}javascript:void(0){% endif %}">     
             {% if settings.stickers_enabled %}
               {%
                 render 'product-thumbnail__sticker',
