@@ -212,7 +212,7 @@
         "heading": "Discover the Joy of Gourmet Meals – Without the Hassle of Cooking",
         "subheading": "<p>Order Your First Week Of Ready-to-Eat Meals Today! <\/p>",
         "btnTxt": "Order Now",
-        "btnUrl": "#",
+        "btnUrl": "shopify:\/\/pages\/plans",
         "btnStyle": "button--primary",
         "preheading_preset": "is-h6",
         "heading_preset": "is-h3",
