@@ -2059,6 +2059,7 @@ span.featured-article__date {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 60%;
 }
 
 .articleContentSec .heading-wrapper--article.heading-wrapper.heading-wrapper--short.one-whole.column.is-flex.is-flex-column.is-align-left.text-align-left {
@@ -2078,6 +2079,14 @@ span.featured-article__date {
 .article-content .one-whole.column.content {
     width: 100%;
     margin: 0px auto !important;
+}
+
+.article-content .one-whole.column.content p:last-child {
+    margin-bottom: 0;
+}
+
+.article-content.has-padding-top.has-padding-bottom {
+    padding-bottom: 0 !important;
 }
 
 .article-content h5 {
