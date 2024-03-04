@@ -3499,6 +3499,7 @@ h3.search__results-count {
 
 .filtersContainer {
     width: 100%;
+    margin-top: -46px;
 }
 
 .product-block variant-selection.variant-selection {
@@ -5112,6 +5113,9 @@ button.cartCloseBtn,
 
     section.section.is-width-standard {
         padding: 0 16px !important;
+    }
+    .filtersContainer {
+        margin-top: 0px;
     }
 }
 
