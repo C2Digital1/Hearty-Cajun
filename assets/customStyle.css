@@ -5018,9 +5018,9 @@ button.cartCloseBtn,
     max-width: 338px !important;
     margin: 0px auto !important;
 }
+
 .account-section .select select,
-.account-section input.input
-.addresses-section .select select,
+.account-section input.input .addresses-section .select select,
 .addresses-section input.input {
     display: flex;
     align-items: center;
@@ -5056,6 +5056,14 @@ button.cartCloseBtn,
     align-items: center;
     justify-content: center;
     padding: 5px 16px;
+}
+
+.addresses-section h2#add_address_title {
+    font-size: 20px !important;
+    margin: 10px auto;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-align: center;
 }
 
 /* media queires for desktop start  */
@@ -6396,6 +6404,27 @@ button.cartCloseBtn,
     .productMainSection .product-gallery__main img {
         min-height: 0 !important;
         height: auto;
+    }
+
+    .addresses-section .container {
+        flex-direction: column;
+    }
+
+    .addresses-section aside.one-fourth.column.account-sidebar {
+        width: 100%;
+        margin: 0px auto;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .addresses-section main.three-fourths.column.account-main {
+        width: 100%;
+        max-width: 100%;
+        margin: 0px auto !important;
     }
 
 }
