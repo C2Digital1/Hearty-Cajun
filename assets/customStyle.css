@@ -1603,6 +1603,10 @@ span.deliveryTimeLabel {
     color: #463F3A;
 }
 
+span.deliveryTimeLabel.freeDelivery {
+    width: 130px;
+}
+
 span.deliveryTimeLabel svg {
     height: 24px;
     width: 24px;
@@ -6644,6 +6648,10 @@ button.cartCloseBtn,
         height: max-content;
         min-height: 23px;
         font-size: 12px !important;
+    }
+
+    .small-down--one-half.column.thumbnail.product__thumbnail span.deliveryTimeLabel.freeDelivery {
+        width: 110px;
     }
 
     .small-down--one-half.column.thumbnail.product__thumbnail .thumbnail-sticker {
