@@ -11,6 +11,13 @@
   assign image = section.settings.image
   assign image_position = section.settings.image_position
 -%}
+{% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
+  {% assign borderWidth = 0 %}
+{% else %}
+  {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
+  {% assign borderWidth = 1 %}
+{% endif %}
 {% comment %}Spacing{% endcomment %}
 {%- liquid
   assign padding_top = section.settings.padding_top
@@ -29,7 +36,10 @@
 {% comment %}Layout{% endcomment %}
 {%- liquid
   assign width = section.settings.width
-  assign section_bg = section.settings.section_bg
+  assign section_bg = section.settings.color_scheme.settings.scheme_background
+  if section.settings.color_scheme.settings.scheme_background_gradient != empty
+    assign section_bg = section.settings.color_scheme.settings.scheme_background_gradient
+  endif
   assign animation = section.settings.animation | default: 'none'
 -%}
 {% comment %}Advanced{% endcomment %}
@@ -39,7 +49,56 @@
 -%}
 
 {% comment %} Section specific CSS {% endcomment %}
-{% capture section_css %}{% endcapture %}
+
+{% capture section_css -%}
+.button--primary{
+  background: {{ primaryBtnBg }};
+  color: {{ section.settings.color_scheme.settings.scheme_button_label }};
+  border: {{borderWidth}}px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--primary:hover{
+   background: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    background-color: {{ section.settings.color_scheme.settings.scheme_button_hover }};
+    color: {{ section.settings.color_scheme.settings.scheme_button_label_hover }};
+    border: 1px solid {{ section.settings.color_scheme.settings.scheme_button_border }};
+}
+
+.button--secondary{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label }};
+  border: 1px solid {{ section.settings.color_scheme.settings.scheme_s_button_border }};
+}
+
+.button--secondary:hover{
+  background-color: {{ section.settings.color_scheme.settings.scheme_s_button_hover }};
+  color: {{ section.settings.color_scheme.settings.scheme_secondary_button_label_hover }};
+}
+
+.button--link-style{
+  color: {{ section.settings.color_scheme.settings.scheme_link }};
+}
+
+.button--link-style:hover{
+  color: {{ section.settings.color_scheme.settings.scheme_link_hover }};
+}
+  h1.title  &&
+ .secHeading &&
+.boxHeading{
+  color: {{ heading_color }};
+}
+.subtitle &&
+.boxSubTxt &&
+.boxSubTxt{
+  color: {{ subheading_color }};
+}
+.colbtmTxt{
+  color: {{ subheading_color }};
+}
+.prodBoxSelectorContainer{
+  color:  {{ subheading_color }};
+} 
+{%- endcapture -%}
 {% style %}
   #shopify-section-{{ id }} {
     padding-top: {{ padding_top }}px;
@@ -73,7 +132,7 @@
 {% comment %} HTML markup {% endcomment %}
 
 <section
-  class="section is-width-{{ width }} {{ css_class }}"
+  class="section accountLoginSignup is-width-{{ width }} {{ css_class }} scheme_color-{{section.settings.color_scheme}}"
   {% if animation != 'none' %}
     data-scroll-class="{{ animation }}"
   {% endif %}
@@ -99,85 +158,87 @@
     </div>
   {% endif %}
 
-  <div class="container {% if image == blank %} is-justify-center {% endif %} {% if image_position == 'right' %} is-flex-row-reverse {% endif %}">
-    {% if image %}
-      <div class="account__image one-half medium-down--one-whole column">
-        {% render 'image-element', image: image, alt: image.alt %}
-      </div>
-    {% endif %}
-    <div class="one-half medium-down--one-whole column">
-      <div id="customer" class="account__form register_form one-whole column">
-        {% form 'create_customer' %}
-          {{ form.errors | default_errors }}
+  <div class="boxShadowContainer">
+    <div class="container {% if image == blank %} is-justify-center {% endif %} {% if image_position == 'right' %} is-flex-row-reverse {% endif %}">
+      {% if image %}
+        <div class="account__image one-half medium-down--one-whole column">
+          {% render 'image-element', image: image, alt: image.alt %}
+        </div>
+      {% endif %}
+      <div class="one-half medium-down--one-whole column customFormFieldsContainer">
+        <div id="customer" class="account__form register_form one-whole column">
+          {% form 'create_customer' %}
+            {{ form.errors | default_errors }}
 
-          <div id="first_name" class="field">
-            <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
-            <div class="control">
+            <div id="first_name" class="field">
+              <label class="label" for="first_name">{{ 'customer.register.first_name' | t }}</label>
+              <div class="control">
+                <input
+                  type="text"
+                  value=""
+                  name="customer[first_name]"
+                  id="first_name"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.first_name' | t }}"
+                >
+              </div>
+            </div>
+
+            <div id="last_name" class="field">
+              <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
+              <div class="control">
+                <input
+                  type="text"
+                  value=""
+                  name="customer[last_name]"
+                  id="last_name"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.last_name' | t }}"
+                >
+              </div>
+            </div>
+
+            <div id="email" class="field">
+              <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
+              <div class="control">
+                <input
+                  type="email"
+                  value=""
+                  name="customer[email]"
+                  id="email"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.email' | t }}*"
+                >
+              </div>
+            </div>
+
+            <div id="password" class="field">
+              <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
+              <div class="control">
+                <input
+                  type="password"
+                  value=""
+                  name="customer[password]"
+                  id="password"
+                  class="input"
+                  size="30"
+                  placeholder="{{ 'customer.register.password' | t }}"
+                >
+              </div>
+            </div>
+
+            <div class="buttons has-margin-top is-center">
               <input
-                type="text"
-                value=""
-                name="customer[first_name]"
-                id="first_name"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.first_name' | t }}"
+                class="button {{ settings.form_button_style }} is-within-form"
+                type="submit"
+                value="{{ 'customer.register.sign_up' | t }}"
               >
             </div>
-          </div>
-
-          <div id="last_name" class="field">
-            <label class="label" for="last_name">{{ 'customer.register.last_name' | t }}</label>
-            <div class="control">
-              <input
-                type="text"
-                value=""
-                name="customer[last_name]"
-                id="last_name"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.last_name' | t }}"
-              >
-            </div>
-          </div>
-
-          <div id="email" class="field">
-            <label class="label" for="email">{{ 'customer.register.email' | t }}*</label>
-            <div class="control">
-              <input
-                type="email"
-                value=""
-                name="customer[email]"
-                id="email"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.email' | t }}*"
-              >
-            </div>
-          </div>
-
-          <div id="password" class="field">
-            <label class="label" for="password">{{ 'customer.register.password' | t }}*</label>
-            <div class="control">
-              <input
-                type="password"
-                value=""
-                name="customer[password]"
-                id="password"
-                class="input"
-                size="30"
-                placeholder="{{ 'customer.register.password' | t }}"
-              >
-            </div>
-          </div>
-
-          <div class="buttons has-margin-top is-center">
-            <input
-              class="button {{ settings.form_button_style }} is-within-form"
-              type="submit"
-              value="{{ 'customer.register.sign_up' | t }}"
-            >
-          </div>
-        {% endform %}
+          {% endform %}
+        </div>
       </div>
     </div>
   </div>
@@ -188,6 +249,12 @@
   "name": "Register",
   "class": "register-section account-page",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "default"
+    },
     {
       "type": "header",
       "content": "Heading"
