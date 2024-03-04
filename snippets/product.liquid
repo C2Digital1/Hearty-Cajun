@@ -298,41 +298,41 @@
 
             {% comment %}
               ORIGIONAL PRODUCT FORM
-                {% if section_onboarding %}
-                  <div class="product-form-container has-padding-top">
-                    <div class="purchase-details">
-                      <div class="purchase-details__buttons purchase-details__spb--false">
-                        <button
-                          name="add"
-                          class="action_button button button--add-to-cart add_to_cart"
-                          data-label="{{ add_to_cart_label | json }}"
-                        >
-                          <span class="text">{{ 'products.product.add_to_cart' | t }}</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                {% else %}
-                  <div class="product-form-container has-padding-top">
-                    {% comment %} Notify form {% endcomment %}
-                    {% render 'product__notify-me-form', product: product %}
-
-                    {% comment %} Product form {% endcomment %}
-                    {% unless collection_handles contains 'coming-soon' %}
-                      {% render 'product__form',
-                        context: 'product',
-                        product: product,
-                        sold_out_options: sold_out_options,
-                        selected_variant: selected_variant,
-                        show_payment_button: block.settings.show_payment_button,
-                        collection_handles: collection_handles,
-                        gift_card_recipient_feature_active: gift_card_recipient_feature_active
-                      %}
-                    {% endunless %}
-                  </div>
-              {% endif %}
+               
             {% endcomment %}
+            {% if section_onboarding %}
+              <div class="product-form-container has-padding-top">
+                <div class="purchase-details">
+                  <div class="purchase-details__buttons purchase-details__spb--false">
+                    <button
+                      name="add"
+                      class="action_button button button--add-to-cart add_to_cart"
+                      data-label="{{ add_to_cart_label | json }}"
+                    >
+                      <span class="text">{{ 'products.product.add_to_cart' | t }}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="product-form-container has-padding-top">
+                {% comment %} Notify form {% endcomment %}
+                {% render 'product__notify-me-form', product: product %}
 
+                {% comment %} Product form {% endcomment %}
+                {% unless collection_handles contains 'coming-soon' %}
+                  {% render 'product__form',
+                    context: 'product',
+                    product: product,
+                    sold_out_options: sold_out_options,
+                    selected_variant: selected_variant,
+                    show_payment_button: block.settings.show_payment_button,
+                    collection_handles: collection_handles,
+                    gift_card_recipient_feature_active: gift_card_recipient_feature_active
+                  %}
+                {% endunless %}
+              </div>
+          {% endif %}
           {%- elsif block.type == 'product-links' -%}
             {% comment %} Collections, type, tags {% endcomment %}
             {% if block.settings.show_collections or block.settings.show_tags or block.settings.show_type %}
