@@ -19,6 +19,7 @@
     "mobile_menu_background_color": "#fff",
     "mobile_menu_link_color": "#463f3a",
     "mobile_menu_link_hover_color": "#f15d5e",
+    "button_default_url": "shopify:\/\/pages\/plans",
     "button_primary_padding": "large",
     "button_primary_bg_color": "#ffffff",
     "button_primary_border_color": "#463f3a",
