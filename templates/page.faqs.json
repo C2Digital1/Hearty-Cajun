@@ -239,8 +239,43 @@
         "faq_n3c389": {
           "type": "faq",
           "settings": {
-            "question": "Faq 3",
-            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+            "question": "Is your packaging recyclable?",
+            "answer": "<p>Yes! Here’s how to recycle and dispose of packaging materials:<br\/><br\/><strong>Boxes<\/strong>: The simplest method is to break down the box and place curbside with your recycling.<\/p><p><strong>Insulation<\/strong>: We use the best insulation to keep your food fresh for optimal quality. Take the insulated box liner to a recycling drop-off bin located at participating grocery and retail stores nationwide. Visit earth911.com to locate the store nearest to you. <br\/><br\/><strong>Gel packs<\/strong> - The gel packs are non-toxic and reusable! They are drain-friendly which makes them easily disposable in any household drain without clogging. So you can dispose of them by draining it into the sink.<\/p><p><strong>Food Containers<\/strong>: Our food containers are made with annually renewable plants, are allergen free, and 100% compostable. <\/p><p>We have put great effort into sourcing packaging that is not wasteful. If your town doesn’t recycle certain materials or if you are interested in other options, please check out Earth911.com for a list of recycling facilities in your area.<\/p>"
+          }
+        },
+        "faq_wLh7nr": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_DH6jTC": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_xXCrmk": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_FPDFgp": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_fRYPPa": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
           }
         },
         "heading_MgGLHV": {
@@ -296,6 +331,11 @@
         "faq_xTFkzf",
         "heading_U4JJyf",
         "faq_n3c389",
+        "faq_wLh7nr",
+        "faq_DH6jTC",
+        "faq_xXCrmk",
+        "faq_FPDFgp",
+        "faq_fRYPPa",
         "heading_MgGLHV",
         "faq_7qmfTd",
         "faq_jxWCWM",
