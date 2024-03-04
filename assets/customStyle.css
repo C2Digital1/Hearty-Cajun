@@ -5018,6 +5018,45 @@ button.cartCloseBtn,
     max-width: 338px !important;
     margin: 0px auto !important;
 }
+.account-section .select select,
+.account-section input.input
+.addresses-section .select select,
+.addresses-section input.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    min-height: 54px;
+    border: 1px solid #463F3A;
+    border-radius: 15px;
+    color: #463F3A;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.account-section .select,
+.addresses-section .select {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+}
+
+.account-section a.button,
+.account-section .button,
+.addresses-section a.button,
+.addresses-section .button {
+    min-height: 54px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 16px;
+}
 
 /* media queires for desktop start  */
 @media only screen and (min-width: 1500px) {
