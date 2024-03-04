@@ -6343,6 +6343,11 @@ button.cartCloseBtn,
         align-self: flex-end;
     }
 
+    .productMainSection .product-gallery__main img {
+        min-height: 0 !important;
+        height: auto;
+    }
+
 }
 
 @media only screen and (max-width: 798px) {
