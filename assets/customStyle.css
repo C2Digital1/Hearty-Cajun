@@ -5012,6 +5012,18 @@ button.cartCloseBtn,
     opacity: 40%;
 }
 
+.account__form.register_form.one-whole.column {
+    width: 100% !important;
+    margin: 0px auto !important;
+    max-width: 100% !important;
+}
+
+.accountLoginSignup .one-half.medium-down--one-whole.column {
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0px auto !important;
+}
+
 /* media queires for desktop start  */
 @media only screen and (min-width: 1500px) {
     .productMainSection .product__information.has-product-sticker.one-half.column.medium-down--one-whole {
