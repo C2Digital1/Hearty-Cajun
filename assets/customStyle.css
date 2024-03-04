@@ -3445,6 +3445,7 @@ form#headerZipCode button {
 form#headerZipCode input[type="text"]::placeholder {
     opacity: 0.4;
 }
+
 .productMainSection .product-gallery__main img {
     min-height: 600px;
     width: 100%;
@@ -3455,6 +3456,19 @@ form#headerZipCode input[type="text"]::placeholder {
 
 
 /* extra styles css code start  */
+.accountLoginSignup .boxShadowContainer {
+    padding: 40px 16px;
+}
+
+.accountLoginSignup a.js-recover-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    width: max-content;
+    margin: 10px auto 0 auto;
+}
+
 .slideshow-classic__banner .image-element__wrap img {
     min-height: 398px;
     object-fit: cover;
