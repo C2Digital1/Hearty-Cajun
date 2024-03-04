@@ -5022,14 +5022,14 @@ button.cartCloseBtn,
 .account-section .select select,
 .account-section input.input .addresses-section .select select,
 .addresses-section input.input {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    min-height: 54px;
-    border: 1px solid #463F3A;
-    border-radius: 15px;
-    color: #463F3A;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 16px !important;
+    min-height: 54px !important;
+    border: 1px solid #463F3A !important;
+    border-radius: 15px !important;
+    color: #463F3A !important;
     font-size: 16px;
     letter-spacing: 0;
     line-height: 22px;
