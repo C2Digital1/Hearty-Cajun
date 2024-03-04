@@ -5012,12 +5012,7 @@ button.cartCloseBtn,
     opacity: 40%;
 }
 
-.account__form.register_form.one-whole.column {
-    width: 100% !important;
-    margin: 0px auto !important;
-    max-width: 100% !important;
-}
-
+.account__form.register_form.one-whole.column.customFormFieldsContainer,
 .accountLoginSignup .customFormFieldsContainer {
     width: 100%;
     max-width: 338px !important;
