@@ -5207,6 +5207,10 @@ button.button.hiddenBtn {
         padding: 0 8px !important;
     }
 
+    section.section.custTestimonialSec.is-width-standard .secHedingContainer {
+        padding: 0 8px;
+    }
+
     .testimonialTextContent {
         padding: 20px 16px;
     }
@@ -6089,6 +6093,50 @@ button.button.hiddenBtn {
     .faqSideImgCol {
         margin: 0px auto 24px auto;
     }
+
+    section.section.custTestimonialSec.is-width-standard .secHedingContainer {
+        padding: 0 8px;
+    }
+
+    .boxShadowContainer {
+        padding: 24px 16px;
+        margin-bottom: 93px;
+    }
+
+    .iconsAndTextInfoRow {
+        flex-direction: column;
+    }
+
+    .iconTxtCol {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+        padding: 24px 16px;
+    }
+
+    .loginSIgnupTabBtns {
+        margin: 8px auto 32px auto;
+    }
+
+    .collectionCart {
+        transform: translateX(200%);
+    }
+
+    .mealBoxCollection .collectionTemplateItems {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section.section.mainCollectionSec.mealBoxCollection.is-width-standard {
+        padding: 0 18px !important;
+    }
+
+    .mealBoxCollection .container.collectionMainContainer {
+        margin-bottom: 90px !important;
+    }
+
+
 }
 
 @media only screen and (max-width: 798px) {
