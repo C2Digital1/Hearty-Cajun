@@ -193,6 +193,10 @@
           <span class="deliveryTimeLabel">
             {%  render 'clockIcon' %} {{ product.metafields.custom.delivery_time }}
           </span>
+          {% elsif product.metafields.custom.free_delivery %}
+          <span class="deliveryTimeLabel freeDelivery">
+            {%  render 'deliveryIcon' %} Free Delivery
+          </span>
         {% endif %}
   
         {% if showMealQuickAdd  %} 

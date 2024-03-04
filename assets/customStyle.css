@@ -319,11 +319,11 @@ ol.flickity-page-dots li.dot.is-selected {
 }
 
 .mainSlideShowSec .customStyleSlideShow .flickity-prev-next-button.previous {
-    left: 28px;
+    left: 10px;
 }
 
 .mainSlideShowSec .customStyleSlideShow .flickity-prev-next-button.next {
-    right: 28px;
+    right: 10px;
 }
 
 .image-with-text-overlay__subheading.banner__subheading.subtitle {
