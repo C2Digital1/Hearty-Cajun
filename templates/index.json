@@ -663,6 +663,38 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "170958621612ef79bc": {
+      "type": "apps",
+      "blocks": {
+        "socialwidget_instagram_feed_base_widget_mzQGNe": {
+          "type": "shopify:\/\/apps\/socialwidget-instagram-feed\/blocks\/base-widget\/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "socialwidget_instagram_feed_base_widget_mzQGNe"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
     }
   },
   "order": [
@@ -676,6 +708,7 @@
     "image_text_grids_7UtzKd",
     "custom_testimonial_m6TjUM",
     "index_image_with_text_overlay_7DhjQT",
-    "index_heading_zXViky"
+    "index_heading_zXViky",
+    "170958621612ef79bc"
   ]
 }
