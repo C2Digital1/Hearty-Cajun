@@ -494,6 +494,14 @@ $(document).ready(function () {
             window.location.href = getAddOnCollectionUrl();
         }
     });
+    
+    $(document).on('click', 'button.ViewMealsBtn', function () {
+       $("body").addClass("showCart");
+    });
+    $(document).on('click', 'button.cartCloseBtn', function () {
+        $("body").removeClass("showCart");
+     });
+    
 
 
     function getPricePerMeal() {
