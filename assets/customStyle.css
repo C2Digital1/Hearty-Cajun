@@ -5018,9 +5018,9 @@ button.cartCloseBtn,
     max-width: 100% !important;
 }
 
-.accountLoginSignup .one-half.medium-down--one-whole.column {
+.accountLoginSignup .customFormFieldsContainer {
     width: 100%;
-    max-width: 100% !important;
+    max-width: 338px !important;
     margin: 0px auto !important;
 }
 
