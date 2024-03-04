@@ -258,14 +258,29 @@
     </div>
   </div>
 </section>
-
 {% if page.metafields.custom.list_of_zip_code != blank %}
+  {% if page.metafields.custom.second_list_of_zip_code != blank %}
+    {% assign hasSecondList = true %}
+  {% endif %}
+  {% if page.metafields.custom.third_list_of_zip_code != blank %}
+    {% assign hasThirdList = true %}
+  {% endif %}
   <script id="availableZipCodes" type="application/json">
     {
       "zipCodes": [
         {% for zipcode in page.metafields.custom.list_of_zip_code.value %}
-         "{{ zipcode | strip }}"{% unless forloop.last %},{% endunless %}
+          "{{ zipcode | strip }}"{% if hasSecondList %},{% else %}{% unless forloop.last %},{% endunless %}{% endif %}
         {% endfor %}
+        {% if hasSecondList %}
+          {% for zipcode2 in page.metafields.custom.second_list_of_zip_code.value %}
+            "{{ zipcode2 | strip }}"{% if hasThirdList %},{% else %}{% unless forloop.last %},{% endunless %}{% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if hasThirdList %}
+          {% for zipcode3 in page.metafields.custom.third_list_of_zip_code.value %}
+            "{{ zipcode3 | strip }}"{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        {% endif %}
       ]
     }
   </script>
