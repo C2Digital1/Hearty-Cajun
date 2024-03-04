@@ -5020,7 +5020,8 @@ button.cartCloseBtn,
 }
 
 .account-section .select select,
-.account-section input.input .addresses-section .select select,
+.account-section input.input,
+.addresses-section .select select,
 .addresses-section input.input {
     display: flex !important;
     align-items: center !important;
