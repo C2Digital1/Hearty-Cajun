@@ -194,6 +194,41 @@
             "answer": "<p>Changing your password is easy.<br\/><br\/><strong>On Web (Desktop and Mobile Device):<\/strong><br\/>*Log Into your account.<br\/>*Click on <br\/>*Click daadfafd.'<br\/>dafafafafddafafadfadfadf<\/p>"
           }
         },
+        "faq_UyrWGh": {
+          "type": "faq",
+          "settings": {
+            "question": "Changing my account’s email address",
+            "answer": "<p>To change your email address, please follow these steps:<br\/><br\/><strong>On Web (Desktop and Mobile Device):<\/strong><br\/>*Log Into your account.<br\/>*Click on <br\/>*Click daadfafd.'<br\/>dafafafafddafafadfadfadf<\/p>"
+          }
+        },
+        "faq_UCEBBL": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_YLPjE8": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_iNX7bW": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_xTFkzf": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
         "heading_U4JJyf": {
           "type": "heading",
           "settings": {
@@ -254,6 +289,11 @@
         "heading_EC3akW",
         "faq_PiWaEp",
         "faq_h3KrGn",
+        "faq_UyrWGh",
+        "faq_UCEBBL",
+        "faq_YLPjE8",
+        "faq_iNX7bW",
+        "faq_xTFkzf",
         "heading_U4JJyf",
         "faq_n3c389",
         "heading_MgGLHV",
