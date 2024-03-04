@@ -4956,6 +4956,9 @@ button.cartCloseBtn,
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
+.bottomSmallText.headingAndBtnSection .heading-section__subheading.subtitle {
+    opacity: 40%;
+}
 
 /* media queires for desktop start  */
 @media only screen and (min-width: 1500px) {
@@ -5114,6 +5117,7 @@ button.cartCloseBtn,
     section.section.is-width-standard {
         padding: 0 16px !important;
     }
+
     .filtersContainer {
         margin-top: 0px;
     }
