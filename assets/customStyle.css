@@ -397,6 +397,8 @@ button.flickity-button.flickity-prev-next-button[disabled] {
     height: 40px;
     width: 40px;
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2) !important;
+    top: calc(50% - 35px);
+
 }
 
 .featuredCollecionSec button.flickity-button.flickity-prev-next-button.next {
