@@ -288,22 +288,22 @@
         "faq_7qmfTd": {
           "type": "faq",
           "settings": {
-            "question": "Faq 4",
-            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+            "question": "Do you change the meals on your menu?",
+            "answer": "<p>Yes, every week! We currently add 4-5 new items to our menu each week. So you can try new items or keep your favorites.<\/p>"
           }
         },
         "faq_jxWCWM": {
           "type": "faq",
           "settings": {
-            "question": "Faq 6",
-            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+            "question": "How do I heat up my meals?",
+            "answer": "<p>Our meals are fully cooked to safe internal temperatures which means all you have to do is reheat the meal in the microwave. Please know, heating times can vary depending on your microwave\/oven. Our meal trays are microwavable but our covers are not, so remember to uncover your meals before microwaving them.<br\/><br\/><strong>Note<\/strong>: If you opt to use a standard oven to heat your meals, we recommend using a sheet pan to heat meals so it is easy to get out once hot! (Our meals trays are designed to be heated in a convection (or toaster) oven and\/or heated with those settings.<\/p>"
           }
         },
         "faq_wgamhi": {
           "type": "faq",
           "settings": {
-            "question": "Faq 7",
-            "answer": "<p>Lorem ipsum Donec ipsum consectetur metus a conubia velit lacinia viverra consectetur vehicula Donec tincidunt lorem. Eu iaculis. Sed, at augue ultricies eget dui eu arcu mattis Nam bibendum Aliquam felis vehicula finibus sed metus, dictum vitae Morbi Class consectetur diam a quam porta at mauris. Urna, augue sagittis turpis eu Praesent ornare. Auctor Donec ipsum tincidunt imperdiet sed, arcu at non id mattis metus id interdum, sagittis ex, laoreet, adipiscing vitae quam porta at mauris.<\/p>"
+            "question": "What if I’m unhappy with any of my meals?",
+            "answer": "<p>If you are unhappy with any of your meals, please reach out to us at 754-732-2599.<\/p>"
           }
         }
       },
