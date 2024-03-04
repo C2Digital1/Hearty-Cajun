@@ -6145,7 +6145,9 @@ button.cartCloseBtn,
         max-width: 100%;
         transition: all cubic-bezier(.25, .75, .5, 1) .4s;
         border-radius: 0 !important;
-    }button.cartCloseBtn {
+    }
+
+    button.cartCloseBtn {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -6159,11 +6161,11 @@ button.cartCloseBtn,
         border: 0px solid !important;
         cursor: pointer;
         border-radius: 100%;
-        box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
         color: #463F3A;
         z-index: 5;
     }
-    
+
     button.cartCloseBtn svg {
         width: 30px;
         height: 30px;
@@ -6234,10 +6236,11 @@ button.cartCloseBtn,
         border-radius: 16px 16px 0 0;
         background-color: rgba(251, 251, 251, 0.9);
         height: max-content;
-        max-height: 466px;
+        max-height: 500px;
         min-height: 0;
         bottom: 0;
         top: unset;
+        padding-bottom: 90px;
     }
 
     .mealBoxCollection .mobileFilterOpenerContainer {

@@ -462,6 +462,8 @@ $(document).ready(function () {
                 // remove classes from Add To Cart Button
                 setTimeout(function () {
                     $(this).removeClass("adding added");
+                    $("body").addClass("showCart");
+                    $(".extraOptionOverlay.active").removeClass("active");
                 }.bind(this), 1500);
 
             }.bind(this), 900);
