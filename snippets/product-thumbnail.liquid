@@ -199,7 +199,12 @@
           </span>
         {% endif %}
   
-        {% if showMealQuickAdd  %} 
+        {% if showMealQuickAdd  %}          
+          {% if product.metafields.custom.popup_content != blank %}
+            {% render 'prodIngredientsPopup', product: product %}
+            <span class="prodIngPopupOpener" data-id="#{{ product.id }}-popup">
+            </span>
+        {% endif %}
           {% render 'quickMealAdd', product: product, addOnIsActive: addOnIsActive %}
         {% endif %}
         {% if settings.showQuickAddBtn and showMealQuickAdd != true %}
