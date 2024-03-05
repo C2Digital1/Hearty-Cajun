@@ -29,7 +29,7 @@ $(document).ready(function () {
         $($thisBtn).addClass("is-loading");
         var $hiddenContainer = $(this).prev('.collectionItemsRow');
         setTimeout(function () {
-            $($thisBtn).addClass("is-loading");
+            $($thisBtn).removeClass("is-loading");
             $hiddenContainer.find('.hiddenItem').slice(0, 6).removeClass('hiddenItem');
             if ($hiddenContainer.find('.hiddenItem').length === 0) {
                 $($thisBtn).hide();
