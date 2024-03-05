@@ -5763,7 +5763,7 @@ button.cartCloseBtn,
 
     .popupInnerBox {
         width: calc(100% - 32px);
-        margin: 20px auto;
+        margin: 20px auto 70px auto;
     }
 
     button.close.popupCloseBtn {
