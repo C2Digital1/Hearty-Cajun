@@ -718,6 +718,11 @@ h3.image-with-text__heading.is-h5 {
     padding-left: 34px;
 }
 
+.hasStrong em {
+    font-style: normal;
+    opacity: 60%;
+}
+
 .customImgTextGrids {
     position: relative;
 }
