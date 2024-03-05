@@ -4,10 +4,34 @@
     {% assign extraProdList = product.metafields.custom.box_items_variants.value %}
     {% for extraProd in extraProdList %}
       <div class="extrProdInfoContainer">
-        <p class="prodTit">{{ extraProd.title }}</p>
+        <p class="prodTit">
+          {%- if extraProd.metafields.custom.title_icon != blank -%}
+            {% liquid
+              assign extraProdMetaObj = extraProd.metafields.custom.title_icon.value
+              assign titleIcon = extraProdMetaObj.icon_image
+            %}
+            {%- if titleIcon != blank -%}
+              <span class="titleIconImg">
+                <img
+                  class="boxImg lazyload"
+                  src="{{ titleIcon | img_url:'master' }}"
+                  alt="img"
+                  width="200"
+                  height="200"
+                  loading="lazy"
+                >
+              </span>
+            {%- endif -%}
+          {%- endif -%}
+          {{ extraProd.title }}
+        </p>
         <div class="extraProdVariantContainer">
           {% for variant in extraProd.variants %}
-            <label data-VarianHiddenBtn= "{% if variant.price > 0 %}#hiddenAddOn-{{  variant.id }} {% else %}.dummyItemsss{% endif %}" for="{{ variant.id }}-variantBtn-{{ forloop.index }}" class="checkboxItem hiddenAddOnLabel">
+            <label
+              data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{  variant.id }} {% else %}.dummyItemsss{% endif %}"
+              for="{{ variant.id }}-variantBtn-{{ forloop.index }}"
+              class="checkboxItem hiddenAddOnLabel"
+            >
               <input
                 id="{{ variant.id }}-variantBtn-{{ forloop.index }}"
                 type="radio"
@@ -16,7 +40,8 @@
                 value="{{extraProd.title}}: {{ variant.title }}"
               >
               <span class="checkmarkIcon"></span>
-              {{ variant.title }} {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
+              {{ variant.title }}
+              {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
             </label>
             {% if variant.price > 0 %}
               <button
@@ -29,7 +54,7 @@
                 data-productImg="{{ extraProd.featured_image | img_url:'master' }}"
                 data-AddOnPrice="{{ variant.price | money_without_currency }}"
               >
-               HIDDEN ADD
+                HIDDEN ADD
               </button>
             {% endif %}
           {% endfor %}
