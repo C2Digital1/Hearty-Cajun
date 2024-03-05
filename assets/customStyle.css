@@ -5776,11 +5776,6 @@ button.cartCloseBtn,
         width: 100% !important;
     }
 
-    .headingAndBtnSection .heading-section__subheading.subtitle {
-        text-align: left !important;
-        opacity: 0.4;
-    }
-
     .headingAndBtnSection .heading-section__subheading.subtitle.is-text-small {
         font-size: 12.1px !important;
         letter-spacing: 0 !important;
