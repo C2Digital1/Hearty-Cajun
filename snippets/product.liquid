@@ -255,9 +255,9 @@
                 {% comment %}Inject @pixelunion/shopify-price-ui/price-ui end{% endcomment %}
               {% endif %}
             </div>
-            {% if product.metafields.custom.attributes != blank %}
+            {% if product.metafields.custom.attributesList != blank %}
               <div class="prodPageProdAttributes">
-                {% for prodAttribute in product.metafields.custom.attributes.value %}
+                {% for prodAttribute in product.metafields.custom.attributesList.value %}
                   {% if forloop.index < 4 %}
                     <span>{{ prodAttribute }}</span>
                   {% endif %}

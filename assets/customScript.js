@@ -505,6 +505,17 @@ $(document).ready(function () {
      });
     
 
+     function getSelectedVariant() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        var pricePerMeal = "";
+        if (storedBoxProdInfo) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            boxProdInfoArray.forEach(function (item, index) {
+                selectedVariantId = item.selectedVariantId;
+            });
+        }
+        return selectedVariantId;
+    }
 
     function getPricePerMeal() {
         var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
@@ -892,7 +903,7 @@ $(document).ready(function () {
             var storedCartAddOns = localStorage.getItem("cartAddOns");
             if (storedCartAddOns) {
                 var storedCartAddOnsInfoArray = JSON.parse(storedCartAddOns);
-            }
+            }        
 
             // lineItems properties 
             // Get cartData from localStorage
@@ -919,17 +930,19 @@ $(document).ready(function () {
                 return item.trim() !== ""; // Filter out empty items
             }).join('\n');
 
+            $("#boxItems").val(finalBoxItemsProd);
             // pushing mainBox Prod Info for Add To Cart
-            mainBoxProdInfoArray.forEach(function (item, index) {
-                finalProdForCart.push({
-                    id: item.selectedVariantId,
-                    quantity: 1,
-                    properties: {
-                        "Box Items": finalBoxItemsProd, // Example property from mainBoxProdInfoArray
-                        // Include more properties as needed
-                    }
-                });
-            });
+            // mainBoxProdInfoArray.forEach(function (item, index) {
+            //     finalProdForCart.push({
+            //         id: item.selectedVariantId,
+            //         quantity: 1,
+            //         properties: {
+            //             "Box Items": finalBoxItemsProd, // Example property from mainBoxProdInfoArray
+            //             // Include more properties as needed
+            //         }
+            //     });
+            // });
+
 
             // pushing Cart Addon Info for Add To Cart
             if (storedCartAddOnsInfoArray && storedCartAddOnsInfoArray.length > 0) {
@@ -940,18 +953,21 @@ $(document).ready(function () {
                 });
             }
 
+            $(".needToAddVariant").val(getSelectedVariant());
+
             console.log(finalProdForCart);
             if (finalProdForCart.length > 0) {
                 $.ajax({
                     type: "POST",
-                    url: "/cart/add.js",
+                    url: "/cart/add.js", 
                     data: { items: finalProdForCart },
                     dataType: "json",
                     success: function () {
                         localStorage.removeItem('cartData');
                         localStorage.removeItem('cartAddOns');
                         setTimeout(function () {
-                            window.location.href = "/cart";
+                            $(".finalAddBtn").click();
+                           // window.location.href = "/cart";
                         }, 200);
                     },
                     error: function () {
@@ -959,6 +975,9 @@ $(document).ready(function () {
                         console.log("ERROR");
                     }
                 });
+            }
+            else{
+                $(".finalAddBtn").click();
             }
         }
 

@@ -1,7 +1,6 @@
 {% comment %}
   ** Collection template with sidebar **
 {% endcomment %}
-
 {%- liquid
   assign id = section.id
   assign show_heading = section.settings.show_heading
@@ -12,7 +11,6 @@
   assign preheading_color = section.settings.color_scheme.settings.scheme_pre_text
   assign heading_color = section.settings.color_scheme.settings.scheme_heading
   assign subheading_color = section.settings.color_scheme.settings.scheme_text
-
 
   assign sidebar_position = section.settings.sidebar_position
   assign show_sidebar = section.settings.show_sidebar
@@ -71,10 +69,10 @@
 {% if section.settings.color_scheme.settings.scheme_button_gradient != blank %}
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button_gradient %}
   {% assign borderWidth = 0 %}
-  {%  else %}      
+{% else %}
   {% assign primaryBtnBg = section.settings.color_scheme.settings.scheme_button %}
   {% assign borderWidth = 1 %}
-{%  endif %}
+{% endif %}
 
 {% comment %} Section specific CSS {% endcomment %}
 {% capture section_css %}
@@ -444,6 +442,7 @@
     });
   </script>
 {% endif %}
+{% render 'appstleDummyForm' %}
 {% schema %}
 {
   "name": "Collection",

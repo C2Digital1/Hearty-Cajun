@@ -41,7 +41,7 @@
             {{ product.title }}
           </h3>
           <div class="popupPillsBtns">
-            {% for prodAttribute in product.metafields.custom.attributes.value %}
+            {% for prodAttribute in product.metafields.custom.attributesList.value %}
               {% if forloop.index < 6 %}
                 <span>{{ prodAttribute }}</span>
               {% endif %}

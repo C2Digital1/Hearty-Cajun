@@ -13,9 +13,9 @@
       {{- product.title -}}
     </a>
   {% endif %}
-  {% if product.metafields.custom.attributes != blank %}
+  {% if product.metafields.custom.attributesList != blank %}
    <div class="prodAttributeItems">
-    {% for prodAttribute in product.metafields.custom.attributes.value %}
+    {% for prodAttribute in product.metafields.custom.attributesList.value %}
       {%  if forloop.index < 4 %}
         <span>{{  prodAttribute }}</span>
       {% endif %}
