@@ -3935,6 +3935,7 @@ button.prefrenceBtn {
     text-align: center;
     background: transparent;
     transition: all linear .3s;
+    color: #463f3a;
 }
 
 button.prefrenceBtn span.boxBtnIcon {
