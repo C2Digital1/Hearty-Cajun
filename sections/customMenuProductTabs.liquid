@@ -99,16 +99,21 @@
       </ul>
     </div>
 
-    <div class="tabContentsContainer">
+    <div class="tabContentsContainer showSquareImages">
       <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
       {% for menuItem in page.metafields.custom.weekly_menu_tabs.value %}
         {%- liquid
           assign menuHeading = menuItem.menu_name
           assign menuDesc = menuItem.menu_description
           assign collection = menuItem.menu_collection.value
+
+          assign newAdditionHeading = menuItem.new_additions_heading
+          assign newAdditionDesc = menuItem.new_additions_description
+          assign newAdditionCollection = menuItem.new_additions_collection.value
+
           assign addOnsHeading = menuItem.add_ons_heading
           assign addOnsDesc = menuItem.add_ons_description
-          assign addOnsProds = menuItem.add_ons
+          assign addOnsProdCollection = menuItem.add_ons_collection.value
         -%}
         <div
           id="{{id}}-tab-{{ forloop.index }}"
@@ -122,7 +127,7 @@
             {{ menuDesc }}
           </div>
           {% if collection != blank %}
-            <div class="collectionItemsRow showSquareImages">
+            <div class="collectionItemsRow">
               {% render 'product-loop',
                 limit: 50,
                 products: collection.products,
@@ -140,35 +145,69 @@
               </button>
             {% endif %}
           {% endif %}
-          {% if addOnsHeading != blank or addOnsDesc != blank or addOnsProds != blank %}
+
+          {% if newAdditionCollection != blank %}
             <div class="addOnsContainer">
-              <h2 class="tabMenuTitle {{ heading_preset }}">
-                {{ addOnsHeading }}
-              </h2>
-              <div class="tabMenuDesc {{ subHeadingPreset }}">
-                {{ addOnsDesc }}
-              </div>
-              {% if addOnsProds != blank %}
-                <div class="collectionItemsRow">
-                  {% for product in addOnsProds.value %}
-                    {% if forloop.index > 3 %}
-                      {% assign hideElement = true %}
-                       {% else %}                      
-                      {% assign hideElement = false %}
-                    {% endif %}
-                    {% render 'product-thumbnail',
-                      product: product,
-                      limit: 50,
-                      items_per_row: 3,
-                      mobile_items_per_row: 1,
-                      hidePrice: true,
-                      hideElement: hideElement
-                    %}
-                  {% endfor %}
+              {% if newAdditionHeading != blank %}
+                <h2 class="tabMenuTitle {{ heading_preset }}">
+                  {{ newAdditionHeading }}
+                </h2>
+              {% endif %}
+              {% if newAdditionDesc != blank %}
+                <div class="tabMenuDesc {{ subHeadingPreset }}">
+                  {{ newAdditionDesc }}
                 </div>
-                {% if hideElement %}
+              {% endif %}
+              {% if newAdditionCollection != blank %}
+                <div class="collectionItemsRow">
+                  {% render 'product-loop',
+                    limit: 50,
+                    products: newAdditionCollection.products,
+                    skip_product: product,
+                    items_per_row: 3,
+                    mobile_items_per_row: 1,
+                    showStyle: true,
+                    hidePrice: true,
+                    hideNextItems: true
+                  %}
+                </div>
+                {% if newAdditionCollection.all_products_count > 6 %}
                   <button class="customLoadMoreBtm button button--primary pagination-button__load-more">
-                    Load More Add-Ons
+                    Load More Meals
+                  </button>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if addOnsProdCollection != blank %}
+            <div class="addOnsContainer">
+              {% if addOnsHeading != blank %}
+                <h2 class="tabMenuTitle {{ heading_preset }}">
+                  {{ addOnsHeading }}
+                </h2>
+              {% endif %}
+              {% if addOnsDesc != blank %}
+                <div class="tabMenuDesc {{ subHeadingPreset }}">
+                  {{ addOnsDesc }}
+                </div>
+              {% endif %}
+              {% if addOnsProdCollection != blank %}
+                <div class="collectionItemsRow">
+                  {% render 'product-loop',
+                    limit: 50,
+                    products: addOnsProdCollection.products,
+                    skip_product: product,
+                    items_per_row: 3,
+                    mobile_items_per_row: 1,
+                    showStyle: true,
+                    hidePrice: true,
+                    hideNextItems: true
+                  %}
+                </div>
+                {% if addOnsProdCollection.all_products_count > 6 %}
+                  <button class="customLoadMoreBtm button button--primary pagination-button__load-more">
+                    Load More Meals
                   </button>
                 {% endif %}
               {% endif %}
@@ -180,7 +219,6 @@
   </section>
   <script>
     $(document).ready(function () {
-
       if ($('.showSquareImages').length > 0) {
         var firstImageWidth = $('.showSquareImages .product__imageContainer .image-element__wrap img').first().width();
         var cssRule =
