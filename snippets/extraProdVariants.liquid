@@ -16,7 +16,7 @@
                 value="{{extraProd.title}}: {{ variant.title }}"
               >
               <span class="checkmarkIcon"></span>
-              {{ variant.title }} ({{ variant.price | money }})
+              {{ variant.title }} {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
             </label>
             {% if variant.price > 0 %}
               <button
