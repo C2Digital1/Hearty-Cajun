@@ -51,13 +51,19 @@
             "show_payment_button": false,
             "enable_giftCard_recipient": false
           }
+        },
+        "appstle_subscriptions_app_appstle_subscription_product_page_widget_ADJAcq": {
+          "type": "shopify:\/\/apps\/appstle-subscriptions-app\/blocks\/appstle-subscription-product-page-widget\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "title",
         "price",
         "description",
-        "form"
+        "form",
+        "appstle_subscriptions_app_appstle_subscription_product_page_widget_ADJAcq"
       ],
       "settings": {
         "color_scheme": "default",
