@@ -748,9 +748,15 @@ $(document).ready(function () {
                 cartItemPrice: cartItemPrice
             });
         });
-
         // Save the cart data to local storage
         localStorage.setItem('cartData', JSON.stringify(cartData));
+        if ($(".mealBoxProgressBar").length > 0) {
+            var limitOfItems = parseInt(getTotalItemLimits());
+            var totalAddedItems = parseInt($(".totalCartItems").text().trim());
+            var finalProgress = totalAddedItems * 100 / limitOfItems;
+            $(".mealBoxProgressBar").css("width", finalProgress + "%");
+        }
+
     }
 
     function loadCartData() {
@@ -786,18 +792,18 @@ $(document).ready(function () {
         $(this).addClass("adding");
         setTimeout(function () {
             $(this).addClass("added");
-            
+
             if (numberOfUnits > 1) {
                 for (var i = 0; i < numberOfUnits; i++) {
                     var existingAddOnCartItemId = $(".addOnsList").find(`#${cartItemId}`);
-                    console.log(existingAddOnCartItemId +existingAddOnCartItemId.length);
+                    console.log(existingAddOnCartItemId + existingAddOnCartItemId.length);
                     if (existingAddOnCartItemId.length > 0) {
                         incrementAddOnCartItem(existingAddOnCartItemId);
                     } else {
                         appendCartAddOnItem(cartItemId, numberOfUnits, addOnVariantId, cartItemImg, cartItemName, cartItemQty, addOnPrice);
                     }
                     attachedAddOnQtyBtnsEventListeners();
-                    updateCartAddonsAndSave();                   
+                    updateCartAddonsAndSave();
                 }
             }
             else {
@@ -831,7 +837,7 @@ $(document).ready(function () {
             .replace('%cartItemName%', cartItemName)
             .replace('%cartItemQtyData%', cartItemQty)
             .replace('%cartItemQty%', cartItemQty)
-            .replace('%numberOfUnits%',numberOfUnits)
+            .replace('%numberOfUnits%', numberOfUnits)
             .replace('%cartItemPrice%', addOnPrice);
         $(".addOnsList").append(itemHtml);
         updateTotalCartItems("isAddOn");
@@ -853,7 +859,7 @@ $(document).ready(function () {
             var currentQty = parseInt(inputField.val());
             if (currentQty > 1) {
                 inputField.val(currentQty - needtoRemoveUnits);
-                if(currentQty - needtoRemoveUnits < 1){
+                if (currentQty - needtoRemoveUnits < 1) {
                     $(this).closest(".customCartItem").remove();
                 }
             } else {

@@ -137,8 +137,12 @@
     data-scroll-class="{{ animation }}"
   {% endif %}
 >
+ 
   <div class="mealBoxCollectionContainer">
     <div class="collectionTemplateItems">
+      <div class="progressBarContainer">
+        <div class="progressBar mealBoxProgressBar"></div>
+      </div>
       <h2 class="mealBoxHeading is-h5">Select Meals</h2>
       {% if section.blocks.size > 0 and show_sidebar %}
         {% assign showMobileFilterBtn = true %}

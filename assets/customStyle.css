@@ -5035,6 +5035,37 @@ button.cartCloseBtn,
     margin-top: 0;
 }
 
+.progressBarContainer {
+    height: 20px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 94px;
+    z-index: 555;
+    width: 100%;
+    opacity: 1 !important;
+    visibility: visible;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: 29px 29px 57px #d9d9d9,
+        -29px -29px 57px #ffffff;
+}
+
+
+.progressBar.mealBoxProgressBar {
+    background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68%;
+    border-radius: 20px;
+    width: 0;
+    min-width: 20px;
+    transition: all linear .3s;
+}
+
 /* =========== PURCHASE FLOW CSS CODE END =========== */
 
 .bottomSmallText.headingAndBtnSection .heading-section__subheading.subtitle {
@@ -6452,6 +6483,14 @@ button.cartCloseBtn,
         margin: 0px auto !important;
     }
 
+    .tabBtnsContainer {
+        top: 70px;
+    }
+
+    .progressBarContainer {
+        margin-top: 0;
+        top: 125px;
+    }
 }
 
 @media only screen and (max-width: 798px) {
