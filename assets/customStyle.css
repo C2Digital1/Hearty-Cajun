@@ -5037,7 +5037,7 @@ button.cartCloseBtn,
 
 .progressBarContainer {
     height: 20px;
-    margin: 20px auto;
+    margin: 0 auto 20px auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -6488,7 +6488,6 @@ button.cartCloseBtn,
     }
 
     .progressBarContainer {
-        margin-top: 0;
         top: 125px;
     }
 }

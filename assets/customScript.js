@@ -491,6 +491,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', 'button.removeAllCart', function () {
+       
         $(".mainCartItemsList").empty();
         $(".addOnsList").empty();
         localStorage.removeItem('cartData');
@@ -498,6 +499,9 @@ $(document).ready(function () {
         $(".totalCartItems").text("0");
         $(".cartSubtotal, .orderTotalPrice").text("$0.00");
         $(".addOnHeader").hide();
+        if ($(".mealBoxProgressBar").length > 0) {
+            $(".mealBoxProgressBar").css("width", 0 + "%");
+        }
         var boxCollectionUrl = getBoxCollectionUrl();
         var currentUrl = window.location.href;
         if (currentUrl.includes(boxCollectionUrl)) {
@@ -505,6 +509,7 @@ $(document).ready(function () {
         } else {
             window.location.href = boxCollectionUrl;
         }
+        
     });
 
     $(document).on('click', 'button.addonStep', function () {
@@ -756,7 +761,6 @@ $(document).ready(function () {
             var finalProgress = totalAddedItems * 100 / limitOfItems;
             $(".mealBoxProgressBar").css("width", finalProgress + "%");
         }
-
     }
 
     function loadCartData() {
@@ -774,6 +778,12 @@ $(document).ready(function () {
     if ($("#cartItemTemplate").length > 0) {
         loadCartData();
         loadAddOnsCartData();
+        if ($(".mealBoxProgressBar").length > 0) {
+            var limitOfItems = parseInt(getTotalItemLimits());
+            var totalAddedItems = parseInt($(".totalCartItems").text().trim());
+            var finalProgress = totalAddedItems * 100 / limitOfItems;
+            $(".mealBoxProgressBar").css("width", finalProgress + "%");
+        }
     };
     // save cart in local storage and load cart data from local storage code end
 
