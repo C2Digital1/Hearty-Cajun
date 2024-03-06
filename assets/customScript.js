@@ -476,6 +476,7 @@ $(document).ready(function () {
 
                     if ($(".hiddenBtn.ableToAddHidden").length > 0) {
                         $(".hiddenBtn.ableToAddHidden").click();
+                        $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
                     }
                 }
 
