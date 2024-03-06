@@ -222,7 +222,7 @@
            
         {% if product.metafields.custom.popup_content != blank %}
         {% endif %}
-          {%- render 'quickAddToCartForm', product: product, selected_variant: selected_variant -%}
+          {% comment %} {%- render 'quickAddToCartForm', product: product, selected_variant: selected_variant -%} {% endcomment %}
         {% endif %}
       </div>
     </div>
