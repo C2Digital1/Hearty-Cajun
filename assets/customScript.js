@@ -460,6 +460,7 @@ $(document).ready(function () {
                         updateCartAndSave();
                         if ($(".hiddenBtn.ableToAddHidden").length > 0) {
                             $(".hiddenBtn.ableToAddHidden").click();
+                            $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
                         }
                     }
                 }
