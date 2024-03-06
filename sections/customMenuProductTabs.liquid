@@ -99,22 +99,23 @@
       </ul>
     </div>
 
-    <div class="tabContentsContainer showSquareImages">
+    <div class="tabContentsContainer">
       <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
       {% for menuItem in page.metafields.custom.weekly_menu_tabs.value %}
         {%- liquid
-          assign menuHeading = menuItem.menu_name
-          assign menuDesc = menuItem.menu_description
+          assign menuHeading = section.settings.menu1Heading
+          assign menuDesc = section.settings.menu1SubHeading
           assign collection = menuItem.menu_collection.value
 
-          assign newAdditionHeading = menuItem.new_additions_heading
-          assign newAdditionDesc = menuItem.new_additions_description
+          assign newAdditionHeading = section.settings.menu2Heading
+          assign newAdditionDesc = section.settings.menu2SubHeading
           assign newAdditionCollection = menuItem.new_additions_collection.value
 
-          assign addOnsHeading = menuItem.add_ons_heading
-          assign addOnsDesc = menuItem.add_ons_description
+          assign addOnsHeading = section.settings.menu3Heading
+          assign addOnsDesc = section.settings.menu3SubHeading
           assign addOnsProdCollection = menuItem.add_ons_collection.value
         -%}
+
         <div
           id="{{id}}-tab-{{ forloop.index }}"
           class="weeklyMenuTabItem"
@@ -153,11 +154,9 @@
                   {{ newAdditionHeading }}
                 </h2>
               {% endif %}
-              {% if newAdditionDesc != blank %}
-                <div class="tabMenuDesc {{ subHeadingPreset }}">
-                  {{ newAdditionDesc }}
-                </div>
-              {% endif %}
+              <div class="tabMenuDesc {{ subHeadingPreset }}">
+                {{ newAdditionDesc }}
+              </div>
               {% if newAdditionCollection != blank %}
                 <div class="collectionItemsRow">
                   {% render 'product-loop',
@@ -217,6 +216,7 @@
       {% endfor %}
     </div>
   </section>
+  {% comment %} 
   <script>
     $(document).ready(function () {
       if ($('.showSquareImages').length > 0) {
@@ -229,12 +229,48 @@
       }
     });
   </script>
+ {% endcomment %}
 {% endif %}
 {% schema %}
 {
   "name": "Weekly Menu",
   "class": "menuProdTabs",
   "settings": [
+    {
+      "type": "text",
+      "id": "menu1Heading",
+      "label": "Menu 1 Heading",
+      "default": "Signature Pastas"
+    },  
+    {
+      "type": "richtext",
+      "id": "menu1SubHeading",
+      "label": "Menu 1 Sub Heading",
+      "default": "<p>6 meals | 0% food waste product</p>"
+    },
+    {
+      "type": "text",
+      "id": "menu2Heading",
+      "label": "Menu 2 Heading",
+      "default": "Others"
+    },  
+    {
+      "type": "richtext",
+      "id": "menu2SubHeading",
+      "label": "Menu 2 Sub Heading"
+    }, 
+    {
+      "type": "text",
+      "id": "menu3Heading",
+      "label": "Menu 3 Heading",
+      "default": "Add-Ons"
+    },  
+    {
+      "type": "richtext",
+      "id": "menu3SubHeading",
+      "label": "Menu 3 Sub Heading",
+      "default": "<p>Healthy and unique sides to help you be your best!</p>"
+    },       
     {
       "type": "select",
       "id": "heading_preset",

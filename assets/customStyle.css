@@ -1512,6 +1512,11 @@ h3.cardHeading {
     margin-bottom: 16px;
 }
 
+.weeklyMenuTabItem .image-element__wrap img {
+    max-height: 344px;
+    object-fit: cover;
+}
+
 .tabMenuDesc {
     text-align: center;
     margin-bottom: 40px;
@@ -5128,11 +5133,12 @@ button.cartCloseBtn,
 }
 
 /* media queires for desktop start  */
+
+
 @media only screen and (min-width: 1500px) {
     .productMainSection .product__information.has-product-sticker.one-half.column.medium-down--one-whole {
         margin-left: 100px;
     }
-
 }
 
 @media only screen and (min-width: 798px) {
@@ -5184,6 +5190,13 @@ button.cartCloseBtn,
 /* =========== MOBILE RESPONSIVNESS CSS CODE START =========== */
 
 /* media queires for desktop start  */
+@media only screen and (max-width: 1650px) {
+    .weeklyMenuTabItem .image-element__wrap img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+
 @media only screen and (max-width: 1500px) {
     .cart__headings.column {
         padding: 0 112px 0 0;
@@ -5191,6 +5204,10 @@ button.cartCloseBtn,
 }
 
 @media only screen and (max-width: 1400px) {
+    .weeklyMenuTabItem .image-element__wrap img {
+        max-height: 250px;
+    }
+
     .imgTextGridsRow .gridSIdeImg {
         padding: 0;
         width: 128px;
@@ -5291,6 +5308,10 @@ button.cartCloseBtn,
 }
 
 @media only screen and (max-width: 991px) {
+    .weeklyMenuTabItem .image-element__wrap img {
+        max-height: none;
+    }
+
     section.section.is-width-standard {
         padding: 0 16px !important;
     }
