@@ -9,7 +9,8 @@
     </div>
     <div class="customCartItemInfo">
       <p class="itemName is-h5">%cartItemName%</p>
-      <p class="cartItemsInfo is-text-small">%cartItemsVariants%</p>
+      <p class="cartItemsInfo is-text-small">%cartItemsVariants%</p>      
+      
       <div class="cartQtyAndPrice">
         <div class="qtyBox" data-currentQty="%cartItemQtyData%">
           <button class="qtyMinus">
@@ -18,8 +19,9 @@
           <input class="qtyField" type="text" readonly value="%cartItemQty%">
           <button class="qtyPlus">
             {% render 'icon', name: icon-plus %}
-          </button>
+          </button>          
         </div>
+        <span class="numberOfUnits" style="display:none">%numberOfUnits%</span>
         <span class="cartItemPrice is-text-small">$%cartItemPrice%</span>
       </div>
     </div>

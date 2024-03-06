@@ -53,6 +53,7 @@
                 data-productName="{{ extraProd.title }}"
                 data-productImg="{{ extraProd.featured_image | img_url:'master' }}"
                 data-AddOnPrice="{{ variant.price | money_without_currency }}"
+                data-numberOfUnits= "1"            
               >
                 HIDDEN ADD
               </button>
@@ -67,6 +68,7 @@
       data-cartItemId="cartItem-{{ product.id }}"
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
+      data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
     >
       <span class="bagIcon"> Apply </span>
       <span class="tickIcon">

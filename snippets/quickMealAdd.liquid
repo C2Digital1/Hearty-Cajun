@@ -7,6 +7,7 @@
     data-productName="{{ product.title }}"
     data-productImg="{{ product.featured_image | img_url:'master' }}"
     data-AddOnPrice="{{ product.selected_or_first_available_variant.price | money_without_currency }}"
+    data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
   >
     <span class="bagIcon">
       {% render 'addToCartIcon' %}
@@ -36,6 +37,7 @@
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
       data-variantOptions=""
+      data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
     >
       <span class="bagIcon">
         {% render 'addToCartIcon' %}
