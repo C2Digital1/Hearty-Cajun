@@ -258,7 +258,7 @@
             {% if product.metafields.custom.attributesList != blank %}
               <div class="prodPageProdAttributes">
                 {% for prodAttribute in product.metafields.custom.attributesList.value %}
-                  {% if forloop.index < 4 %}
+                  {% if forloop.index < 6 %}
                     <span>{{ prodAttribute }}</span>
                   {% endif %}
                 {% endfor %}
