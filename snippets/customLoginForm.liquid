@@ -85,7 +85,8 @@
                 {{- 'customer.login.forgot_password' | t -}}
               </a>
             </div>
-
+            <input type="hidden" name="return_to" class="submissionRedirectInput" value="/pages/customize-plans#loginForm">
+         
             <div class="buttons is-center has-margin-top">
               <input
                 class="button {{ settings.form_button_style }} is-within-form"
@@ -96,7 +97,6 @@
               >
             </div>
           {% endform %}
-          <input type="hidden" name="return_to" class="submissionRedirectInput" value="/pages/customize-plans#loginForm">
           {% if shop.checkout.guest_login %}
             <span class="has-padding-top"> {{ 'customer.login.or' | t }} </span>
             {% form 'guest_login' %}
