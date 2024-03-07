@@ -451,8 +451,7 @@ $(document).ready(function () {
                 if (numberOfUnits > 1) {
                     for (var i = 0; i < numberOfUnits; i++) {
                         var existingCartItemID = $(".mainCartItemsList").find(`#${cartItemId}`);
-                        var repeateIt = false;
-                        if (existingCartItemID.length > 0 && repeateIt != true) {
+                        if (existingCartItemID.length > 0) {
                             incrementCartItem(existingCartItemID);
                         } else {
                             appendCartItem(cartItemId, numberOfUnits, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
