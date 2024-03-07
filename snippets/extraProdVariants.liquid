@@ -29,11 +29,11 @@
           {% for variant in extraProd.variants %}
             <label
               data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{  variant.id }} {% else %}.dummyItemsss{% endif %}"
-              for="{{ variant.id }}-variantBtn-{{ forloop.index }}"
+              for="{{extraProd.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
               class="checkboxItem hiddenAddOnLabel"
             >
               <input
-                id="{{ variant.id }}-variantBtn-{{ forloop.index }}"
+                id="{{extraProd.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
                 type="radio"
                 class="optionChooser"
                 name="{{ extraProd.id }}"
