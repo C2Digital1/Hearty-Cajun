@@ -1002,8 +1002,7 @@ $(document).ready(function () {
         }
         var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
         if (hiddenAddOnBtn.length > 0 && radioIsChecked) {
-            $(hiddenAddOnBtn).addClass("ableToAddHidden");
-           
+            $(hiddenAddOnBtn).addClass("ableToAddHidden");           
         }
     });
 
