@@ -407,6 +407,7 @@ button.flickity-button.flickity-prev-next-button[disabled] {
 
 .featuredCollecionSec button.flickity-button.flickity-prev-next-button.previous {
     left: 0;
+    top: calc(50% - 35px);
 }
 
 .product__thumbnail .product-image__wrapper {
