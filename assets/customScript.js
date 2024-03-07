@@ -971,11 +971,13 @@ $(document).ready(function () {
         }.bind(this), 900);
     });
 
-    $(document).on('click', 'label.hiddenAddOnLabel', function () {
-        $(".hiddenBtn").removeClass("ableToAddHidden");
+    $(document).on('click', 'label.hiddenAddOnLabel', function () {        
         var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
         if (hiddenAddOnBtn.length > 0) {
             $(hiddenAddOnBtn).addClass("ableToAddHidden");
+        }
+        else{
+            $(".hiddenBtn").removeClass("ableToAddHidden");
         }
     });
 
