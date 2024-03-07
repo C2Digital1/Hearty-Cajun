@@ -962,7 +962,7 @@ $(document).ready(function () {
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
 
     });
-    $(document).on('click', 'button.customQuickAdd.button.disabled', function () {
+    $(document).on('click', 'button.customQuickAdd.extraQuickMeal.button.disabled', function () {
         $(this).addClass("animated bounceIn");
         $(".extrProdInfoContainer").addClass("showError animated bounceIn");
         setTimeout(function () {
