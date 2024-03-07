@@ -451,6 +451,7 @@ $(document).ready(function () {
                 if (numberOfUnits > 1) {
                     for (var i = 0; i < numberOfUnits; i++) {
                         var existingCartItemID = $(".mainCartItemsList").find(`#${cartItemId}`);
+                        var repeateIt = false;
                         if (existingCartItemID.length > 0 && repeateIt != true) {
                             incrementCartItem(existingCartItemID);
                         } else {
