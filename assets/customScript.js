@@ -457,11 +457,7 @@ $(document).ready(function () {
                             appendCartItem(cartItemId, numberOfUnits, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
                         }
                         attachedQtyBtnsEventListeners();
-                        updateCartAndSave();
-                        if ($(".hiddenBtn.ableToAddHidden").length > 0) {
-                            $(".hiddenBtn.ableToAddHidden").click();
-                            $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
-                        }
+                        updateCartAndSave();                       
                     }
                 }
                 else {
@@ -472,14 +468,13 @@ $(document).ready(function () {
                     }
 
                     attachedQtyBtnsEventListeners();
-                    updateCartAndSave();
-
-                    if ($(".hiddenBtn.ableToAddHidden").length > 0) {
-                        $(".hiddenBtn.ableToAddHidden").click();
-                        $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
-                    }
+                    updateCartAndSave();                    
                 }
 
+                if ($(".hiddenBtn.ableToAddHidden").length > 0) {
+                    $(".hiddenBtn.ableToAddHidden").click();
+                    $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
+                }
 
                 // remove classes from Add To Cart Button
                 setTimeout(function () {
