@@ -64,9 +64,10 @@
         </div>
       </div>
     {% endfor %}
-    <button
+    <button      
       class="customQuickAdd extraQuickMeal button disabled"
       data-variantOptions=""
+      data-AbleToAddId="#dummyId"
       data-cartItemId="cartItem-{{ product.id }}"
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"

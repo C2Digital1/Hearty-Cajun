@@ -956,10 +956,15 @@ $(document).ready(function () {
 
 
         var allOptions = [];
+        var extraAddOnProd = "";
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
             allOptions.push($(this).val());
         });
+        $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
+            extraAddOnProd= $(this).attr("data-VariantProdAddBtn");
+        });                
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
+        $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd);
 
     });
     $(document).on('click', 'button.customQuickAdd.extraQuickMeal.button.disabled', function () {
@@ -971,13 +976,16 @@ $(document).ready(function () {
         }.bind(this), 900);
     });
 
-    $(document).on('click', 'label.hiddenAddOnLabel', function () {        
-        var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
-        if (hiddenAddOnBtn.length > 0) {
-            $(hiddenAddOnBtn).addClass("ableToAddHidden");
+    $(document).on('click', 'label.hiddenAddOnLabel', function () {
+        $(this).parent(".extraProdVariantContainer").children(".hiddenBtn").removeClass("ableToAddHidden");
+        var radioIsChecked = false;
+        if ($(this).children("input").is(':checked')) {
+            radioIsChecked = true;
         }
-        else{
-            $(".hiddenBtn").removeClass("ableToAddHidden");
+        var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
+        if (hiddenAddOnBtn.length > 0 && radioIsChecked) {
+            $(hiddenAddOnBtn).addClass("ableToAddHidden");
+           
         }
     });
 

@@ -21,6 +21,7 @@
     <button
       class="customQuickAdd optionsOverlayOpener button"
       data-showOptions="#options-{{ product.id }}"
+      data-AbleToAddId="#dummyId"
     >
       <span class="bagIcon">
         {% render 'addToCartIcon' %}
@@ -37,6 +38,7 @@
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
       data-variantOptions=""
+      data-AbleToAddId="#dummyId"
       data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
     >
       <span class="bagIcon">
