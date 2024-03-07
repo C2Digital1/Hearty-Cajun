@@ -961,12 +961,8 @@ $(document).ready(function () {
 
     $(document).on('click', 'label.hiddenAddOnLabel', function () {
         $(".hiddenBtn").removeClass("ableToAddHidden");
-        var radioIsChecked = false;
-        if ($(this).children("input").is(':checked')) {
-            radioIsChecked = true;
-        }
         var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
-        if (hiddenAddOnBtn.length > 0 && radioIsChecked) {
+        if (hiddenAddOnBtn.length > 0) {
             $(hiddenAddOnBtn).addClass("ableToAddHidden");
         }
     });
