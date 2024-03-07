@@ -457,7 +457,11 @@ $(document).ready(function () {
                             appendCartItem(cartItemId, numberOfUnits, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
                         }
                         attachedQtyBtnsEventListeners();
-                        updateCartAndSave();                       
+                        updateCartAndSave();    
+                        if ($(".hiddenBtn.ableToAddHidden").length > 0) {
+                            $(".hiddenBtn.ableToAddHidden").click();
+                            $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
+                        }                   
                     }
                 }
                 else {
@@ -468,13 +472,14 @@ $(document).ready(function () {
                     }
 
                     attachedQtyBtnsEventListeners();
-                    updateCartAndSave();                    
+                    updateCartAndSave(); 
+                    if ($(".hiddenBtn.ableToAddHidden").length > 0) {
+                        $(".hiddenBtn.ableToAddHidden").click();
+                        $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
+                    }                   
                 }
 
-                if ($(".hiddenBtn.ableToAddHidden").length > 0) {
-                    $(".hiddenBtn.ableToAddHidden").click();
-                    $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
-                }
+               
 
                 // remove classes from Add To Cart Button
                 setTimeout(function () {
@@ -962,7 +967,7 @@ $(document).ready(function () {
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
             extraAddOnProd.push($(this).attr("data-VariantProdAddBtn").trim());
         });     
-                   
+
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd.join(", "));
 
