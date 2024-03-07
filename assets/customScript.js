@@ -956,15 +956,15 @@ $(document).ready(function () {
 
 
         var allOptions = [];
-        var extraAddOnProd = "";
+        var extraAddOnProd = [];
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
             allOptions.push($(this).val());
         });
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
-            extraAddOnProd= $(this).attr("data-VariantProdAddBtn");
+            extraAddOnProd.push($(this).attr("data-VariantProdAddBtn").trim());
         });                
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
-        $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd);
+        $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd.join(", "));
 
     });
     $(document).on('click', 'button.customQuickAdd.extraQuickMeal.button.disabled', function () {
