@@ -458,10 +458,17 @@ $(document).ready(function () {
                         }
                         attachedQtyBtnsEventListeners();
                         updateCartAndSave();    
-                        if ($(".hiddenBtn.ableToAddHidden").length > 0) {
-                            $(".hiddenBtn.ableToAddHidden").click();
-                            $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
-                        }                   
+                        
+                        var extrAddOnsBtns = $(this).attr("data-AbleToAddId").split(",");
+                        extrAddOnsBtns.forEach(function(id) {
+                              var addOnBtnElement = $(id);
+                              if (addOnBtnElement.length) {
+                                  addOnBtnElement.click(); // Trigger click event if element exists
+                              } else {
+                                  console.log("");
+                              }
+                          });
+
                     }
                 }
                 else {
@@ -473,10 +480,16 @@ $(document).ready(function () {
 
                     attachedQtyBtnsEventListeners();
                     updateCartAndSave(); 
-                    if ($(".hiddenBtn.ableToAddHidden").length > 0) {
-                        $(".hiddenBtn.ableToAddHidden").click();
-                        $(".hiddenBtn.ableToAddHidden").removeClass("ableToAddHidden");
-                    }                   
+                    var extrAddOnsBtns = $(this).attr("data-AbleToAddId").split(",");
+                    extrAddOnsBtns.forEach(function(id) {
+                          var addOnBtnElement = $(id);
+                          if (addOnBtnElement.length) {
+                              addOnBtnElement.click(); // Trigger click event if element exists
+                          } else {
+                              console.log("");
+                          }
+                      });
+                      $(this).attr("data-AbleToAddId", "")           
                 }
 
                
