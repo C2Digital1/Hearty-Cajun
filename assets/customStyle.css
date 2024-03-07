@@ -5147,7 +5147,14 @@ div#template-customers-order h4.subtitle {
 .shopify-section.reset-page.account-page section.section.accountLoginSignup.is-width-.scheme_color-default.animated {
     opacity: 1 !important;
 }
-
+.appstle-wrapper {
+    min-height: 50vh;
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* media queires for desktop start  */
 
 
