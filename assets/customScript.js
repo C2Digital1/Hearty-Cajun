@@ -482,7 +482,9 @@ $(document).ready(function () {
                     $("body").addClass("showCart");
                     $('.optionChooser').prop('checked', false);
                     $(".extraOptionOverlay.active").removeClass("active");
-                    $(".customQuickAdd").removeClass("quickMealAddBtn").addClass("disabled");
+                    if($(".extraQuickMeal").length > 0){
+                        $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
+                    }                    
                 }.bind(this), 1500);
 
             }.bind(this), 900);
@@ -920,7 +922,9 @@ $(document).ready(function () {
 
     $(document).on('click', 'button.optionsOverlayOpener', function () {        
         $('.optionChooser').prop('checked', false);
-        $(".customQuickAdd").removeClass("quickMealAddBtn").addClass("disabled");
+        if($(".extraQuickMeal").length > 0){
+            $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
+        }
         $(".extraOptionOverlay").removeClass("active");
         var optionOverlay = $(this).attr("data-showOptions");
         $(optionOverlay).addClass("active");
@@ -928,6 +932,9 @@ $(document).ready(function () {
     $(document).on('click', 'button.closeOptionOverlay', function () {
         $(".extraOptionOverlay").removeClass("active");
         $('.optionChooser').prop('checked', false);
+        if($(".extraQuickMeal").length > 0){
+            $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
+        }
     });
     $(document).on('change', '.extraProdVariantContainer .optionChooser', function () {
 
