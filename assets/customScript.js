@@ -932,8 +932,9 @@ $(document).ready(function () {
     $(document).on('change', '.extraProdVariantContainer .optionChooser', function () {
 
         var allGroupsChecked = true;
+        var itsParentVariantContainer = $(this).attr("data-ParentContainer")
 
-        $(".extraProdVariantContainer").each(function () {
+        $(itsParentVariantContainer).each(function () {
             if (!$(this).find('.optionChooser:checked').length) {
                 allGroupsChecked = false;
                 return false; // Exit the loop early

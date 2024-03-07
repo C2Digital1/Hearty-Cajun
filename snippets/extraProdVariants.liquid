@@ -25,7 +25,7 @@
           {%- endif -%}
           {{ extraProd.title }}
         </p>
-        <div class="extraProdVariantContainer">
+        <div id="{{extraProd.id}}-VariantContainer" class="extraProdVariantContainer">
           {% for variant in extraProd.variants %}
             <label
               data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{  variant.id }} {% else %}.dummyItemsss{% endif %}"
@@ -36,6 +36,7 @@
                 id="{{extraProd.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
                 type="radio"
                 class="optionChooser"
+                data-ParentContainer="#{{extraProd.id}}-VariantContainer"
                 name="{{ extraProd.id }}"
                 value="{{extraProd.title}}: {{ variant.title }}"
               >
