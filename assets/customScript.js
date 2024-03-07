@@ -480,6 +480,7 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $(this).removeClass("adding added");
                     $("body").addClass("showCart");
+                    $('.optionChooser').prop('checked', false);
                     $(".extraOptionOverlay.active").removeClass("active");
                 }.bind(this), 1500);
 
@@ -916,13 +917,15 @@ $(document).ready(function () {
 
     //  ========  ADD ONS ADD TO CART CODE END ======== 
 
-    $(document).on('click', 'button.optionsOverlayOpener', function () {
+    $(document).on('click', 'button.optionsOverlayOpener', function () {        
+        $('.optionChooser').prop('checked', false);
         $(".extraOptionOverlay").removeClass("active");
         var optionOverlay = $(this).attr("data-showOptions");
         $(optionOverlay).addClass("active");
     });
     $(document).on('click', 'button.closeOptionOverlay', function () {
         $(".extraOptionOverlay").removeClass("active");
+        $('.optionChooser').prop('checked', false);
     });
     $(document).on('change', '.extraProdVariantContainer .optionChooser', function () {
 
