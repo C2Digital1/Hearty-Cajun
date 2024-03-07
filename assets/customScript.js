@@ -954,7 +954,6 @@ $(document).ready(function () {
             $(this).closest('.extraOptionOverlay').find(".customQuickAdd").removeClass("quickMealAddBtn").addClass("disabled");
         }
 
-
         var allOptions = [];
         var extraAddOnProd = [];
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
@@ -962,7 +961,8 @@ $(document).ready(function () {
         });
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
             extraAddOnProd.push($(this).attr("data-VariantProdAddBtn").trim());
-        });                
+        });     
+                   
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd.join(", "));
 
