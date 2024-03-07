@@ -28,7 +28,7 @@
         <div id="{{product.id}}-VariantContainer" class="extraProdVariantContainer">
           {% for variant in extraProd.variants %}
             <label
-              data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{  variant.id }} {% else %}.dummyItemsss{% endif %}"
+              data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{ product.id }}-{{  variant.id }}{% else %}.dummyItemsss{% endif %}"
               for="{{product.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
               class="checkboxItem hiddenAddOnLabel"
             >
@@ -37,6 +37,7 @@
                 type="radio"
                 class="optionChooser"
                 data-ParentContainer="#{{product.id}}-VariantContainer"
+                data-VariantProdAddBtn="#hiddenAddOn-{{ product.id }}-{{  variant.id }}"
                 name="{{ extraProd.id }}"
                 value="{{extraProd.title}}: {{ variant.title }}"
               >
@@ -46,7 +47,7 @@
             </label>
             {% if variant.price > 0 %}
               <button
-                id="hiddenAddOn-{{ variant.id }}"
+                id="hiddenAddOn-{{ product.id }}-{{  variant.id }}"
                 class="quickAddOnsBtn  button hiddenBtn"
                 data-cartItemId="cartItem-{{ extraProd.id }}"
                 data-addOnVariantId="{{ variant.id }}"

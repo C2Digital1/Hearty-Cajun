@@ -960,7 +960,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', 'label.hiddenAddOnLabel', function () {
-        $(this).parent(".extraProdVariantContainer").children(".hiddenBtn").removeClass("ableToAddHidden");
+        $(".hiddenBtn").removeClass("ableToAddHidden");
         var radioIsChecked = false;
         if ($(this).children("input").is(':checked')) {
             radioIsChecked = true;
