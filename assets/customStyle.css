@@ -5266,8 +5266,8 @@ svg.as-w-4.as-h-4.as-inline.as-text-indigo-600.false,
     color: #463f3a;
 }
 
-.appstle-wrapper :is(.as-border-indigo-500) {
-    border-color: #F15D5E !important;
+.appstle-wrapper button.as-w-full.as-border-indigo-500 {
+    border-bottom: 2px solid #F15D5E!important;
 }
 
 /* media queires for desktop start  */
