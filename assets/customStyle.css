@@ -5284,6 +5284,11 @@ svg.as-w-4.as-h-4.as-inline.as-text-indigo-600.false,
     margin: 10px auto !important;
 }
 
+.appstle-contract-action-wrapper.as-flex button.as-w-full {
+    margin: 0 !important;
+}
+
+
 /* media queires for desktop start  */
 
 
