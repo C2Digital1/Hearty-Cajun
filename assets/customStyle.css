@@ -5160,11 +5160,15 @@ div#template-customers-order h4.subtitle {
 
 .appstle-wrapper {
     min-height: 50vh;
-    padding: 50px 0;
+    padding: 50px 16px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+button.appstle_order-detail_update-button svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-vubbuv {
+    display: none;
 }
 
 a.appstle_manageSubBtn {
@@ -5189,6 +5193,81 @@ a.appstle_manageSubBtn button.btn {
     background: transparent;
     border: 0px solid !important;
     color: #463f3a;
+}
+
+
+button.appstle_order-detail_update-button svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-vubbuv {
+    display: none;
+}
+
+
+.appstle-wrapper button.as-w-full.as-button.as-button--pause,
+.appstle-wrapper button.as-edit-discount_primary-button,
+.appstle-wrapper button.as-border.as-border-transparent.as-order-now-btn {
+    background: linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%);
+    color: #463f3a;
+    border: 0px solid #463f3a;
+    min-height: 54px;
+    border-radius: 10px;
+}
+
+.appstle-wrapper button.as-border {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-family: 'Montserrat' !important;
+}
+
+.appstle-wrapper button.as-w-full.as-button.as-button--cancelsub,
+.appstle-wrapper button.as-w-full.as-skip-order-btn {
+    color: #463f3a !important;
+    border: 1px solid #463f3a !important;
+    min-height: 54px !important;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.appstle-wrapper button.as-w-full.as-button.as-button--cancelsub:hover,
+.appstle-wrapper button.as-w-full.as-skip-order-btn:hover {
+    background: #463f3a !important;
+    border: 1px solid #463f3a !important;
+    color: #fff !important;
+}
+
+
+.appstle-wrapper h2.as-customer-info-name.as-text-lg {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 20px;
+    color: #463f3a;
+}
+
+.appstle-wrapper span.as-cursor-pointer.as-swap-edit-product-cta,
+.appstle-wrapper,
+.appstle-wrapper p.as-text-sm.as-text-blue-500.as-cursor-pointer,
+.appstle-wrapper p.as-text-sm {
+    color: #463f3a;
+}
+
+.appstle-wrapper span.as-cursor-pointer.as-edit-product-cta {
+    color: #F15D5E;
+}
+
+svg.as-w-4.as-h-4.as-inline.as-text-indigo-600.false,
+.appstle-wrapper span.as-cursor-pointer.as-edit-product-cta {
+    color: #F15D5E;
+}
+
+
+
+.appstle-wrapper h3.as-text-lg {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    font-family: 'Montserrat' !important;
+    color: #463f3a;
+}
+
+.appstle-wrapper :is(.as-border-indigo-500) {
+    border-color: #F15D5E;
 }
 
 /* media queires for desktop start  */
