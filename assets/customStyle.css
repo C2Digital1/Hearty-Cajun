@@ -5320,6 +5320,10 @@ a.appstle_contract_see_more.as-see-more-link {
     padding: 0 !important;
 }
 
+.cartItemsList.mainCartItemsList span.cartItemPrice {
+    opacity: 0 !important;
+}
+
 /* media queires for desktop start  */
 
 
