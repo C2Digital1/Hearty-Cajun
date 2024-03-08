@@ -5159,12 +5159,15 @@ div#template-customers-order h4.subtitle {
 }
 
 .appstle-wrapper {
+
     min-height: 50vh;
     padding: 50px 16px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: calc(100% - 100px) !important;
+    margin: 0px auto !important;
 }
 
 button.appstle_order-detail_update-button svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-vubbuv {
@@ -5267,14 +5270,16 @@ svg.as-w-4.as-h-4.as-inline.as-text-indigo-600.false,
 }
 
 .appstle-wrapper button.as-w-full.as-border-indigo-500 {
-    border-bottom: 2px solid #F15D5E!important;
+    border-bottom: 2px solid #F15D5E !important;
 }
+
 .appstle-wrapper button.as-inline-flex.as-button.as-button--primary.as-see-more-button {
     color: #463f3a;
     background: transparent !important;
     cursor: pointer;
     padding: 0;
 }
+
 .appstle-contract-action-wrapper.as-flex.as-flex-col.md\:as-flex-row.as-items-center.as-justify-between {
     flex-direction: column !important;
 }
@@ -6667,6 +6672,37 @@ svg.as-w-4.as-h-4.as-inline.as-text-indigo-600.false,
 
     .progressBarContainer {
         top: 125px;
+    }
+
+    .appstle-contract-action-wrapper.as-flex.as-flex-col.md\:as-flex-row.as-items-center.as-justify-between .as-flex.as-items-center.lg\:as-ml-auto.appstle-contract-cancel-and-detail-wrapper {
+        display: block !important;
+    }
+
+    .appstle-contract-action-wrapper.as-flex button.as-w-full {
+        margin: 10px auto !important;
+    }
+
+    .appstle-wrapper button.as-inline-flex.as-button.as-button--primary.as-see-more-button {
+        text-align: center;
+        margin: 0px auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a.appstle_contract_see_more.as-see-more-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
+    }
+
+    .appstle-wrapper {
+        max-width: 98% !important;
+    }
+
+    .as-w-full.as-pl-3.appstle-contract-cancel-button {
+        padding: 0 !important;
     }
 }
 
