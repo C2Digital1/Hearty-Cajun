@@ -4092,7 +4092,14 @@ p.boldBadge {
     font-weight: bold;
     letter-spacing: 0;
     line-height: 17px;
-    text-align: center;
+    text-align: left;
+    margin-right: 20px;
+    width: calc(100% - 140px);
+}
+
+span.selectedPreference {
+    display: inline-flex;
+    text-align: left;
 }
 
 p.mosPopularBox {
@@ -6477,7 +6484,7 @@ a.appstle_manageSubBtn button.btn {
         border-radius: 16px 16px 0 0;
         background-color: #463F3A;
         box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
-        padding: 16px 16px 55px 16px;
+        padding: 16px 16px 16px 16px;
         left: 0;
         bottom: 0;
     }
@@ -6998,7 +7005,7 @@ a.appstle_manageSubBtn button.btn {
 
 @media only screen and (max-width: 400px) {
     .collectionMobileFooter {
-        padding: 16px 16px 80px 16px;
+        padding: 16px 16px 16px 16px;
     }
 }
 

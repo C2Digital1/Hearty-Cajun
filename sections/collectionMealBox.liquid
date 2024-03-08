@@ -80,6 +80,9 @@
     {% endif %}
   }
   @media screen and (max-width:798px){
+    .shopify-section.custFooterBar {
+        display: none;
+    }
     #shopify-section-{{ id }} {
       padding-top: {{ padding_top_m }}px;
       padding-bottom: {{ padding_bottom_m }}px;
@@ -356,7 +359,7 @@
     </div>
     <div class="collectionMobileFooter">
       <button class="addonStep button">Add Ons</button>
-      <button class="ViewMealsBtn button">View Meals</button>
+      <button class="ViewMealsBtn button">View Meals (<span class="mobileTotalCart">0</span>)</button>
     </div>
   </div>
 </section>

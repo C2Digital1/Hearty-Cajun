@@ -246,6 +246,15 @@ $(document).ready(function () {
             preferences.push($(this).text().trim());
         });
         localStorage.setItem("preferences", JSON.stringify(preferences));
+        if ($(".selectedPreference").length > 0) {
+            var selectedPreferences = preferences;
+            if(selectedPreferences.length>1){
+                $(".selectedPreference").text("Multiple Preferences");
+            }
+            else{
+                $(".selectedPreference").text(selectedPreferences);
+            }           
+        }
     }
 
     $("button.prefrenceBtn").click(function () {
@@ -261,6 +270,15 @@ $(document).ready(function () {
             preferences.forEach(function (preference) {
                 $(".prefrenceBtn .btnTxt:contains('" + preference + "')").closest("button").addClass("active");
             });
+            if ($(".selectedPreference").length > 0) {
+                var selectedPreferences = preferences;
+                if(selectedPreferences.length>1){
+                    $(".selectedPreference").text("Multiple Preferences");
+                }
+                else{
+                    $(".selectedPreference").text(selectedPreferences);
+                }
+            }
         }
     }
 
@@ -457,17 +475,17 @@ $(document).ready(function () {
                             appendCartItem(cartItemId, numberOfUnits, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
                         }
                         attachedQtyBtnsEventListeners();
-                        updateCartAndSave();    
-                        
+                        updateCartAndSave();
+
                         var extrAddOnsBtns = $(this).attr("data-AbleToAddId").split(",");
-                        extrAddOnsBtns.forEach(function(id) {
-                              var addOnBtnElement = $(id);
-                              if (addOnBtnElement.length) {
-                                  addOnBtnElement.click(); // Trigger click event if element exists
-                              } else {
-                                  console.log("");
-                              }
-                          });
+                        extrAddOnsBtns.forEach(function (id) {
+                            var addOnBtnElement = $(id);
+                            if (addOnBtnElement.length) {
+                                addOnBtnElement.click(); // Trigger click event if element exists
+                            } else {
+                                console.log("");
+                            }
+                        });
 
                     }
                 }
@@ -479,30 +497,29 @@ $(document).ready(function () {
                     }
 
                     attachedQtyBtnsEventListeners();
-                    updateCartAndSave(); 
+                    updateCartAndSave();
                     var extrAddOnsBtns = $(this).attr("data-AbleToAddId").split(",");
-                    extrAddOnsBtns.forEach(function(id) {
-                          var addOnBtnElement = $(id);
-                          if (addOnBtnElement.length) {
-                              addOnBtnElement.click(); // Trigger click event if element exists
-                          } else {
-                              console.log("");
-                          }
-                      });
-                      $(this).attr("data-AbleToAddId", "")           
+                    extrAddOnsBtns.forEach(function (id) {
+                        var addOnBtnElement = $(id);
+                        if (addOnBtnElement.length) {
+                            addOnBtnElement.click(); // Trigger click event if element exists
+                        } else {
+                            console.log("");
+                        }
+                    });
+                    $(this).attr("data-AbleToAddId", "")
                 }
 
-               
+
 
                 // remove classes from Add To Cart Button
                 setTimeout(function () {
                     $(this).removeClass("adding added");
-                    $("body").addClass("showCart");
                     $('.optionChooser').prop('checked', false);
                     $(".extraOptionOverlay.active").removeClass("active");
-                    if($(".extraQuickMeal").length > 0){
+                    if ($(".extraQuickMeal").length > 0) {
                         $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
-                    }                    
+                    }
                 }.bind(this), 1500);
 
             }.bind(this), 900);
@@ -510,12 +527,13 @@ $(document).ready(function () {
     });
 
     $(document).on('click', 'button.removeAllCart', function () {
-       
+
         $(".mainCartItemsList").empty();
         $(".addOnsList").empty();
         localStorage.removeItem('cartData');
         localStorage.removeItem('cartAddOns');
-        $(".totalCartItems").text("0");
+        $(".totalCartItems").text("0");        
+        $(".mobileTotalCart").text("0");
         $(".cartSubtotal, .orderTotalPrice").text("$0.00");
         $(".addOnHeader").hide();
         if ($(".mealBoxProgressBar").length > 0) {
@@ -528,7 +546,7 @@ $(document).ready(function () {
         } else {
             window.location.href = boxCollectionUrl;
         }
-        
+
     });
 
     $(document).on('click', 'button.addonStep', function () {
@@ -685,6 +703,7 @@ $(document).ready(function () {
         }
         else {
             $(".totalCartItems").text(totalItems);
+            $(".mobileTotalCart").text(totalItems);
         }
         updatCartFooterTotal();
     }
@@ -938,9 +957,9 @@ $(document).ready(function () {
 
     //  ========  ADD ONS ADD TO CART CODE END ======== 
 
-    $(document).on('click', 'button.optionsOverlayOpener', function () {        
+    $(document).on('click', 'button.optionsOverlayOpener', function () {
         $('.optionChooser').prop('checked', false);
-        if($(".extraQuickMeal").length > 0){
+        if ($(".extraQuickMeal").length > 0) {
             $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
         }
         $(".extraOptionOverlay").removeClass("active");
@@ -950,7 +969,7 @@ $(document).ready(function () {
     $(document).on('click', 'button.closeOptionOverlay', function () {
         $(".extraOptionOverlay").removeClass("active");
         $('.optionChooser').prop('checked', false);
-        if($(".extraQuickMeal").length > 0){
+        if ($(".extraQuickMeal").length > 0) {
             $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
         }
     });
@@ -979,7 +998,7 @@ $(document).ready(function () {
         });
         $(this).closest('.extraOptionOverlay').find('.optionChooser:checked').each(function () {
             extraAddOnProd.push($(this).attr("data-VariantProdAddBtn").trim());
-        });     
+        });
 
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-variantoptions", allOptions.join(", "));
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd.join(", "));
@@ -1002,7 +1021,7 @@ $(document).ready(function () {
         }
         var hiddenAddOnBtn = $(this).attr("data-VarianHiddenBtn");
         if (hiddenAddOnBtn.length > 0 && radioIsChecked) {
-            $(hiddenAddOnBtn).addClass("ableToAddHidden");           
+            $(hiddenAddOnBtn).addClass("ableToAddHidden");
         }
     });
 
