@@ -48,14 +48,14 @@
             {% if variant.price > 0 %}
               <button
                 id="hiddenAddOn-{{ product.id }}-{{  variant.id }}"
-                class="quickAddOnsBtn  button hiddenBtn"
+                class="quickAddOnsBtn button hiddenBtn"
                 data-cartItemId="cartItem-{{ extraProd.id }}"
                 data-addOnVariantId="{{ variant.id }}"
                 data-addOnProdId="{{ extraProd.id }}"
                 data-productName="{{ extraProd.title }}"
                 data-productImg="{{ extraProd.featured_image | img_url:'master' }}"
                 data-AddOnPrice="{{ variant.price | money_without_currency }}"
-                data-numberOfUnits= "1"            
+                data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"            
               >
                 HIDDEN ADD
               </button>
