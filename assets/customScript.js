@@ -1085,6 +1085,16 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on('click', 'label.extraProdLineItem', function () {
+        var sameLabels = $(this).attr('data-sameLabels');
+        $("label.extraProdLineItem").removeClass('active');
+        $(this).addClass("active");
+        $(sameLabels).addClass('active');
+        var selectedSpice = $(this).attr("data-labelVal").trim();
+        localStorage.setItem('spiceFlavorClass', selectedSpice);
+    });
+
+
     /* =========== MEAL BOX AND CART  CODE END =========== */
 
 
@@ -1135,6 +1145,17 @@ $(document).ready(function () {
             }).join('\n');
 
             $("#boxItems").val(finalBoxItemsProd);
+
+            // Retrieve the selected spice flavor from local storage
+            var selectedSpice = localStorage.getItem('spiceFlavorClass');
+
+            if (selectedSpice && selectedSpice.trim() !== "") {
+                $("#spiceFlavor").val(selectedSpice);
+            } else {
+                $("#spiceFlavor").val("");
+            }
+
+          
             // pushing mainBox Prod Info for Add To Cart
             // mainBoxProdInfoArray.forEach(function (item, index) {
             //     finalProdForCart.push({

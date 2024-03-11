@@ -2867,10 +2867,13 @@ label.checkboxItem input {
     display: none;
 }
 
+
+label.checkboxItem.active span.checkmarkIcon,
 label.checkboxItem input:checked~span.checkmarkIcon {
     background: #463F3A;
 }
 
+label.checkboxItem.active span.checkmarkIcon::after,
 label.checkboxItem input:checked~span.checkmarkIcon::after {
     display: block;
 }
@@ -5029,7 +5032,25 @@ span.titleIconImg img.boxImg {
     object-fit: contain;
 }
 
+.productExtraOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
 .extraProdVariantContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.optionsLabelsContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -6372,10 +6393,12 @@ a.appstle_contract_see_more.as-see-more-link {
         flex-direction: column;
         margin: 10px 0;
     }
+
     .line-item-discount__container {
         text-align: center;
         margin: 0;
     }
+
     .cart__card.container .cart__info .cart__quantity {
         width: 100%;
         text-align: left;

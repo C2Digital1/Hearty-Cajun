@@ -25,56 +25,79 @@
           {%- endif -%}
           {{ extraProd.title }}
         </p>
-        <div id="{{product.id}}-VariantContainer" class="extraProdVariantContainer">
-          {% for variant in extraProd.variants %}
-            <label
-              data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{ product.id }}-{{  variant.id }}{% else %}.dummyItemsss{% endif %}"
-              for="{{product.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
-              class="checkboxItem hiddenAddOnLabel"
-            >
-              <input
-                id="{{product.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
-                type="radio"
-                class="optionChooser"
-                data-ParentContainer="#{{product.id}}-VariantContainer"
-                data-VariantProdAddBtn="#hiddenAddOn-{{ product.id }}-{{  variant.id }}"
-                name="{{ extraProd.id }}"
-                value="{{extraProd.title}}: {{ variant.title }}"
-              >
-              <span class="checkmarkIcon"></span>
-              {{ variant.title }}
-              {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
-            </label>
-            {% if variant.price > 0 %}
-              <button
-                id="hiddenAddOn-{{ product.id }}-{{  variant.id }}"
-                class="quickAddOnsBtn button hiddenBtn"
-                data-mainProdId="{{ product.id }}"
-                data-linkedProd="true"
-                data-cartItemId="cartItem-{{ extraProd.id }}"
-                data-addOnVariantId="{{ variant.id }}"
-                data-addOnProdId="{{ extraProd.id }}"
-                data-productName="{{ extraProd.title }}"
-                data-productImg="{{ extraProd.featured_image | img_url:'master' }}"
-                data-AddOnPrice="{{ variant.price | money_without_currency }}"
-                data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"            
-              >
-                HIDDEN ADD
-              </button>
-            {% endif %}
-          {% endfor %}
+        <div class="productExtraOptions">
+          {% if extraProd.metafields.custom.one_selection_only %}
+            {% assign allowOneTime = true %}
+            <div class="optionsLabelsContainer">
+              {% for variant in extraProd.variants %}
+                <label
+                  data-sameLabels=".extraProdOpt-{{ variant.id }}-variantBtn"
+                  data-labelVal="{{ variant.title }}"
+                  class="checkboxItem extraProdLineItem  extraProdOpt-{{ variant.id }}-variantBtn"
+                >
+                  <span class="checkmarkIcon"></span>
+                  {{ variant.title }}
+                  {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
+                </label>
+              {% endfor %}
+            </div>
+          {% else %}
+            {% assign allowOneTime = false %}
+            <div id="{{product.id}}-VariantContainer" class="extraProdVariantContainer">
+              {% for variant in extraProd.variants %}
+                <label
+                  {% if allowOneTime %}
+                  {% else %}
+                    data-VarianHiddenBtn="{% if variant.price > 0 %}#hiddenAddOn-{{ product.id }}-{{  variant.id }}{% else %}.dummyItemsss{% endif %}"
+                  {% endif %}
+                  for="{{product.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
+                  class="checkboxItem  {% if allowOneTime %} extraProdLineItem {% else %} hiddenAddOnLabel {% endif %}"
+                >
+                  <input
+                    id="{{product.id}}-{{ variant.id }}-variantBtn-{{ forloop.index }}"
+                    type="radio"
+                    class="{% if allowOneTime %}{% else %}optionChooser{% endif %}"
+                    data-ParentContainer="#{{product.id}}-VariantContainer"
+                    data-VariantProdAddBtn="#hiddenAddOn-{{ product.id }}-{{  variant.id }}"
+                    name="{{ extraProd.id }}"
+                    value="{{extraProd.title}}: {{ variant.title }}"
+                  >
+                  <span class="checkmarkIcon"></span>
+                  {{ variant.title }}
+                  {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
+                </label>
+                {% if variant.price > 0 %}
+                  <button
+                    id="hiddenAddOn-{{ product.id }}-{{  variant.id }}"
+                    class="quickAddOnsBtn button hiddenBtn"
+                    data-mainProdId="{{ product.id }}"
+                    data-linkedProd="true"
+                    data-cartItemId="cartItem-{{ extraProd.id }}"
+                    data-addOnVariantId="{{ variant.id }}"
+                    data-addOnProdId="{{ extraProd.id }}"
+                    data-productName="{{ extraProd.title }}"
+                    data-productImg="{{ extraProd.featured_image | img_url:'master' }}"
+                    data-AddOnPrice="{{ variant.price | money_without_currency }}"
+                    data-numberOfUnits="{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
+                  >
+                    HIDDEN ADD
+                  </button>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
-    <button      
+    <button
       class="customQuickAdd extraQuickMeal button disabled"
       data-variantOptions=""
-      data-AbleToAddId="#dummyId"      
+      data-AbleToAddId="#dummyId"
       data-mainProdId="{{ product.id }}"
       data-cartItemId="cartItem-{{ product.id }}"
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
-      data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
+      data-numberOfUnits="{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
     >
       <span class="bagIcon"> Apply </span>
       <span class="tickIcon">
