@@ -753,10 +753,11 @@ $(document).ready(function () {
         // update cart Ordar total prcie in footer 
         var cartSubtotal = parseFloat($(".cartSubtotal").text().replace("$", ""));
         var estimatedTax = parseFloat($(".estimatedTax").text().replace("$", ""));
-        if($("discountPrice").length>1){
+        if($(".discountPrice").length>1){
             var discountPercentage = 15;
             discountPrice = totalPrice * (discountPercentage / 100);
             cartSubtotal = cartSubtotal - discountPrice;
+            $(".discountPrice").text("$" + discountPrice.toFixed(2));       
         }
         var cartShippingCharges = 0;       
         if ($(".shippingCharges").text() != "FREE") {
