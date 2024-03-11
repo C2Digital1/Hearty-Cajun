@@ -4888,6 +4888,11 @@ span.discountIcon svg {
     margin: 0 5px 0 11px;
 }
 
+.line-item-discount__container {
+    max-width: 150px;
+    margin: 0px auto;
+}
+
 p.footerTxtRow.orderTotalRow {
     color: #FFFFFF;
     font-size: 12px;
@@ -6363,10 +6368,14 @@ a.appstle_contract_see_more.as-see-more-link {
 
     .cart__info .cart__price {
         width: 100%;
-        text-align: left;
-        display: none;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
     }
-
+    .line-item-discount__container {
+        text-align: center;
+        margin: 0;
+    }
     .cart__card.container .cart__info .cart__quantity {
         width: 100%;
         text-align: left;
