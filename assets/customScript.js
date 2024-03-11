@@ -746,12 +746,19 @@ $(document).ready(function () {
             totalPrice += quantity * price; // Multiply price by quantity
         });
 
+        var discountPrice = 0;
         // Update the subt total price in the footer
-        $(".cartSubtotal").text("$" + totalPrice.toFixed(2));
+        $(".cartSubtotal").text("$" + totalPrice.toFixed(2));       
+
         // update cart Ordar total prcie in footer 
         var cartSubtotal = parseFloat($(".cartSubtotal").text().replace("$", ""));
         var estimatedTax = parseFloat($(".estimatedTax").text().replace("$", ""));
-        var cartShippingCharges = 0;
+        if($("discountPrice").length>1){
+            var discountPercentage = 15;
+            discountPrice = totalPrice * (discountPercentage / 100);
+            cartSubtotal = cartSubtotal - discountPrice;
+        }
+        var cartShippingCharges = 0;       
         if ($(".shippingCharges").text() != "FREE") {
             cartShippingCharges = parseFloat($(".shippingCharges").text.replace("$", ""));
         }
