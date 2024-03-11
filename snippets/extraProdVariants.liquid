@@ -49,6 +49,8 @@
               <button
                 id="hiddenAddOn-{{ product.id }}-{{  variant.id }}"
                 class="quickAddOnsBtn button hiddenBtn"
+                data-mainProdId="{{ product.id }}"
+                data-linkedProd="true"
                 data-cartItemId="cartItem-{{ extraProd.id }}"
                 data-addOnVariantId="{{ variant.id }}"
                 data-addOnProdId="{{ extraProd.id }}"
@@ -67,7 +69,8 @@
     <button      
       class="customQuickAdd extraQuickMeal button disabled"
       data-variantOptions=""
-      data-AbleToAddId="#dummyId"
+      data-AbleToAddId="#dummyId"      
+      data-mainProdId="{{ product.id }}"
       data-cartItemId="cartItem-{{ product.id }}"
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"

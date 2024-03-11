@@ -3,7 +3,7 @@
   assign icon-minus = 'minus'
 -%}
 <div id="cartItemTemplate" style="display: none;">
-  <div id="%cartItemId%" data-VariantId="%cartItemVariantId%" class="customCartItem">
+  <div id="%cartItemId%" data-linkedProd="%isLinkedProd%" data-VariantId="%cartItemVariantId%" data-extraProdMainProdId="%extraProdMainProdId%" class="customCartItem">
     <div class="customCartItemImg">
       <img src="%cartItemImg%" alt="img" loading="lazy" height="96" width="96" class="boxImg lazyload">
     </div>

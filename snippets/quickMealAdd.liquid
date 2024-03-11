@@ -4,6 +4,8 @@
     data-cartItemId="cartItem-{{ product.id }}"
     data-addOnVariantId="{{ product.selected_or_first_available_variant.id }}"
     data-addOnProdId="{{ product.id }}"
+    data-mainProdId=""
+    data-linkedProd="false"
     data-productName="{{ product.title }}"
     data-productImg="{{ product.featured_image | img_url:'master' }}"
     data-AddOnPrice="{{ product.selected_or_first_available_variant.price | money_without_currency }}"
@@ -38,6 +40,7 @@
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
       data-variantOptions=""
+      data-mainProdId=""
       data-AbleToAddId="#dummyId"
       data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
     >
