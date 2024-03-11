@@ -43,6 +43,14 @@
 
 <div class="cartDrawerFooter">
   <p class="footerTxtRow cartSubTotalRow">Subtotal <span class="cartSubtotal">$0.0</span></p>
+
+  {% if customer %}
+    {% assign order_count = customer.orders_count %}
+    {% if order_count < 1 %}
+      <p class="footerTxtRow discountCodeLine"><span class="discountLabel">Discount <span class="discountIcon">{% render 'dicountIcon' %}neworder</span></span> <span class="discountPrice">$0.0</span></p>
+    {% endif %}
+  {% endif %}
+  
   <p class="footerTxtRow shippingTxtRow">
     Shipping
     {% if settings.ShippingCharges == '0' or settings.ShippingCharges == '0.0' -%}
