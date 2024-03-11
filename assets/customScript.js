@@ -753,7 +753,7 @@ $(document).ready(function () {
         // update cart Ordar total prcie in footer 
         var cartSubtotal = parseFloat($(".cartSubtotal").text().replace("$", ""));
         var estimatedTax = parseFloat($(".estimatedTax").text().replace("$", ""));
-        if($(".discountPrice").length>1){
+        if($(".discountPrice").length > 0){
             var discountPercentage = 15;
             discountPrice = totalPrice * (discountPercentage / 100);
             cartSubtotal = cartSubtotal - discountPrice;
