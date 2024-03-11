@@ -402,7 +402,7 @@ $(document).ready(function () {
             var selectedVariantId = $(activeProdActiveVariant).attr("data-variant").trim();
             var availabelSelection = $(activeProdActiveVariant).text().trim();
             var pricePerMeal = $(activeProdActiveVariant).attr("data-pricepermeal").trim();
-            var boxTotalPrice = $(activeProdActiveVariant).attr("data-boxTotalPrice").trim();       
+            var boxTotalPrice = $(activeProdActiveVariant).attr("data-boxTotalPrice").trim();
 
             updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection, boxTotalPrice);
             $(".loadingIcon").show();
@@ -449,7 +449,7 @@ $(document).ready(function () {
         var cartItemName = $(this).attr("data-productName");
         var cartItemImg = $(this).attr("data-productImg");
         var cartItemsVariants = $(this).attr("data-variantOptions");
-        var numberOfUnits = parseInt($(this).attr("data-numberOfUnits").trim());        
+        var numberOfUnits = parseInt($(this).attr("data-numberOfUnits").trim());
         var extraProdMainProdId = $(this).attr("data-mainProdId");
         var cartItemQty = 1;
         var sameProdLength = 0;
@@ -579,7 +579,7 @@ $(document).ready(function () {
         return selectedVariantId;
     }
 
-    
+
     function boxTotalPrice() {
         var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
         var boxTotalPrice = "";
@@ -673,7 +673,7 @@ $(document).ready(function () {
             var needtoAddUnits = parseInt($(this).parent(".qtyBox").next("span.numberOfUnits").text().trim());
             var currentTotalCartItems = parseInt($(".totalCartItems").text().trim());
             var limitOfSelection = parseInt(getTotalItemLimits());
-            var afterAddingTotalItems = needtoAddUnits + currentTotalCartItems; 
+            var afterAddingTotalItems = needtoAddUnits + currentTotalCartItems;
             if (afterAddingTotalItems > limitOfSelection) {
                 alert(`You can't add more than ${limitOfSelection} items to this box.`)
             }
@@ -683,7 +683,7 @@ $(document).ready(function () {
                     var currentQty = parseInt(inputField.val());
                     inputField.val(currentQty + needtoAddUnits);
                     var buttonId = $(this).attr('id');
-                    var dataLinkQtyBtn = $('[data-linkqtybtn="' + buttonId + '"]'); 
+                    var dataLinkQtyBtn = $('[data-linkqtybtn="' + buttonId + '"]');
                     if (dataLinkQtyBtn.length) {
                         dataLinkQtyBtn.trigger('click');
                     }
@@ -707,7 +707,7 @@ $(document).ready(function () {
                 $(this).closest(".customCartItem").remove();
             }
             var buttonId = $(this).attr('id');
-            var dataLinkQtyBtn = $('[data-linkqtybtn="' + buttonId + '"]'); 
+            var dataLinkQtyBtn = $('[data-linkqtybtn="' + buttonId + '"]');
             if (dataLinkQtyBtn.length) {
                 dataLinkQtyBtn.trigger('click');
             }
@@ -748,18 +748,21 @@ $(document).ready(function () {
 
         var discountPrice = 0;
         // Update the subt total price in the footer
-        $(".cartSubtotal").text("$" + totalPrice.toFixed(2));       
+        $(".cartSubtotal").text("$" + totalPrice.toFixed(2));
 
         // update cart Ordar total prcie in footer 
         var cartSubtotal = parseFloat($(".cartSubtotal").text().replace("$", ""));
         var estimatedTax = parseFloat($(".estimatedTax").text().replace("$", ""));
-        if($(".discountPrice").length > 0){
+
+        // add 15% discount for new customer start
+        if ($(".discountPrice").length > 0) {
             var discountPercentage = 15;
-            discountPrice = totalPrice * (discountPercentage / 100);
+            discountPrice = parseFloat(boxTotalPrice()) * (discountPercentage / 100);
             cartSubtotal = cartSubtotal - discountPrice;
-            $(".discountPrice").text("$" + discountPrice.toFixed(2));       
+            $(".discountPrice").text("$" + discountPrice.toFixed(2));
         }
-        var cartShippingCharges = 0;       
+        // add 15% discount for new customer end
+        var cartShippingCharges = 0;
         if ($(".shippingCharges").text() != "FREE") {
             cartShippingCharges = parseFloat($(".shippingCharges").text.replace("$", ""));
         }
@@ -809,7 +812,7 @@ $(document).ready(function () {
         $(".mainCartItemsList .customCartItem").each(function () {
             var cartItemId = $(this).attr("id");
             var cartItemImg = $(this).find("img").attr("src");
-            var cartItemName = $(this).find(".itemName").text();            
+            var cartItemName = $(this).find(".itemName").text();
             var extraProdMainProdId = $(this).attr("data-extraProdMainProdId");
             var numberOfUnitsForItem = parseInt($(this).find(".numberOfUnits").text().trim());
             if ($(this).find(".cartItemsInfo").text() != undefined || (this).find(".cartItemsInfo").text() != "") {
@@ -822,7 +825,7 @@ $(document).ready(function () {
             var cartItemPrice = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
             cartData.push({
                 cartItemId: cartItemId,
-                cartItemImg: cartItemImg,                
+                cartItemImg: cartItemImg,
                 extraProdMainProdId: extraProdMainProdId,
                 cartItemName: cartItemName,
                 cartItemsVariants: cartItemsVariants,
@@ -855,7 +858,7 @@ $(document).ready(function () {
 
     if ($("#cartItemTemplate").length > 0) {
         loadCartData();
-        loadAddOnsCartData();        
+        loadAddOnsCartData();
         updatCartFooterTotal();
         if ($(".mealBoxProgressBar").length > 0) {
             var limitOfItems = parseInt(getTotalItemLimits());
@@ -891,7 +894,7 @@ $(document).ready(function () {
                 sameProdLength = checkPlusBtnLenght;
                 appendCartAddOnItem(cartItemId, sameProdLength, numberOfUnits, addOnVariantId, extraProdMainProdId, cartItemImg, cartItemName, numberOfUnits, addOnPrice, linkedProd);
                 attachedAddOnQtyBtnsEventListeners();
-                updateCartAddonsAndSave();                
+                updateCartAddonsAndSave();
             }
             else {
                 if (existingAddOnCartItem.length > 0) {
@@ -902,7 +905,7 @@ $(document).ready(function () {
                     appendCartAddOnItem(cartItemId, sameProdLength, numberOfUnits, addOnVariantId, extraProdMainProdId, cartItemImg, cartItemName, cartItemQty, addOnPrice, linkedProd);
                 }
                 attachedAddOnQtyBtnsEventListeners();
-                updateCartAddonsAndSave();                
+                updateCartAddonsAndSave();
             }
             // remove classes from Add To Cart Button
             setTimeout(function () {
@@ -930,18 +933,18 @@ $(document).ready(function () {
             .replace('%numberOfUnits%', numberOfUnits)
             .replace('%cartItemPrice%', addOnPrice)
             .replace('%isLinkedProd%', linkedProd);
-            var $appendedItem = $(itemHtml); 
+        var $appendedItem = $(itemHtml);
         if (sameProdLength != 0) {
             $appendedItem.find('.qtyMinus').attr('data-linkQtyBtn', `qtyMinus-${extraProdMainProdId}-${sameProdLength}`);
             $appendedItem.find('.qtyPlus').attr('data-linkQtyBtn', `qtyPlus-${extraProdMainProdId}-${sameProdLength}`);
         }
-        if(linkedProd == "true"){
+        if (linkedProd == "true") {
             $appendedItem.find('.qtyMinus').hide();
             $appendedItem.find('.qtyPlus').hide();
         }
-        $(".addOnsList").append($appendedItem);       
+        $(".addOnsList").append($appendedItem);
         updateTotalCartItems("isAddOn");
-       
+
     }
 
     function attachedAddOnQtyBtnsEventListeners() {
