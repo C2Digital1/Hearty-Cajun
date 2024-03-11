@@ -4866,6 +4866,28 @@ p.footerTxtRow {
     line-height: 18px;
 }
 
+span.discountLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span.discountIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+span.discountIcon svg {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 11px;
+}
+
 p.footerTxtRow.orderTotalRow {
     color: #FFFFFF;
     font-size: 12px;
