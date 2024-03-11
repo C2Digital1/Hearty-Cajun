@@ -30,7 +30,7 @@ $(document).ready(function () {
         var $hiddenContainer = $(this).prev('.collectionItemsRow');
         setTimeout(function () {
             $($thisBtn).removeClass("is-loading");
-            $hiddenContainer.find('.hiddenItem').slice(0, 6).removeClass('hiddenItem');
+            $hiddenContainer.find('.hiddenItem').slice(0, 3).removeClass('hiddenItem');
             if ($hiddenContainer.find('.hiddenItem').length === 0) {
                 $($thisBtn).hide();
             }
