@@ -68,6 +68,7 @@
                     data-variant="{{ variant.id }}"
                     data-tabId="#variant-{{ product.id }}-{{ variant.id }}"
                     data-pricePerMeal = "{{ variant.metafields.custom.price_per_meal }}"
+                    data-boxTotalPrice = "{{ variant.price | money_without_currency }}"
                     class="variantBtn button selectionBtn {% if forloop.index == 1 %} active{% endif %}"
                   >
                     {{ variant.title }}

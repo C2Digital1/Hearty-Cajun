@@ -338,7 +338,7 @@ $(document).ready(function () {
 
     // Select Plan Final Button Function Code Sart
 
-    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection) {
+    function updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection, boxTotalPrice) {
         var boxProdInfo = JSON.parse(localStorage.getItem("boxProdInfo")) || [];
         var freshValues = {
             "activeProdId": activeProdId,
@@ -347,6 +347,7 @@ $(document).ready(function () {
             "mealBoxCollection": mealBoxCollection,
             "mealBoxAddOnsCollection": mealBoxAddOnsCollection,
             "pricePerMeal": pricePerMeal,
+            "boxTotalPrice": boxTotalPrice,
         };
         boxProdInfo = [];
         boxProdInfo.push(freshValues);
@@ -365,14 +366,15 @@ $(document).ready(function () {
                     var mealBoxCollectionUrl = item.mealBoxCollection;
                     var addOnsCollectionURL = item.mealBoxAddOnsCollection;
                     var pricePerMeal = item.pricePerMeal;
-                    if (activeProdId || selectedVariantId || availabelSelection || pricePerMeal || mealBoxCollectionUrl || addOnsCollectionURL) {
+                    var boxTotalPrice = item.boxTotalPrice;
+                    if (activeProdId || selectedVariantId || availabelSelection || pricePerMeal || mealBoxCollectionUrl || addOnsCollectionURL || boxTotalPrice) {
 
-                        console.log("Active Product ID: " + activeProdId);
-                        console.log("Selected Variant ID: " + selectedVariantId);
-                        console.log("Available Selection: " + availabelSelection);
-                        console.log("Meal Box Collection: " + addOnsCollectionURL);
-                        console.log("Meal Box Add-Ons Collection: " + addOnsCollectionURL);
-                        console.log("Meal Box Add-Ons Price Per Meal: " + pricePerMeal);
+                        // console.log("Active Product ID: " + activeProdId);
+                        // console.log("Selected Variant ID: " + selectedVariantId);
+                        // console.log("Available Selection: " + availabelSelection);
+                        // console.log("Meal Box Collection: " + addOnsCollectionURL);
+                        // console.log("Meal Box Add-Ons Collection: " + addOnsCollectionURL);
+                        // console.log("Meal Box Add-Ons Price Per Meal: " + pricePerMeal);
 
                         if ($("#continueToMeals").length > 0) {
                             $("#continueToMeals").attr('href', mealBoxCollectionUrl);
@@ -400,8 +402,9 @@ $(document).ready(function () {
             var selectedVariantId = $(activeProdActiveVariant).attr("data-variant").trim();
             var availabelSelection = $(activeProdActiveVariant).text().trim();
             var pricePerMeal = $(activeProdActiveVariant).attr("data-pricepermeal").trim();
+            var boxTotalPrice = $(activeProdActiveVariant).attr("data-boxTotalPrice").trim();       
 
-            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection);
+            updateBoxProdInfo(activeProdId, selectedVariantId, availabelSelection, pricePerMeal, mealBoxCollection, mealBoxAddOnsCollection, boxTotalPrice);
             $(".loadingIcon").show();
             $("body").addClass("showSecondStep");
             $(".purchaseFlowStep1").hide();
@@ -525,14 +528,13 @@ $(document).ready(function () {
     });
 
     $(document).on('click', 'button.removeAllCart', function () {
-
         $(".mainCartItemsList").empty();
         $(".addOnsList").empty();
         localStorage.removeItem('cartData');
         localStorage.removeItem('cartAddOns');
         $(".totalCartItems").text("0");
         $(".mobileTotalCart").text("0");
-        $(".cartSubtotal, .orderTotalPrice").text("$0.00");
+        $(".cartSubtotal, .orderTotalPrice").text(`$${parseFloat(boxTotalPrice().replace("$", ""))}`);
         $(".addOnHeader").hide();
         if ($(".mealBoxProgressBar").length > 0) {
             $(".mealBoxProgressBar").css("width", 0 + "%");
@@ -575,6 +577,19 @@ $(document).ready(function () {
             });
         }
         return selectedVariantId;
+    }
+
+    
+    function boxTotalPrice() {
+        var storedBoxProdInfo = localStorage.getItem("boxProdInfo");
+        var boxTotalPrice = "";
+        if (storedBoxProdInfo) {
+            var boxProdInfoArray = JSON.parse(storedBoxProdInfo);
+            boxProdInfoArray.forEach(function (item, index) {
+                boxTotalPrice = item.boxTotalPrice;
+            });
+        }
+        return boxTotalPrice;
     }
 
     function getPricePerMeal() {
@@ -724,8 +739,8 @@ $(document).ready(function () {
     }
 
     function updatCartFooterTotal() {
-        var totalPrice = 0;
-        $(".customCartContainer .customCartItem").each(function () {
+        var totalPrice = parseFloat(boxTotalPrice().replace("$", ""));
+        $(".addOnsList .customCartItem").each(function () {
             var quantity = parseInt($(this).find("input.qtyField").val());
             var price = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
             totalPrice += quantity * price; // Multiply price by quantity
@@ -832,7 +847,8 @@ $(document).ready(function () {
 
     if ($("#cartItemTemplate").length > 0) {
         loadCartData();
-        loadAddOnsCartData();
+        loadAddOnsCartData();        
+        updatCartFooterTotal();
         if ($(".mealBoxProgressBar").length > 0) {
             var limitOfItems = parseInt(getTotalItemLimits());
             var totalAddedItems = parseInt($(".totalCartItems").text().trim());
