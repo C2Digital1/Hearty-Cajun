@@ -534,7 +534,7 @@ $(document).ready(function () {
         localStorage.removeItem('cartAddOns');
         $(".totalCartItems").text("0");
         $(".mobileTotalCart").text("0");
-        $(".cartSubtotal, .orderTotalPrice").text(`$${parseFloat(boxTotalPrice().replace("$", ""))}`);
+        $(".cartSubtotal, .orderTotalPrice").text(`$${parseFloat(boxTotalPrice())}`);
         $(".addOnHeader").hide();
         if ($(".mealBoxProgressBar").length > 0) {
             $(".mealBoxProgressBar").css("width", 0 + "%");
@@ -739,7 +739,7 @@ $(document).ready(function () {
     }
 
     function updatCartFooterTotal() {
-        var totalPrice = parseFloat(boxTotalPrice().replace("$", ""));
+        var totalPrice = parseFloat(boxTotalPrice());
         $(".addOnsList .customCartItem").each(function () {
             var quantity = parseInt($(this).find("input.qtyField").val());
             var price = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
