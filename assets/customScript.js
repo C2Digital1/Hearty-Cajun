@@ -454,7 +454,9 @@ $(document).ready(function () {
         var cartItemQty = 1;
         var sameProdLength = 0;
         var repeateIt = true;
-        var existingCartItem = $(".mainCartItemsList").find(`#${cartItemId}`);
+        var existingCartItem = $(".mainCartItemsList").find(`[data-cartItemId="${cartItemId}"]`);
+        //var existingCartItem = $(".mainCartItemsList[data-cartItemId='" + cartItemId + "']");
+
         if (cartItemsVariants == undefined || cartItemsVariants == "") {
             repeateIt = false;
             var cartItemsVariants = " ";
@@ -496,7 +498,6 @@ $(document).ready(function () {
                         sameProdLength = existingItemLength + 1;
                         appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
                     }
-
                     attachedQtyBtnsEventListeners();
                     updateCartAndSave();
                     var extrAddOnsBtns = $(this).attr("data-AbleToAddId").split(",");
@@ -649,6 +650,7 @@ $(document).ready(function () {
     function appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal) {
         var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
         itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
+            .replace('%dataCartItemId%', cartItemId)
             .replace('%cartItemImg%', cartItemImg)
             .replace('%cartItemName%', cartItemName)
             .replace('%extraProdMainProdId%', extraProdMainProdId)
@@ -884,6 +886,7 @@ $(document).ready(function () {
         var existingAddOnCartItem = $(".addOnsList").find(`#${cartItemId}`);
         var checkPlusBtnLenght = $(`.plusBtn-${extraProdMainProdId}`).length;
         var linkedProd = $(this).attr("data-linkedProd");
+        var appendNewOne = $(this).attr("data-AppendNewOne")
 
         $(this).addClass("adding");
         setTimeout(function () {
@@ -897,7 +900,7 @@ $(document).ready(function () {
                 updateCartAddonsAndSave();
             }
             else {
-                if (existingAddOnCartItem.length > 0) {
+                if (existingAddOnCartItem.length > 0 && appendNewOne != "true") {
                     incrementAddOnCartItem(existingAddOnCartItem);
                 } else {
                     var existingAddOnItemLength = existingAddOnCartItem.length;
@@ -925,6 +928,7 @@ $(document).ready(function () {
         var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
         itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
             .replace('%cartItemVariantId%', addOnVariantId)
+            .replace('%dataCartItemId%', cartItemId)
             .replace('%cartItemImg%', cartItemImg)
             .replace('%cartItemName%', cartItemName)
             .replace('%extraProdMainProdId%', extraProdMainProdId)
