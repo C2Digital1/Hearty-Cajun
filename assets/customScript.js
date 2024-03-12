@@ -519,7 +519,7 @@ $(document).ready(function () {
                     $('.optionChooser').prop('checked', false);
                     $(".extraOptionOverlay.active").removeClass("active");
                     if ($(".extraQuickMeal").length > 0) {
-                        $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
+                        $(".extraQuickMeal").removeClass("quickMealAddBtn.hasExtraVariant").addClass("disabled");
                     }
                 }.bind(this), 1500);
 
@@ -1019,8 +1019,8 @@ $(document).ready(function () {
 
     $(document).on('click', 'button.optionsOverlayOpener', function () {
         $('.optionChooser').prop('checked', false);
-        if ($(".extraQuickMeal").length > 0) {
-            $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
+        if ($(".extraQuickMeal.hasExtraVariant").length > 0) {
+            $(".extraQuickMeal.hasExtraVariant").removeClass("quickMealAddBtn").addClass("disabled");
         }
         $(".extraOptionOverlay").removeClass("active");
         var optionOverlay = $(this).attr("data-showOptions");
@@ -1029,12 +1029,11 @@ $(document).ready(function () {
     $(document).on('click', 'button.closeOptionOverlay', function () {
         $(".extraOptionOverlay").removeClass("active");
         $('.optionChooser').prop('checked', false);
-        if ($(".extraQuickMeal").length > 0) {
-            $(".extraQuickMeal").removeClass("quickMealAddBtn").addClass("disabled");
+        if ($(".extraQuickMeal.hasExtraVariant").length > 0) {
+            $(".extraQuickMeal.hasExtraVariant").removeClass("quickMealAddBtn").addClass("disabled");
         }
     });
     $(document).on('change', '.extraProdVariantContainer .optionChooser', function () {
-
         var allGroupsChecked = true;
         var itsParentVariantContainer = $(this).attr("data-ParentContainer")
 
@@ -1064,7 +1063,7 @@ $(document).ready(function () {
         $(this).closest('.extraOptionOverlay').find(".quickMealAddBtn").attr("data-AbleToAddId", extraAddOnProd.join(", "));
 
     });
-    $(document).on('click', 'button.customQuickAdd.extraQuickMeal.button.disabled', function () {
+    $(document).on('click', 'button.customQuickAdd.extraQuickMeal.button.hasExtraVariant.disabled', function () {
         $(this).addClass("animated bounceIn");
         $(".extrProdInfoContainer").addClass("showError animated bounceIn");
         setTimeout(function () {
@@ -1072,6 +1071,17 @@ $(document).ready(function () {
             $(".extrProdInfoContainer").removeClass("showError animated bounceIn");
         }.bind(this), 900);
     });
+    $(document).on('click', 'button.customQuickAdd.extraQuickMeal.button.dontHaveVariants', function () {
+        $(this).addClass("animated bounceIn");
+        $(".extrProdInfoContainer").addClass("showError animated bounceIn");
+        setTimeout(function () {
+            $(this).removeClass("animated bounceIn");
+            $(".extrProdInfoContainer").removeClass("showError animated bounceIn");
+        }.bind(this), 900);
+    });
+
+    
+
 
     $(document).on('click', 'label.hiddenAddOnLabel', function () {
         $(this).parent(".extraProdVariantContainer").children(".hiddenBtn").removeClass("ableToAddHidden");
@@ -1092,6 +1102,7 @@ $(document).ready(function () {
         $(sameLabels).addClass('active');
         var selectedSpice = $(this).attr("data-labelVal").trim();
         localStorage.setItem('spiceFlavorClass', selectedSpice);
+        $("button.customQuickAdd.extraQuickMeal.button.dontHaveVariants").addClass("quickMealAddBtn").removeClass("dontHaveVariants");
     });
 
 

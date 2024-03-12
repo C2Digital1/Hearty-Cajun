@@ -45,6 +45,9 @@
             {% assign allowOneTime = false %}
             <div id="{{product.id}}-VariantContainer" class="extraProdVariantContainer">
               {% for variant in extraProd.variants %}
+                {% if forloop.index == 1 %}
+                  {% assign hasExtraVariant = true %}
+                {% endif %}
                 <label
                   {% if allowOneTime %}
                   {% else %}
@@ -90,7 +93,7 @@
       </div>
     {% endfor %}
     <button
-      class="customQuickAdd extraQuickMeal button disabled"
+      class="customQuickAdd extraQuickMeal button {% if hasExtraVariant %}hasExtraVariant disabled{% else %}dontHaveVariants{% endif %}"
       data-variantOptions=""
       data-AbleToAddId="#dummyId"
       data-mainProdId="{{ product.id }}"
