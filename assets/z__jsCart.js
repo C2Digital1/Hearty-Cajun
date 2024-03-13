@@ -95,6 +95,10 @@ Shopify.theme.jsCart = {
 
           $('[data-bind="itemCount"]').text(cart.item_count);
 
+          if ($(".linkedDelBtn").length > 0) {
+            $(".linkedDelBtn:first").click();
+          }
+
         }
       });
 
