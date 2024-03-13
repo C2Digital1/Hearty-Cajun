@@ -5,25 +5,27 @@
     {% for extraProd in extraProdList %}
       <div class="extrProdInfoContainer">
         <p class="prodTit">
-          {%- if extraProd.metafields.custom.title_icon != blank -%}
-            {% liquid
-              assign extraProdMetaObj = extraProd.metafields.custom.title_icon.value
-              assign titleIcon = extraProdMetaObj.icon_image
-            %}
-            {%- if titleIcon != blank -%}
-              <span class="titleIconImg">
-                <img
-                  class="boxImg lazyload"
-                  src="{{ titleIcon | img_url:'master' }}"
-                  alt="img"
-                  width="200"
-                  height="200"
-                  loading="lazy"
-                >
-              </span>
+          <span class="titleInnerPart">
+            {%- if extraProd.metafields.custom.title_icon != blank -%}
+              {% liquid
+                assign extraProdMetaObj = extraProd.metafields.custom.title_icon.value
+                assign titleIcon = extraProdMetaObj.icon_image
+              %}
+              {%- if titleIcon != blank -%}
+                <span class="titleIconImg">
+                  <img
+                    class="boxImg lazyload"
+                    src="{{ titleIcon | img_url:'master' }}"
+                    alt="img"
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                  >
+                </span>
+              {%- endif -%}
             {%- endif -%}
-          {%- endif -%}
-          {{ extraProd.title }}
+            {{ extraProd.title }}
+          </span>
           {% if extraProd.metafields.custom.one_selection_only %}
             <span class="extraNoteTxt">
               {% if extraProd.title contains 'spice' or extraProd.title contains 'Spice' %} Spice Flavor {% endif -%}

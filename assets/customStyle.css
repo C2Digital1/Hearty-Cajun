@@ -5020,6 +5020,9 @@ p.prodTit {
     letter-spacing: 0;
     line-height: 18px;
     margin-bottom: 16px;
+}
+
+.titleInnerPart {
     display: flex;
     align-items: center;
     justify-content: flex-start;
