@@ -225,6 +225,7 @@
 
                 {% elsif item.object_type == 'product' %}
                   {% render 'product-thumbnail',
+                    hidePrice: true,
                     pagination_type: pagination_type,
                     items_per_row: items_per_row,
                     mobile_items_per_row: mobile_items_per_row,
