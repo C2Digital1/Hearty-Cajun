@@ -31,13 +31,6 @@
             "preset": "is-h5"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-            "display_savings": false,
-            "preset": "is-h5"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -55,7 +48,6 @@
       },
       "block_order": [
         "title",
-        "price",
         "description",
         "form"
       ],
