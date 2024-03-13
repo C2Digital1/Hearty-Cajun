@@ -46,7 +46,7 @@
   {% if customer %}
     {% assign order_count = customer.orders_count %}
     {% if order_count < 1 %}
-      <p class="footerTxtRow discountCodeLine"><span class="discountLabel">Discount <span class="discountIcon">{% render 'dicountIcon' %}neworder</span></span> <span class="discountPrice">$0.0</span></p>
+      <p class="footerTxtRow discountCodeLine"><span class="discountLabel">Discount {{customer.orders_count }} <span class="discountIcon">{% render 'dicountIcon' %}neworder</span></span> <span class="discountPrice">$0.0</span></p>
     {% endif %}
   {% endif %}
   
