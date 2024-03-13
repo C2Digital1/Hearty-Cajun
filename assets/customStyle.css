@@ -5021,7 +5021,14 @@ p.prodTit {
     line-height: 18px;
     margin-bottom: 16px;
 }
+span.extraNoteTxthasIconTxt {
+    margin-left: 23px;
+    font-weight: normal;
+}
 
+span.extraNoteTxt {
+    font-weight: normal;
+}
 .titleInnerPart {
     display: flex;
     align-items: center;
