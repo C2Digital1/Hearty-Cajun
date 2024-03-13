@@ -5371,9 +5371,15 @@ a.appstle_contract_see_more.as-see-more-link {
 .cartItemsList.mainCartItemsList span.cartItemPrice {
     opacity: 0 !important;
 }
+
 div#storePickupApp {
     width: 100%;
 }
+
+form.search-form span.item-pricing.price {
+    display: none !important;
+}
+
 /* media queires for desktop start  */
 
 
