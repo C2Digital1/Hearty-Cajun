@@ -310,11 +310,10 @@ p.cart__subtotal__price{
                 {% if display_product_quantity_cart %}
                   {% assign thisIsLinkedProd = false %}
                   {% for itemProperty in item.properties %}
-                    {% if itemProperty contains 'LinkedProd' and  itemProperty contains 'true'%}
+                    {% if itemProperty contains '_LinkedProd' and  itemProperty contains 'true'%}
                       {% assign thisIsLinkedProd = true %}
                     {% endif %}
                   {% endfor %}
-                  {{ thisIsLinkedProd }}
                   <div class="cart__quantity">
                     <div
                       class="purchase-details__quantity product-quantity-box"

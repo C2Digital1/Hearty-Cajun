@@ -1195,7 +1195,7 @@ $(document).ready(function () {
                         id: item.addOnVariantId,
                         quantity: item.cartItemQty,
                         properties: {
-                            "LinkedProd": `${item.isLinkedProd}`,
+                            "_LinkedProd": `${item.isLinkedProd}`,
                         }
                     });
                 });
