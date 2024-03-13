@@ -1,116 +1,110 @@
 {%- liquid
   assign prodMetObj = product.metafields.custom.popup_content.value
   assign customPopupImg = prodMetObj.popup_image
-  assign ingredients = prodMetObj.ingredients-icons
+  assign ingredients = prodMetObj['ingredients-icons']
   assign nutritionHeadings = prodMetObj.nutrition_headings
   assign nutritionValues = prodMetObj.nutrition_values
   assign btnTxt = prodMetObj.button_text
   assign btnUrl = prodMetObj.button_url
 -%}
 
-
 <div id="{{ product.id }}-popup">
-<div class="prodIngPopup">
-  <div class="popupInnerBox">
-    <button class="close popupCloseBtn" aria-label="close">
+  <div class="prodIngPopup">
+    <div class="popupInnerBox">
+      <button class="close popupCloseBtn" aria-label="close">
         {% render 'crossIcon' %}
       </button>
-    <div class="popupContent">
-      
-      <div class="popupBannerArea">
-        {% if customPopupImg != blank %}
-          <img
-            class="boxImg lazyload"
-            src="{{ customPopupImg | img_url:'master' }}"
-            alt="img"
-            width="200"
-            height="200"
-            loading="lazy"
-          >
-        {% else %}
-          <img
-            class="boxImg lazyload"
-            src="{{ product.featured_image | img_url:'master' }}"
-            alt="img"
-            width="200"
-            height="200"
-            loading="lazy"
-          >
-        {% endif %}
+      <div class="popupContent">
+        <div class="popupBannerArea">
+          {% if customPopupImg != blank %}
+            <img
+              class="boxImg lazyload"
+              src="{{ customPopupImg | img_url:'master' }}"
+              alt="img"
+              width="200"
+              height="200"
+              loading="lazy"
+            >
+          {% else %}
+            <img
+              class="boxImg lazyload"
+              src="{{ product.featured_image | img_url:'master' }}"
+              alt="img"
+              width="200"
+              height="200"
+              loading="lazy"
+            >
+          {% endif %}
 
-        <div class="popupBannerContent">
-          <h3 class="is-h6">
-            {{ product.title }}
-          </h3>
-          <div class="popupPillsBtns">
-            {% for prodAttribute in product.metafields.custom.attributesList.value %}
-              {% if forloop.index < 6 %}
-                <span>{{ prodAttribute }}</span>
-              {% endif %}
-            {% endfor %}
+          <div class="popupBannerContent">
+            <h3 class="is-h6">
+              {{ product.title }}
+            </h3>
+            <div class="popupPillsBtns">
+              {% for prodAttribute in product.metafields.custom.attributesList.value %}
+                {% if forloop.index < 6 %}
+                  <span>{{ prodAttribute }}</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="popupBannerOverlay"></div>
           </div>
-          <div class="popupBannerOverlay"></div>
         </div>
-      </div>
-      <div class="popupBodyContent">
-        {% if product.description != blank %}
-          <div class="popupBoxContent">
-            <h4 class="is-h6">Description</h4>
-            <div class="prodDescription is-small">
-              {{ product.description }}
+        <div class="popupBodyContent">
+          {% if product.description != blank %}
+            <div class="popupBoxContent">
+              <h4 class="is-h6">Description</h4>
+              <div class="prodDescription is-small">
+                {{ product.description }}
+              </div>
             </div>
-          </div>
-        {% endif %}
-        {% if ingredients != blank or ingredientsImgs != blank %}
-          <div class="popupBoxContent">
-            <h4 class="is-h6">Ingredients</h4>
-            <div class="ingredientsRow">
-              {% for ingredient in ingredients.value %}
-                {% assign mainLoopIndex = forloop.index %}
-                <div class="ingredientCol">
-                  {% if ingredient.icon_image != blank %}
-                    <img
-                      class="boxImg lazyload"
-                      src="{{ ingredient.icon_image | img_url:'master' }}"
-                      alt="img"
-                      width="24"
-                      height="24"
-                      loading="lazy"
-                    >
-                  {% endif %}
-                  <p>{{ ingredient.meta_object_name }}</p>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        {% endif %}
-        {% if nutritionHeadings != blank or nutritionValues != blank %}
-          <div class="popupBoxContent">
-            <h4 class="is-h6">Nutrition</h4>
-            <div class="nutritionRows">
-              {% for nutritionHeading in nutritionHeadings.value %}
-                {% assign mainLoopIndex = forloop.index %}
-                <div class="nutritionItem">
-                  <p>{{ nutritionHeading }}</p>
-                  {% for nutritionValue in nutritionValues.value %}
-                    {% if forloop.index == mainLoopIndex %}
-                      {% if nutritionValue != blank %}
-                        <p>{{ nutritionValue }}</p>
-                      {% endif %}
+          {% endif %}
+          {% if ingredients != blank or ingredientsImgs != blank %}
+            <div class="popupBoxContent">
+              <h4 class="is-h6">Ingredients</h4>
+              <div class="ingredientsRow">
+                {% for ingredient in ingredients.value %}
+                  {% assign mainLoopIndex = forloop.index %}
+                  <div class="ingredientCol">
+                    {% if ingredient.icon_image != blank %}
+                      <img
+                        class="boxImg lazyload"
+                        src="{{ ingredient.icon_image | img_url:'master' }}"
+                        alt="img"
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                      >
                     {% endif %}
-                  {% endfor %}
-                </div>
-              {% endfor %}
+                    <p>{{ ingredient.meta_object_name }}</p>
+                  </div>
+                {% endfor %}
+              </div>
             </div>
-          </div>
-        {% endif %}
-        {% if btnTxt != blank %}
-            <a href="{{ btnUrl }}" class="popupBtn button button-primary">
-                {{ btnTxt }}
-            </a>
-        {% endif %}
+          {% endif %}
+          {% if nutritionHeadings != blank or nutritionValues != blank %}
+            <div class="popupBoxContent">
+              <h4 class="is-h6">Nutrition</h4>
+              <div class="nutritionRows">
+                {% for nutritionHeading in nutritionHeadings.value %}
+                  {% assign mainLoopIndex = forloop.index %}
+                  <div class="nutritionItem">
+                    <p>{{ nutritionHeading }}</p>
+                    {% for nutritionValue in nutritionValues.value %}
+                      {% if forloop.index == mainLoopIndex %}
+                        {% if nutritionValue != blank %}
+                          <p>{{ nutritionValue }}</p>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="/pages/plans" class="popupBtn button button-primary"> Get Started </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
