@@ -27,7 +27,7 @@
             {{ extraProd.title }}
           </span>
           {% if extraProd.metafields.custom.one_selection_only %}
-            <span class="extraNoteTxt">
+            <span class="extraNoteTxt {%- if extraProd.metafields.custom.title_icon != blank -%} hasIconTxt{% endif %}">
               {% if extraProd.title contains 'spice' or extraProd.title contains 'Spice' %} Spice Flavor {% endif -%}
               (applies to all meals)
             </span>
