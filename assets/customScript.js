@@ -98,7 +98,7 @@ $(document).ready(function () {
         $(".activeFaqHeading").text(activeFaqGroupHeading);
     });
 
-    $(".accordianOpener").click(function () {
+    $(document).on('click', 'button.accordianOpener', function () {
         $(this).toggleClass("active");
         $(this).next(".accordianContent").slideToggle("200");
     });

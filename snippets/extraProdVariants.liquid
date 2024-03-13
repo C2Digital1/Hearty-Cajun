@@ -24,6 +24,12 @@
             {%- endif -%}
           {%- endif -%}
           {{ extraProd.title }}
+          {% if extraProd.metafields.custom.one_selection_only %}
+            <span class="extraNoteTxt">
+              {% if extraProd.title contains 'spice' or extraProd.title contains 'Spice' %} Spice Flavor {% endif -%}
+              (applies to all meals)
+            </span>
+          {% endif %}
         </p>
         <div class="productExtraOptions">
           {% if extraProd.metafields.custom.one_selection_only %}
