@@ -1,3 +1,4 @@
+
 {% comment %}
   ** Cart page - main content area
 {% endcomment %}
@@ -306,14 +307,27 @@ p.cart__subtotal__price{
 
                   {% render 'unit-price', item: item, class: 'cart__unit-price' %}
                 </div>
-
                 {% if display_product_quantity_cart %}
+                  {% assign thisIsLinkedProd = false %}
+                  {% for itemProperty in item.properties %}
+                    {% if itemProperty contains 'LinkedProd' and  itemProperty contains 'true'%}
+                      {% assign thisIsLinkedProd = true %}
+                    {% endif %}
+                  {% endfor %}
+                  {{ thisIsLinkedProd }}
                   <div class="cart__quantity">
                     <div
                       class="purchase-details__quantity product-quantity-box"
                       data-line-item-key="{{ forloop.index }}"
                     >
-                      {% render 'quantity-box', item: item, size: 'is-medium', variant: item.variant %}
+                      {% if thisIsLinkedProd %}
+                        <span class="qtyInfoBox">
+                          {{ item.quantity }}
+                        </span>
+                        {% else %}
+                        {% render 'quantity-box', item: item, size: 'is-medium', variant: item.variant %}
+                      {% endif %}
+                    
                     </div>
                     <p class="cart__quantity-warning quantity-warning"></p>
                   </div>
@@ -332,7 +346,7 @@ p.cart__subtotal__price{
                 </div>
               </div>
               <a
-                class="cart__remove removeIcon close ajax-cart__delete"
+                class="cart__remove removeIcon close ajax-cart__delete   {% if thisIsLinkedProd %}linkedDelBtn{% endif %}"
                 data-cart-page-delete
                 data-cart-item-key="{{ item.key }}"
                 data-line-item-key="{{ forloop.index }}"

@@ -1458,7 +1458,7 @@ h3.cardHeading {
     min-height: 55px;
 }
 
-.tabBtnsContainer button.tabBtn {
+.tabBtnsContainer .tabBtn {
     width: max-content;
     max-width: 100px;
     min-width: 90px;
@@ -1476,14 +1476,14 @@ h3.cardHeading {
     background: transparent;
 }
 
-.tabBtnsContainer button.tabBtn span {
+.tabBtnsContainer .tabBtn span {
     font-size: 10px;
     letter-spacing: 0;
     line-height: 13px;
     text-align: center;
 }
 
-.tabBtnsContainer button.tabBtn span.strong {
+.tabBtnsContainer .tabBtn span.strong {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0;
@@ -1492,7 +1492,7 @@ h3.cardHeading {
     margin-top: 4px;
 }
 
-.tabBtnsContainer button.tabBtn.active {
+.tabBtnsContainer .tabBtn.active {
     background: linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%);
     cursor: pointer;
 }
@@ -2529,6 +2529,7 @@ a.cart__image {
     margin: 0px auto;
 }
 
+span.qtyInfoBox,
 .quantity-wrapper.quantity-style--box {
     width: 100%;
     max-width: 68px;
@@ -2540,6 +2541,15 @@ a.cart__image {
     border-radius: 8.89px;
     background-color: #FFFFFF;
     padding: 0 10px;
+}
+
+span.qtyInfoBox {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 13px;
+    text-align: center;
+    color: #463F3A;
 }
 
 .quantity-wrapper.quantity-style--box span.quantity-element.button.is-inverse {

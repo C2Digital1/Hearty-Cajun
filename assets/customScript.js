@@ -39,6 +39,9 @@ $(document).ready(function () {
     });
 
     $(".tabBtn").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#menuTabs").offset().top - 100
+        }, 500);
         $(".tabBtn").removeClass("active");
         $(this).addClass("active");
         var $activeTabContent = $(this).attr("data-id");
@@ -1084,7 +1087,7 @@ $(document).ready(function () {
         }.bind(this), 900);
     });
 
-    
+
 
 
     $(document).on('click', 'label.hiddenAddOnLabel', function () {
@@ -1170,7 +1173,8 @@ $(document).ready(function () {
                 $("#spiceFlavor").val("");
             }
 
-          
+            $("#LinkedProd").val("true");
+
             // pushing mainBox Prod Info for Add To Cart
             // mainBoxProdInfoArray.forEach(function (item, index) {
             //     finalProdForCart.push({
@@ -1188,7 +1192,11 @@ $(document).ready(function () {
             if (storedCartAddOnsInfoArray && storedCartAddOnsInfoArray.length > 0) {
                 storedCartAddOnsInfoArray.forEach(function (item, index) {
                     finalProdForCart.push({
-                        id: item.addOnVariantId, quantity: item.cartItemQty
+                        id: item.addOnVariantId,
+                        quantity: item.cartItemQty,
+                        properties: {
+                            "LinkedProd": `${item.isLinkedProd}`,
+                        }
                     });
                 });
             }
@@ -1225,6 +1233,7 @@ $(document).ready(function () {
         }
 
     });
+
 
     // =========== FINAL ADD TO CART BUTTON CODE START ===========
 
