@@ -7239,3 +7239,20 @@ form.search-form span.item-pricing.price {
 /* media queires for desktop end  */
 
 /* =========== MOBILE RESPONSIVNESS CSS CODE END =========== */
+
+
+
+
+.checkoutMethodImage {
+    display: none !important;
+}
+
+.checkoutMethodName {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 26px;
+    color: #463f3a;
+    padding: 16px 0;
+    cursor: pointer;
+}
