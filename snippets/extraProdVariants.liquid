@@ -4,51 +4,57 @@
     {% assign extraProdList = product.metafields.custom.box_items_variants.value %}
     {% for extraProd in extraProdList %}
       <div class="extrProdInfoContainer">
-        <p class="prodTit">
-          <span class="titleInnerPart">
-            {%- if extraProd.metafields.custom.title_icon != blank -%}
-              {% liquid
-                assign extraProdMetaObj = extraProd.metafields.custom.title_icon.value
-                assign titleIcon = extraProdMetaObj.icon_image
-              %}
-              {%- if titleIcon != blank -%}
-                <span class="titleIconImg">
-                  <img
-                    class="boxImg lazyload"
-                    src="{{ titleIcon | img_url:'master' }}"
-                    alt="img"
-                    width="200"
-                    height="200"
-                    loading="lazy"
-                  >
-                </span>
+        {% if extraProd.metafields.custom.one_selection_only != true %}
+          <p class="prodTit">
+            <span class="titleInnerPart">
+              {%- if extraProd.metafields.custom.title_icon != blank -%}
+                {% liquid
+                  assign extraProdMetaObj = extraProd.metafields.custom.title_icon.value
+                  assign titleIcon = extraProdMetaObj.icon_image
+                %}
+                {%- if titleIcon != blank -%}
+                  <span class="titleIconImg">
+                    <img
+                      class="boxImg lazyload"
+                      src="{{ titleIcon | img_url:'master' }}"
+                      alt="img"
+                      width="200"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </span>
+                {%- endif -%}
               {%- endif -%}
-            {%- endif -%}
-            {{ extraProd.title }}
-          </span>
-          {% if extraProd.metafields.custom.one_selection_only %}
-            {% comment %} <span class="extraNoteTxt {%- if extraProd.metafields.custom.title_icon != blank -%} hasIconTxt{% endif %}">
-              {% if extraProd.title contains 'spice' or extraProd.title contains 'Spice' %} Spice Flavor {% endif -%}
-              (applies to all meals)
-            </span> {% endcomment %}
-          {% endif %}
-        </p>
+              {{ extraProd.title }}
+            </span>
+            {% if extraProd.metafields.custom.one_selection_only %}
+              {% comment %}
+                <span class="extraNoteTxt {%- if extraProd.metafields.custom.title_icon != blank -%} hasIconTxt{% endif %}">
+                  {% if extraProd.title contains 'spice' or extraProd.title contains 'Spice' %} Spice Flavor {% endif -%}
+                  (applies to all meals)
+                </span>
+              {% endcomment %}
+            {% endif %}
+          </p>
+        {% endif %}
         <div class="productExtraOptions">
           {% if extraProd.metafields.custom.one_selection_only %}
             {% assign allowOneTime = true %}
-            {% comment %} <div class="optionsLabelsContainer">
-              {% for variant in extraProd.variants %}
-                <label
-                  data-sameLabels=".extraProdOpt-{{ variant.id }}-variantBtn"
-                  data-labelVal="{{ variant.title }}"
-                  class="checkboxItem extraProdLineItem  extraProdOpt-{{ variant.id }}-variantBtn"
-                >
-                  <span class="checkmarkIcon"></span>
-                  {{ variant.title }}
-                  {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
-                </label>
-              {% endfor %}
-            </div> {% endcomment %}
+            {% comment %}
+              <div class="optionsLabelsContainer">
+                {% for variant in extraProd.variants %}
+                  <label
+                    data-sameLabels=".extraProdOpt-{{ variant.id }}-variantBtn"
+                    data-labelVal="{{ variant.title }}"
+                    class="checkboxItem extraProdLineItem  extraProdOpt-{{ variant.id }}-variantBtn"
+                  >
+                    <span class="checkmarkIcon"></span>
+                    {{ variant.title }}
+                    {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
+                  </label>
+                {% endfor %}
+              </div>
+            {% endcomment %}
           {% else %}
             {% assign allowOneTime = false %}
             <div id="{{product.id}}-VariantContainer" class="extraProdVariantContainer">
