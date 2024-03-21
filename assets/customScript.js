@@ -1145,19 +1145,20 @@ $(document).ready(function () {
         else {
             
             // check for spice flavor upsell 
-            // var hasSpice = checkSpiceFlavour();
-            // var selectedSpice = localStorage.getItem('spiceFlavorClass');
+            var hasSpice = checkSpiceFlavour();
+            var selectedSpice = localStorage.getItem('spiceFlavorClass');
             
-            // if(hasSpice){
-            //     if (selectedSpice && selectedSpice.trim() !== "") {
-            //         $("#spiceFlavor").val(selectedSpice);
-            //         ableToCheckout = true;
+            if(hasSpice){
+                if (selectedSpice && selectedSpice.trim() !== "") {
+                    $("#spiceFlavor").val(selectedSpice);
+                    ableToCheckout = true;
     
-            //     } else {
-            //         $("#spiceFlavor").val("");
-            //         return false
-            //     }
-            // }
+                } else {
+                    $("#spiceFlavor").val("");
+                    $(".finalUpsellProdPopup").show();
+                    return false
+                }
+            }
 
             var finalProdForCart = [];
 
