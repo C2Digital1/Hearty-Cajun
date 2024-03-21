@@ -1142,7 +1142,7 @@ $(document).ready(function () {
         }
         else {
             
-            // check for spice flavor upsell 
+            // check for spice flavor upsell code start 
             var hasSpice = checkSpiceFlavour();
             var selectedSpice = localStorage.getItem('spiceFlavorClass');
             console.log("hasSpice1 ="+hasSpice);
@@ -1161,7 +1161,7 @@ $(document).ready(function () {
                     return false
                 }
             }
-
+            // check for spice flavor upsell code end 
             var finalProdForCart = [];
 
             var storedMainProdBox = localStorage.getItem("boxProdInfo");
