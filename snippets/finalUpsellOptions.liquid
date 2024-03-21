@@ -21,7 +21,7 @@
       {%- endif -%}
       {{ product.title }}
     </p>
-    {% for variant in extraProd.variants %}
+    {% for variant in product.variants %}
       <label
         data-labelVal="{{ variant.title }}"
         class="checkboxItem extraProdLineItem "
