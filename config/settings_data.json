@@ -1252,7 +1252,7 @@
       "scheme-0b404fdd-f99c-41cc-9c5f-dbc473405c91": {
         "settings": {
           "scheme_background": "rgba(0,0,0,0)",
-          "scheme_background_gradient": "linear-gradient(315deg, #F15D5E 0%, #EDF67D 100%)",
+          "scheme_background_gradient": "linear-gradient(315deg, rgba(241, 93, 94, 1), rgba(237, 246, 125, 1) 100%)",
           "scheme_heading": "#f15d5e",
           "scheme_text": "#463f3a",
           "scheme_pre_text": "#463f3a",

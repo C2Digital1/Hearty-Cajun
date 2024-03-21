@@ -1,1 +1,145 @@
-{"sections":{"banner":{"type":"banner","settings":{"image_darken":true,"heading_preset":"is-h2","heading_color":"","subheading":"","subheading_preset":"is-h6","subheading_color":"","alignment":"center","banner_height":"medium","width":"standard","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0,"margin_top":0,"margin_bottom":0,"padding_top_m":0,"padding_bottom_m":0,"padding_left_m":0,"padding_right_m":0,"margin_top_m":0,"margin_bottom_m":0,"section_bg":"linear-gradient(#ffffff, #ffffff)","animation":"none","css_class":"","custom_css":""}},"main":{"type":"page-content__main","settings":{"show_heading":true,"heading_preset":"is-h1","heading_alignment":"left","width":"standard","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0,"margin_top":0,"margin_bottom":0,"padding_top_m":0,"padding_bottom_m":0,"padding_left_m":0,"padding_right_m":0,"margin_top_m":0,"margin_bottom_m":0,"section_bg":"linear-gradient(#ffffff, #ffffff)","animation":"none","css_class":"","custom_css":""}},"gallery":{"type":"index__gallery","settings":{"gallery_type":"classic","crop_images":false,"images_per_row":4,"enable_lightbox":true,"overlay_color":"","width":"standard","show_gutter":true,"padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0,"margin_top":0,"margin_bottom":0,"padding_top_m":0,"padding_bottom_m":0,"padding_left_m":0,"padding_right_m":0,"margin_top_m":0,"margin_bottom_m":0,"animation":"none","css_class":"","custom_css":""}}},"order":["banner","main","gallery"]}
+{
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Copy_of_Portrait-106.jpg01.jpg",
+        "image_darken": false,
+        "desktop_height": 0,
+        "mobile_height": 0,
+        "heading_preset": "is-h2",
+        "heading_color": "",
+        "subheading": "",
+        "subheading_preset": "is-h6",
+        "subheading_color": "",
+        "alignment": "center",
+        "banner_height": "medium",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "page-content__main",
+      "settings": {
+        "show_heading": true,
+        "heading_preset": "is-h1",
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(#ffffff, #ffffff)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "gallery": {
+      "type": "index__gallery",
+      "settings": {
+        "color_scheme": "",
+        "gallery_type": "classic",
+        "crop_images": false,
+        "images_per_row": 4,
+        "enable_lightbox": true,
+        "desktop_height": 0,
+        "mobile_height": 0,
+        "overlay_color": "",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "171103609565d5cd53": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_76XtVL": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "judge_me_reviews_ugc_media_grid_Q4hTze": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/ugc_media_grid\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "judge_me_reviews_all_reviews_page_cyqEVE": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_page\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_76XtVL",
+        "judge_me_reviews_ugc_media_grid_Q4hTze",
+        "judge_me_reviews_all_reviews_page_cyqEVE"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "padding_left_m": 0,
+        "padding_right_m": 0,
+        "margin_top_m": 0,
+        "margin_bottom_m": 0,
+        "section_bg": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main",
+    "gallery",
+    "171103609565d5cd53"
+  ]
+}
