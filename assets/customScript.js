@@ -1119,10 +1119,8 @@ $(document).ready(function () {
     });
 
     $(document).on('click', 'label.extraProdLineItem', function () {
-        var sameLabels = $(this).attr('data-sameLabels');
         $("label.extraProdLineItem").removeClass('active');
         $(this).addClass("active");
-        $(sameLabels).addClass('active');
         var selectedSpice = $(this).attr("data-labelVal").trim();
         localStorage.setItem('spiceFlavorClass', selectedSpice);
         $("button.customQuickAdd.extraQuickMeal.button.dontHaveVariants").addClass("quickMealAddBtn").removeClass("dontHaveVariants");
@@ -1146,8 +1144,9 @@ $(document).ready(function () {
             
             // check for spice flavor upsell 
             var hasSpice = checkSpiceFlavour();
+            localStorage.setItem('spiceFlavorClass' ,"");
             var selectedSpice = localStorage.getItem('spiceFlavorClass');
-            
+            console.log("hasSpice1 ="+hasSpice);
             if(hasSpice){
                 if (selectedSpice && selectedSpice.trim() !== "") {
                     $("#spiceFlavor").val(selectedSpice);

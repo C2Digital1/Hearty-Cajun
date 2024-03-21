@@ -1,3 +1,35 @@
 <div class="finalUpsellProdPopup" style="display:none">
-    {{ product.title }}
+  <div class="upsellItemDetail">
+    <p class="prodTit">
+      {%- if product.metafields.custom.title_icon != blank -%}
+        {% liquid
+          assign prodMetaObj = product.metafields.custom.title_icon.value
+          assign titleIcon = prodMetaObj.icon_image
+        %}
+        {%- if titleIcon != blank -%}
+          <span class="titleIconImg">
+            <img
+              class="boxImg lazyload"
+              src="{{ titleIcon | img_url:'master' }}"
+              alt="img"
+              width="200"
+              height="200"
+              loading="lazy"
+            >
+          </span>
+        {%- endif -%}
+      {%- endif -%}
+      {{ product.title }}
+    </p>
+    {% for variant in extraProd.variants %}
+      <label
+        data-labelVal="{{ variant.title }}"
+        class="checkboxItem extraProdLineItem "
+      >
+        <span class="checkmarkIcon"></span>
+        {{ variant.title }}
+      </label>
+    {% endfor %}
+    <button type="button" class="finalAddToCartBtn button button--primary">Checkout</button>
+  </div>
 </div>
