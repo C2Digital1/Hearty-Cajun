@@ -58,7 +58,7 @@
               </p>
             {% endif %}
             <p class="prodBoxSelectorLabel">
-              {{ variantsLabel }}
+              {{ variantsLabel }} 
             </p>
 
             {% if product.variants.size > 1 %}
@@ -71,7 +71,7 @@
                     data-boxTotalPrice = "{{ variant.price | money_without_currency }}"
                     class="variantBtn button selectionBtn {% if forloop.index == 1 %} active{% endif %}"
                   >
-                    {{ variant.title }}
+                    {{ variant.title }} {{ variant.id }}
                   </button>
                 {% endfor %}
               </div>
