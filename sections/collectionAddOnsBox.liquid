@@ -450,7 +450,7 @@
 {% endif %}
 {% render 'appstleDummyForm' %}
 
-{% if section.setting.finalUpsellProd %}
+{% if section.setting.finalUpsellProd != blank %}
   {% render 'finalUpsellOptions', product: section.setting.finalUpsellProd %}
 {% endif %}
 

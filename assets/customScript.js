@@ -876,6 +876,18 @@ $(document).ready(function () {
             $(".mealBoxProgressBar").css("width", finalProgress + "%");
         }
     };
+
+    function checkSpiceFlavour() {
+        var cartData = JSON.parse(localStorage.getItem('cartData'));
+        var hasSpiceFlavour = false;
+        $.each(cartData, function(index, item) {
+            if (item.hasSpciceFlavour === "true") {
+                hasSpiceFlavour = true;
+                return false; 
+            }
+        });
+        return hasSpiceFlavour;
+    }
     // save cart in local storage and load cart data from local storage code end
 
 
@@ -1131,6 +1143,22 @@ $(document).ready(function () {
             alert(`Please add ${maxLimitForCartItems - totalCartItemsAdded} more meal items to continue.`);
         }
         else {
+            
+            // check for spice flavor upsell 
+            // var hasSpice = checkSpiceFlavour();
+            // var selectedSpice = localStorage.getItem('spiceFlavorClass');
+            
+            // if(hasSpice){
+            //     if (selectedSpice && selectedSpice.trim() !== "") {
+            //         $("#spiceFlavor").val(selectedSpice);
+            //         ableToCheckout = true;
+    
+            //     } else {
+            //         $("#spiceFlavor").val("");
+            //         return false
+            //     }
+            // }
+
             var finalProdForCart = [];
 
             var storedMainProdBox = localStorage.getItem("boxProdInfo");
@@ -1169,13 +1197,7 @@ $(document).ready(function () {
             $("#boxItems").val(finalBoxItemsProd);
 
             // Retrieve the selected spice flavor from local storage
-            var selectedSpice = localStorage.getItem('spiceFlavorClass');
-
-            if (selectedSpice && selectedSpice.trim() !== "") {
-                $("#spiceFlavor").val(selectedSpice);
-            } else {
-                $("#spiceFlavor").val("");
-            }
+          
 
             $("#LinkedProd").val("true");
 
