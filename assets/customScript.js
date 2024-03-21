@@ -1144,7 +1144,6 @@ $(document).ready(function () {
             
             // check for spice flavor upsell 
             var hasSpice = checkSpiceFlavour();
-            localStorage.setItem('spiceFlavorClass' ,"");
             var selectedSpice = localStorage.getItem('spiceFlavorClass');
             console.log("hasSpice1 ="+hasSpice);
             if(hasSpice){
@@ -1154,7 +1153,7 @@ $(document).ready(function () {
     
                 } else {
                     $("#spiceFlavor").val("");
-                    $(".finalUpsellProdPopup").show();
+                    $("body").addClass("showUpsell");
                     return false
                 }
             }
@@ -1238,7 +1237,8 @@ $(document).ready(function () {
                     dataType: "json",
                     success: function () {
                         // localStorage.removeItem('cartData');
-                        // localStorage.removeItem('cartAddOns');
+                        // localStorage.removeItem('cartAddOns');                        
+                        // localStorage.removeItem('spiceFlavorClass');
                         setTimeout(function () {
                             $(".finalAddBtn").click();
                             // window.location.href = "/cart";
