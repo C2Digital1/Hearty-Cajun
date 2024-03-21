@@ -545,5 +545,12 @@
         "other": "{{ count }} items"
       }
     }
+  },
+  "shopify": {
+    "checkout": {
+      "delivery_options": {
+        "free_total_label": "--"
+      }
+    }
   }
 }
