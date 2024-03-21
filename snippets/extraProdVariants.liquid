@@ -27,16 +27,16 @@
             {{ extraProd.title }}
           </span>
           {% if extraProd.metafields.custom.one_selection_only %}
-            <span class="extraNoteTxt {%- if extraProd.metafields.custom.title_icon != blank -%} hasIconTxt{% endif %}">
+            {% comment %} <span class="extraNoteTxt {%- if extraProd.metafields.custom.title_icon != blank -%} hasIconTxt{% endif %}">
               {% if extraProd.title contains 'spice' or extraProd.title contains 'Spice' %} Spice Flavor {% endif -%}
               (applies to all meals)
-            </span>
+            </span> {% endcomment %}
           {% endif %}
         </p>
         <div class="productExtraOptions">
           {% if extraProd.metafields.custom.one_selection_only %}
             {% assign allowOneTime = true %}
-            <div class="optionsLabelsContainer">
+            {% comment %} <div class="optionsLabelsContainer">
               {% for variant in extraProd.variants %}
                 <label
                   data-sameLabels=".extraProdOpt-{{ variant.id }}-variantBtn"
@@ -48,7 +48,7 @@
                   {% if variant.price > 0 %} ({{ variant.price | money }}) {% endif %}
                 </label>
               {% endfor %}
-            </div>
+            </div> {% endcomment %}
           {% else %}
             {% assign allowOneTime = false %}
             <div id="{{product.id}}-VariantContainer" class="extraProdVariantContainer">
