@@ -1153,6 +1153,10 @@ $(document).ready(function () {
     
                 } else {
                     $("#spiceFlavor").val("");
+                    $(".upsellProdOptions").addClass("showError animated bounceIn");
+                    setTimeout(function () {                        
+                        $(".upsellProdOptions").removeClass("showError animated bounceIn");
+                    }.bind(this), 500);        
                     $("body").addClass("showUpsell");
                     return false
                 }
@@ -1238,7 +1242,7 @@ $(document).ready(function () {
                     success: function () {
                         // localStorage.removeItem('cartData');
                         // localStorage.removeItem('cartAddOns');                        
-                        // localStorage.removeItem('spiceFlavorClass');
+                        localStorage.removeItem('spiceFlavorClass');
                         setTimeout(function () {
                             $(".finalAddBtn").click();
                             // window.location.href = "/cart";

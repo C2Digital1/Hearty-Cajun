@@ -5103,7 +5103,11 @@ button.button.hiddenBtn {
 .cartItemsList.addOnsList p.cartItemsInfo {
     display: none !important;
 }
-
+.upsellProdOptions{
+    width: 100%;
+    margin: 5px auto;
+}
+.upsellProdOptions.showError,
 .extrProdInfoContainer.showError {
     padding: 5px;
     background: rgba(241, 93, 94, .4);
@@ -5166,10 +5170,24 @@ button.cartCloseBtn,
     visibility: hidden;
     transform: translateY(-200%);
 }
+
 .showUpsell .finalUpsellProdPopup {
     opacity: 1;
     visibility: visible;
     transform: translateY(0%);
+}
+
+.upsellItemDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 95%;
+    max-width: 350px;
+    margin: 0px auto;
+    padding: 15px;
+    background: #fff;
+    border-radius: 15px;
 }
 
 /* =========== PURCHASE FLOW CSS CODE END =========== */

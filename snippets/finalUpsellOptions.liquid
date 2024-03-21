@@ -1,4 +1,4 @@
-<div class="finalUpsellProdPopup" >
+<div class="finalUpsellProdPopup">
   <div class="upsellItemDetail">
     <p class="prodTit">
       {%- if product.metafields.custom.title_icon != blank -%}
@@ -21,15 +21,17 @@
       {%- endif -%}
       {{ product.title }}
     </p>
-    {% for variant in product.variants %}
-      <label
-        data-labelVal="{{ variant.title }}"
-        class="checkboxItem extraProdLineItem "
-      >
-        <span class="checkmarkIcon"></span>
-        {{ variant.title }}
-      </label>
-    {% endfor %}
+    <div class="upsellProdOptions">
+      {% for variant in product.variants %}
+        <label
+          data-labelVal="{{ variant.title }}"
+          class="checkboxItem extraProdLineItem "
+        >
+          <span class="checkmarkIcon"></span>
+          {{ variant.title }}
+        </label>
+      {% endfor %}
+    </div>
     <button type="button" class="finalAddToCartBtn button button--primary">Checkout</button>
   </div>
 </div>
