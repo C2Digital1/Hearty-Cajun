@@ -548,7 +548,7 @@
   },
   "shopify": {
     "checkout": {
-      "delivery_options": {
+      "order_summary": {
         "free_total_label": "--"
       }
     }
