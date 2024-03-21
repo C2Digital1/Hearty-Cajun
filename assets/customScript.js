@@ -454,6 +454,7 @@ $(document).ready(function () {
         var cartItemsVariants = $(this).attr("data-variantOptions");
         var numberOfUnits = parseInt($(this).attr("data-numberOfUnits").trim());
         var extraProdMainProdId = $(this).attr("data-mainProdId");
+        var hasSpiceFlavor = $(this).attr("data-hasSpiceFlavor");        
         var cartItemQty = 1;
         var sameProdLength = 0;
         var repeateIt = true;

@@ -35,6 +35,11 @@
     </button>
 
   {% else %}
+  {% if product.metafields.custom.enable_spcie_flavor_product != blank %}
+    {%  assign hasSpiceFlavor = true %}
+    {%  else %}
+    {%  assign hasSpiceFlavor = false %}
+  {% endif %}
     <button
       class="quickMealAddBtn customQuickAdd button"
       data-cartItemId="cartItem-{{ product.id }}"
@@ -42,6 +47,7 @@
       data-productImg="{{ product.featured_image | img_url:'master' }}"
       data-variantOptions=""
       data-mainProdId=""
+      data-hasSpiceFlavor= "{{ hasSpiceFlavor }}"
       data-AbleToAddId="#dummyId"
       data-numberOfUnits= "{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"
     >

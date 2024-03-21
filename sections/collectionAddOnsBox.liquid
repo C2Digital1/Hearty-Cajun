@@ -449,6 +449,11 @@
   </script>
 {% endif %}
 {% render 'appstleDummyForm' %}
+
+{% if section.setting.finalUpsellProd %}
+  {% render 'finalUpsellOptions', product: section.setting.finalUpsellProd %}
+{% endif %}
+
 {% schema %}
 {
   "name": "Collection",
@@ -463,6 +468,11 @@
     {
       "type": "header",
       "content": "Heading"
+    },
+    {
+      "type": "product",
+      "id": "finalUpsellProd",
+      "label": "Final Upsell Product"
     },
     {
       "type": "checkbox",
