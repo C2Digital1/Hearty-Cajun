@@ -480,7 +480,7 @@ $(document).ready(function () {
                 if (numberOfUnits > 1) {
                     var existingItemLength = existingCartItem.length;
                     sameProdLength = existingItemLength + 1;
-                    appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, numberOfUnits, pricePerMeal);
+                    appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, numberOfUnits, pricePerMeal, hasSpiceFlavor);
                     updateTotalCartItems("normal");
                     attachedQtyBtnsEventListeners();
                     updateCartAndSave();
@@ -500,7 +500,7 @@ $(document).ready(function () {
                     } else {
                         var existingItemLength = existingCartItem.length;
                         sameProdLength = existingItemLength + 1;
-                        appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal);
+                        appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal, hasSpiceFlavor);
                     }
                     attachedQtyBtnsEventListeners();
                     updateCartAndSave();
@@ -651,7 +651,7 @@ $(document).ready(function () {
         updateTotalCartItems("normal");
     }
 
-    function appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal) {
+    function appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal, hasSpiceFlavor) {
         var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
         itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
             .replace('%dataCartItemId%', cartItemId)
@@ -662,6 +662,7 @@ $(document).ready(function () {
             .replace('%cartItemQtyData%', cartItemQty)
             .replace('%cartItemQty%', cartItemQty)
             .replace('%numberOfUnits%', numberOfUnits)
+            .replace('%hasSpiceFlavor%', hasSpiceFlavor)
             .replace('%cartItemPrice%', pricePerMeal);
         var $appendedItem = $(itemHtml); // Convert to jQuery object
 
@@ -820,6 +821,7 @@ $(document).ready(function () {
             var cartItemImg = $(this).find("img").attr("src");
             var cartItemName = $(this).find(".itemName").text();
             var extraProdMainProdId = $(this).attr("data-extraProdMainProdId");
+            var hasSpciceFlavour = $(this).attr("data-hasSpiceFlavor");
             var numberOfUnitsForItem = parseInt($(this).find(".numberOfUnits").text().trim());
             if ($(this).find(".cartItemsInfo").text() != undefined || (this).find(".cartItemsInfo").text() != "") {
                 var cartItemsVariants = $(this).find(".cartItemsInfo").text();
@@ -832,11 +834,12 @@ $(document).ready(function () {
             cartData.push({
                 cartItemId: cartItemId,
                 cartItemImg: cartItemImg,
-                extraProdMainProdId: extraProdMainProdId,
+                extraProdMainProdId: extraProdMainProdId,               
                 cartItemName: cartItemName,
                 cartItemsVariants: cartItemsVariants,
                 numberOfUnitsForItem: numberOfUnitsForItem,
                 cartItemQty: cartItemQty,
+                hasSpciceFlavour: hasSpciceFlavour,
                 cartItemPrice: cartItemPrice
             });
         });
@@ -855,7 +858,7 @@ $(document).ready(function () {
         if (cartData) {
             cartData = JSON.parse(cartData);
             cartData.forEach(function (item) {
-                appendCartItem(item.cartItemId, 1, item.numberOfUnitsForItem, item.extraProdMainProdId, item.cartItemImg, item.cartItemName, item.cartItemsVariants, item.cartItemQty, item.cartItemPrice);
+                appendCartItem(item.cartItemId, 1, item.numberOfUnitsForItem, item.extraProdMainProdId, item.cartItemImg, item.cartItemName, item.cartItemsVariants, item.cartItemQty, item.cartItemPrice, item.hasSpciceFlavour);
             });
             updateTotalCartItems("normal");
             attachedQtyBtnsEventListeners();
