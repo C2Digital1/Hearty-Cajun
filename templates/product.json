@@ -38,6 +38,11 @@
             "preset": "is-text"
           }
         },
+        "appstle_subscriptions_app_appstle_subscription_product_page_widget_TBcrtd": {
+          "type": "shopify:\/\/apps\/appstle-subscriptions-app\/blocks\/appstle-subscription-product-page-widget\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+          "settings": {
+          }
+        },
         "form": {
           "type": "form",
           "settings": {
@@ -49,6 +54,7 @@
       "block_order": [
         "title",
         "description",
+        "appstle_subscriptions_app_appstle_subscription_product_page_widget_TBcrtd",
         "form"
       ],
       "settings": {
