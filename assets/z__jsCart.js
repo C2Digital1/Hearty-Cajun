@@ -17,31 +17,33 @@
       });
       $(document).on('click', '.linkedDeleteBtn', function (e) {
         e.preventDefault();
-        var lineItemKeyToRemove = $(this).data('line-item-key'); 
-        var thisParentContainer = $(this).attr('data-cart-item');  
-        $(thisParentContainer).addClass("fadeItem");   
-      //   $.ajax({
-      //     type: 'POST',
-      //     url: '/cart/change.js',
-      //     data: 'quantity=0&line=' + lineItemKeyToRemove,
-      //     success: function (data) {
-      //       $(thisParentContainer).remove();
-      //       setTimeout(function() { 
-      //         if ($(".linkedDeleteBtn").length > 0) {
-      //           $(".linkedDeleteBtn:first").click();
-      //         }
-      //         else{
-      //           window.location.reload();
-      //         }
-      //       }, 2000);
-           
-      //     },
-      //     error: function (xhr, status, error) {
-      //         console.error(xhr.responseText); // Log error if any
-      //     }
-      // });
-    });
-    
+        var lineItemKeyToRemove = $(this).data('line-item-key');
+        var thisParentContainer = $(this).attr('data-cart-item-key');
+        $(".isLinkedProdItem").addClass("fadeItem");
+          $.ajax({
+            type: 'POST',
+            url: '/cart/change.js',
+            data: 'quantity=0&line=' + lineItemKeyToRemove,
+            success: function (data) {
+              $(thisParentContainer).remove();
+              setTimeout(function() { 
+                if ($(".linkedDeleteBtn").length > 0) {
+                  $(".linkedDeleteBtn:first").click();
+                }
+                else{
+                  Shopify.theme.jsCart.updateView();
+
+                  //window.location.reload();
+                }
+              }, 2000);
+
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText); // Log error if any
+            }
+        });
+      });
+
 
 
       // Prevent the ajax cart form from being submitted when pressing the "Enter" key
