@@ -2621,7 +2621,7 @@ span.qtyInfoBox {
 .quantity-box-enabled-true .cart__total-title {
     width: 19%;
 }
-
+button.linkedDeleteBtn,
 a.cart__remove.removeIcon.close.ajax-cart__delete {
     top: calc(50% - 10px);
     transform: translateX(-50%);
@@ -2637,25 +2637,23 @@ a.cart__remove.removeIcon.close.ajax-cart__delete {
     max-height: none !important;
     background: transparent !important;
 }
-
+button.linkedDeleteBtn svg,
 a.cart__remove.removeIcon.close.ajax-cart__delete svg {
     height: 16px !important;
     width: 16px !important;
-
 }
-
-
+button.linkedDeleteBtn span,
 a.cart__remove.removeIcon.close.ajax-cart__delete span {
     margin-left: 6px;
     opacity: .4;
     cursor: pointer;
     transition: all linear .3s;
 }
-
+button.linkedDeleteBtn:hover span,
 a.cart__remove.removeIcon.close.ajax-cart__delete:hover span {
     opacity: 1;
 }
-
+button.linkedDeleteBtn:hover,
 a.cart__remove.removeIcon.close.ajax-cart__delete:hover {
     color: #F15D5E;
 }
