@@ -4950,7 +4950,7 @@ button.finalAddToCartBtn.button {
     padding: 5px;
 }
 button.finalAddToCartBtn.button.tempDisabled{
-    opacity: .8;
+    opacity: .5;
     pointer-events: none;
 }
 
@@ -5451,7 +5451,9 @@ div#storePickupApp {
 form.search-form span.item-pricing.price {
     display: none !important;
 }
-
+.fadeItem{
+    opacity: .5;
+}
 /* media queires for desktop start  */
 
 

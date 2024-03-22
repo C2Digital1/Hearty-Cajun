@@ -205,7 +205,7 @@ p.cart__subtotal__price{
             {% endif %}
 
             <div
-              class="cart__card container is-align-center"
+              class="cart__card container is-align-center .{{ item.key }}"
               data-cart-item="{{ item.key }}"
               data-variant-id="{{ item.id }}"
               data-line-item="{{ forloop.index }}"
@@ -347,7 +347,7 @@ p.cart__subtotal__price{
                 <button
                   type="button"
                   class="cart__remove removeIcon close linkedDeleteBtn"
-                  data-cart-item-key="{{ item.key }}"
+                  data-cart-item-key=".{{ item.key }}"
                   data-line-item-key="{{ forloop.index }}"
                   title="{{ 'cart.general.remove' | t }}"
                 >
