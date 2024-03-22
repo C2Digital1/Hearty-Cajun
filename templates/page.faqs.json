@@ -380,7 +380,7 @@
         "button_link_view": "",
         "button_alignment_view": "center",
         "button_style_view": "button--primary",
-        "hidePrice": false,
+        "hidePrice": true,
         "collection_style": "grid",
         "enableCenterMode": false,
         "dotsBg": "#463f3a",
