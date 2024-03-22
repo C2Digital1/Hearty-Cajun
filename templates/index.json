@@ -547,7 +547,7 @@
         "subHeading": "",
         "subHeadingPreset": "is-text",
         "btnTxt": "All Reviews",
-        "btnUrl": "shopify:\/\/pages\/about-us",
+        "btnUrl": "shopify:\/\/pages\/reviews",
         "btnStyle": "button--secondary",
         "titlePreset": "is-h5",
         "textPreset": "is-text",
