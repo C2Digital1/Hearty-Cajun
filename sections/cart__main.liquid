@@ -344,8 +344,8 @@ p.cart__subtotal__price{
                 </div>
               </div>
               <a
-                class="cart__remove removeIcon close ajax-cart__delete   {% if thisIsLinkedProd %}linkedDelBtn{% endif %}"
-                data-cart-page-delete
+                class="cart__remove removeIcon close ajax-cart__delete {% if thisIsLinkedProd %}linkedDelBtn{% endif %}"
+                {% if thisIsLinkedProd %}{% else%}data-cart-page-delete{% endif %} 
                 data-cart-item-key="{{ item.key }}"
                 data-line-item-key="{{ forloop.index }}"
                 href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0"

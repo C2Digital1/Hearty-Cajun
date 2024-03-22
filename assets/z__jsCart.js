@@ -94,11 +94,9 @@ Shopify.theme.jsCart = {
           $('.cart__footer').replaceWith(subtotal);
 
           $('[data-bind="itemCount"]').text(cart.item_count);
-
-          if ($(".linkedDelBtn").length > 0) {
-            $(".linkedDelBtn:first").click();
-          }
-
+          // if ($(".linkedDelBtn").length > 0) {
+          //   $(".linkedDelBtn:first").click();
+          // }
         }
       });
 
@@ -115,6 +113,10 @@ Shopify.theme.jsCart = {
     $('[data-cart-page-delete]').off();
     $('#cart_form').off();
   }
+  
+
+
+
 }
 
 /******/ })()
