@@ -6918,10 +6918,10 @@ form.search-form span.item-pricing.price {
     .mainSlideShowSec.mobile-text--below-media .bannersCaptionTxtBox.caption {
         display: none !important;
     }
-
+/* 
     .slideshow-classic__subheading.banner__subheading.subtitle p br {
         display: none;
-    }
+    } */
 
     .featuredCollecionSec ol.flickity-page-dots {
         display: flex !important;
