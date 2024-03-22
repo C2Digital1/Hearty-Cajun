@@ -212,7 +212,7 @@ p.cart__subtotal__price{
             {% endfor %}
 
             <div
-              class="cart__card container is-align-center isLinkedProdItem cartItem-{{ item.variant.id }}"
+              class="cart__card container is-align-center {% if thisIsLinkedProd %} isLinkedProdItem cartItem-{{ item.variant.id }} {% endif%} %}"
               data-cart-item="{{ item.key }}"
               data-variant-id="{{ item.id }}"
               data-line-item="{{ forloop.index }}"
