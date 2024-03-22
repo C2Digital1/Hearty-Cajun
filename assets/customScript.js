@@ -1139,8 +1139,7 @@ $(document).ready(function () {
         if (totalCartItemsAdded < maxLimitForCartItems) {
             alert(`Please add ${maxLimitForCartItems - totalCartItemsAdded} more meal items to continue.`);
         }
-        else { 
-            $(this).addClass("tempDisabled");           
+        else {            
             // check for spice flavor upsell code start 
             var hasSpice = checkSpiceFlavour();
             var selectedSpice = localStorage.getItem('spiceFlavorClass');
@@ -1149,17 +1148,14 @@ $(document).ready(function () {
                 if (selectedSpice && selectedSpice.trim() !== "") {
                     $("#spiceFlavor").val(selectedSpice);
                     ableToCheckout = true;
-    
                 } else {
                     $("#spiceFlavor").val("");
-                    $(".upsellProdOptions").addClass("showError animated bounceIn");
-                    setTimeout(function () {                        
-                        $(".upsellProdOptions").removeClass("showError animated bounceIn");
-                    }.bind(this), 500);        
+                    $(".upsellProdOptions label.extraProdLineItem:first-child").click();       
                     $("body").addClass("showUpsell");
                     return false
                 }
             }
+            $(this).addClass("tempDisabled");    
             // check for spice flavor upsell code end 
             var finalProdForCart = [];
 
@@ -1233,8 +1229,8 @@ $(document).ready(function () {
                     data: { items: finalProdForCart },
                     dataType: "json",
                     success: function () {
-                     //   localStorage.removeItem('cartData');
-                      //  localStorage.removeItem('cartAddOns');                        
+                        localStorage.removeItem('cartData');
+                        localStorage.removeItem('cartAddOns');                        
                         localStorage.removeItem('spiceFlavorClass');
                         setTimeout(function () {
                             $(".finalAddBtn").click();

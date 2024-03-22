@@ -23,17 +23,25 @@
           $.ajax({
             type: 'POST',
             url: '/cart/change.js',
-            data: 'quantity=0&line=' + lineItemKeyToRemove,
-            success: function (data) {
-              $(thisParentContainer).remove();
+            data: 'quantity=0&line=' + lineItemKeyToRemove,            
+            dataType: 'json',
+            success: function (cart) {
+              console.log(lineItemKeyToRemove);
+              $(thisParentContainer).remove();                  
+              Shopify.theme.jsCart.updateView(cart, lineItemKeyToRemove);
+
+              if (typeof Shopify.theme.jsAjaxCart !== 'undefined') {
+                Shopify.theme.jsAjaxCart.updateView();
+              }
               setTimeout(function() { 
                 if ($(".linkedDeleteBtn").length > 0) {
                   $(".linkedDeleteBtn:first").click();
+                  console.log("REMAINING"+ $(".linkedDeleteBtn").length);
                 }
                 else{
-                  Shopify.theme.jsCart.updateView();
-
-                  //window.location.reload();
+                 // Shopify.theme.jsCart.updateView();
+                  console.log("REMAINING"+ $(".linkedDeleteBtn").length);
+                //  window.location.reload();
                 }
               }, 2000);
 
