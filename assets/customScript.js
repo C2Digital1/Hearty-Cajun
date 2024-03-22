@@ -1133,15 +1133,14 @@ $(document).ready(function () {
     // =========== FINAL ADD TO CART BUTTON CODE START =========== 
 
     $(document).on('click', '.finalAddToCartBtn', function (e) {
-
         var limitOfSelection = getTotalItemLimits();
         var maxLimitForCartItems = parseInt(limitOfSelection);
         var totalCartItemsAdded = parseInt($(".totalCartItems").text());
         if (totalCartItemsAdded < maxLimitForCartItems) {
             alert(`Please add ${maxLimitForCartItems - totalCartItemsAdded} more meal items to continue.`);
         }
-        else {
-            
+        else { 
+            $(this).addClass("tempDisabled");           
             // check for spice flavor upsell code start 
             var hasSpice = checkSpiceFlavour();
             var selectedSpice = localStorage.getItem('spiceFlavorClass');
@@ -1198,10 +1197,7 @@ $(document).ready(function () {
             }).join('\n');
 
             $("#boxItems").val(finalBoxItemsProd);
-
             // Retrieve the selected spice flavor from local storage
-          
-
             $("#LinkedProd").val("true");
 
             // pushing mainBox Prod Info for Add To Cart
@@ -1215,8 +1211,6 @@ $(document).ready(function () {
             //         }
             //     });
             // });
-
-
             // pushing Cart Addon Info for Add To Cart
             if (storedCartAddOnsInfoArray && storedCartAddOnsInfoArray.length > 0) {
                 storedCartAddOnsInfoArray.forEach(function (item, index) {
@@ -1231,7 +1225,6 @@ $(document).ready(function () {
             }
 
             $(".needToAddVariant").val(getSelectedVariant());
-
             console.log(finalProdForCart);
             if (finalProdForCart.length > 0) {
                 $.ajax({
@@ -1258,17 +1251,12 @@ $(document).ready(function () {
                 localStorage.removeItem('cartData');
                 localStorage.removeItem('cartAddOns');
                 $(".finalAddBtn").click();
-
             }
         }
 
     });
 
-
     // =========== FINAL ADD TO CART BUTTON CODE START ===========
-
-
-
 
     /* =========== PURCHASE FLOW  CODE END =========== */
 });
