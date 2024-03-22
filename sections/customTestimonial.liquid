@@ -198,7 +198,7 @@
       {% endif %}
     </div>
   {% endif %}
-  <div class="customTestimonialContainer">
+  <div class="customTestimonialContainer {% if btnTxt != blank %}hasCtaBtn{% endif %}">
     <div id="customTestiomonialsCarousel-{{id}}" class="testimonialCarouselContainer">
       {% for block in section.blocks %}
         {% case block.type %}
