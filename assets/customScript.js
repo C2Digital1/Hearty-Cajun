@@ -1265,8 +1265,8 @@ $(document).ready(function () {
                     data: { items: finalProdForCart },
                     dataType: "json",
                     success: function () {
-                        // localStorage.removeItem('cartData');
-                        // localStorage.removeItem('cartAddOns');                        
+                        localStorage.removeItem('cartData');
+                        localStorage.removeItem('cartAddOns');                        
                         localStorage.removeItem('spiceFlavorClass');
                         setTimeout(function () {
                             // $(".finalAddBtn").click();
