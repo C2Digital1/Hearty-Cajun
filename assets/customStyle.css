@@ -2471,6 +2471,16 @@ h1.cart-page__title.title {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
     padding: 16px 140px 16px 16px;
     position: relative;
+    display: block;
+    width: 100%;
+}
+
+.cartItemInnerContainer {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
 .cart__headings.column {
@@ -2943,6 +2953,14 @@ label.checkboxItem input:checked~span.checkmarkIcon::after {
     border-radius: 10px;
     margin-bottom: 4px;
     display: block;
+}
+
+.cart__card.container.hiddenCartItem {
+    display: none !important;
+}
+
+.item__properties div {
+    margin-bottom: 5px;
 }
 
 /* =========== CART PAGE CSS CODE END =========== */
@@ -6554,6 +6572,7 @@ form.search-form span.item-pricing.price {
         max-width: 100%;
     }
 
+    button.linkedDeleteBtn,
     a.cart__remove.removeIcon.close {
         font-size: 0 !important;
         position: absolute;
@@ -6561,6 +6580,13 @@ form.search-form span.item-pricing.price {
         transform: none !important;
         right: 16px !important;
         margin: 0 !important;
+    }
+
+    .cartMealBoxInfo {
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 10px auto;
     }
 
     .cart__total.is-h6 {

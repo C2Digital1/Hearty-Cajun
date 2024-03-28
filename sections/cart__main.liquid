@@ -244,122 +244,127 @@ p.cart__subtotal__price{
               {% endif %}
 
               {% comment %} {{ item.url }} {% endcomment %}
-              <a
-                href="{% if hideLink %}javascript:void(0){% else %}{% endif %}"
-                title="{{ item.title | escape }}"
-                class="cart__image"
-              >
-                {% render 'image-element', image: item.image, alt: item.title, object_fit: true, max_height: 150 %}
-              </a>
-              <div class="cart__info">
-                <div class="cart__description">
-                  <div class="cart__text">
-                    <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{% endif %}">
-                      {{- item.product.title -}}
-                    </a>
-                    {% unless item.variant.title contains 'Title' %}
-                      <p class="item__properties is-text-small">
-                        {% for option in item.product.options %}
-                          <span>{{ option }}:</span> <span>{{ item.variant.options[forloop.index0] }}</span><br>
-                        {% endfor %}
-                      </p>
-                    {% endunless %}
-                    {% if item.properties %}
-                      <div class="item__properties is-text-small">
-                        {% for p in item.properties %}
-                          {% assign property_starts = p.first | slice: 0 %}
-                          {% unless p.last == blank or property_starts == '_' %}
-                            {% if p.last contains '/uploads/' %}
-                              <div>
-                                {{ p.first }}:
-                                <a class="lightbox" href="{{ p.last }}">{{ 'cart.general.uploaded_file' | t }}</a>
-                              </div>
-                            {% else %}
-                              <div>{{ p.first }}: {{ p.last }}</div>
-                            {% endif %}
-                          {% endunless %}
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                    {% if item.selling_plan_allocation.selling_plan %}
-                      <p class="item__selling-plan-name is-text-small">
-                        {{ item.selling_plan_allocation.selling_plan.name }}
-                      </p>
-                    {% endif %}
-                  </div>
-                </div>
+             
 
-                <div class="cart__price is-h6">
-                  {% if item.line_level_discount_allocations.size < 1 %}
-                    <p>
-                      {% if item.original_price > 0 %}
-                        <span class="money {% if item.original_price < item.variant.compare_at_price %}sale{% endif %}">
-                          {% render 'price-element', price: item.original_price %}
-                        </span>
-                        {% if item.original_price < item.variant.compare_at_price %}
-                          <span class="money compare-at-price">
-                            {% render 'price-element', price: item.variant.compare_at_price %}
+              <div class="cartItemInnerContainer">
+                <a
+                  href="{% if hideLink %}javascript:void(0){% else %}{% endif %}"
+                  title="{{ item.title | escape }}"
+                  class="cart__image"
+                >
+                  {% render 'image-element', image: item.image, alt: item.title, object_fit: true, max_height: 150 %}
+                </a>
+                <div class="cart__info">
+                  <div class="cart__description">
+                    <div class="cart__text">
+                      <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{% endif %}">
+                        {{- item.product.title -}}
+                      </a>
+                      {% unless item.variant.title contains 'Title' %}
+                        <p class="item__properties is-text-small">
+                          {% for option in item.product.options %}
+                            <span>{{ option }}:</span> <span>{{ item.variant.options[forloop.index0] }}</span><br>
+                          {% endfor %}
+                        </p>
+                      {% endunless %}
+                      {% if item.properties %}
+                        <div class="item__properties is-text-small">
+                          {% for p in item.properties %}
+                            {% assign property_starts = p.first | slice: 0 %}
+                            {% unless p.last == blank or property_starts == '_' %}
+                              {% if p.last contains '/uploads/' %}
+                                <div>
+                                  {{ p.first }}:
+                                  <a class="lightbox" href="{{ p.last }}">{{ 'cart.general.uploaded_file' | t }}</a>
+                                </div>
+                              {% else %}
+                                <div>{{ p.first }}: {{ p.last }}</div>
+                              {% endif %}
+                            {% endunless %}
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                      {% if item.selling_plan_allocation.selling_plan %}
+                        <p class="item__selling-plan-name is-text-small">
+                          {{ item.selling_plan_allocation.selling_plan.name }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  </div>
+  
+                  <div class="cart__price is-h6">
+                    {% if item.line_level_discount_allocations.size < 1 %}
+                      <p>
+                        {% if item.original_price > 0 %}
+                          <span class="money {% if item.original_price < item.variant.compare_at_price %}sale{% endif %}">
+                            {% render 'price-element', price: item.original_price %}
                           </span>
+                          {% if item.original_price < item.variant.compare_at_price %}
+                            <span class="money compare-at-price">
+                              {% render 'price-element', price: item.variant.compare_at_price %}
+                            </span>
+                          {% endif %}
+                        {% else %}
+                          {{ settings.free_price_text }}
                         {% endif %}
+                      </p>
+                    {% endif %}
+  
+                    {% comment %} Discounts for line items {% endcomment %}
+                    {% if item.line_level_discount_allocations.size > 0 %}
+                      <p class="sale">
+                        <span class="money">
+                          {% render 'price-element', price: item.final_price %}
+                        </span>
+                      </p>
+                      {% if item.original_line_price > item.final_line_price %}
+                        <s class="original-price">
+                          <span class="money">
+                            {% render 'price-element', price: item.original_price %}
+                          </span>
+                        </s>
+                      {% endif %}
+                      {% for discount_allocation in item.line_level_discount_allocations %}
+                        <div class="line-item-discount__container">
+                          <p>{{ discount_allocation.discount_application.title }}</p>
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+  
+                    {% render 'unit-price', item: item, class: 'cart__unit-price' %}
+                  </div>
+                  {% if display_product_quantity_cart %}
+                    <div class="cart__quantity">
+                      <div
+                        class="purchase-details__quantity product-quantity-box"
+                        data-line-item-key="{{ forloop.index }}"
+                      >
+                        {% if thisIsLinkedProd %}
+                          <span class="qtyInfoBox">
+                            {{ item.quantity }}
+                          </span>
+                        {% else %}
+                          {% render 'quantity-box', item: item, size: 'is-medium', variant: item.variant %}
+                        {% endif %}
+                      </div>
+                      <p class="cart__quantity-warning quantity-warning"></p>
+                    </div>
+                  {% endif %}
+  
+                  <div class="cart__total is-h6">
+                    <p>
+                      {% if item.final_line_price > 0 %}
+                        <span class="money">
+                          {% render 'price-element', price: item.final_line_price %}
+                        </span>
                       {% else %}
                         {{ settings.free_price_text }}
                       {% endif %}
                     </p>
-                  {% endif %}
-
-                  {% comment %} Discounts for line items {% endcomment %}
-                  {% if item.line_level_discount_allocations.size > 0 %}
-                    <p class="sale">
-                      <span class="money">
-                        {% render 'price-element', price: item.final_price %}
-                      </span>
-                    </p>
-                    {% if item.original_line_price > item.final_line_price %}
-                      <s class="original-price">
-                        <span class="money">
-                          {% render 'price-element', price: item.original_price %}
-                        </span>
-                      </s>
-                    {% endif %}
-                    {% for discount_allocation in item.line_level_discount_allocations %}
-                      <div class="line-item-discount__container">
-                        <p>{{ discount_allocation.discount_application.title }}</p>
-                      </div>
-                    {% endfor %}
-                  {% endif %}
-
-                  {% render 'unit-price', item: item, class: 'cart__unit-price' %}
-                </div>
-                {% if display_product_quantity_cart %}
-                  <div class="cart__quantity">
-                    <div
-                      class="purchase-details__quantity product-quantity-box"
-                      data-line-item-key="{{ forloop.index }}"
-                    >
-                      {% if thisIsLinkedProd %}
-                        <span class="qtyInfoBox">
-                          {{ item.quantity }}
-                        </span>
-                      {% else %}
-                        {% render 'quantity-box', item: item, size: 'is-medium', variant: item.variant %}
-                      {% endif %}
-                    </div>
-                    <p class="cart__quantity-warning quantity-warning"></p>
                   </div>
-                {% endif %}
-
-                <div class="cart__total is-h6">
-                  <p>
-                    {% if item.final_line_price > 0 %}
-                      <span class="money">
-                        {% render 'price-element', price: item.final_line_price %}
-                      </span>
-                    {% else %}
-                      {{ settings.free_price_text }}
-                    {% endif %}
-                  </p>
                 </div>
               </div>
+
               {% if thisIsLinkedProd %}
                 <button
                   type="button"
