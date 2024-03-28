@@ -40,11 +40,13 @@
         },
         "appstle_subscriptions_app_appstle_subscription_product_page_widget_TBcrtd": {
           "type": "shopify:\/\/apps\/appstle-subscriptions-app\/blocks\/appstle-subscription-product-page-widget\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+          "disabled": true,
           "settings": {
           }
         },
         "form": {
           "type": "form",
+          "disabled": true,
           "settings": {
             "show_payment_button": false,
             "enable_giftCard_recipient": false
