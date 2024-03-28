@@ -119,6 +119,7 @@
       data-mainProdId="{{ product.id }}"
       data-hasSpiceFlavor= "{{ hasSpiceFlavor }}"
       data-cartItemId="cartItem-{{ product.id }}"
+      data-mealItemVariantId="{{ product.selected_or_first_available_variant.id }}"
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
       data-numberOfUnits="{%- if product.metafields.custom.number_of_units != blank -%}{{product.metafields.custom.number_of_units}}{%-else-%}1{%- endif -%}"

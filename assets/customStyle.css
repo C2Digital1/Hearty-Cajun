@@ -2914,6 +2914,37 @@ label.checkboxItem input:checked~span.checkmarkIcon::after {
     padding: 16px;
 }
 
+.cartMealBoxInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 13px;
+    padding-left: 140px;
+}
+
+.cartMealBoxInfo .mealBoxInfoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px !important;
+    font-weight: 600;
+    text-transform: lowercase;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.cartMealBoxInfo .mealBoxInfoItem img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    display: block;
+}
+
 /* =========== CART PAGE CSS CODE END =========== */
 
 
@@ -7293,8 +7324,6 @@ form.search-form span.item-pricing.price {
     .collectionMobileFooter {
         padding: 16px 16px 16px 16px;
     }
-
-    
 }
 
 @media only screen and (max-width: 380px) {
@@ -7302,6 +7331,7 @@ form.search-form span.item-pricing.price {
         font-size: 18px !important;
         line-height: 100%;
     }
+
     .flowBtn {
         min-width: 60px;
         font-size: 8px !important;
@@ -7313,6 +7343,7 @@ form.search-form span.item-pricing.price {
         right: 0;
     }
 }
+
 @media only screen and (max-width: 320px) {
     .flowBtn {
         min-width: 50px;

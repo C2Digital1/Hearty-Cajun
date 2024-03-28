@@ -43,6 +43,7 @@
     <button
       class="quickMealAddBtn customQuickAdd button"
       data-cartItemId="cartItem-{{ product.id }}"
+      data-mealItemVariantId="{{ product.selected_or_first_available_variant.id }}"
       data-productName="{{ product.title }}"
       data-productImg="{{ product.featured_image | img_url:'master' }}"
       data-variantOptions=""

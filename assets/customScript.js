@@ -449,12 +449,13 @@ $(document).ready(function () {
 
     $(document).on('click', 'button.quickMealAddBtn', function () {
         var cartItemId = $(this).attr("data-cartItemId");
+        var mealItemVariantId = $(this).attr("data-mealItemVariantId");
         var cartItemName = $(this).attr("data-productName");
         var cartItemImg = $(this).attr("data-productImg");
         var cartItemsVariants = $(this).attr("data-variantOptions");
         var numberOfUnits = parseInt($(this).attr("data-numberOfUnits").trim());
         var extraProdMainProdId = $(this).attr("data-mainProdId");
-        var hasSpiceFlavor = $(this).attr("data-hasSpiceFlavor");        
+        var hasSpiceFlavor = $(this).attr("data-hasSpiceFlavor");
         var cartItemQty = 1;
         var sameProdLength = 0;
         var repeateIt = true;
@@ -480,7 +481,7 @@ $(document).ready(function () {
                 if (numberOfUnits > 1) {
                     var existingItemLength = existingCartItem.length;
                     sameProdLength = existingItemLength + 1;
-                    appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, numberOfUnits, pricePerMeal, hasSpiceFlavor);
+                    appendCartItem(cartItemId, mealItemVariantId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, numberOfUnits, pricePerMeal, hasSpiceFlavor);
                     updateTotalCartItems("normal");
                     attachedQtyBtnsEventListeners();
                     updateCartAndSave();
@@ -500,7 +501,7 @@ $(document).ready(function () {
                     } else {
                         var existingItemLength = existingCartItem.length;
                         sameProdLength = existingItemLength + 1;
-                        appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal, hasSpiceFlavor);
+                        appendCartItem(cartItemId, mealItemVariantId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal, hasSpiceFlavor);
                     }
                     attachedQtyBtnsEventListeners();
                     updateCartAndSave();
@@ -651,10 +652,11 @@ $(document).ready(function () {
         updateTotalCartItems("normal");
     }
 
-    function appendCartItem(cartItemId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal, hasSpiceFlavor) {
+    function appendCartItem(cartItemId, mealItemVariantId, sameProdLength, numberOfUnits, extraProdMainProdId, cartItemImg, cartItemName, cartItemsVariants, cartItemQty, pricePerMeal, hasSpiceFlavor) {
         var itemHtml = $("#cartItemTemplate").html(); // Retrieve template from hidden container
         itemHtml = itemHtml.replace('%cartItemId%', cartItemId)
             .replace('%dataCartItemId%', cartItemId)
+            .replace('%cartItemVariantId%', mealItemVariantId)
             .replace('%cartItemImg%', cartItemImg)
             .replace('%cartItemName%', cartItemName)
             .replace('%extraProdMainProdId%', extraProdMainProdId)
@@ -818,6 +820,7 @@ $(document).ready(function () {
         var cartData = [];
         $(".mainCartItemsList .customCartItem").each(function () {
             var cartItemId = $(this).attr("id");
+            var mealItemVariantId = $(this).attr("data-VariantId")
             var cartItemImg = $(this).find("img").attr("src");
             var cartItemName = $(this).find(".itemName").text();
             var extraProdMainProdId = $(this).attr("data-extraProdMainProdId");
@@ -833,8 +836,9 @@ $(document).ready(function () {
             var cartItemPrice = parseFloat($(this).find(".cartItemPrice").text().replace("$", ""));
             cartData.push({
                 cartItemId: cartItemId,
+                mealItemVariantId: mealItemVariantId,
                 cartItemImg: cartItemImg,
-                extraProdMainProdId: extraProdMainProdId,               
+                extraProdMainProdId: extraProdMainProdId,
                 cartItemName: cartItemName,
                 cartItemsVariants: cartItemsVariants,
                 numberOfUnitsForItem: numberOfUnitsForItem,
@@ -858,7 +862,7 @@ $(document).ready(function () {
         if (cartData) {
             cartData = JSON.parse(cartData);
             cartData.forEach(function (item) {
-                appendCartItem(item.cartItemId, 1, item.numberOfUnitsForItem, item.extraProdMainProdId, item.cartItemImg, item.cartItemName, item.cartItemsVariants, item.cartItemQty, item.cartItemPrice, item.hasSpciceFlavour);
+                appendCartItem(item.cartItemId, item.mealItemVariantId, 1, item.numberOfUnitsForItem, item.extraProdMainProdId, item.cartItemImg, item.cartItemName, item.cartItemsVariants, item.cartItemQty, item.cartItemPrice, item.hasSpciceFlavour);
             });
             updateTotalCartItems("normal");
             attachedQtyBtnsEventListeners();
@@ -880,10 +884,10 @@ $(document).ready(function () {
     function checkSpiceFlavour() {
         var cartData = JSON.parse(localStorage.getItem('cartData'));
         var hasSpiceFlavour = false;
-        $.each(cartData, function(index, item) {
+        $.each(cartData, function (index, item) {
             if (item.hasSpciceFlavour === "true") {
                 hasSpiceFlavour = true;
-                return false; 
+                return false;
             }
         });
         return hasSpiceFlavour;
@@ -1139,35 +1143,46 @@ $(document).ready(function () {
         if (totalCartItemsAdded < maxLimitForCartItems) {
             alert(`Please add ${maxLimitForCartItems - totalCartItemsAdded} more meal items to continue.`);
         }
-        else {            
+        else {
             // check for spice flavor upsell code start 
             var hasSpice = checkSpiceFlavour();
             var selectedSpice = localStorage.getItem('spiceFlavorClass');
-            console.log("hasSpice1 ="+hasSpice);
-            if(hasSpice){
+            console.log("hasSpice1 =" + hasSpice);
+            if (hasSpice) {
                 if (selectedSpice && selectedSpice.trim() !== "") {
-                    $("#spiceFlavor").val(selectedSpice);
                     ableToCheckout = true;
                 } else {
-                    $("#spiceFlavor").val("");
-                    $(".upsellProdOptions label.extraProdLineItem:first-child").click();       
+                    $(".upsellProdOptions label.extraProdLineItem:first-child").click();
                     $("body").addClass("showUpsell");
                     return false
                 }
             }
-            $(this).addClass("tempDisabled");    
-            // check for spice flavor upsell code end 
+            $(this).addClass("tempDisabled")
             var finalProdForCart = [];
+            var singleMealProdImages = [];
+            var singleMealProdQty = [];
 
             var storedMainProdBox = localStorage.getItem("boxProdInfo");
-            var mainBoxProdInfoArray = JSON.parse(storedMainProdBox);
+            if (storedMainProdBox) {
+                var mainBoxProdInfoArray = JSON.parse(storedMainProdBox);
+            }
+
+            var cartSingleMealItems = localStorage.getItem("cartData");
+            if (cartSingleMealItems) {
+                var storedSingleMealItems = JSON.parse(cartSingleMealItems);
+                storedSingleMealItems.forEach(function(item, index) {
+                    singleMealProdImages.push(item.cartItemImg);
+                });
+                storedSingleMealItems.forEach(function(item, index) {
+                    singleMealProdQty.push(item.cartItemQty);
+                });
+            }
 
             var storedCartAddOns = localStorage.getItem("cartAddOns");
             if (storedCartAddOns) {
                 var storedCartAddOnsInfoArray = JSON.parse(storedCartAddOns);
             }
 
-            // lineItems properties 
             // Get cartData from localStorage
 
             var cartData = localStorage.getItem("cartData");
@@ -1192,29 +1207,50 @@ $(document).ready(function () {
                 return item.trim() !== ""; // Filter out empty items
             }).join('\n');
 
-            $("#boxItems").val(finalBoxItemsProd);
-            // Retrieve the selected spice flavor from local storage
-            $("#LinkedProd").val("true");
 
             // pushing mainBox Prod Info for Add To Cart
-            // mainBoxProdInfoArray.forEach(function (item, index) {
-            //     finalProdForCart.push({
-            //         id: item.selectedVariantId,
-            //         quantity: 1,
-            //         properties: {
-            //             "Box Items": finalBoxItemsProd, // Example property from mainBoxProdInfoArray
-            //             // Include more properties as needed
-            //         }
-            //     });
-            // });
+            mainBoxProdInfoArray.forEach(function (item, index) {
+                finalProdForCart.push({
+                    id: item.selectedVariantId,
+                    quantity: 1,
+                    selling_plan: 689977786651,
+                    properties: {
+                        "_LinkedProd": "true",
+                        "Box Items": finalBoxItemsProd, // Example property from mainBoxProdInfoArray
+                        "Spice Flavor": selectedSpice,
+                        "_Product-Images": singleMealProdImages.join(', '),
+                        "_Product-Qty": singleMealProdQty.join(', '),
+                    }
+                });
+            });
+
+            // pushing single meal product for add to cart 
+
+
+            if (storedSingleMealItems && storedSingleMealItems.length > 0) {
+                storedSingleMealItems.forEach(function (item, index) {
+                    finalProdForCart.push({
+                        id: item.mealItemVariantId,
+                        quantity: item.cartItemQty,
+                        selling_plan: 690043191579,
+                        properties: {
+                            "_LinkedProd": "true",
+                            "_SingleMealProd": "true",
+                        }
+                    });
+                });
+            }
+
+
             // pushing Cart Addon Info for Add To Cart
             if (storedCartAddOnsInfoArray && storedCartAddOnsInfoArray.length > 0) {
                 storedCartAddOnsInfoArray.forEach(function (item, index) {
                     finalProdForCart.push({
                         id: item.addOnVariantId,
                         quantity: item.cartItemQty,
+                        selling_plan: "",
                         properties: {
-                            "_LinkedProd": `${item.isLinkedProd}`,
+                            "_LinkedProd": `${item.isLinkedProd}`
                         }
                     });
                 });
@@ -1229,12 +1265,12 @@ $(document).ready(function () {
                     data: { items: finalProdForCart },
                     dataType: "json",
                     success: function () {
-                        localStorage.removeItem('cartData');
-                        localStorage.removeItem('cartAddOns');                        
+                        // localStorage.removeItem('cartData');
+                        // localStorage.removeItem('cartAddOns');                        
                         localStorage.removeItem('spiceFlavorClass');
                         setTimeout(function () {
-                            $(".finalAddBtn").click();
-                            // window.location.href = "/cart";
+                            // $(".finalAddBtn").click();
+                            window.location.href = "/cart";
                         }, 200);
                     },
                     error: function () {

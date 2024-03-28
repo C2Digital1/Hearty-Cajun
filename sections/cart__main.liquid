@@ -1,4 +1,3 @@
-
 {% comment %}
   ** Cart page - main content area
 {% endcomment %}
@@ -157,7 +156,7 @@ p.cart__subtotal__price{
         href="/pages/customize-plans"
         class="continue-button button button--primary"
       >
-        {{- 'cart.general.continue_shopping_link_html' | t -}} 
+        {{- 'cart.general.continue_shopping_link_html' | t -}}
       </a>
     </div>
   </div>
@@ -203,41 +202,61 @@ p.cart__subtotal__price{
               {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
               {% assign total_saving = saving | plus: total_saving %}
             {% endif %}
-            
+
             {% assign thisIsLinkedProd = false %}
+            {% assign thisIsSingleMealProd = false %}
+            {% assign linkedProdImages = '' %}
+            {% assign linkedProdQty = '' %}
             {% for itemProperty in item.properties %}
-              {% if itemProperty contains '_LinkedProd' and  itemProperty contains 'true'%}
+              {% if itemProperty contains '_LinkedProd' and itemProperty contains 'true' %}
                 {% assign thisIsLinkedProd = true %}
+              {% endif %}
+
+              {% if itemProperty contains '_SingleMealProd' and itemProperty contains 'true' %}
+                {% assign thisIsSingleMealProd = true %}
+              {% endif %}
+
+              {% if itemProperty contains '_Product-Images' %}
+                {% assign linkedProdImages = itemProperty %}
+              {% endif %}
+
+              {% if itemProperty contains '_Product-Qty' %}
+                {% assign linkedProdQty = itemProperty %}
               {% endif %}
             {% endfor %}
 
             <div
-              class="cart__card container is-align-center {% if thisIsLinkedProd %} isLinkedProdItem cartItem-{{ item.variant.id }} {% endif%} %}"
+              class="cart__card container is-align-center {% if thisIsSingleMealProd %}hiddenCartItem{% endif %} {% if thisIsLinkedProd %} isLinkedProdItem cartItem-{{ item.variant.id }} {% endif%} %}"
               data-cart-item="{{ item.key }}"
               data-variant-id="{{ item.id }}"
               data-line-item="{{ forloop.index }}"
-            >   
-            {%  assign hideLink = false %}
+            >
+              {% assign hideLink = false %}
               {% if item.properties %}
                 <div class="item__properties is-text-small">
                   {% for p in item.properties %}
                     {% assign property_starts = p.first | slice: 0 %}
-                    {% if property_starts == "B" %}
-                      {%  assign hideLink = true %}
+                    {% if property_starts == 'B' %}
+                      {% assign hideLink = true %}
                     {% endif %}
                   {% endfor %}
                 </div>
               {% endif %}
 
-{% comment %} {{ item.url }} {% endcomment %}
-              <a href="{% if hideLink %}javascript:void(0){% else %}{% endif %}" title="{{ item.title | escape }}" class="cart__image">
+              {% comment %} {{ item.url }} {% endcomment %}
+              <a
+                href="{% if hideLink %}javascript:void(0){% else %}{% endif %}"
+                title="{{ item.title | escape }}"
+                class="cart__image"
+              >
                 {% render 'image-element', image: item.image, alt: item.title, object_fit: true, max_height: 150 %}
               </a>
               <div class="cart__info">
                 <div class="cart__description">
                   <div class="cart__text">
-                    <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{% endif %}">{{ item.product.title }}</a>
-
+                    <a class="item__title is-h5" href="{% if hideLink %}javascript:void(0){% else %}{% endif %}">
+                      {{- item.product.title -}}
+                    </a>
                     {% unless item.variant.title contains 'Title' %}
                       <p class="item__properties is-text-small">
                         {% for option in item.product.options %}
@@ -245,7 +264,6 @@ p.cart__subtotal__price{
                         {% endfor %}
                       </p>
                     {% endunless %}
-
                     {% if item.properties %}
                       <div class="item__properties is-text-small">
                         {% for p in item.properties %}
@@ -263,7 +281,6 @@ p.cart__subtotal__price{
                         {% endfor %}
                       </div>
                     {% endif %}
-
                     {% if item.selling_plan_allocation.selling_plan %}
                       <p class="item__selling-plan-name is-text-small">
                         {{ item.selling_plan_allocation.selling_plan.name }}
@@ -323,10 +340,9 @@ p.cart__subtotal__price{
                         <span class="qtyInfoBox">
                           {{ item.quantity }}
                         </span>
-                        {% else %}
+                      {% else %}
                         {% render 'quantity-box', item: item, size: 'is-medium', variant: item.variant %}
                       {% endif %}
-                    
                     </div>
                     <p class="cart__quantity-warning quantity-warning"></p>
                   </div>
@@ -354,8 +370,8 @@ p.cart__subtotal__price{
                 >
                   {% render 'delIcon' %}
                   <span>Remove</span>
-                </button>              
-                {% else %}
+                </button>
+              {% else %}
                 <a
                   class="cart__remove removeIcon close ajax-cart__delete "
                   data-cart-page-delete
@@ -367,7 +383,55 @@ p.cart__subtotal__price{
                   {% render 'delIcon' %}
                   <span>Remove</span>
                 </a>
-              {% endif %}              
+              {% endif %}
+
+              {% if item.properties %}
+                {% if linkedProdImages != blank %}
+                  {% assign imageUrls = linkedProdImages
+                    | replace: '"', ''
+                    | replace: '[', ''
+                    | replace: ']', ''
+                    | replace: '_Product-Images', ''
+                    | split: ','
+                  %}
+                  
+                  
+                  {% if linkedProdQty  != blank %}
+                    {% assign prodQtys = linkedProdQty
+                      | replace: '"', ''
+                      | replace: '[', ''
+                      | replace: ']', ''
+                      | replace: '_Product-Qty', ''
+                      | split: ','
+                    %}
+                  {% endif %}
+                  
+                  <div class="cartMealBoxInfo">
+                    {% for imageUrl in imageUrls %}
+                      {% assign imgItemIndex = forloop.index %}
+                    {% if imageUrl != blank %}
+                      <div class="mealBoxInfoItem">
+                        <img
+                          class="boxImg lazyload"
+                          src="{{ imageUrl }}"
+                          alt="img"
+                          width="200"
+                          height="200"
+                          loading="lazy"
+                        >
+                          {% for prodQty in prodQtys %}
+                            {% if forloop.index == imgItemIndex %}
+                              <span>
+                                X {{ prodQty }}
+                              </span>
+                            {% endif %}
+                          {% endfor %}
+                      </div>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endif %}
             </div>
           {% endfor %}
 
@@ -424,7 +488,12 @@ p.cart__subtotal__price{
                       </label>
                     </div>
                     <div class="field">
-                      <input class="input accessCode is-primary-btn-style" type="text" placeholder="Access Code" name="accessCode">
+                      <input
+                        class="input accessCode is-primary-btn-style"
+                        type="text"
+                        placeholder="Access Code"
+                        name="accessCode"
+                      >
                     </div>
                     <div class="field">
                       <label
@@ -437,7 +506,7 @@ p.cart__subtotal__price{
                       </label>
                       <div class="control">
                         <textarea
-                          class="textarea is-primary-btn-style dummyTextArea"   
+                          class="textarea is-primary-btn-style dummyTextArea"
                           {% if settings.use_placeholders %}
                             placeholder="Other"
                           {% endif %}
