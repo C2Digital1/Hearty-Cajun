@@ -2481,6 +2481,7 @@ h1.cart-page__title.title {
     justify-content: flex-start;
     width: 100%;
     flex-wrap: nowrap;
+    position: relative;
 }
 
 .cart__headings.column {
@@ -2637,10 +2638,10 @@ button.linkedDeleteBtn,
 a.cart__remove.removeIcon.close.ajax-cart__delete {
     top: calc(50% - 10px);
     transform: translateX(-50%);
-    right: 0;
+    right: -140px;
     width: max-content;
     color: #463F3A;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 12px;
     letter-spacing: 0;
     line-height: 19px;
@@ -6576,9 +6577,9 @@ form.search-form span.item-pricing.price {
     a.cart__remove.removeIcon.close {
         font-size: 0 !important;
         position: absolute;
-        top: 16px !important;
+        top: 0px !important;
         transform: none !important;
-        right: 16px !important;
+        right: 0px !important;
         margin: 0 !important;
     }
 

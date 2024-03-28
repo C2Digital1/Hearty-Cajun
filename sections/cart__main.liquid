@@ -363,32 +363,33 @@ p.cart__subtotal__price{
                     </p>
                   </div>
                 </div>
+                {% if thisIsLinkedProd %}
+                  <button
+                    type="button"
+                    class="cart__remove removeIcon close linkedDeleteBtn"
+                    data-cart-item-key=".cartItem-{{ item.variant.id }}"
+                    data-line-item-key="{{ forloop.index }}"
+                    title="{{ 'cart.general.remove' | t }}"
+                  >
+                    {% render 'delIcon' %}
+                    <span>Remove</span>
+                  </button>
+                {% else %}
+                  <a
+                    class="cart__remove removeIcon close ajax-cart__delete "
+                    data-cart-page-delete
+                    data-cart-item-key="{{ item.key }}"
+                    data-line-item-key="{{ forloop.index }}"
+                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0"
+                    title="{{ 'cart.general.remove' | t }}"
+                  >
+                    {% render 'delIcon' %}
+                    <span>Remove</span>
+                  </a>
+                {% endif %}
               </div>
 
-              {% if thisIsLinkedProd %}
-                <button
-                  type="button"
-                  class="cart__remove removeIcon close linkedDeleteBtn"
-                  data-cart-item-key=".cartItem-{{ item.variant.id }}"
-                  data-line-item-key="{{ forloop.index }}"
-                  title="{{ 'cart.general.remove' | t }}"
-                >
-                  {% render 'delIcon' %}
-                  <span>Remove</span>
-                </button>
-              {% else %}
-                <a
-                  class="cart__remove removeIcon close ajax-cart__delete "
-                  data-cart-page-delete
-                  data-cart-item-key="{{ item.key }}"
-                  data-line-item-key="{{ forloop.index }}"
-                  href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0"
-                  title="{{ 'cart.general.remove' | t }}"
-                >
-                  {% render 'delIcon' %}
-                  <span>Remove</span>
-                </a>
-              {% endif %}
+             
 
               {% if item.properties %}
                 {% if linkedProdImages != blank %}
